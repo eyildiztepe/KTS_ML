@@ -42,9 +42,6 @@
 \usepackage{float}
 \floatplacement{figure}{H}
 % End of CII addition
-% Added by EY
-\usepackage[utf8]{inputenc}
-%End of EY addition
 \usepackage{rotating}
 
 % Next line commented out by CII
@@ -287,8 +284,8 @@ Hopefully, you won't have much of a learning period to go through and you will r
 
 Anyone who needs to use data analysis, math, tables, a lot of figures, complex cross-references, or who just cares about the final appearance of their document should use \emph{R Markdown}. Of particular use should be anyone in the sciences, but the user-friendly nature of \emph{Markdown} and its ability to keep track of and easily include figures, automatically generate a table of contents, index, references, table of figures, etc. should make it of great benefit to nearly anyone writing a thesis project.
 
-\hypertarget{rmd-basics}{%
-\chapter{R Markdown Basics}\label{rmd-basics}}
+\hypertarget{kts-tanim}{%
+\chapter{Karpal Tünel Sendromu}\label{kts-tanim}}
 
 Here is a brief introduction into using \emph{R Markdown}. \emph{Markdown} is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. \emph{R Markdown} provides the flexibility of \emph{Markdown} with the implementation of \textbf{R} input and output. For more details on using \emph{R Markdown} see \url{http://rmarkdown.rstudio.com}.
 
@@ -453,17 +450,6 @@ We begin by checking to ensure that needed packages are installed and then we lo
 \CommentTok{\#library(dplyr)}
 \CommentTok{\#library(ggplot2)}
 \FunctionTok{library}\NormalTok{(tidyverse)}
-\end{Highlighting}
-\end{Shaded}
-\begin{verbatim}
-Warning in (function (kind = NULL, normal.kind = NULL, sample.kind = NULL) :
-non-uniform 'Rounding' sampler used
-
-Warning in (function (kind = NULL, normal.kind = NULL, sample.kind = NULL) :
-non-uniform 'Rounding' sampler used
-\end{verbatim}
-\begin{Shaded}
-\begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(bookdown)}
 \FunctionTok{library}\NormalTok{(knitr)}
 \end{Highlighting}
@@ -619,7 +605,7 @@ You will probably find the resources at \url{http://www.lecb.ncifcrf.gov/~toms/l
 \hypertarget{tables}{%
 \section{Tables}\label{tables}}
 
-In addition to the tables that can be automatically generated from a data frame in \textbf{R} that you saw in \protect\hyperlink{rmd-basics}{R Markdown Basics} using the \texttt{kable} function, you can also create tables using \emph{pandoc}. (More information is available at \url{http://pandoc.org/README.html\#tables}.) This might be useful if you don't have values specifically stored in \textbf{R}, but you'd like to display them in table form. Below is an example. Pay careful attention to the alignment in the table and hyphens to create the rows and columns.
+In addition to the tables that can be automatically generated from a data frame in \textbf{R} that you saw in {[}R Markdown Basics{]} using the \texttt{kable} function, you can also create tables using \emph{pandoc}. (More information is available at \url{http://pandoc.org/README.html\#tables}.) This might be useful if you don't have values specifically stored in \textbf{R}, but you'd like to display them in table form. Below is an example. Pay careful attention to the alignment in the table and hyphens to create the rows and columns.
 \begin{longtable}[]{@{}l@{}}
 \caption{\label{tab:inher} Correlation of Inheritance Factors for Parents and Child}\tabularnewline
 \toprule

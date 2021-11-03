@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  1 NOV 2021 11:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  3 NOV 2021 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,8 +416,8 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
 )
-Package color Info: Redefining color shadecolor on input line 82.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 211.
+Package color Info: Redefining color shadecolor on input line 79.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 208.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -427,31 +427,31 @@ File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 ) (./BP_Rapor.aux)
 \openout1 = `BP_Rapor.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 211.
-LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 208.
+LaTeX Font Info:    ... okay on input line 208.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 211.
+Package hyperref Info: Link coloring OFF on input line 208.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -461,46 +461,46 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count299
 )
-LaTeX Info: Redefining \ref on input line 211.
-LaTeX Info: Redefining \pageref on input line 211.
-LaTeX Info: Redefining \nameref on input line 211.
+LaTeX Info: Redefining \ref on input line 208.
+LaTeX Info: Redefining \pageref on input line 208.
+LaTeX Info: Redefining \nameref on input line 208.
 (./BP_Rapor.out) (./BP_Rapor.out)
 \@outlinefile=\write4
 \openout4 = `BP_Rapor.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 215.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 212.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 215.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 212.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 215.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 212.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 215.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 212.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 215.
+(Font)              <12> on input line 212.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 215.
+(Font)              <8> on input line 212.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 215.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 215.
+(Font)              <6> on input line 212.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 212.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 215.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 212.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 215.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 212.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -513,12 +513,12 @@ Non-PDF special ignored!
 {c:/Users/ey/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 219--223
+Underfull \hbox (badness 10000) in paragraph at lines 216--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--223
+Underfull \hbox (badness 10000) in paragraph at lines 216--220
 
  []
 
@@ -528,17 +528,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--223
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 225--230
+Underfull \hbox (badness 10000) in paragraph at lines 222--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--230
+Underfull \hbox (badness 10000) in paragraph at lines 222--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--230
+Underfull \hbox (badness 10000) in paragraph at lines 222--227
 
  []
 
@@ -546,11 +546,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--230
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 232.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 229.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 238--241
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
 
  []
 
@@ -558,7 +558,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 238--241
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 247--250
+Underfull \hbox (badness 10000) in paragraph at lines 244--247
 
  []
 
@@ -587,18 +587,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--250
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.291 ...ter{R Markdown Basics}\label{rmd-basics}}
+l.288 ...Karpal Tünel Sendromu}\label{kts-tanim}}
                                                    [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.291 ...ter{R Markdown Basics}\label{rmd-basics}}
+l.288 ...Karpal Tünel Sendromu}\label{kts-tanim}}
                                                    [2
 
 ]
 B\"ol\"um 1.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 293.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 290.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [3]
@@ -613,10 +613,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <BP_Rapor_files/figure-latex/pressure-1.pdf, id=272, 469.755pt x 325.215pt>
 File: BP_Rapor_files/figure-latex/pressure-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/pressure-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/pressure-1.pdf  used on input line 393.
+Package pdftex.def Info: BP_Rapor_files/figure-latex/pressure-1.pdf  used on input line 390.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (53.75868pt too wide) in paragraph at lines 393--394
+Overfull \hbox (53.75868pt too wide) in paragraph at lines 390--391
 [][] 
  []
 
@@ -628,12 +628,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5 <./BP_Rapor_files/figure-latex/pressure-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 447.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 444.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 449.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 446.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -663,15 +663,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <BP_Rapor_files/figure-latex/march3plot-1.pdf, id=303, 433.62pt x 216.81pt>
 File: BP_Rapor_files/figure-latex/march3plot-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/march3plot-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/march3plot-1.pdf  used on input line 542.
+Package pdftex.def Info: BP_Rapor_files/figure-latex/march3plot-1.pdf  used on input line 528.
 (pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
 
-Overfull \hbox (17.62376pt too wide) in paragraph at lines 542--543
+Overfull \hbox (17.62376pt too wide) in paragraph at lines 528--529
 [][] 
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 550--552
+Underfull \hbox (badness 1062) in paragraph at lines 536--538
 []\T1/lmr/m/it/12 R Mark-down \T1/lmr/m/n/12 Ref-er-ence Guide - []$\T1/lmtt/m/n/12 https : / / www . rstudio . com / wp -[] content /
  []
 
@@ -690,27 +690,27 @@ B\"ol\"um 2.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
 \T1/lmr/m/n/12 ([]$\T1/lmtt/m/n/12 http : / / mirror . utexas . edu / ctan / info / symbols / comprehensive / symbols -[]
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 614--615
+Underfull \hbox (badness 7030) in paragraph at lines 600--601
 \T1/lmr/m/n/12 You will prob-a-bly find the re-sources at []$\T1/lmtt/m/n/12 http : / / www . lecb . ncifcrf . gov /
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 614--615
+Underfull \hbox (badness 3168) in paragraph at lines 600--601
 \T1/lmtt/m/n/12 ~toms / latex . html$[] \T1/lmr/m/n/12 help-ful, par-tic-u-larly the links to bsts for var-i-ous jour-
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 614--615
+Underfull \hbox (badness 3199) in paragraph at lines 600--601
 \T1/lmr/m/n/12 nals. You may also be in-ter-ested in TeXShade for nu-cleotide type-set-ting
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--615
+Underfull \hbox (badness 10000) in paragraph at lines 600--601
 \T1/lmr/m/n/12 ([]$\T1/lmtt/m/n/12 http : / / homepages . uni -[] tuebingen . de / beitz / txe . html$[]\T1/lmr/m/n/12 ). Be sure to read
  []
 
@@ -734,10 +734,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-<figure/ist.png, id=369, 321.2pt x 321.2pt>
+<figure/ist.png, id=368, 321.2pt x 321.2pt>
 File: figure/ist.png Graphic file (type png)
 <use figure/ist.png>
-Package pdftex.def Info: figure/ist.png  used on input line 664.
+Package pdftex.def Info: figure/ist.png  used on input line 650.
 (pdftex.def)             Requested size: 321.19922pt x 321.19922pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -757,10 +757,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=384, 433.62pt x 325.215pt>
+
+LaTeX Warning: Reference `rmd-basics' on page 17 undefined on input line 657.
+
+<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=382, 433.62pt x 325.215pt>
 File: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf  used on input line 682.
+Package pdftex.def Info: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf  used on input line 668.
 (pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -772,21 +775,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [17
 
  <./BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>]
-<figure/subdivision.pdf, id=397, 220.825pt x 89.33376pt>
+<figure/subdivision.pdf, id=395, 220.825pt x 89.33376pt>
 File: figure/subdivision.pdf Graphic file (type pdf)
 <use figure/subdivision.pdf>
-Package pdftex.def Info: figure/subdivision.pdf  used on input line 693.
+Package pdftex.def Info: figure/subdivision.pdf  used on input line 679.
 (pdftex.def)             Requested size: 165.61833pt x 67.00014pt.
 File: figure/subdivision.pdf Graphic file (type pdf)
 <use figure/subdivision.pdf>
-Package pdftex.def Info: figure/subdivision.pdf  used on input line 701.
+Package pdftex.def Info: figure/subdivision.pdf  used on input line 687.
 (pdftex.def)             Requested size: 220.82445pt x 89.33353pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 708.
+(Font)              <10> on input line 694.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 708.
+(Font)              <7> on input line 694.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 708.
+(Font)              <5> on input line 694.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -829,22 +832,25 @@ B\"ol\"um 4.
 ] [27] [28
 
 ] [29] (./BP_Rapor.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
-(rerunfilecheck)             Checksum: 432DBF7D30375FDFBFA826B4F9037D1D;3913.
+(rerunfilecheck)             Checksum: F48AA44BF4DDAE9C47E3DA944123E1E1;3936.
  ) 
 Here is how much of TeX's memory you used:
- 13291 strings out of 480539
- 205306 string characters out of 5900884
- 520004 words of memory out of 5000000
- 30532 multiletter control sequences out of 15000+600000
+ 13292 strings out of 480539
+ 205316 string characters out of 5900884
+ 521009 words of memory out of 5000000
+ 30533 multiletter control sequences out of 15000+600000
  475613 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  72i,12n,80p,846b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on BP_Rapor.pdf (45 pages, 412395 bytes).
+Output written on BP_Rapor.pdf (45 pages, 412042 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
- 523 compressed objects within 6 object streams
+ 624 PDF objects out of 1000 (max. 8388607)
+ 521 compressed objects within 6 object streams
  128 named destinations out of 1000 (max. 500000)
  250 words of extra memory for PDF output out of 10000 (max. 10000000)
 
