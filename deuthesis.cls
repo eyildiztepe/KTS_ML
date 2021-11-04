@@ -299,10 +299,10 @@
 
 \ifx\@pdfoutput\@undefined
   \newcommand{\RTpercent}{\@percentchar\space}
-  \AtBeginDvi{\special{!\RTpercent DEÜ LaTeX Thesis Class 2018/11/24}}
-  \AtBeginDvi{\special{rawpostscript \RTpercent DEÜ LaTeX Thesis Class 2018/11/24}}
+  \AtBeginDvi{\special{!\RTpercent DEU LaTeX Thesis Class 2018/11/24}}
+  \AtBeginDvi{\special{rawpostscript \RTpercent DEU LaTeX Thesis Class 2018/11/24}}
 \else
-  \AtEndDocument{\pdfinfo{/Creator	(DEÜ LaTeX Thesis Class 2018/11/24)}}
+  \AtEndDocument{\pdfinfo{/Creator	(DEU LaTeX Thesis Class 2018/11/24)}}
 \fi
 
 % I hacked the title page to all be the same font size

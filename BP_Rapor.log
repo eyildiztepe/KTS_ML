@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  3 NOV 2021 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  4 NOV 2021 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -505,9 +505,9 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 212.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 Non-PDF special ignored!
-<special> !% DEÜ LaTeX Thesis Class 2018/11/24
+<special> !% DEU LaTeX Thesis Class 2018/11/24
 Non-PDF special ignored!
-<special> rawpostscript % DEÜ LaTeX Thesis Class 2018/11/24
+<special> rawpostscript % DEU LaTeX Thesis Class 2018/11/24
 
 
 {c:/Users/ey/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
@@ -546,10 +546,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 222--227
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 229.
-(c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 Underfull \hbox (badness 10000) in paragraph at lines 235--238
 
  []
@@ -565,17 +561,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--247
 [7] [8
 
 
-] (./BP_Rapor.toc)
+] (./BP_Rapor.toc [9])
 \tf@toc=\write5
 \openout5 = `BP_Rapor.toc'.
 
-[9] [10
-
-] (./BP_Rapor.lot)
+[10] (./BP_Rapor.lot)
 \tf@lot=\write6
 \openout6 = `BP_Rapor.lot'.
 
-[11] [12
+[11
+
+] [12
 
 ] (./BP_Rapor.lof)
 \tf@lof=\write7
@@ -587,13 +583,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--247
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 ...Karpal TÃ¼nel Sendromu}\label{kts-tanim}}
+l.288 ...ter{R Markdown Basics}\label{rmd-basics}}
                                                    [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 ...Karpal TÃ¼nel Sendromu}\label{kts-tanim}}
+l.288 ...ter{R Markdown Basics}\label{rmd-basics}}
                                                    [2
 
 ]
@@ -601,6 +597,10 @@ B\"ol\"um 1.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 290.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 301.
+(c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [3]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -610,7 +610,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
-<BP_Rapor_files/figure-latex/pressure-1.pdf, id=272, 469.755pt x 325.215pt>
+<BP_Rapor_files/figure-latex/pressure-1.pdf, id=277, 469.755pt x 325.215pt>
 File: BP_Rapor_files/figure-latex/pressure-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/pressure-1.pdf>
 Package pdftex.def Info: BP_Rapor_files/figure-latex/pressure-1.pdf  used on input line 390.
@@ -660,7 +660,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [8
 
 ]
-<BP_Rapor_files/figure-latex/march3plot-1.pdf, id=303, 433.62pt x 216.81pt>
+<BP_Rapor_files/figure-latex/march3plot-1.pdf, id=308, 433.62pt x 216.81pt>
 File: BP_Rapor_files/figure-latex/march3plot-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/march3plot-1.pdf>
 Package pdftex.def Info: BP_Rapor_files/figure-latex/march3plot-1.pdf  used on input line 528.
@@ -734,7 +734,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-<figure/ist.png, id=368, 321.2pt x 321.2pt>
+<figure/ist.png, id=374, 321.2pt x 321.2pt>
 File: figure/ist.png Graphic file (type png)
 <use figure/ist.png>
 Package pdftex.def Info: figure/ist.png  used on input line 650.
@@ -757,10 +757,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-
-LaTeX Warning: Reference `rmd-basics' on page 17 undefined on input line 657.
-
-<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=382, 433.62pt x 325.215pt>
+<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=389, 433.62pt x 325.215pt>
 File: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>
 Package pdftex.def Info: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf  used on input line 668.
@@ -775,7 +772,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [17
 
  <./BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>]
-<figure/subdivision.pdf, id=395, 220.825pt x 89.33376pt>
+<figure/subdivision.pdf, id=402, 220.825pt x 89.33376pt>
 File: figure/subdivision.pdf Graphic file (type pdf)
 <use figure/subdivision.pdf>
 Package pdftex.def Info: figure/subdivision.pdf  used on input line 679.
@@ -832,25 +829,22 @@ B\"ol\"um 4.
 ] [27] [28
 
 ] [29] (./BP_Rapor.aux)
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
-(rerunfilecheck)             Checksum: F48AA44BF4DDAE9C47E3DA944123E1E1;3936.
+(rerunfilecheck)             Checksum: 29421E7928915E11E486F4AA89DCD127;4151.
  ) 
 Here is how much of TeX's memory you used:
- 13292 strings out of 480539
- 205316 string characters out of 5900884
- 521009 words of memory out of 5000000
- 30533 multiletter control sequences out of 15000+600000
+ 13291 strings out of 480539
+ 205362 string characters out of 5900884
+ 521068 words of memory out of 5000000
+ 30530 multiletter control sequences out of 15000+600000
  475613 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,12n,80p,846b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,12n,80p,846b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on BP_Rapor.pdf (45 pages, 412042 bytes).
+Output written on BP_Rapor.pdf (45 pages, 410441 bytes).
 PDF statistics:
- 624 PDF objects out of 1000 (max. 8388607)
- 521 compressed objects within 6 object streams
- 128 named destinations out of 1000 (max. 500000)
- 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 632 PDF objects out of 1000 (max. 8388607)
+ 529 compressed objects within 6 object streams
+ 130 named destinations out of 1000 (max. 500000)
+ 258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

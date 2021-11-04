@@ -112,8 +112,8 @@
 
 % To pass between YAML and LaTeX the dollar signs are added by CII
 \title{PROJE BAŞLIĞI}
-%\author{Yazar1 Ad SoyadYazar2 Ad Soyad} %Tek yazar için
-\author{Yazar1 Ad Soyad \\ Yazar2 Ad Soyad} %Çok yazar için
+%\author{Yazar1 Adı SoyadıYazar2 Adı SoyadıYazar3 Adı Soyadı} %Tek yazar için
+\author{Yazar1 Adı Soyadı \\ Yazar2 Adı Soyadı \\ Yazar3 Adı Soyadı} %Çok yazar için
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
 \date{Kasým 2021}
 \division{İSTATİSTİK BÖLÜMÜ}
@@ -162,8 +162,8 @@
 Tüm çalışma süresince yönlendiriciliği, katkıları ve yardımları ile yanımızda olan danışmanımız Dr.~Ad Soyad 'ye ve böyle bir çalışmayı yapmamız için bize fırsat tanıyan Dokuz Eylül Üniversitesi Fen Fakültesi İstatistik Bölümüne teşekkür ederiz.\\
 ~\\
 ~\\
-Yazar1 Ad Soyad\\
-Yazar2 Ad Soyad\\
+Yazar1 Adı Soyadı\\
+Yazar2 Adı Soyadı\\
 }
 
 \Dedication{
@@ -178,13 +178,13 @@ Dr.~Ad Soyad
 }
 
 \AbstractTR{
-Ã--zet, Ã§alÄ±ÅŸmanÄ±n Ã¶nemini ve faydasÄ±nÄ± anlatan bir bÃ¶lÃ¼m degildir. Ã‡alÄ±smayÄ± ana
-hatlarÄ±yla anlatacak ve 300 kelimeyi asmayacak sekilde hazÄ±rlanmalÄ±dÄ±r. En az Ã¼Ã§ en
-Ã§ok beÅŸ anahtar kelime ilgili yere yazÄ±lmalÄ±dÄ±r.
+Özet, çalışmanın önemini ve faydasını anlatan bir bölüm degildir. Çalısmayı ana
+hatlarıyla anlatacak ve 300 kelimeyi aşmayacak şekilde hazırlanmalıdır. En az üç en
+çok beş anahtar kelime ilgili yere yazılmalıdır.
 
 \par
 
-ikinci paragraf buradan baÅŸlar\\
+ikinci paragraf buradan başlar\\
 ~\\
 \textbf{Anahtar Kelimeler:} anahtar kelime 1, anahtar kelime 2, anahtar kelime 3
 }
@@ -222,17 +222,17 @@ Second paragraph of abstract starts here.\\
     Tüm çalışma süresince yönlendiriciliği, katkıları ve yardımları ile yanımızda olan danışmanımız Dr.~Ad Soyad 'ye ve böyle bir çalışmayı yapmamız için bize fırsat tanıyan Dokuz Eylül Üniversitesi Fen Fakültesi İstatistik Bölümüne teşekkür ederiz.\\
     ~\\
     ~\\
-    Yazar1 Ad Soyad\\
-    Yazar2 Ad Soyad\\
+    Yazar1 Adı Soyadı\\
+    Yazar2 Adı Soyadı\\
   \end{acknowledgements}
 \begin{abstractTR}
-	Ã--zet, Ã§alÄ±ÅŸmanÄ±n Ã¶nemini ve faydasÄ±nÄ± anlatan bir bÃ¶lÃ¼m degildir. Ã‡alÄ±smayÄ± ana
- hatlarÄ±yla anlatacak ve 300 kelimeyi asmayacak sekilde hazÄ±rlanmalÄ±dÄ±r. En az Ã¼Ã§ en
- Ã§ok beÅŸ anahtar kelime ilgili yere yazÄ±lmalÄ±dÄ±r.
+	Özet, çalışmanın önemini ve faydasını anlatan bir bölüm degildir. Çalısmayı ana
+ hatlarıyla anlatacak ve 300 kelimeyi aşmayacak şekilde hazırlanmalıdır. En az üç en
+ çok beş anahtar kelime ilgili yere yazılmalıdır.
 
  \par
 
- ikinci paragraf buradan baÅŸlar\\
+ ikinci paragraf buradan başlar\\
  ~\\
  \textbf{Anahtar Kelimeler:} anahtar kelime 1, anahtar kelime 2, anahtar kelime 3
 \end{abstractTR}
@@ -284,8 +284,8 @@ Hopefully, you won't have much of a learning period to go through and you will r
 
 Anyone who needs to use data analysis, math, tables, a lot of figures, complex cross-references, or who just cares about the final appearance of their document should use \emph{R Markdown}. Of particular use should be anyone in the sciences, but the user-friendly nature of \emph{Markdown} and its ability to keep track of and easily include figures, automatically generate a table of contents, index, references, table of figures, etc. should make it of great benefit to nearly anyone writing a thesis project.
 
-\hypertarget{kts-tanim}{%
-\chapter{Karpal Tünel Sendromu}\label{kts-tanim}}
+\hypertarget{rmd-basics}{%
+\chapter{R Markdown Basics}\label{rmd-basics}}
 
 Here is a brief introduction into using \emph{R Markdown}. \emph{Markdown} is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. \emph{R Markdown} provides the flexibility of \emph{Markdown} with the implementation of \textbf{R} input and output. For more details on using \emph{R Markdown} see \url{http://rmarkdown.rstudio.com}.
 
@@ -436,8 +436,8 @@ We begin by checking to ensure that needed packages are installed and then we lo
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# List of packages required for this analysis}
-\CommentTok{\#pkg \textless{}{-} c("dplyr", "ggplot2", "knitr", "bookdown", "devtools")}
-\NormalTok{pkg }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{, }\StringTok{"knitr"}\NormalTok{, }\StringTok{"bookdown"}\NormalTok{, }\StringTok{"devtools"}\NormalTok{)}
+\CommentTok{\#pkg \textless{}{-} c("dplyr", "ggplot2", "knitr", "bookdown", "remotes")}
+\NormalTok{pkg }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{, }\StringTok{"knitr"}\NormalTok{, }\StringTok{"bookdown"}\NormalTok{, }\StringTok{"remotes"}\NormalTok{)}
 \CommentTok{\# Check if packages are not installed and assign the}
 \CommentTok{\# names of the packages not installed to the variable new.pkg}
 \NormalTok{new.pkg }\OtherTok{\textless{}{-}}\NormalTok{ pkg[}\SpecialCharTok{!}\NormalTok{(pkg }\SpecialCharTok{\%in\%} \FunctionTok{installed.packages}\NormalTok{())]}
@@ -605,7 +605,7 @@ You will probably find the resources at \url{http://www.lecb.ncifcrf.gov/~toms/l
 \hypertarget{tables}{%
 \section{Tables}\label{tables}}
 
-In addition to the tables that can be automatically generated from a data frame in \textbf{R} that you saw in {[}R Markdown Basics{]} using the \texttt{kable} function, you can also create tables using \emph{pandoc}. (More information is available at \url{http://pandoc.org/README.html\#tables}.) This might be useful if you don't have values specifically stored in \textbf{R}, but you'd like to display them in table form. Below is an example. Pay careful attention to the alignment in the table and hyphens to create the rows and columns.
+In addition to the tables that can be automatically generated from a data frame in \textbf{R} that you saw in \protect\hyperlink{rmd-basics}{R Markdown Basics} using the \texttt{kable} function, you can also create tables using \emph{pandoc}. (More information is available at \url{http://pandoc.org/README.html\#tables}.) This might be useful if you don't have values specifically stored in \textbf{R}, but you'd like to display them in table form. Below is an example. Pay careful attention to the alignment in the table and hyphens to create the rows and columns.
 \begin{longtable}[]{@{}l@{}}
 \caption{\label{tab:inher} Correlation of Inheritance Factors for Parents and Child}\tabularnewline
 \toprule
@@ -731,6 +731,11 @@ If you'd like to see examples of other things in this template, please contact t
 \hypertarget{bu-bir-alt-baux15flux131k}{%
 \section{Bu bir alt başlık}\label{bu-bir-alt-baux15flux131k}}
 
+Bu bölümde şu konular yer almaktadır\ldots{}
+
+\hypertarget{bu-ikinci-seviye-bir-alt-baux15flux131k}{%
+\subsection{Bu ikinci seviye bir alt başlık}\label{bu-ikinci-seviye-bir-alt-baux15flux131k}}
+
 \hypertarget{sonuuxe7}{%
 \chapter*{Sonuç}\label{sonuuxe7}}
 \addcontentsline{toc}{chapter}{Sonuç}
@@ -787,8 +792,8 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \CommentTok{\# This chunk ensures that the thesisdown package is}
 \CommentTok{\# installed and loaded. This thesisdown package includes}
 \CommentTok{\# the template files for the thesis.}
- \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(devtools)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
- \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(thesisdown))devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
+ \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(remotes)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"remotes"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+ \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(thesisdown))remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
  \FunctionTok{library}\NormalTok{(thesisdown)}
 \end{Highlighting}
 \end{Shaded}
@@ -799,8 +804,8 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \CommentTok{\# installed and loaded. This thesisdown package includes}
 \CommentTok{\# the template files for the thesis and also two functions}
 \CommentTok{\# used for labeling and referencing}
-\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(devtools))}
-  \FunctionTok{install.packages}\NormalTok{(}\StringTok{"devtools"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(remotes))}
+  \FunctionTok{install.packages}\NormalTok{(}\StringTok{"remotes"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
 \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(dplyr))}
     \FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
 \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(ggplot2))}
@@ -808,8 +813,8 @@ This first appendix includes all of the R chunks of code that were hidden throug
 \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(ggplot2))}
     \FunctionTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
 \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(thesisdown))\{}
-  \FunctionTok{library}\NormalTok{(devtools)}
-\NormalTok{  devtools}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
+  \FunctionTok{library}\NormalTok{(remotes)}
+\NormalTok{  remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
 \NormalTok{  \}}
 \FunctionTok{library}\NormalTok{(thesisdown)}
 \NormalTok{flights }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"data/flights.csv"}\NormalTok{)}
