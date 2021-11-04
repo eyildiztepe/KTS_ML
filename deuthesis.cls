@@ -10,6 +10,7 @@
 % May 2005 Patrick Carlisle Table of contents chapter definition
 % 2004-2005 Ben Salzberg (BTS) a variety of tweaks here and in the template
 % 2015 Chester Ismay (CII) modified to create R Markdown template
+% 2018-2021 Engin Yildiztepe (EY) modified to create DEU_Thesis R Markdown template
 %
 % Oddities:
 %
@@ -38,7 +39,7 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage[turkish]{babel}
+  \usepackage[turkish,english]{babel}
 \else % if luatex or xelatex
   \ifxetex
     \usepackage{mathspec}
@@ -347,7 +348,7 @@
     \bigskip
     {\fontsize{12}{14}\selectfont \lineskip .75em
     \begin{tabular}[t]{c}%
-      \@author\\ %burada birden fazla yazar durumu düzeltilecek ama nasıl??
+      \@author\\ %burada birden fazla yazar durumu düzeltilecek ama nasıl?? template.tex de duzeltildi.
     \end{tabular}\par}
     \vskip 1.5em
     {\fontsize{12}{14}\selectfont \@date \par}

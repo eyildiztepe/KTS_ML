@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  4 NOV 2021 11:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  4 NOV 2021 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -90,6 +90,18 @@ Package babel Info: Hyphen rules for 'turkish' set to \l@english
 Package babel Info: Making : an active character on input line 163.
 Package babel Info: Making ! an active character on input line 164.
 Package babel Info: Making = an active character on input line 194.
+) (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
 )) (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -550,6 +562,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--238
 
  []
 
+
+Underfull \hbox (badness 1571) in paragraph at lines 235--238
+\T1/lmr/bx/n/12 Anahtar Ke-limeler: \T1/lmr/m/n/12 anahtar ke-lime 1, anahtar ke-lime 2, anahtar ke-lime
+ []
+
 [5] [6
 
 
@@ -593,7 +610,7 @@ l.288 ...ter{R Markdown Basics}\label{rmd-basics}}
                                                    [2
 
 ]
-B\"ol\"um 1.
+Chapter 1.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 290.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -685,7 +702,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [9 <./BP_Rapor_files/figure-latex/march3plot-1.pdf>] [10
 
 ]
-B\"ol\"um 2.
+Chapter 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -700,17 +717,17 @@ Underfull \hbox (badness 7030) in paragraph at lines 600--601
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 600--601
+Underfull \hbox (badness 2922) in paragraph at lines 600--601
 \T1/lmtt/m/n/12 ~toms / latex . html$[] \T1/lmr/m/n/12 help-ful, par-tic-u-larly the links to bsts for var-i-ous jour-
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 600--601
+Underfull \hbox (badness 1742) in paragraph at lines 600--601
 \T1/lmr/m/n/12 nals. You may also be in-ter-ested in TeXShade for nu-cleotide type-set-ting
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 600--601
+Underfull \hbox (badness 4001) in paragraph at lines 600--601
 \T1/lmr/m/n/12 ([]$\T1/lmtt/m/n/12 http : / / homepages . uni -[] tuebingen . de / beitz / txe . html$[]\T1/lmr/m/n/12 ). Be sure to read
  []
 
@@ -722,7 +739,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
-B\"ol\"um 3.
+Chapter 3.
 [13
 
 ]
@@ -815,36 +832,47 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [20]
-B\"ol\"um 4.
+Chapter 4.
 [21
 
 ] [22
 
 ] [23] [24
 
-] [25
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] [26
+[25
 
-] [27] [28
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26] [27
+
+] [28
 
 ] [29] (./BP_Rapor.aux)
 Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
-(rerunfilecheck)             Checksum: 29421E7928915E11E486F4AA89DCD127;4151.
+(rerunfilecheck)             Checksum: 4532B16787723604DB39DE03318246E5;4167.
  ) 
 Here is how much of TeX's memory you used:
- 13291 strings out of 480539
- 205362 string characters out of 5900884
- 521068 words of memory out of 5000000
- 30530 multiletter control sequences out of 15000+600000
+ 13328 strings out of 480539
+ 206111 string characters out of 5900884
+ 521701 words of memory out of 5000000
+ 30552 multiletter control sequences out of 15000+600000
  475613 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,12n,80p,846b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,12n,80p,846b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on BP_Rapor.pdf (45 pages, 410441 bytes).
+Output written on BP_Rapor.pdf (45 pages, 416067 bytes).
 PDF statistics:
- 632 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
- 130 named destinations out of 1000 (max. 500000)
+ 647 PDF objects out of 1000 (max. 8388607)
+ 544 compressed objects within 6 object streams
+ 141 named destinations out of 1000 (max. 500000)
  258 words of extra memory for PDF output out of 10000 (max. 10000000)
 

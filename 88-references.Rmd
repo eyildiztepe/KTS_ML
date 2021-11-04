@@ -34,6 +34,6 @@ This is just for testing with more citations for the bibliography at the end.  A
 -->
 
 ---
-nocite: | 
-  @angel2000, @angel2001a, @angel2001b, @wong1999
+nocite: |
+  @angel2000, @angel2001a, @angel2001b, @deussen2000, @wong1999, @hipr1997, @goochandgooch2001, @goochandgooch2001a, @tukey1984, @hertzmann2000, @jain1989, @reedweb2007, @russ1995, @salisbury1997, @savitch2001, @wong1999
 ...
