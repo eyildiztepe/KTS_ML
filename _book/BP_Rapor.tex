@@ -639,7 +639,7 @@ We can also create a link to the table by doing the following: Table \ref{tab:in
 
 If your thesis has a lot of figures, \emph{R Markdown} might behave better for you than that other word processor. One perk is that it will automatically number the figures accordingly in each chapter. You'll also be able to create a label for each figure, add a caption, and then reference the figure in a way similar to what we saw with tables earlier. If you label your figures, you can move the figures around and \emph{R Markdown} will automatically adjust the numbering for you. No need for you to remember! So that you don't have to get too far into LaTeX to do this, a couple \textbf{R} functions have been created for you to assist. You'll see their use below.
 
-In the \textbf{R} chunk below, we will load in a picture stored as \texttt{ist.png} in our ``figure'' directory. We then give it the caption of ``IST logo,'' the label of ``istlogo,'' and specify that this is a figure. Make note of the different \textbf{R} chunk options that are given in the R Markdown file (not shown in the knitted document).
+In the \textbf{R} chunk below, we will load in a picture stored as \texttt{ist.png} in our ``figure'' directory. We then give it the caption of ``IST logo'', the label of ``istlogo'', and specify that this is a figure. Make note of the different \textbf{R} chunk options that are given in the R Markdown file (not shown in the knitted document).
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{include\_graphics}\NormalTok{(}\AttributeTok{path =} \StringTok{"figure/ist.png"}\NormalTok{)}
@@ -698,7 +698,7 @@ You might want to footnote something.\footnote{footnote text} The footnote will 
 
 Of course you will need to cite things, and you will probably accumulate an armful of sources. There are a variety of tools available for creating a bibliography database (stored with the .bib extension). In addition to BibTeX suggested below, you may want to consider using the free and easy-to-use tool called Zotero. The librarians have created Zotero documentation at \url{http://libguides.reed.edu/citation/zotero}. In addition, a tutorial is available from Middlebury College at \url{http://sites.middlebury.edu/zoteromiddlebury/}.
 
-\emph{R Markdown} uses \emph{pandoc} (\url{http://pandoc.org/}) to build its bibliographies. One nice caveat of this is that you won't have to do a second compile to load in references as standard LaTeX requires. To cite references in your thesis (after creating your bibliography database), place the reference name inside square brackets and precede it by the ``at'' symbol. For example, here's a reference to a book about worrying: (Molina \& Borkovec, 1994). This \texttt{Molina1994} entry appears in a file called \texttt{thesis.bib} in the \texttt{bib} folder. This bibliography database file was created by a program called BibTeX. You can call this file something else if you like (look at the YAML header in the main .Rmd file) and, by default, is to placed in the \texttt{bib} folder.
+\emph{R Markdown} uses \emph{pandoc} (\url{http://pandoc.org/}) to build its bibliographies. One nice caveat of this is that you won't have to do a second compile to load in references as standard LaTeX requires. To cite references in your thesis (after creating your bibliography database), place the reference name inside square brackets and precede it by the ``at'' symbol. For example, here's a reference to a book about worrying: (Molina ve Borkovec, 1994). This \texttt{Molina1994} entry appears in a file called \texttt{thesis.bib} in the \texttt{bib} folder. This bibliography database file was created by a program called BibTeX. You can call this file something else if you like (look at the YAML header in the main .Rmd file) and, by default, is to placed in the \texttt{bib} folder.
 
 For more information about BibTeX and bibliographies, see the CUS site \url{http://web.reed.edu/cis/help/latex/index.html}. There are three pages on this topic: \emph{bibtex} (which talks about using BibTeX, at \url{http://web.reed.edu/cis/help/latex/bibtex.html}), \emph{bibtexstyles} (about how to find and use the bibliography style that best suits your needs, at \url{http://web.reed.edu/cis/help/latex/bibtexstyles.html}) and \emph{bibman} (which covers how to make and maintain a bibliography by hand, without BibTeX, at \url{http://web.reed.edu/cis/help/latex/bibman.html}). The last page will not be useful unless you have only a few sources.
 
@@ -755,55 +755,55 @@ And here's some other random info: the first paragraph after a chapter title or 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
 \leavevmode\hypertarget{ref-angel2000}{}%
-Angel, E. (2000). \emph{Interactive computer graphics : A top-down approach with OpenGL}. Boston, MA: Addison Wesley Longman.
+Angel, E. (2000). \emph{Interactive Computer Graphics : A Top-Down Approach with OpenGL}. Boston, MA: Addison Wesley Longman.
 
 \leavevmode\hypertarget{ref-angel2001a}{}%
-Angel, E. (2001a). \emph{Batch-file computer graphics : A bottom-up approach with QuickTime}. Boston, MA: Wesley Addison Longman.
+Angel, E. (2001a). \emph{Batch-file Computer Graphics : A Bottom-Up Approach with QuickTime}. Boston, MA: Wesley Addison Longman.
 
 \leavevmode\hypertarget{ref-angel2001b}{}%
-Angel, E. (2001b). \emph{Test second book by angel}. Boston, MA: Wesley Addison Longman.
+Angel, E. (2001b). \emph{test second book by angel}. Boston, MA: Wesley Addison Longman.
 
 \leavevmode\hypertarget{ref-deussen2000}{}%
-Deussen, O., \& Strothotte, T. (2000). Computer-generated pen-and-ink illustration of trees. \emph{{``Proceedings of''} SIGGRAPH 2000}, 13--18.
+Deussen, O. ve Strothotte, T. (2000). Computer-Generated Pen-and-Ink Illustration of Trees. \emph{{``Proceedings of''} SIGGRAPH 2000}, Computer Graphics Proceedings, Annual Conference Series, 13-18.
 
 \leavevmode\hypertarget{ref-hipr1997}{}%
-Fisher, R., Perkins, S., Walker, A., \& Wolfart, E. (1997). \emph{Hypermedia image processing reference}. New York, NY: John Wiley \& Sons.
+Fisher, R., Perkins, S., Walker, A. ve Wolfart, E. (1997). \emph{Hypermedia Image Processing Reference}. New York, NY: John Wiley \& Sons.
 
 \leavevmode\hypertarget{ref-goochandgooch2001}{}%
-Gooch, B., \& Gooch, A. (2001a). \emph{{Non-Photorealistic Rendering}}. Natick, Massachusetts: A K Peters.
+Gooch, B. ve Gooch, A. (2001a). \emph{{Non-Photorealistic Rendering}}. Natick, Massachusetts: A K Peters.
 
 \leavevmode\hypertarget{ref-goochandgooch2001a}{}%
-Gooch, B., \& Gooch, A. (2001b). \emph{Test second book by gooches}. Natick, Massachusetts: A K Peters.
+Gooch, B. ve Gooch, A. (2001b). \emph{Test second book by gooches}. Natick, Massachusetts: A K Peters.
 
 \leavevmode\hypertarget{ref-hertzmann2000}{}%
-Hertzmann, A., \& Zorin, D. (2000). Illustrating smooth surfaces. \emph{Proceedings of SIGGRAPH 2000}, \emph{5}(17), 517--526.
+Hertzmann, A. ve Zorin, D. (2000). Illustrating Smooth Surfaces. \emph{Proceedings of SIGGRAPH 2000}, Computer Graphics Proceedings, Annual Conference Series, \emph{5}(17), 517-526.
 
 \leavevmode\hypertarget{ref-jain1989}{}%
-Jain, A. K. (1989). \emph{Fundamentals of digital image processing}. Englewood Cliffs, New Jersey: Prentice-Hall.
+Jain, A. K. (1989). \emph{Fundamentals of Digital Image Processing}. Englewood Cliffs, New Jersey: Prentice-Hall.
 
 \leavevmode\hypertarget{ref-Molina1994}{}%
-Molina, S. T., \& Borkovec, T. D. (1994). The {P}enn {S}tate worry questionnaire: Psychometric properties and associated characteristics. In G. C. L. Davey \& F. Tallis (Eds.), \emph{Worrying: Perspectives on theory, assessment and treatment} (pp. 265--283). New York: Wiley.
+Molina, S. T. ve Borkovec, T. D. (1994). The {P}enn {S}tate Worry Questionnaire: Psychometric properties and associated characteristics. G. C. L. Davey ve F. Tallis (Ed.), \emph{Worrying: Perspectives on theory, assessment and treatment} içinde (ss. 265-283). New York: Wiley.
 
 \leavevmode\hypertarget{ref-noble2002}{}%
-Noble, S. G. (2002). \emph{Turning images into simple line-art} (Undergraduate thesis). Reed College.
+Noble, S. G. (2002). \emph{Turning images into simple line-art}. (Yayımlanmamış undergraduate thesis). Reed College.
 
 \leavevmode\hypertarget{ref-reedweb2007}{}%
-Reed~College. (2007). LaTeX your document. Retrieved from \url{http://web.reed.edu/cis/help/LaTeX/index.html}
+Reed~College. (2007). LaTeX Your Document. \url{http://web.reed.edu/cis/help/LaTeX/index.html} adresinden erişildi.
 
 \leavevmode\hypertarget{ref-russ1995}{}%
 Russ, J. C. (1995). \emph{{The Image Processing Handbook, Second Edition}}. Boca Raton, Florida: CRC Press.
 
 \leavevmode\hypertarget{ref-salisbury1997}{}%
-Salisbury, M. P., Wong, M. T., Hughes, J. F., \& Salesin, D. H. (1997). Orientable textures for image-based pen-and-ink illustration. \emph{{``Proceedings of''} SIGGRAPH 97}, 401--406.
+Salisbury, M. P., Wong, M. T., Hughes, J. F. ve Salesin, D. H. (1997). Orientable Textures for Image-Based Pen-and-Ink Illustration. \emph{{``Proceedings of''} SIGGRAPH 97}, Computer Graphics Proceedings, Annual Conference Series, 401-406.
 
 \leavevmode\hypertarget{ref-savitch2001}{}%
-Savitch, W. (2001). \emph{JAVA: An introduction to computer science \& programming}. Upper Saddle River, New Jersey: Prentice Hall.
+Savitch, W. (2001). \emph{JAVA: An Introduction to Computer Science \& Programming}. Upper Saddle River, New Jersey: Prentice Hall.
 
 \leavevmode\hypertarget{ref-tukey1984}{}%
-Tukey, J. W. (1984). \emph{The collected works of john w. tukey} (Vol. 1). Taylor \& Francis.
+Tukey, J. W. (1984). \emph{The collected works of John W. Tukey} (C. 1). Taylor \& Francis.
 
 \leavevmode\hypertarget{ref-wong1999}{}%
-Wong, E. (1999). \emph{{Artistic Rendering of Portrait Photographs}} (Master's thesis). Cornell University.
+Wong, E. (1999). \emph{{Artistic Rendering of Portrait Photographs}}. (Yayımlanmamış mathesis). Cornell University.
 
 \end{CSLReferences}
 \setlength{\parindent}{-0.20in}

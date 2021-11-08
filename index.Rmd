@@ -59,7 +59,7 @@ acknowledgements: |
 #  You can have a dedication here if you wish. 
 bibliography: bib/thesis.bib
 # Download your specific bibliography database file and refer to it in the line above.
-csl: csl/apa.csl
+csl: csl/apa-tr.csl
 # Download your specific csl file and refer to it in the line above.
 lot: true
 lof: true
