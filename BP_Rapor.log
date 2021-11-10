@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  8 NOV 2021 10:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.10.25)  10 NOV 2021 15:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -600,22 +600,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--247
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 ...ter{R Markdown Basics}\label{rmd-basics}}
+l.288 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
                                                    [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 ...ter{R Markdown Basics}\label{rmd-basics}}
+l.288 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
                                                    [2
 
 ]
 Chapter 1.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 290.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 292.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 301.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 303.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [3]
@@ -627,15 +627,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
-<BP_Rapor_files/figure-latex/pressure-1.pdf, id=277, 469.755pt x 325.215pt>
+<BP_Rapor_files/figure-latex/pressure-1.pdf, id=273, 469.755pt x 325.215pt>
 File: BP_Rapor_files/figure-latex/pressure-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/pressure-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/pressure-1.pdf  used on input line 390.
+Package pdftex.def Info: BP_Rapor_files/figure-latex/pressure-1.pdf  used on input line 392.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (53.75868pt too wide) in paragraph at lines 390--391
+Overfull \hbox (53.75868pt too wide) in paragraph at lines 392--393
 [][] 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -645,12 +648,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5 <./BP_Rapor_files/figure-latex/pressure-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 444.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 446.
 (c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 446.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 448.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -680,15 +683,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <BP_Rapor_files/figure-latex/march3plot-1.pdf, id=308, 433.62pt x 216.81pt>
 File: BP_Rapor_files/figure-latex/march3plot-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/march3plot-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/march3plot-1.pdf  used on input line 528.
+Package pdftex.def Info: BP_Rapor_files/figure-latex/march3plot-1.pdf  used on input line 530.
 (pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
 
-Overfull \hbox (17.62376pt too wide) in paragraph at lines 528--529
+Overfull \hbox (17.62376pt too wide) in paragraph at lines 530--531
 [][] 
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 536--538
+Underfull \hbox (badness 1062) in paragraph at lines 538--540
 []\T1/lmr/m/it/12 R Mark-down \T1/lmr/m/n/12 Ref-er-ence Guide - []$\T1/lmtt/m/n/12 https : / / www . rstudio . com / wp -[] content /
  []
 
@@ -707,27 +710,27 @@ Chapter 2.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 595--596
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
 \T1/lmr/m/n/12 ([]$\T1/lmtt/m/n/12 http : / / mirror . utexas . edu / ctan / info / symbols / comprehensive / symbols -[]
  []
 
 
-Underfull \hbox (badness 7030) in paragraph at lines 600--601
+Underfull \hbox (badness 7030) in paragraph at lines 602--603
 \T1/lmr/m/n/12 You will prob-a-bly find the re-sources at []$\T1/lmtt/m/n/12 http : / / www . lecb . ncifcrf . gov /
  []
 
 
-Underfull \hbox (badness 2922) in paragraph at lines 600--601
+Underfull \hbox (badness 2922) in paragraph at lines 602--603
 \T1/lmtt/m/n/12 ~toms / latex . html$[] \T1/lmr/m/n/12 help-ful, par-tic-u-larly the links to bsts for var-i-ous jour-
  []
 
 
-Underfull \hbox (badness 1742) in paragraph at lines 600--601
+Underfull \hbox (badness 1742) in paragraph at lines 602--603
 \T1/lmr/m/n/12 nals. You may also be in-ter-ested in TeXShade for nu-cleotide type-set-ting
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 600--601
+Underfull \hbox (badness 4001) in paragraph at lines 602--603
 \T1/lmr/m/n/12 ([]$\T1/lmtt/m/n/12 http : / / homepages . uni -[] tuebingen . de / beitz / txe . html$[]\T1/lmr/m/n/12 ). Be sure to read
  []
 
@@ -751,10 +754,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-<figure/ist.png, id=374, 321.2pt x 321.2pt>
+<figure/ist.png, id=373, 321.2pt x 321.2pt>
 File: figure/ist.png Graphic file (type png)
 <use figure/ist.png>
-Package pdftex.def Info: figure/ist.png  used on input line 650.
+Package pdftex.def Info: figure/ist.png  used on input line 652.
 (pdftex.def)             Requested size: 321.19922pt x 321.19922pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -774,10 +777,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=389, 433.62pt x 325.215pt>
+
+LaTeX Warning: Reference `rmd-basics' on page 17 undefined on input line 659.
+
+<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=387, 433.62pt x 325.215pt>
 File: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf  used on input line 668.
+Package pdftex.def Info: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf  used on input line 670.
 (pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -789,21 +795,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [17
 
  <./BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>]
-<figure/subdivision.pdf, id=402, 220.825pt x 89.33376pt>
+<figure/subdivision.pdf, id=400, 220.825pt x 89.33376pt>
 File: figure/subdivision.pdf Graphic file (type pdf)
 <use figure/subdivision.pdf>
-Package pdftex.def Info: figure/subdivision.pdf  used on input line 679.
+Package pdftex.def Info: figure/subdivision.pdf  used on input line 681.
 (pdftex.def)             Requested size: 165.61833pt x 67.00014pt.
 File: figure/subdivision.pdf Graphic file (type pdf)
 <use figure/subdivision.pdf>
-Package pdftex.def Info: figure/subdivision.pdf  used on input line 687.
+Package pdftex.def Info: figure/subdivision.pdf  used on input line 689.
 (pdftex.def)             Requested size: 220.82445pt x 89.33353pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 694.
+(Font)              <10> on input line 696.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 694.
+(Font)              <7> on input line 696.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 694.
+(Font)              <5> on input line 696.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -867,22 +873,25 @@ Appendix B.
 [29
 
 ] (./BP_Rapor.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
-(rerunfilecheck)             Checksum: B3F7915E24B5205EF2284219EC536F65;4295.
+(rerunfilecheck)             Checksum: E446382A26A1B261DEA87502FEC2934F;4318.
  ) 
 Here is how much of TeX's memory you used:
- 13328 strings out of 480539
- 206103 string characters out of 5900884
- 520687 words of memory out of 5000000
- 30552 multiletter control sequences out of 15000+600000
+ 13330 strings out of 480539
+ 206131 string characters out of 5900884
+ 520692 words of memory out of 5000000
+ 30553 multiletter control sequences out of 15000+600000
  475613 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  72i,12n,80p,846b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb><c:/Users/ey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on BP_Rapor.pdf (45 pages, 418670 bytes).
+Output written on BP_Rapor.pdf (45 pages, 419674 bytes).
 PDF statistics:
- 647 PDF objects out of 1000 (max. 8388607)
- 544 compressed objects within 6 object streams
- 141 named destinations out of 1000 (max. 500000)
+ 646 PDF objects out of 1000 (max. 8388607)
+ 543 compressed objects within 6 object streams
+ 142 named destinations out of 1000 (max. 500000)
  258 words of extra memory for PDF output out of 10000 (max. 10000000)
 
