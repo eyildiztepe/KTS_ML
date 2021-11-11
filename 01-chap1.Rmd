@@ -8,8 +8,44 @@ The {#rmd-basics} text after the chapter declaration will allow us to link throu
 
 # Karpal Tünel Sendromu {#KTSTanim}
 
-Karpal tünel sendromu, medyan sinirin karpal tüneli içerisinde baskıya uğraması sonucu ortaya çıkan semptonların genel adıdır [@werner2002carpal]. Tarihte ilk kez Pajet tarafından, 1854 yılında medyan sinir hasarının bulguları gözlenirken tanımlanmıştır (BURAYA ATIF GELECEK).
+Karpal tünel sendromu, medyan sinirin karpal tüneli içerisinde baskıya uğraması sonucu ortaya çıkan semptomların genel adıdır [@werner2002carpal].  
+Tarihte ilk kez Pajet tarafından, 1854 yılında medyan sinir hasarının bulguları gözlenirken tanımlanmıştır [@history1988].  
+Karpal tünel sendromu (KTS), tanımlanması ve terimleştirilmesi ilk olarak 1947 yılında Brain, Wright ve Wilkinson tarafından yapılmıştır [@1995love].  
 
+## Epidemiyoloji {#KTSEpidemiyoloji}  
+
+KTS prevalansı kadınlarda %3 ila %3.4 arasında, erkeklerde ise %0.6 ila % 2.7 arasında olarak
+belirlenmiştir. İnsidans ise kadınlarda 100.000’de 140, erkeklerde 100.000’de 52 olarak saptanmıştır.
+Kadınlarda genellikle menopoz dönemimde sıklıkla görülmüş olsa da hem erkek hem de kadınlarda
+gözlenme sıklığı yaş ile doğru orantılıdır. Özellikle 20 ila 50 yaş arasında daha sıktır. KTS’nin %40 ila %60 oranında her iki elde de başlayabileceği çeşitli yayınlarda bildirilmiş olup, iki elde de görüldüğü olgularda baskın elin genellikle semptomları daha önce ve daha şiddetli gösterdiği söylenebilir. KTS tek elde görüldüğü durumlarda ise genellikle semptomlar baskın elde görülür [@kts_bagatur].  
+
+## Etiyoloji {#KTSEtiyoloji}  
+
+Karpal tünel sendromunun en sık nedeni; herhangi bir etiyolojik etkenin saptanamadığı idiopatik KTS’dir. İdiopatik KTS’de ailesel yatkınlık, obezite, VKİ fazla olması, kara şeklinde bilek yapısı gibi
+kişisel faktörlerin etken olduğu düşünülmektedir. Günlük yaşamda ki mekanik etkenler de idiopatik KTS
+üzerinde etkin rol oynamaktadır. Montaj işinde çalışan işçiler, fabrika çalışanları, klavye ve bilgisayar
+kullananlarda olduğu gibi el bilek fleksiyonun aktif olarak yapıldığı belli hareketlerin çok sık
+tekrarlanması da KTS ile ilişkili bulunmuştur [@robbins1963anatomical].  
+
+## Semptomlar {#KTSSemptom}  
+
+Hastalığın şiddetine bağlı olarak semptomlar değişkendir. Erken evrelerde medyan sinirin duyusal
+liflerinin tutulumuna bağlı şikayetler görülür. En yaygın semptom el bileğinin merkezinden uzak
+dokularda sızlama ve uyuşuklukla beraber yanıcı tarzda ağrıdır. Başparmak tarafından itibaren ilk üç
+parmak ve dördüncü parmağın yanal yarısı etkilenir. Daha ileri dönemlerde el ayasında kas
+güçsüzlüğü ve körelme meydana gelir . Bu hastalarda elde, özellikle aktivite ile artan beceriksizlik ve objeleri kavramada kuvvetsizlik görülür [@aroori77carpal].  
+
+## Tanı {#KTSTani}  
+
+Karpal tünel sendromunda tanı koymak için hastanın hikayesi, klinik semptomlar, fizik muayene bulguları ve
+bu bulguların elektronörofizyolojik testlerle desteklenmesi kullanılmaktadır [@ghasemi2014handy].
+Provokatif testler hastanın bilek ve parmak eklemlerine fiziksel baskı uygulayacak şekilde bir takım
+testler uygulanması ve alınan sonuçların değerlendirmesine dayanan deneysel test yöntemleridir.
+Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.
+İdiopatik karpal tünel sendromunda hastalığın tanımlanmasında Boston Karpal Tünel Sendromu
+Anketi kullanılmaktadır ve bu anket halen geçerliliğini korumaktadır.  
+
+## R Markdown Tanıtımı
 Here is a brief introduction into using _R Markdown_. _Markdown_ is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. _R Markdown_ provides the flexibility of _Markdown_ with the implementation of **R** input and output.  For more details on using _R Markdown_ see <http://rmarkdown.rstudio.com>.  
 
 Be careful with your spacing in _Markdown_ documents.  While whitespace largely is ignored, it does at times give _Markdown_ signals as to how to proceed.  As a habit, try to keep everything left aligned whenever possible, especially as you type a new paragraph.  In other words, there is no need to indent basic text in the Rmd document (in fact, it might cause your text to do funny things if you do).
