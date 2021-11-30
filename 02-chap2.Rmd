@@ -1,4 +1,4 @@
-# Mathematics and Science {#math-sci}
+# Metod {#metod}
 
 <!-- Required to number equations in HTML files -->
 <script type="text/x-mathjax-config">

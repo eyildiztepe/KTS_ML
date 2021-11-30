@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.3)  11 NOV 2021 23:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.3)  30 NOV 2021 21:37
 entering extended mode
 **./BP_Rapor.tex
 (BP_Rapor.tex
@@ -660,12 +660,23 @@ Underfull \vbox (badness 4927) has occurred while \output is active []
 
 [3]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-34.
+41.
 (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[4]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-45.
+52.
 (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -677,24 +688,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [5]
-<BP_Rapor_files/figure-latex/pressure-1.pdf, id=303, 469.755pt x 325.215pt>
+<BP_Rapor_files/figure-latex/pressure-1.pdf, id=301, 469.755pt x 325.215pt>
 File: BP_Rapor_files/figure-latex/pressure-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/pressure-1.pdf>
 Package pdftex.def Info: BP_Rapor_files/figure-latex/pressure-1.pdf  used on in
-put line 434.
+put line 441.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 
-Overfull \hbox (53.75868pt too wide) in paragraph at lines 434--435
+Overfull \hbox (53.75868pt too wide) in paragraph at lines 441--442
 [][] 
  []
 
@@ -706,7 +708,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6 <./BP_Rapor_files/figure-latex/pressure-1.pdf>]
+[6]
+Underfull \vbox (badness 1107) has occurred while \output is active []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -715,14 +719,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7]
+[7 <./BP_Rapor_files/figure-latex/pressure-1.pdf>]
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-488.
+495.
 (C:\Program Files\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 490.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 497.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -740,17 +744,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10
 
 ]
-<BP_Rapor_files/figure-latex/march3plot-1.pdf, id=340, 433.62pt x 216.81pt>
+<BP_Rapor_files/figure-latex/march3plot-1.pdf, id=341, 433.62pt x 216.81pt>
 File: BP_Rapor_files/figure-latex/march3plot-1.pdf Graphic file (type pdf)
 <use BP_Rapor_files/figure-latex/march3plot-1.pdf>
 Package pdftex.def Info: BP_Rapor_files/figure-latex/march3plot-1.pdf  used on 
-input line 572.
+input line 579.
 (pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
 
-Overfull \hbox (17.62376pt too wide) in paragraph at lines 572--573
+Overfull \hbox (17.62376pt too wide) in paragraph at lines 579--580
 [][] 
  []
 
@@ -762,15 +775,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10 <./BP_Rapor_files/figure-latex/march3plot-1.pdf>]
+[11 <./BP_Rapor_files/figure-latex/march3plot-1.pdf>] [12
+
+]
 Chapter 2.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[11
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 646--647
 \T1/lmr/m/n/12 (+20) ([]$\T1/lmtt/m/n/12 http : / / mirror . utexas . edu / cta
 n / info / symbols / comprehensive / symbols -[]
  []
@@ -783,9 +796,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12]
+[14]
 Chapter 3.
-[13
+[15
 
 ]
 
@@ -796,42 +809,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[14]
-<figure/ist.png, id=401, 321.2pt x 321.2pt>
+[16]
+<figure/ist.png, id=408, 321.2pt x 321.2pt>
 File: figure/ist.png Graphic file (type png)
 <use figure/ist.png>
-Package pdftex.def Info: figure/ist.png  used on input line 694.
-(pdftex.def)             Requested size: 321.19922pt x 321.19922pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[15
-
- <./figure/ist.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[16]
-
-LaTeX Warning: Reference `rmd-basics' on page 17 undefined on input line 701.
-
-<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=415, 433.62pt x 325.215pt>
-
-File: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf Graphic file (type pdf)
-<use BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf  used 
-on input line 712.
-(pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
+Package pdftex.def Info: figure/ist.png  used on input line 700.
+(pdftex.def)             Requested size: 320.87897pt x 320.89044pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -842,22 +825,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [17
 
- <./BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>]
-<figure/subdivision.pdf, id=428, 220.825pt x 89.33376pt>
-File: figure/subdivision.pdf Graphic file (type pdf)
-<use figure/subdivision.pdf>
-Package pdftex.def Info: figure/subdivision.pdf  used on input line 723.
-(pdftex.def)             Requested size: 165.61833pt x 67.00014pt.
-File: figure/subdivision.pdf Graphic file (type pdf)
-<use figure/subdivision.pdf>
-Package pdftex.def Info: figure/subdivision.pdf  used on input line 731.
-(pdftex.def)             Requested size: 220.82445pt x 89.33353pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 738.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 738.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 738.
+ <./figure/ist.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -866,7 +834,52 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[18
+[18]
+
+LaTeX Warning: Reference `rmd-basics' on page 19 undefined on input line 706.
+
+<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=421, 433.62pt x 325.215pt>
+
+File: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf Graphic file (type pdf)
+<use BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>
+Package pdftex.def Info: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf  used 
+on input line 717.
+(pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[19
+
+ <./BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>]
+<figure/subdivision.pdf, id=434, 220.825pt x 89.33376pt>
+File: figure/subdivision.pdf Graphic file (type pdf)
+<use figure/subdivision.pdf>
+Package pdftex.def Info: figure/subdivision.pdf  used on input line 728.
+(pdftex.def)             Requested size: 165.61833pt x 67.00014pt.
+File: figure/subdivision.pdf Graphic file (type pdf)
+<use figure/subdivision.pdf>
+Package pdftex.def Info: figure/subdivision.pdf  used on input line 736.
+(pdftex.def)             Requested size: 220.82445pt x 89.33353pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 743.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 743.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 743.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20
 
  <./figure/subdivision.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -879,7 +892,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[19]
+[21]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -888,31 +901,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20]
+[22]
 Chapter 4.
-[21
+[23
 
-] [22
+] [24
 
-] [23] [24
+] [25] [26
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[25]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[26]
-Appendix A.
-[27
-
-]
+[27]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -922,22 +922,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
-Appendix B.
+Appendix A.
 [29
+
+]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
+Appendix B.
+[31
 
 ] (BP_Rapor.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
-(rerunfilecheck)             Checksum: 4CC8A852EA1B83E5404F741DD8522C71;4889.
+(rerunfilecheck)             Checksum: 9559B9857579D049D8DAB16459409FD7;4793.
  ) 
 Here is how much of TeX's memory you used:
- 15603 strings out of 478907
- 242049 string characters out of 2861755
- 596244 words of memory out of 3000000
- 32797 multiletter control sequences out of 15000+600000
- 485973 words of font info for 189 fonts, out of 8000000 for 9000
+ 15616 strings out of 478907
+ 242252 string characters out of 2861755
+ 596388 words of memory out of 3000000
+ 32802 multiletter control sequences out of 15000+600000
+ 486064 words of font info for 190 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,80p,1007b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTe
@@ -956,10 +969,10 @@ les/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type
 ><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
 lic/amsfonts/symbols/msam10.pfb>
-Output written on BP_Rapor.pdf (45 pages, 495921 bytes).
+Output written on BP_Rapor.pdf (47 pages, 500395 bytes).
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
- 158 named destinations out of 1000 (max. 500000)
+ 688 PDF objects out of 1000 (max. 8388607)
+ 164 named destinations out of 1000 (max. 500000)
  43306 words of extra memory for PDF output out of 51595 (max. 10000000)
 
 

@@ -1,16 +1,16 @@
 ---
 authors: 
-  - 'Yazar1 Adı Soyadı'
-  - 'Yazar2 Adı Soyadı'
-  - 'Yazar3 Adı Soyadı'
+  - 'Alper ENGİN'
+  - 'Atadeniz SAYAR'
+  - 'Cem GÖRENER'
 date:  '`r format(Sys.Date(), "%B %Y")`'
 institution: 'FEN FAKÜLTESİ'
 division: 'İSTATİSTİK BÖLÜMÜ'
-advisor: 'Dr. Ad Soyad' #Danışman Ünvan Adı Soyadı
+advisor: 'Dr. Engin YILDIZTEPE' #Danışman Ünvan Adı Soyadı
 #altadvisor: 'Your Other Advisor' # Delete line if you only have one advisor
 department: 'İstatistik Bölümü'
 degree: 'Bitirme Projesi Raporu'  
-title: 'PROJE BAŞLIĞI'
+title: 'MAKİNE ÖĞRENMESİ YAKLAŞIMLARININ KARPAL TÜNEL SENDROMU CİDDİYET SINIFLAMASINDA KULLANILMASI'
 knit: 'bookdown::render_book'
 site: bookdown::bookdown_site
 
