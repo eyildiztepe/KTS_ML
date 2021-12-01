@@ -49,8 +49,8 @@ Teknolojinin hızla gelişmesi ile birlikte hastalara uygulunan testlerin sonuç
 Makine öğrenmesi ve Yapay zeka uygulamalarının yaygınlaşması ile birlikte tıp sektöründe tanı koyma ve tanıların derecesini belirleme alanlarında kullanımı da artmıştır.  
 
 2020 yılında Ali Abbasian Ardakani ve arkadaşları tarafından hasta olduğu bilinen kişilerden elde edilen bilgisayarlı tomografi görüntüleri, derin öğrenme metodları kullanılarak başka kişilerin hasta olup olmadığını tespit etmek için kullanılmıştır[@ardakani2020diagnosis].  
-Bir diğer çalışma ise 2021 yılında Takafumi Koyama  ve arkadaşları tarafından geliştirilen bir mobil uygulama sayesinde hastaların ekranın farklı yerlerinde çıkan cisimlere ulaşma sürelerini baz alarak hastalığın evresini tahminlemeyi amaçlamıştır[@koyama2021screening]. Bu uygulumanın deneysel olması ile birlikte hastanın kendi kendine ev ortamında hastalığına ön tanı koyabilmesi açısından yararlı olduğu düşünülmektedir.  
-Son olarak bizimde ilgilendiğimiz bir örnek olarak 2021 yılında Dougho Park ve arkadaşları tarafından 1035 hastaya yapılan testlerin sonuçlarını farklı makine öğrenmesi algoritmalarında kullanarak hastaların, hastalığının ciddiyetini sınıflandırmak ve doktor gözetiminde gerekli tedavinin belirlenebilmesine yardımcı olması amaçlanmıştır[@park2021machine].  
+Bir diğer çalışma ise 2021 yılında Takafumi Koyama  ve arkadaşları tarafından geliştirilen bir mobil uygulama sayesinde hastaların ekranın farklı yerlerinde çıkan cisimlere ulaşma sürelerini baz alarak hastalığın evresini tahminlemeyi amaçlamıştır[@koyama2021screening]. Bu uygulamanın deneysel olması ile birlikte hastanın kendi kendine ev ortamında hastalığına ön tanı koyabilmesi açısından yararlı olduğu düşünülmektedir.  
+Son olarak bizimde ilgilendiğimiz bir örnek olarak 2021 yılında Dougho Park ve arkadaşları tarafından 1037 hastaya yapılan testlerin sonuçlarını farklı makine öğrenmesi algoritmalarında kullanarak hastaların, hastalığının ciddiyetini sınıflandırmak ve doktor gözetiminde gerekli tedavinin belirlenebilmesine yardımcı olması amaçlanmıştır[@park2021machine].  
 
 
 ## R Markdown Tanıtımı
