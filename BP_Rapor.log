@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.3)  30 NOV 2021 21:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.7)  8 DEC 2021 00:09
 entering extended mode
 **./BP_Rapor.tex
 (BP_Rapor.tex
@@ -34,7 +34,7 @@ rs
 \f@nch@O@erf=\skip55
 \f@nch@O@olf=\skip56
 \f@nch@O@orf=\skip57
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+) (C:\Program Files\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2021/10/15 v3.9 verbatim text (tvz,hv)
 (C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
@@ -94,12 +94,12 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language73). Reported on input line 108.
-)) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/upquote\upquote.sty
+)) (C:\Program Files\MiKTeX\tex/latex/upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 (C:\Program Files\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype.sty
+)) (C:\Program Files\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2021/10/31 v3.0 Micro-typographical refinements (RS)
 (C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
@@ -114,14 +114,14 @@ LaTeX Info: Redefining \textls on input line 1114.
 \MT@outer@kern=\dimen142
 LaTeX Info: Redefining \textmicrotypecontext on input line 1700.
 \MT@listname@count=\count198
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype-pdftex.def
+(C:\Program Files\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2021/10/31 v3.0 Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 915.
 LaTeX Info: Redefining \lslig on input line 915.
 \MT@outer@space=\skip58
 )
 Package microtype Info: Loading configuration file microtype.cfg.
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype.cfg
+(C:\Program Files\MiKTeX\tex/latex/microtype\microtype.cfg
 File: microtype.cfg 2021/10/31 v3.0 microtype main configuration file (RS)
 )) (C:\Program Files\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
@@ -131,7 +131,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 (C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-)) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/framed\framed.sty
+)) (C:\Program Files\MiKTeX\tex/latex/framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip59
 \fb@frw=\dimen143
@@ -247,7 +247,7 @@ Package: longtable 2021-05-07 v4.16 Multi-page Table package (DPC)
 \c@LT@tables=\count280
 \c@LT@chunks=\count281
 \LT@p@ftn=\toks31
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/booktabs\booktabs.sty
+) (C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen159
 \lightrulewidth=\dimen160
@@ -275,31 +275,30 @@ Package: chemarr 2001/06/22 v1.1 Chemical reaction arrows (HO)
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(C:\Program Files\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 ) (C:\Program Files\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+(C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
+) (C:\Program Files\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.st
-y
+) (C:\Program Files\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+) (C:\Program Files\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/hycolor\hycolor.sty
+) (C:\Program Files\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
+) (C:\Program Files\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/auxhook\auxhook.sty
+) (C:\Program Files\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+) (C:\Program Files\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen172
@@ -312,9 +311,9 @@ Now handling font encoding PD1 ...
 ) (C:\Program Files\MiKTeX\tex/latex/hyperref\hyperref-langpatches.def
 File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
 nguages
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Program Files\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+) (C:\Program Files\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count288
@@ -333,9 +332,9 @@ Package hyperref Info: Bookmarks ON on input line 4445.
 \c@Hy@tempcnt=\count289
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen173
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Program Files\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+(C:\Program Files\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -369,13 +368,9 @@ with kernel methods
 )
 \Fld@listcount=\count294
 \c@bookmark@seq@number=\count295
-
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.st
-y
+(C:\Program Files\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/uniquecounter\uniquecounter.st
-y
+(C:\Program Files\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -458,7 +453,7 @@ Package caption Info: rotating package is loaded.
 )
 Package color Info: Redefining color shadecolor on input line 79.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 20
-8.
+9.
 (C:\Program Files\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -468,40 +463,40 @@ File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 ) (BP_Rapor.aux)
 \openout1 = `BP_Rapor.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 208.
-LaTeX Font Info:    ... okay on input line 208.
-LaTeX Info: Redefining \microtypecontext on input line 208.
-Package microtype Info: Applying patch `item' on input line 208.
-Package microtype Info: Applying patch `toc' on input line 208.
-Package microtype Info: Applying patch `eqnum' on input line 208.
-Package microtype Info: Applying patch `footnote' on input line 208.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 209.
+LaTeX Font Info:    ... okay on input line 209.
+LaTeX Info: Redefining \microtypecontext on input line 209.
+Package microtype Info: Applying patch `item' on input line 209.
+Package microtype Info: Applying patch `toc' on input line 209.
+Package microtype Info: Applying patch `eqnum' on input line 209.
+Package microtype Info: Applying patch `footnote' on input line 209.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 208.
+LaTeX Info: Redefining \showhyphens on input line 209.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+(C:\Program Files\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 ) (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
@@ -524,21 +519,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 208.
+Package hyperref Info: Link coloring OFF on input line 209.
 (C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/refcount\refcount.sty
+(C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/generic/gettitlestring\gettitlestring.
-sty
+) (C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count307
 )
-LaTeX Info: Redefining \ref on input line 208.
-LaTeX Info: Redefining \pageref on input line 208.
-LaTeX Info: Redefining \nameref on input line 208.
+LaTeX Info: Redefining \ref on input line 209.
+LaTeX Info: Redefining \pageref on input line 209.
+LaTeX Info: Redefining \nameref on input line 209.
 (BP_Rapor.out) (BP_Rapor.out)
 \@outlinefile=\write4
 \openout4 = `BP_Rapor.out'.
@@ -546,48 +539,48 @@ LaTeX Info: Redefining \nameref on input line 208.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-12.
+13.
 (C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-12.
+13.
 (C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-212.
+213.
 (C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-212.
+213.
 (C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 212.
+(Font)              <12> on input line 213.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 212.
+(Font)              <8> on input line 213.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 212.
+(Font)              <6> on input line 213.
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 21
-2.
+3.
 (C:\Program Files\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 212
+LaTeX Font Info:    Trying to load font information for U+msa on input line 213
 .
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msa.cfg
+) (C:\Program Files\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 212
+LaTeX Font Info:    Trying to load font information for U+msb on input line 213
 .
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/microtype\mt-msb.cfg
+) (C:\Program Files\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 Non-PDF special ignored!
@@ -604,7 +597,7 @@ Non-PDF special ignored!
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 222--227
+Underfull \hbox (badness 10000) in paragraph at lines 223--229
 
  []
 
@@ -617,20 +610,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 222--227
 ] [7] [8
 
 
-] (BP_Rapor.toc
-Underfull \vbox (badness 1502) has occurred while \output is active []
-
-[9])
+] (BP_Rapor.toc)
 \tf@toc=\write5
 \openout5 = `BP_Rapor.toc'.
 
-[10] (BP_Rapor.lot)
+[9] [10
+
+] (BP_Rapor.lot)
 \tf@lot=\write6
 \openout6 = `BP_Rapor.lot'.
 
-[11
-
-] [12
+[11] [12
 
 ] (BP_Rapor.lof)
 \tf@lof=\write7
@@ -643,28 +633,34 @@ Underfull \vbox (badness 1502) has occurred while \output is active []
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
+l.290 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
                                                    [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.288 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
+l.290 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
                                                    [2
 
 ]
 Chapter 1.
+<figure/karpal_tunnel.png, id=170, 255.95625pt x 225.84375pt>
+File: figure/karpal_tunnel.png Graphic file (type png)
+<use figure/karpal_tunnel.png>
+Package pdftex.def Info: figure/karpal_tunnel.png  used on input line 297.
+(pdftex.def)             Requested size: 341.11449pt x 301.00247pt.
 
-Underfull \vbox (badness 4927) has occurred while \output is active []
-
-[3]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-41.
-(C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[3 <./figure/karpal_tunnel.png>]
+<figure/elektrod.jpg, id=179, 75.28125pt x 56.46094pt>
+File: figure/elektrod.jpg Graphic file (type jpg)
+<use figure/elektrod.jpg>
+Package pdftex.def Info: figure/elektrod.jpg  used on input line 337.
+(pdftex.def)             Requested size: 100.45525pt x 75.34882pt.
+
+Underfull \vbox (badness 1661) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -675,29 +671,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-52.
-(C:\Program Files\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+<figure/phalen.png, id=188, 399.4925pt x 331.2375pt>
+File: figure/phalen.png Graphic file (type png)
+<use figure/phalen.png>
+Package pdftex.def Info: figure/phalen.png  used on input line 353.
+(pdftex.def)             Requested size: 212.47978pt x 143.09145pt.
+<figure/tinel.jpg, id=189, 451.6875pt x 317.68687pt>
+File: figure/tinel.jpg Graphic file (type jpg)
+<use figure/tinel.jpg>
+Package pdftex.def Info: figure/tinel.jpg  used on input line 353.
+(pdftex.def)             Requested size: 212.47923pt x 143.09834pt.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+Underfull \hbox (badness 10000) in paragraph at lines 343--358
 
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+ []
 
-[5]
-<BP_Rapor_files/figure-latex/pressure-1.pdf, id=301, 469.755pt x 325.215pt>
-File: BP_Rapor_files/figure-latex/pressure-1.pdf Graphic file (type pdf)
-<use BP_Rapor_files/figure-latex/pressure-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/pressure-1.pdf  used on in
-put line 441.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+<figure/karpal_komp.jpg, id=190, 186.6975pt x 272.01625pt>
+File: figure/karpal_komp.jpg Graphic file (type jpg)
+<use figure/karpal_komp.jpg>
+Package pdftex.def Info: figure/karpal_komp.jpg  used on input line 361.
+(pdftex.def)             Requested size: 212.48695pt x 143.10121pt.
+<figure/gerilmis.png, id=191, 271.0125pt x 248.42813pt>
+File: figure/gerilmis.png Graphic file (type png)
+<use figure/gerilmis.png>
+Package pdftex.def Info: figure/gerilmis.png  used on input line 361.
+(pdftex.def)             Requested size: 212.48474pt x 143.09525pt.
+<figure/ultraradyo.jpg, id=192, 259.97125pt x 194.7275pt>
+File: figure/ultraradyo.jpg Graphic file (type jpg)
+<use figure/ultraradyo.jpg>
+Package pdftex.def Info: figure/ultraradyo.jpg  used on input line 374.
+(pdftex.def)             Requested size: 212.47566pt x 143.1007pt.
+<figure/radyog.jpg, id=193, 233.87375pt x 217.81375pt>
+File: figure/radyog.jpg Graphic file (type jpg)
+<use figure/radyog.jpg>
+Package pdftex.def Info: figure/radyog.jpg  used on input line 374.
+(pdftex.def)             Requested size: 212.4864pt x 143.09279pt.
 
-Overfull \hbox (53.75868pt too wide) in paragraph at lines 441--442
-[][] 
+Underfull \hbox (badness 10000) in paragraph at lines 367--379
+
  []
 
 
@@ -708,8 +719,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[6]
-Underfull \vbox (badness 1107) has occurred while \output is active []
+[5 <./figure/elektrod.jpg> <./figure/phalen.png> <./figure/tinel.jpg> <./figure
+/karpal_komp.jpg> <./figure/gerilmis.png>]
+<figure/bt.jpg, id=200, 231.86626pt x 218.8175pt>
+File: figure/bt.jpg Graphic file (type jpg)
+<use figure/bt.jpg>
+Package pdftex.def Info: figure/bt.jpg  used on input line 382.
+(pdftex.def)             Requested size: 212.48102pt x 143.0978pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6 <./figure/ultraradyo.jpg> <./figure/radyog.jpg> <./figure/bt.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -719,88 +745,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7 <./BP_Rapor_files/figure-latex/pressure-1.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-495.
-(C:\Program Files\MiKTeX\tex/latex/lm\ts1lmtt.fd
-File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 497.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[8]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[9]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[10
-
-]
-<BP_Rapor_files/figure-latex/march3plot-1.pdf, id=341, 433.62pt x 216.81pt>
-File: BP_Rapor_files/figure-latex/march3plot-1.pdf Graphic file (type pdf)
-<use BP_Rapor_files/figure-latex/march3plot-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/march3plot-1.pdf  used on 
-input line 579.
-(pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
-
-Overfull \hbox (17.62376pt too wide) in paragraph at lines 579--580
-[][] 
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[11 <./BP_Rapor_files/figure-latex/march3plot-1.pdf>] [12
+[7] [8
 
 ]
 Chapter 2.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 646--647
-\T1/lmr/m/n/12 (+20) ([]$\T1/lmtt/m/n/12 http : / / mirror . utexas . edu / cta
-n / info / symbols / comprehensive / symbols -[]
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[14]
-Chapter 3.
-[15
+[9] [10
 
 ]
+Chapter 3.
+[11] [12
+
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+19.
+(C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [13] [14
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[15]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -810,170 +775,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-<figure/ist.png, id=408, 321.2pt x 321.2pt>
-File: figure/ist.png Graphic file (type png)
-<use figure/ist.png>
-Package pdftex.def Info: figure/ist.png  used on input line 700.
-(pdftex.def)             Requested size: 320.87897pt x 320.89044pt.
+Appendix A.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 535.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+LaTeX Warning: Reference `ref-labels' on page 17 undefined on input line 540.
 
 [17
 
- <./figure/ist.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[18]
-
-LaTeX Warning: Reference `rmd-basics' on page 19 undefined on input line 706.
-
-<BP_Rapor_files/figure-latex/delaysboxplot-1.pdf, id=421, 433.62pt x 325.215pt>
-
-File: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf Graphic file (type pdf)
-<use BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>
-Package pdftex.def Info: BP_Rapor_files/figure-latex/delaysboxplot-1.pdf  used 
-on input line 717.
-(pdftex.def)             Requested size: 433.61894pt x 325.2142pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[19
-
- <./BP_Rapor_files/figure-latex/delaysboxplot-1.pdf>]
-<figure/subdivision.pdf, id=434, 220.825pt x 89.33376pt>
-File: figure/subdivision.pdf Graphic file (type pdf)
-<use figure/subdivision.pdf>
-Package pdftex.def Info: figure/subdivision.pdf  used on input line 728.
-(pdftex.def)             Requested size: 165.61833pt x 67.00014pt.
-File: figure/subdivision.pdf Graphic file (type pdf)
-<use figure/subdivision.pdf>
-Package pdftex.def Info: figure/subdivision.pdf  used on input line 736.
-(pdftex.def)             Requested size: 220.82445pt x 89.33353pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 743.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 743.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 743.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[20
-
- <./figure/subdivision.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[21]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[22]
-Chapter 4.
-[23
-
-] [24
-
-] [25] [26
+] [18
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[27]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[28]
-Appendix A.
-[29
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[30]
 Appendix B.
-[31
-
-] (BP_Rapor.aux)
+[19] (BP_Rapor.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
-(rerunfilecheck)             Checksum: 9559B9857579D049D8DAB16459409FD7;4793.
+(rerunfilecheck)             Checksum: 0880FF52166BC13CAF5E7B7F1E33684C;2170.
  ) 
 Here is how much of TeX's memory you used:
- 15616 strings out of 478907
- 242252 string characters out of 2861755
- 596388 words of memory out of 3000000
- 32802 multiletter control sequences out of 15000+600000
- 486064 words of font info for 190 fonts, out of 8000000 for 9000
+ 15358 strings out of 478907
+ 237735 string characters out of 2861755
+ 589530 words of memory out of 3000000
+ 32698 multiletter control sequences out of 15000+600000
+ 456177 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,80p,1007b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTe
-X/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/
-lm-mathsy.enc}{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program
- Files/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX/fonts/type
-1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbxi10.p
-fb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Program Files/
-MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
-lic/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/P
-rogram Files/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX/fon
-ts/type1/public/lm/lmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri
-12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Program Fi
-les/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX/fonts/type
-1/public/lm/lmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtk10.pfb
-><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/lm/lmtti10.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb>
-Output written on BP_Rapor.pdf (47 pages, 500395 bytes).
+ 72i,12n,80p,1007b,407s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTe
+X/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/
+lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmt
+t12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtti10.pfb>
+Output written on BP_Rapor.pdf (35 pages, 533345 bytes).
 PDF statistics:
- 688 PDF objects out of 1000 (max. 8388607)
- 164 named destinations out of 1000 (max. 500000)
- 43306 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 356 PDF objects out of 1000 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
+ 26782 words of extra memory for PDF output out of 29859 (max. 10000000)
 
 
-! pdflatex: major issue: So far, you have not checked for updates as a MiKTeX user.
+! pdflatex: major issue: User/administrator updates are out-of-sync.
