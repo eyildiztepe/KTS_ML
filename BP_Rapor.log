@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.7)  8 DEC 2021 00:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.12.7)  9 DEC 2021 01:32
 entering extended mode
 **./BP_Rapor.tex
 (BP_Rapor.tex
@@ -452,8 +452,8 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 Package caption Info: rotating package is loaded.
 )
 Package color Info: Redefining color shadecolor on input line 79.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 20
-9.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 21
+6.
 (C:\Program Files\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -463,36 +463,36 @@ File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 ) (BP_Rapor.aux)
 \openout1 = `BP_Rapor.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 209.
-LaTeX Font Info:    ... okay on input line 209.
-LaTeX Info: Redefining \microtypecontext on input line 209.
-Package microtype Info: Applying patch `item' on input line 209.
-Package microtype Info: Applying patch `toc' on input line 209.
-Package microtype Info: Applying patch `eqnum' on input line 209.
-Package microtype Info: Applying patch `footnote' on input line 209.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Info: Redefining \microtypecontext on input line 216.
+Package microtype Info: Applying patch `item' on input line 216.
+Package microtype Info: Applying patch `toc' on input line 216.
+Package microtype Info: Applying patch `eqnum' on input line 216.
+Package microtype Info: Applying patch `footnote' on input line 216.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 209.
+LaTeX Info: Redefining \showhyphens on input line 216.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -519,7 +519,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 209.
+Package hyperref Info: Link coloring OFF on input line 216.
 (C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (C:\Program Files\MiKTeX\tex/latex/refcount\refcount.sty
@@ -529,9 +529,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count307
 )
-LaTeX Info: Redefining \ref on input line 209.
-LaTeX Info: Redefining \pageref on input line 209.
-LaTeX Info: Redefining \nameref on input line 209.
+LaTeX Info: Redefining \ref on input line 216.
+LaTeX Info: Redefining \pageref on input line 216.
+LaTeX Info: Redefining \nameref on input line 216.
 (BP_Rapor.out) (BP_Rapor.out)
 \@outlinefile=\write4
 \openout4 = `BP_Rapor.out'.
@@ -539,44 +539,44 @@ LaTeX Info: Redefining \nameref on input line 209.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-13.
+20.
 (C:\Program Files\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-13.
+20.
 (C:\Program Files\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-213.
+220.
 (C:\Program Files\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-213.
+220.
 (C:\Program Files\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 213.
+(Font)              <12> on input line 220.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 213.
+(Font)              <8> on input line 220.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 213.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 21
-3.
+(Font)              <6> on input line 220.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 22
+0.
 (C:\Program Files\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 213
+LaTeX Font Info:    Trying to load font information for U+msa on input line 220
 .
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Program Files\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 213
+LaTeX Font Info:    Trying to load font information for U+msb on input line 220
 .
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -597,7 +597,7 @@ Non-PDF special ignored!
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 223--229
+Underfull \hbox (badness 10000) in paragraph at lines 230--236
 
  []
 
@@ -633,22 +633,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 223--229
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.290 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
+l.297 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
                                                    [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.290 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
+l.297 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
                                                    [2
 
 ]
-Chapter 1.
+Bölüm 1.
 <figure/karpal_tunnel.png, id=170, 255.95625pt x 225.84375pt>
 File: figure/karpal_tunnel.png Graphic file (type png)
 <use figure/karpal_tunnel.png>
-Package pdftex.def Info: figure/karpal_tunnel.png  used on input line 297.
+Package pdftex.def Info: figure/karpal_tunnel.png  used on input line 304.
 (pdftex.def)             Requested size: 341.11449pt x 301.00247pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -657,7 +657,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figure/elektrod.jpg, id=179, 75.28125pt x 56.46094pt>
 File: figure/elektrod.jpg Graphic file (type jpg)
 <use figure/elektrod.jpg>
-Package pdftex.def Info: figure/elektrod.jpg  used on input line 337.
+Package pdftex.def Info: figure/elektrod.jpg  used on input line 344.
 (pdftex.def)             Requested size: 100.45525pt x 75.34882pt.
 
 Underfull \vbox (badness 1661) has occurred while \output is active []
@@ -674,40 +674,40 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figure/phalen.png, id=188, 399.4925pt x 331.2375pt>
 File: figure/phalen.png Graphic file (type png)
 <use figure/phalen.png>
-Package pdftex.def Info: figure/phalen.png  used on input line 353.
+Package pdftex.def Info: figure/phalen.png  used on input line 360.
 (pdftex.def)             Requested size: 212.47978pt x 143.09145pt.
 <figure/tinel.jpg, id=189, 451.6875pt x 317.68687pt>
 File: figure/tinel.jpg Graphic file (type jpg)
 <use figure/tinel.jpg>
-Package pdftex.def Info: figure/tinel.jpg  used on input line 353.
+Package pdftex.def Info: figure/tinel.jpg  used on input line 360.
 (pdftex.def)             Requested size: 212.47923pt x 143.09834pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--358
+Underfull \hbox (badness 10000) in paragraph at lines 350--365
 
  []
 
 <figure/karpal_komp.jpg, id=190, 186.6975pt x 272.01625pt>
 File: figure/karpal_komp.jpg Graphic file (type jpg)
 <use figure/karpal_komp.jpg>
-Package pdftex.def Info: figure/karpal_komp.jpg  used on input line 361.
+Package pdftex.def Info: figure/karpal_komp.jpg  used on input line 368.
 (pdftex.def)             Requested size: 212.48695pt x 143.10121pt.
 <figure/gerilmis.png, id=191, 271.0125pt x 248.42813pt>
 File: figure/gerilmis.png Graphic file (type png)
 <use figure/gerilmis.png>
-Package pdftex.def Info: figure/gerilmis.png  used on input line 361.
+Package pdftex.def Info: figure/gerilmis.png  used on input line 368.
 (pdftex.def)             Requested size: 212.48474pt x 143.09525pt.
 <figure/ultraradyo.jpg, id=192, 259.97125pt x 194.7275pt>
 File: figure/ultraradyo.jpg Graphic file (type jpg)
 <use figure/ultraradyo.jpg>
-Package pdftex.def Info: figure/ultraradyo.jpg  used on input line 374.
+Package pdftex.def Info: figure/ultraradyo.jpg  used on input line 381.
 (pdftex.def)             Requested size: 212.47566pt x 143.1007pt.
 <figure/radyog.jpg, id=193, 233.87375pt x 217.81375pt>
 File: figure/radyog.jpg Graphic file (type jpg)
 <use figure/radyog.jpg>
-Package pdftex.def Info: figure/radyog.jpg  used on input line 374.
+Package pdftex.def Info: figure/radyog.jpg  used on input line 381.
 (pdftex.def)             Requested size: 212.4864pt x 143.09279pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--379
+Underfull \hbox (badness 10000) in paragraph at lines 374--386
 
  []
 
@@ -724,7 +724,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <figure/bt.jpg, id=200, 231.86626pt x 218.8175pt>
 File: figure/bt.jpg Graphic file (type jpg)
 <use figure/bt.jpg>
-Package pdftex.def Info: figure/bt.jpg  used on input line 382.
+Package pdftex.def Info: figure/bt.jpg  used on input line 389.
 (pdftex.def)             Requested size: 212.48102pt x 143.0978pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -748,16 +748,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [7] [8
 
 ]
-Chapter 2.
+Bölüm 2.
 [9] [10
 
 ]
-Chapter 3.
+Bölüm 3.
 [11] [12
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-19.
+26.
 (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [13] [14
@@ -775,29 +775,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-Appendix A.
+Ek A.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 535.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 542.
 
-LaTeX Warning: Reference `ref-labels' on page 17 undefined on input line 540.
+LaTeX Warning: Reference `ref-labels' on page 17 undefined on input line 547.
 
 [17
 
 ] [18
 
 ]
-Appendix B.
+Ek B.
 [19] (BP_Rapor.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
-(rerunfilecheck)             Checksum: 0880FF52166BC13CAF5E7B7F1E33684C;2170.
+(rerunfilecheck)             Checksum: 24173B40ED50F7C55204D4D6A206B0D2;2098.
  ) 
 Here is how much of TeX's memory you used:
  15358 strings out of 478907
  237735 string characters out of 2861755
- 589530 words of memory out of 3000000
+ 589627 words of memory out of 3000000
  32698 multiletter control sequences out of 15000+600000
  456177 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -808,7 +808,7 @@ lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Program Files/MiKTeX/font
 s/type1/public/lm/lmtk10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmt
 t12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmtti10.pfb>
-Output written on BP_Rapor.pdf (35 pages, 533345 bytes).
+Output written on BP_Rapor.pdf (35 pages, 533270 bytes).
 PDF statistics:
  356 PDF objects out of 1000 (max. 8388607)
  104 named destinations out of 1000 (max. 500000)
