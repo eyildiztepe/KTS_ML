@@ -1,1 +1,23 @@
-# Metod {#metod}
+# Yöntem {#yontem}
+Bu bölümde uygulama kısmında kullanmış olduğumuz sınıflama algoritmalarına değineceğiz.  
+
+## K - En Yakın Komşuluk Algoritamsı (K-NN) {#knn}
+Öklid uzaklığı benzeri uzaklıklar ile tahminlenecek gözleme en yakın k adet gözlemin en fazla olduğu sınıfı atar.  
+
+## Sınıflama ve Regresyon Ağaçları (CART) {#cart}
+İnsanın karar verme süreci olan dallanmış karar verme yapısını taklid eder.  
+
+## Rassal Ormanlar {#random_forest}
+Torbalama yöntemi ile oluşturulmuş n adet karar ağacının sonuca göre çalışır.  
+
+## Extreme Gradyan Artışı {#xgboost}
+NO COMMENT  
+
+## Yapay Sinir Ağları {#nn}
+NO COMMENT  
+
+## DENEME
+
+* Liste1
+* Liste2
+  + liste3

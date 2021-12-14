@@ -35,27 +35,32 @@ güçsüzlüğü ve körelme meydana gelir . Bu hastalarda elde, özellikle akti
 Karpal tünel sendromunda tanı koymak için hastanın hikayesi, klinik semptomlar, fizik muayene bulguları ve bu bulguları destekleyen çeşitli testler kullanılmaktadır[@ghasemi2014handy].
 Bu testler elektronörofizyolojik, provokatif testler ve tıbbi görüntülemeye dayanan testlerdir.
 Elektronörofizyolojik testler karpal Tünel'e bağlanan elektrotlar ile elektrik sinyallerinin incelenmesi ve sonuçların bilgisayar ile yorumlanmasına dayananan testlerdir.
-```{r echo=FALSE,fig.align='center',fig.cap="Elektronörofizyolojik Test"}
-knitr::include_graphics(path="figure/elektrod.jpg")
+(ref:noropati) [@kumacs2005idiyopatik]
+```{r echo=FALSE,fig.align='center',fig.cap="Elektronörofizyolojik Test (ref:noropati)",out.width="49%",out.height="18%"}
+knitr::include_graphics(path="figure/noropati_test.jpg")
 ```  
-
 Provokatif testler hastanın bilek ve parmak eklemlerine fiziksel baskı uygulayacak şekilde bir takım
 testler uygulanması ve alınan sonuçların değerlendirmesine dayanan deneysel test yöntemleridir.
-Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.  
-* Phalen testi  
-* Ters Phalen testi  
-* Tinel testi  
-* Karpal kompresyon testi  
-* Gerilmiş median sinir stres (GMSS) testi  
-```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="Phalen ve Tinel Testi",out.width="49%",out.height="22%"}
+Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.\
+* Phalen Testi\
+  + 60 saniye boyunca parmaklar ayak ucuna bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\
+* Ters Phalen testi\
+    + 60 saniye boyunca parmaklar yukarı bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\
+* Tinel testi\
+    + Uygulayıcı tarafından karpal tünelin üstüne perküsyon yapılır. Medyan sinir bölgesinde karıncalanma ve elektrik şoku hissi oluşursa test pozitiftir [@kurt2020karpal].\
+* Karpal kompresyon testi\
+    + El bileği düz tutulurken medyan sinirin yakınına başparmak ile bastırılır. Medyan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\
+* Gerilmiş median sinir stres (GMSS) testi\
+  + Medyan sinir hareketliliğinin azaldığı durumlarda medyan sinirin gerilerek lokal iskeminin arttırılması mantığına dayanır.
+```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="Phalen ve Tinel Testi",out.width="49%",out.height="18%"}
 knitr::include_graphics("figure/phalen.png")
 knitr::include_graphics(path="figure/tinel.jpg")
 ```
-```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="Karpal kompresyon ve GMSS Testi ",out.width="49%",out.height="22%"}
+```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="Karpal kompresyon ve GMSS Testi ",out.width="49%",out.height="18%"}
 knitr::include_graphics("figure/karpal_komp.jpg")
 knitr::include_graphics(path="figure/gerilmis.png")
-```
-Görüntülemeye dayalı testlerde el bileği ve parmakların hareketi sırasında karpal tünel içerisindeki değişiklikleri ve medyan sinirin hareketlerini yorumlayarak hastaya tanı koymayı kolaylaştırır fakat hastalığın şiddeti hakkında bilgi vermez.
+```  
+Görüntülemeye dayalı testlerde el bileği ve parmakların hareketi sırasında karpal tünel içerisindeki değişiklikleri ve medyan sinirin hareketlerini yorumlayarak hastaya tanı koymayı kolaylaştırır fakat hastalığın şiddeti hakkında bilgi vermez.\
 * Ultrasonografi  
 * Düz radyografi  
 * Bilgisayarlı tomografi  
@@ -68,14 +73,13 @@ knitr::include_graphics(path="figure/radyog.jpg")
 knitr::include_graphics("figure/bt.jpg")
 ```
 İdiopatik karpal tünel sendromunda hastalığın tanımlanmasında Boston Karpal Tünel Sendromu
-Anketi(BKTSA) kullanılmaktadır. Bu ankete farklı dillere çevrilmiş ve ülkelere göre uyarlanmıştır. Anketin amacı hastanın yanıtlarına göre bir ciddiyet sınıflandırması yapmaktır. Anketin Türkçe versiyonu Sezgin ve ark. [@sezgi2006assessment] tarafından yayımlanmıştır . BKTSA sadece hastaların verdiği yanıtlara dayanarak bir semptom şiddeti belirlemeyi amaçlar.  
+Anketi(BKTSA) kullanılmaktadır [@levine1993self]. Bu ankete farklı dillere çevrilmiş ve ülkelere göre uyarlanmıştır. Anketin amacı hastanın yanıtlarına göre bir ciddiyet sınıflandırması yapmaktır. Anketin Türkçe versiyonu Sezgin ve ark. [@sezgi2006assessment] tarafından yayımlanmıştır , ancak  BKTSA sadece hastaların verdiği yanıtlara dayanarak bir semptom şiddeti belirlemeyi amaçlar.  
 
 Teknolojinin hızla gelişmesi ile birlikte hastalara uygulanan testlerin sonuçlarının toplanmasının kolaylaşmasının yanı sıra testlerin sonuçlarına bağlı olarak hastaya tanı koymak ve tanının şiddetini ve derecesini tespit etmek oldukça kolaylaşmıştır.  
 Makine öğrenmesi ve Yapay zeka uygulamalarının yaygınlaşması ile birlikte bu yöntemlerin tıp alanında da kullanımı artmıştır.  
 
 Makine öğrenmesi yöntemlerinin KTS tanısında kullanılmaına örnek olarak.
 Ardakani ve ark. [@ardakani2020diagnosis] tarafından hasta olduğu bilinen kişilerden elde edilen bilgisayarlı tomografi görüntüleri, derin öğrenme metodları kullanılarak başka kişilerin hasta olup olmadığını tespit etmek için kullanılmıştır.  
-Bir diğer çalışma ise 2021 yılında Koyama  ve ark. [@koyama2021screening] tarafından geliştirilen bir mobil uygulama sayesinde hastaların ekranın farklı yerlerinde çıkan cisimlere ulaşma sürelerini baz alarak hastalığın evresini tahminlemeyi amaçlamıştır. Bu uygulamanın deneysel olması ile birlikte hastanın kendi kendine ev ortamında hastalığına ön tanı koyabilmesi açısından yararlı olduğu düşünülmektedir.\
+Bir diğer çalışma ise 2021 yılında Koyama  ve ark. [@koyama2021screening] tarafından geliştirilen bir mobil uygulama sayesinde hastaların ekranın farklı yerlerinde çıkan cisimlere ulaşma sürelerini baz alarak hastalığın evresini tahminlemeyi amaçlamıştır. Bu uygulama hastanın kendi kendine ev ortamında hastalığına ön tanı koyabilmesi açısından yararlı olabilir.\
 Bunların yanı sıra KTS ciddiyet skoru belirlemek için makine öğrenmesi yöntemlerini kullanan çalışmalar da yapılmaktadır.
 Güncel bir çalışmada Park ve ark. [@park2021machine] 1037 hastadan elde edilen verileri farklı makine öğrenmesi yöntemlerinde kullanarak KTS ciddiyet sınıflandırmasını tahmin etmeyi amaçlamışlardır.
-\pagebreak
