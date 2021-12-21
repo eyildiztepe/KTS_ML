@@ -1,0 +1,143 @@
+# Veri Seti {#veri_seti}
+```{r echo=FALSE,warning=FALSE,message=FALSE}
+if(!require(reticulate)) install.packages("reticulate", repos = "http://cran.rstudio.com")
+if(!require(tidyverse)) install.packages("tidyverse", repos = "http://cran.rstudio.com")
+if(!require(caret)) install.packages("caret",repos = "http://cran.rstudio.com")
+if(!require(caretEnsemble))  install.packages("caretEnsemble",repos = "http://cran.rstudio.com")
+if(!require(doParallel))  install.packages("doParallel",repos = "http://cran.rstudio.com")
+if(!require(data.table))  install.packages("data.table",repos = "http://cran.rstudio.com")
+if(!require(dplyr))  install.packages("dplyr",repos = "http://cran.rstudio.com")
+if(!require(e1071))  install.packages("e1071",repos = "http://cran.rstudio.com")
+#if(!require(gbm))  install.packages("gbm",repos = "http://cran.rstudio.com")
+if(!require(kernlab))  install.packages("kernlab",repos = "http://cran.rstudio.com")
+#if(!require(randomForest))  install.packages("randomForest",repos = "http://cran.rstudio.com")
+if(!require(tidyverse))  install.packages("tidyverse",repos = "http://cran.rstudio.com")
+#if(!require(xgboost))  install.packages("xgboost",repos = "http://cran.rstudio.com")
+if(!require(smotefamily))  install.packages("smotefamily",repos = "http://cran.rstudio.com")
+```
+```{python}
+import numpy as np, pandas as pd, matplotlib.pyplot as plt
+data = pd.read_csv("data/CTS.csv",sep=",")
+dataGroup = data[["Severity","Age","BMI","CSA","PB","Duration","NRS"]]
+dataOverall = data[["Age","BMI","CSA","PB","Duration","NRS"]]
+meanoval, stdoval = round(dataOverall.mean(),1), round(dataOverall.std(ddof=1),1)
+means = round(dataGroup.groupby("Severity").mean(),1)
+stds = round(dataGroup.groupby("Severity").std(ddof=1),1)
+```
+```{r, echo=FALSE,warning=FALSE,message=FALSE}
+  means <- as.data.frame(py$means)
+  stds <- as.data.frame(py$stds)
+  meanOval <- as.data.frame(t(py$meanoval))
+  stdOval <- as.data.frame(t(py$stdoval))
+  CTS <- as.data.frame(read_csv("data/CTS.csv"))
+  seed<-0923
+  set.seed(seed)
+  ind<-sample(2,nrow(CTS),replace = T,prob = c(0.7,0.3))
+  traindata_top <- CTS[ind==1,]
+  testdata_top <- CTS[ind==2,]
+  # BURADAN SORNASI R VERİ ÖNİŞLEME
+  CTS$Severity<-as.factor(CTS$Severity)
+  CTS$Mild<-as.factor(CTS$Mild)
+  CTS$Mod<-as.factor(CTS$Mod)
+  CTS$Sev<-as.factor(CTS$Sev)
+  CTS$Sex <-as.factor(CTS$Sex)
+  CTS$Side <-as.factor(CTS$Side)
+  CTS$Diabetes <-as.factor(CTS$Diabetes)
+  CTS$NP <- as.factor(CTS$NP)
+  CTS$Weakness <- as.factor(CTS$Weakness)
+  predata<-CTS
+  st_model<-preProcess(predata[,5:10], method=c("center","scale"))
+  data<-predict(st_model, predata)
+  data=as.data.frame(data)
+  ohe_feats = c('Sex','Side','Diabetes','NP','Weakness')
+  dummies = dummyVars(~ Sex+Side+Diabetes+NP+Weakness, data = data)
+  df_ohe <- as.data.frame(predict(dummies, newdata = data))
+  df_combined <- cbind(data[,-c(which(colnames(data) %in% ohe_feats))],df_ohe)
+  dat = as.data.table(df_combined)
+  traindata<-dat[ind==1,]
+  testdata<-dat[ind==2,]
+  trainmc<-traindata
+  testmc<-testdata
+  trainmc$Mild=NULL
+  trainmc$Mod=NULL
+  trainmc$Sev=NULL
+  testmc$Mild=NULL
+  testmc$Mod=NULL
+  testmc$Sev=NULL
+```
+```{python,echo=FALSE,warning=FALSE,message=FALSE}
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
+LE = LabelEncoder().fit(["mild","moderate","severe"])
+traindata_P = pd.DataFrame(r.traindata_top)
+traindata_P.drop(["Mild","Mod","Sev"],axis=1,inplace=True)
+testdata_P = pd.DataFrame(r.testdata_top)
+testdata_P.drop(["Mild","Mod","Sev"],axis=1,inplace=True)
+X_train, X_test, y_train, y_test = traindata_P.drop(["Severity"],axis=1),testdata_P.drop(["Severity"],axis=1),pd.DataFrame(LE.transform(traindata_P.Severity)),pd.DataFrame(LE.transform(testdata_P.Severity))
+Stand = StandardScaler().fit(r.CTS[["Age","BMI","CSA","PB","Duration","NRS"]])
+X_train[["Age","BMI","CSA","PB","Duration","NRS"]]=pd.DataFrame(Stand.transform(X_train[["Age","BMI","CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
+y_train = y_train.to_numpy().ravel()
+X_test[["Age","BMI","CSA","PB","Duration","NRS"]] = pd.DataFrame(Stand.transform(X_test[["Age","BMI","CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
+y_test = y_test.to_numpy().ravel()
+```
+
+
+|                                    | Overall |
+|:-----------------------------------|--------:|
+| Age,years (mean $\pm$ SD)          | `r meanOval$Age` $\pm$ `r stdOval$Age` |
+| BMI, kg/m$^2$ (mean $\pm$ SD)      | `r meanOval$BMI` $\pm$ `r stdOval$BMI` |
+| Duration, months (mean $\pm$ SD)   | `r meanOval$Duration` $\pm$ `r stdOval$Duration` |
+| NRS (mean $\pm$ SD)                | `r meanOval$NRS` $\pm$ `r stdOval$NRS` |
+| CSA, mm$^2$ (mean $\pm$ SD)        | `r meanOval$CSA` $\pm$ `r stdOval$CSA` |
+| PB, mm (mean $\pm$ SD)             | `r meanOval$PB` $\pm$ `r stdOval$PB` |
+
+Table: (\#tab:deneme) Değişkenlerin Tanımlayıcı İstatistikleri
+
+|                                    | Mild                                | Moderate                            | Severe                              |
+|:-----------------------------------|------------------------------------:|------------------------------------:|------------------------------------:|
+| Age,years (mean $\pm$ SD)          | `r means$Age[1]` $\pm$ `r stds$Age[1]` | `r means$Age[2]` $\pm$ `r stds$Age[2]` | `r means$Age[3]` $\pm$ `r stds$Age[3]` |
+| BMI, kg/m$^2$ (mean $\pm$ SD)      | `r means$BMI[1]` $\pm$ `r stds$BMI[1]` | `r means$BMI[2]` $\pm$ `r stds$BMI[2]` | `r means$BMI[3]` $\pm$ `r stds$BMI[3]` |
+| Duration, months (mean $\pm$ SD)   | `r means$Duration[1]` $\pm$ `r stds$Duration[1]` | `r means$Duration[2]` $\pm$ `r stds$Duration[2]` | `r means$Duration[3]` $\pm$ `r stds$Duration[3]` |
+| NRS (mean $\pm$ SD)                | `r means$NRS[1]` $\pm$ `r stds$NRS[1]` | `r means$NRS[2]` $\pm$ `r stds$NRS[2]` | `r means$NRS[3]` $\pm$ `r stds$NRS[3]` |
+| CSA, mm$^2$ (mean $\pm$ SD)        | `r means$CSA[1]` $\pm$ `r stds$CSA[1]` | `r means$CSA[2]` $\pm$ `r stds$CSA[2]` | `r means$CSA[3]` $\pm$ `r stds$CSA[3]` |
+| PB, mm (mean $\pm$ SD)             | `r means$PB[1]` $\pm$ `r stds$PB[1]` | `r means$PB[2]` $\pm$ `r stds$PB[2]` | `r means$PB[3]` $\pm$ `r stds$PB[3]` |
+Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkence Tanımlayıcı İstatistikleri  
+
+## K-En Yakın Komşuluk Modeli  
+### Hiper Parametre Seçimi
+```{python,out.height="10%"}
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report
+KNN_model = KNeighborsClassifier()
+params = {"n_neighbors":np.arange(5,200,1),
+          "weights":["uniform", "distance"],
+          "algorithm":["auto","ball_tree","kd_tree","brute"]}
+GSC = GridSearchCV(KNN_model,param_grid=params,
+                   cv=10,verbose=1,scoring="accuracy").fit(X_train,y_train)
+```
+```{python echo=FALSE}
+print(f'En İyi Parametreler : {GSC.best_params_}')
+
+```
+
+### En İyi Parametreli Model
+```{python}
+KNN_model = KNeighborsClassifier(n_neighbors = 33,
+                                 weights ='distance').fit(X_train,y_train)
+y_pred = KNN_model.predict(X_test)
+classification_report(y_test,y_pred);
+```
+```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="K-NN Metrikleri",out.height="25%",out.width="70%"}
+knitr::include_graphics(path="figure/knn_metrics.png")
+```
+
+```{python,echo=FALSE}
+ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred)).plot();
+plt.savefig("figure/knn_conf.png")
+```
+```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+knitr::include_graphics(path="figure/knn_conf.png")
+``` 
+
+
