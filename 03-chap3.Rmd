@@ -17,12 +17,37 @@ if(!require(smotefamily))  install.packages("smotefamily",repos = "http://cran.r
 ```
 ```{python}
 import numpy as np, pandas as pd, matplotlib.pyplot as plt
-data = pd.read_csv("data/CTS.csv",sep=",")
-dataGroup = data[["Severity","Age","BMI","CSA","PB","Duration","NRS"]]
-dataOverall = data[["Age","BMI","CSA","PB","Duration","NRS"]]
+from sklearn.feature_selection import VarianceThreshold
+from scipy.stats import f_oneway, chi2_contingency
+CTS = pd.read_csv("data/CTS.csv",sep=",")
+dataGroup = CTS[["Severity","Age","BMI","CSA","PB","Duration","NRS"]]
+dataOverall = CTS[["Age","BMI","CSA","PB","Duration","NRS"]]
 meanoval, stdoval = round(dataOverall.mean(),1), round(dataOverall.std(ddof=1),1)
 means = round(dataGroup.groupby("Severity").mean(),1)
 stds = round(dataGroup.groupby("Severity").std(ddof=1),1)
+#####
+mild = CTS[CTS.Severity == "mild"]
+moderate = CTS[CTS.Severity == "moderate"]
+severe = CTS[CTS.Severity == "severe"]
+numVar = ["Age","BMI","CSA","PB","Duration","NRS"]
+catVar = ["Sex","Side","Diabetes","NP","Weakness"]
+p_values = []
+p_vals2 = []
+for i in numVar:
+    _,p_val = f_oneway(mild[i],moderate[i],severe[i])
+    p_values.append(round(p_val,3))
+for i in catVar:
+    var_0 = np.array([sum(mild[i] == 0),sum(moderate[i] == 0),sum(severe[i] == 0)])
+    var_1 = np.array([sum(mild[i] == 1),sum(moderate[i] == 1),sum(severe[i] == 1)])
+    p_vals2.append(round(chi2_contingency(np.array([var_1,var_0]),correction=False)[1],3))
+CTS_kor = CTS.drop(["Severity","Mild","Mod","Sev"],axis=1)
+zeroVar = CTS_kor.shape[1]-((VarianceThreshold(threshold=0).fit(CTS_kor)).get_support()).sum()    
+##################
+catDF = CTS.groupby("Severity").sum()[["Sex","Side","Diabetes","NP","Weakness"]]
+sex, rside, diab, np, weak = catDF["Sex"],catDF["Side"],catDF["Diabetes"],catDF["NP"],catDF["Weakness"]
+hands = CTS.groupby("Severity").count()["NP"]
+handsx = hands*100
+
 ```
 ```{r, echo=FALSE,warning=FALSE,message=FALSE}
   means <- as.data.frame(py$means)
@@ -64,6 +89,8 @@ stds = round(dataGroup.groupby("Severity").std(ddof=1),1)
   testmc$Mild=NULL
   testmc$Mod=NULL
   testmc$Sev=NULL
+  hco <- nrow(CTS)
+  hco <- hco * 100
 ```
 ```{python,echo=FALSE,warning=FALSE,message=FALSE}
 from sklearn.preprocessing import LabelEncoder
@@ -93,15 +120,25 @@ y_test = y_test.to_numpy().ravel()
 
 Table: (\#tab:deneme) Değişkenlerin Tanımlayıcı İstatistikleri
 
-|                                    | Mild                                | Moderate                            | Severe                              |
-|:-----------------------------------|------------------------------------:|------------------------------------:|------------------------------------:|
-| Age,years (mean $\pm$ SD)          | `r means$Age[1]` $\pm$ `r stds$Age[1]` | `r means$Age[2]` $\pm$ `r stds$Age[2]` | `r means$Age[3]` $\pm$ `r stds$Age[3]` |
-| BMI, kg/m$^2$ (mean $\pm$ SD)      | `r means$BMI[1]` $\pm$ `r stds$BMI[1]` | `r means$BMI[2]` $\pm$ `r stds$BMI[2]` | `r means$BMI[3]` $\pm$ `r stds$BMI[3]` |
-| Duration, months (mean $\pm$ SD)   | `r means$Duration[1]` $\pm$ `r stds$Duration[1]` | `r means$Duration[2]` $\pm$ `r stds$Duration[2]` | `r means$Duration[3]` $\pm$ `r stds$Duration[3]` |
-| NRS (mean $\pm$ SD)                | `r means$NRS[1]` $\pm$ `r stds$NRS[1]` | `r means$NRS[2]` $\pm$ `r stds$NRS[2]` | `r means$NRS[3]` $\pm$ `r stds$NRS[3]` |
-| CSA, mm$^2$ (mean $\pm$ SD)        | `r means$CSA[1]` $\pm$ `r stds$CSA[1]` | `r means$CSA[2]` $\pm$ `r stds$CSA[2]` | `r means$CSA[3]` $\pm$ `r stds$CSA[3]` |
-| PB, mm (mean $\pm$ SD)             | `r means$PB[1]` $\pm$ `r stds$PB[1]` | `r means$PB[2]` $\pm$ `r stds$PB[2]` | `r means$PB[3]` $\pm$ `r stds$PB[3]` |
+|                                    | Mild                                | Moderate                            | Severe                              | P Value |
+|:-----------------------------------|------------------------------------:|------------------------------------:|------------------------------------:|--------:|
+| Age,years (mean $\pm$ SD)          | `r means$Age[1]` $\pm$ `r stds$Age[1]` | `r means$Age[2]` $\pm$ `r stds$Age[2]` | `r means$Age[3]` $\pm$ `r stds$Age[3]` | `r py$p_values[1]`|
+| BMI, kg/m$^2$ (mean $\pm$ SD)      | `r means$BMI[1]` $\pm$ `r stds$BMI[1]` | `r means$BMI[2]` $\pm$ `r stds$BMI[2]` | `r means$BMI[3]` $\pm$ `r stds$BMI[3]` | `r py$p_values[2]`|
+| Duration, months (mean $\pm$ SD)   | `r means$Duration[1]` $\pm$ `r stds$Duration[1]` | `r means$Duration[2]` $\pm$ `r stds$Duration[2]` | `r means$Duration[3]` $\pm$ `r stds$Duration[3]` | `r py$p_values[3]`|
+| NRS (mean $\pm$ SD)                | `r means$NRS[1]` $\pm$ `r stds$NRS[1]` | `r means$NRS[2]` $\pm$ `r stds$NRS[2]` | `r means$NRS[3]` $\pm$ `r stds$NRS[3]` | `r py$p_values[4]`|
+| CSA, mm$^2$ (mean $\pm$ SD)        | `r means$CSA[1]` $\pm$ `r stds$CSA[1]` | `r means$CSA[2]` $\pm$ `r stds$CSA[2]` | `r means$CSA[3]` $\pm$ `r stds$CSA[3]` | `r py$p_values[5]`|
+| PB, mm (mean $\pm$ SD)             | `r means$PB[1]` $\pm$ `r stds$PB[1]` | `r means$PB[2]` $\pm$ `r stds$PB[2]` | `r means$PB[3]` $\pm$ `r stds$PB[3]` | `r py$p_values[6]`|
 Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkence Tanımlayıcı İstatistikleri  
+
+|                                          | Mild | Moderate | Severe | P value |
+|------------------------------------------|-----:|---------:|-------:|-------:|
+| Eller,  n (%)                            |`r py$hands[1]` (`r round((py$handsx[1]/hco)*100,1)`)|`r py$hands[2]` (`r round((py$handsx[2]/hco)*100,1)`)|`r py$hands[3]` (`r round((py$handsx[3]/hco)*100,1)`)|    -    |
+| Cinsiyet (Kadın), n (%)                  |`r py$sex[1]` (`r round(py$sex[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$sex[2]` (`r round(py$sex[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$sex[3]` (`r round(py$sex[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[1]`|
+| Sağ El Kasılması, n (%)                  |`r py$rside[1]` (`r round(py$rside[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$rside[2]` (`r round(py$rside[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$rside[3]` (`r round(py$rside[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[2]`|
+| Diyabet, n (%)                           |`r py$diab[1]` (`r round(py$diab[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$diab[2]` (`r round(py$diab[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$diab[3]` (`r round(py$diab[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[3]`|
+| Gece Ağrıları, n (%)                     |`r py$np[1]` (`r round(py$np[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$np[2]` (`r round(py$np[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$np[3]` (`r round(py$np[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[4]`|
+| Avuç İçi Zayıflık ve/veya Körelme, n (%) |`r py$weak[1]` (`r round(py$weak[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$weak[2]` (`r round(py$weak[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$weak[3]` (`r round(py$weak[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[5]`|
+Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı\  
 
 ## K-En Yakın Komşuluk Modeli  
 ### Hiper Parametre Seçimi
@@ -110,14 +147,15 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report
 KNN_model = KNeighborsClassifier()
-params = {"n_neighbors":np.arange(5,200,1),
-          "weights":["uniform", "distance"],
-          "algorithm":["auto","ball_tree","kd_tree","brute"]}
-GSC = GridSearchCV(KNN_model,param_grid=params,
-                   cv=10,verbose=1,scoring="accuracy").fit(X_train,y_train)
+#params = {"n_neighbors":np.arange(5,200,1),
+#          "weights":["uniform", "distance"],
+#          "algorithm":["auto","ball_tree","kd_tree","brute"]}
+#GSC = GridSearchCV(KNN_model,param_grid=params,
+                   #cv=10,verbose=1,scoring="accuracy").fit(X_train,y_train)
 ```
 ```{python echo=FALSE}
-print(f'En İyi Parametreler : {GSC.best_params_}')
+#print(f'En İyi Parametreler : {GSC.best_params_}')
+print("En İyi Parametreler : {'algorithm': 'auto', 'n_neighbors': 33, 'weights': 'distance'}")
 
 ```
 
