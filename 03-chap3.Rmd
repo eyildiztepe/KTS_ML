@@ -15,7 +15,7 @@ if(!require(tidyverse))  install.packages("tidyverse",repos = "http://cran.rstud
 #if(!require(xgboost))  install.packages("xgboost",repos = "http://cran.rstudio.com")
 if(!require(smotefamily))  install.packages("smotefamily",repos = "http://cran.rstudio.com")
 ```
-```{python}
+```{python,echo=FALSE}
 import numpy as np, pandas as pd, matplotlib.pyplot as plt
 from sklearn.feature_selection import VarianceThreshold
 from scipy.stats import f_oneway, chi2_contingency
@@ -106,7 +106,8 @@ X_train[["Age","BMI","CSA","PB","Duration","NRS"]]=pd.DataFrame(Stand.transform(
 y_train = y_train.to_numpy().ravel()
 X_test[["Age","BMI","CSA","PB","Duration","NRS"]] = pd.DataFrame(Stand.transform(X_test[["Age","BMI","CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
 y_test = y_test.to_numpy().ravel()
-```
+```  
+Veri setindeki düşük varyanslı değişken sayısı : `r py$zeroVar`
 
 
 |                                    | Overall |
@@ -118,7 +119,7 @@ y_test = y_test.to_numpy().ravel()
 | CSA, mm$^2$ (mean $\pm$ SD)        | `r meanOval$CSA` $\pm$ `r stdOval$CSA` |
 | PB, mm (mean $\pm$ SD)             | `r meanOval$PB` $\pm$ `r stdOval$PB` |
 
-Table: (\#tab:deneme) Değişkenlerin Tanımlayıcı İstatistikleri
+Table: (\#tab:deneme) Sayısal Değişkenlerin Tanımlayıcı İstatistikleri
 
 |                                    | Mild                                | Moderate                            | Severe                              | P Value |
 |:-----------------------------------|------------------------------------:|------------------------------------:|------------------------------------:|--------:|
@@ -128,8 +129,12 @@ Table: (\#tab:deneme) Değişkenlerin Tanımlayıcı İstatistikleri
 | NRS (mean $\pm$ SD)                | `r means$NRS[1]` $\pm$ `r stds$NRS[1]` | `r means$NRS[2]` $\pm$ `r stds$NRS[2]` | `r means$NRS[3]` $\pm$ `r stds$NRS[3]` | `r py$p_values[4]`|
 | CSA, mm$^2$ (mean $\pm$ SD)        | `r means$CSA[1]` $\pm$ `r stds$CSA[1]` | `r means$CSA[2]` $\pm$ `r stds$CSA[2]` | `r means$CSA[3]` $\pm$ `r stds$CSA[3]` | `r py$p_values[5]`|
 | PB, mm (mean $\pm$ SD)             | `r means$PB[1]` $\pm$ `r stds$PB[1]` | `r means$PB[2]` $\pm$ `r stds$PB[2]` | `r means$PB[3]` $\pm$ `r stds$PB[3]` | `r py$p_values[6]`|
-Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkence Tanımlayıcı İstatistikleri  
+Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri  
 
+  \
+  \
+  \  
+  
 |                                          | Mild | Moderate | Severe | P value |
 |------------------------------------------|-----:|---------:|-------:|-------:|
 | Eller,  n (%)                            |`r py$hands[1]` (`r round((py$handsx[1]/hco)*100,1)`)|`r py$hands[2]` (`r round((py$handsx[2]/hco)*100,1)`)|`r py$hands[3]` (`r round((py$handsx[3]/hco)*100,1)`)|    -    |
@@ -142,10 +147,10 @@ Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans 
 
 ## K-En Yakın Komşuluk Modeli  
 ### Hiper Parametre Seçimi
-```{python,out.height="10%"}
+```{python,out.height="10%",echo=FALSE}
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report
+from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report,balanced_accuracy_score
 KNN_model = KNeighborsClassifier()
 #params = {"n_neighbors":np.arange(5,200,1),
 #          "weights":["uniform", "distance"],
@@ -160,18 +165,19 @@ print("En İyi Parametreler : {'algorithm': 'auto', 'n_neighbors': 33, 'weights'
 ```
 
 ### En İyi Parametreli Model
-```{python}
+```{python,echo=FALSE}
 KNN_model = KNeighborsClassifier(n_neighbors = 33,
                                  weights ='distance').fit(X_train,y_train)
 y_pred = KNN_model.predict(X_test)
-classification_report(y_test,y_pred);
+print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
+print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
 ```
-```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="K-NN Metrikleri",out.height="25%",out.width="70%"}
+<!--```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="K-NN Metrikleri",out.height="25%",out.width="70%"}
 knitr::include_graphics(path="figure/knn_metrics.png")
-```
+```-->
 
 ```{python,echo=FALSE}
-ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred)).plot();
+ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
 plt.savefig("figure/knn_conf.png")
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}

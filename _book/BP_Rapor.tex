@@ -456,43 +456,10 @@ NO COMMENT
 \end{itemize}
 \hypertarget{veri_seti}{%
 \chapter{Veri Seti}\label{veri_seti}}
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np, pandas }\ImportTok{as}\NormalTok{ pd, matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
-\ImportTok{from}\NormalTok{ sklearn.feature\_selection }\ImportTok{import}\NormalTok{ VarianceThreshold}
-\ImportTok{from}\NormalTok{ scipy.stats }\ImportTok{import}\NormalTok{ f\_oneway, chi2\_contingency}
-\NormalTok{CTS }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/CTS.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{","}\NormalTok{)}
-\NormalTok{dataGroup }\OperatorTok{=}\NormalTok{ CTS[[}\StringTok{"Severity"}\NormalTok{,}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]]}
-\NormalTok{dataOverall }\OperatorTok{=}\NormalTok{ CTS[[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]]}
-\NormalTok{meanoval, stdoval }\OperatorTok{=} \BuiltInTok{round}\NormalTok{(dataOverall.mean(),}\DecValTok{1}\NormalTok{), }\BuiltInTok{round}\NormalTok{(dataOverall.std(ddof}\OperatorTok{=}\DecValTok{1}\NormalTok{),}\DecValTok{1}\NormalTok{)}
-\NormalTok{means }\OperatorTok{=} \BuiltInTok{round}\NormalTok{(dataGroup.groupby(}\StringTok{"Severity"}\NormalTok{).mean(),}\DecValTok{1}\NormalTok{)}
-\NormalTok{stds }\OperatorTok{=} \BuiltInTok{round}\NormalTok{(dataGroup.groupby(}\StringTok{"Severity"}\NormalTok{).std(ddof}\OperatorTok{=}\DecValTok{1}\NormalTok{),}\DecValTok{1}\NormalTok{)}
-\CommentTok{\#\#\#\#\#}
-\NormalTok{mild }\OperatorTok{=}\NormalTok{ CTS[CTS.Severity }\OperatorTok{==} \StringTok{"mild"}\NormalTok{]}
-\NormalTok{moderate }\OperatorTok{=}\NormalTok{ CTS[CTS.Severity }\OperatorTok{==} \StringTok{"moderate"}\NormalTok{]}
-\NormalTok{severe }\OperatorTok{=}\NormalTok{ CTS[CTS.Severity }\OperatorTok{==} \StringTok{"severe"}\NormalTok{]}
-\NormalTok{numVar }\OperatorTok{=}\NormalTok{ [}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]}
-\NormalTok{catVar }\OperatorTok{=}\NormalTok{ [}\StringTok{"Sex"}\NormalTok{,}\StringTok{"Side"}\NormalTok{,}\StringTok{"Diabetes"}\NormalTok{,}\StringTok{"NP"}\NormalTok{,}\StringTok{"Weakness"}\NormalTok{]}
-\NormalTok{p\_values }\OperatorTok{=}\NormalTok{ []}
-\NormalTok{p\_vals2 }\OperatorTok{=}\NormalTok{ []}
-\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ numVar:}
-\NormalTok{    \_,p\_val }\OperatorTok{=}\NormalTok{ f\_oneway(mild[i],moderate[i],severe[i])}
-\NormalTok{    p\_values.append(}\BuiltInTok{round}\NormalTok{(p\_val,}\DecValTok{3}\NormalTok{))}
-\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ catVar:}
-\NormalTok{    var\_0 }\OperatorTok{=}\NormalTok{ np.array([}\BuiltInTok{sum}\NormalTok{(mild[i] }\OperatorTok{==} \DecValTok{0}\NormalTok{),}\BuiltInTok{sum}\NormalTok{(moderate[i] }\OperatorTok{==} \DecValTok{0}\NormalTok{),}\BuiltInTok{sum}\NormalTok{(severe[i] }\OperatorTok{==} \DecValTok{0}\NormalTok{)])}
-\NormalTok{    var\_1 }\OperatorTok{=}\NormalTok{ np.array([}\BuiltInTok{sum}\NormalTok{(mild[i] }\OperatorTok{==} \DecValTok{1}\NormalTok{),}\BuiltInTok{sum}\NormalTok{(moderate[i] }\OperatorTok{==} \DecValTok{1}\NormalTok{),}\BuiltInTok{sum}\NormalTok{(severe[i] }\OperatorTok{==} \DecValTok{1}\NormalTok{)])}
-\NormalTok{    p\_vals2.append(}\BuiltInTok{round}\NormalTok{(chi2\_contingency(np.array([var\_1,var\_0]),correction}\OperatorTok{=}\VariableTok{False}\NormalTok{)[}\DecValTok{1}\NormalTok{],}\DecValTok{3}\NormalTok{))}
-\NormalTok{CTS\_kor }\OperatorTok{=}\NormalTok{ CTS.drop([}\StringTok{"Severity"}\NormalTok{,}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod"}\NormalTok{,}\StringTok{"Sev"}\NormalTok{],axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
-\NormalTok{zeroVar }\OperatorTok{=}\NormalTok{ CTS\_kor.shape[}\DecValTok{1}\NormalTok{]}\OperatorTok{{-}}\NormalTok{((VarianceThreshold(threshold}\OperatorTok{=}\DecValTok{0}\NormalTok{).fit(CTS\_kor)).get\_support()).}\BuiltInTok{sum}\NormalTok{()    }
-\CommentTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
-\NormalTok{catDF }\OperatorTok{=}\NormalTok{ CTS.groupby(}\StringTok{"Severity"}\NormalTok{).}\BuiltInTok{sum}\NormalTok{()[[}\StringTok{"Sex"}\NormalTok{,}\StringTok{"Side"}\NormalTok{,}\StringTok{"Diabetes"}\NormalTok{,}\StringTok{"NP"}\NormalTok{,}\StringTok{"Weakness"}\NormalTok{]]}
-\NormalTok{sex, rside, diab, np, weak }\OperatorTok{=}\NormalTok{ catDF[}\StringTok{"Sex"}\NormalTok{],catDF[}\StringTok{"Side"}\NormalTok{],catDF[}\StringTok{"Diabetes"}\NormalTok{],catDF[}\StringTok{"NP"}\NormalTok{],catDF[}\StringTok{"Weakness"}\NormalTok{]}
-\NormalTok{hands }\OperatorTok{=}\NormalTok{ CTS.groupby(}\StringTok{"Severity"}\NormalTok{).count()[}\StringTok{"NP"}\NormalTok{]}
-\NormalTok{handsx }\OperatorTok{=}\NormalTok{ hands}\OperatorTok{*}\DecValTok{100}
-\end{Highlighting}
-\end{Shaded}
+
+Veri setindeki düşük varyanslı değişken sayısı : 0
 \begin{longtable}[]{@{}lr@{}}
-\caption{\label{tab:deneme} Değişkenlerin Tanımlayıcı İstatistikleri}\tabularnewline
+\caption{\label{tab:deneme} Sayısal Değişkenlerin Tanımlayıcı İstatistikleri}\tabularnewline
 \toprule
 & Overall \\
 \midrule
@@ -510,7 +477,7 @@ PB, mm (mean \(\pm\) SD) & 2.5 \(\pm\) 1.8 \\
 \bottomrule
 \end{longtable}
 \begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:descrip} Değişkenlerin Bağımlı Değişkence Tanımlayıcı İstatistikleri}\tabularnewline
+\caption{\label{tab:descrip} Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri}\tabularnewline
 \toprule
 & Mild & Moderate & Severe & P Value \\
 \midrule
@@ -527,6 +494,9 @@ CSA, mm\(^2\) (mean \(\pm\) SD) & 13.2 \(\pm\) 3 & 15.4 \(\pm\) 3.2 & 18.9 \(\pm
 PB, mm (mean \(\pm\) SD) & 2.1 \(\pm\) 0.8 & 2.6 \(\pm\) 2.4 & 3.1 \(\pm\) 2.3 & 0 \\
 \bottomrule
 \end{longtable}
+\hfill\break
+\hfill\break
+~
 \begin{longtable}[]{@{}lrrrr@{}}
 \caption{\label{tab:catvar} Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı~}\tabularnewline
 \toprule
@@ -550,47 +520,32 @@ Avuç İçi Zayıflık ve/veya Körelme, n (\%) & 1 (0.2) & 24 (8.7) & 169 (66.5
 
 \hypertarget{hiper-parametre-seuxe7imi}{%
 \subsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi}}
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{from}\NormalTok{ sklearn.neighbors }\ImportTok{import}\NormalTok{ KNeighborsClassifier}
-\ImportTok{from}\NormalTok{ sklearn.model\_selection }\ImportTok{import}\NormalTok{ GridSearchCV}
-\ImportTok{from}\NormalTok{ sklearn.metrics }\ImportTok{import}\NormalTok{ ConfusionMatrixDisplay,confusion\_matrix,classification\_report}
-\NormalTok{KNN\_model }\OperatorTok{=}\NormalTok{ KNeighborsClassifier()}
-\CommentTok{\#params = \{"n\_neighbors":np.arange(5,200,1),}
-\CommentTok{\#          "weights":["uniform", "distance"],}
-\CommentTok{\#          "algorithm":["auto","ball\_tree","kd\_tree","brute"]\}}
-\CommentTok{\#GSC = GridSearchCV(KNN\_model,param\_grid=params,}
-                   \CommentTok{\#cv=10,verbose=1,scoring="accuracy").fit(X\_train,y\_train)}
-\end{Highlighting}
-\end{Shaded}
 \begin{verbatim}
 En İyi Parametreler : {'algorithm': 'auto', 'n_neighbors': 33, 'weights': 'distance'}
 \end{verbatim}
 \hypertarget{en-iyi-parametreli-model}{%
 \subsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model}}
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{KNN\_model }\OperatorTok{=}\NormalTok{ KNeighborsClassifier(n\_neighbors }\OperatorTok{=} \DecValTok{33}\NormalTok{,}
-\NormalTok{                                 weights }\OperatorTok{=}\StringTok{\textquotesingle{}distance\textquotesingle{}}\NormalTok{).fit(X\_train,y\_train)}
-\NormalTok{y\_pred }\OperatorTok{=}\NormalTok{ KNN\_model.predict(X\_test)}
-\NormalTok{classification\_report(y\_test,y\_pred)}\OperatorTok{;}
-\end{Highlighting}
-\end{Shaded}
-\begin{figure}
+\begin{verbatim}
+              precision    recall  f1-score   support
 
-{\centering \includegraphics[width=0.7\linewidth,height=0.25\textheight]{figure/knn_metrics} 
+        Mild       0.76      0.92      0.83       137
+    Moderate       0.51      0.42      0.46        65
+      Severe       0.89      0.68      0.77        72
 
-}
-
-\caption{K-NN Metrikleri}\label{fig:unnamed-chunk-14}
-\end{figure}
+    accuracy                           0.74       274
+   macro avg       0.72      0.67      0.69       274
+weighted avg       0.73      0.74      0.73       274
+\end{verbatim}
+\begin{verbatim}
+Balanced Accuracy Score : 0.6718827333790838
+\end{verbatim}
 \begin{figure}
 
 {\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/knn_conf} 
 
 }
 
-\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-16}
+\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-15}
 \end{figure}
 \hypertarget{Bolum4}{%
 \chapter{Bölüm 4 Başlık}\label{Bolum4}}
