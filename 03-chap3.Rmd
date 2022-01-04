@@ -129,12 +129,17 @@ Table: (\#tab:deneme) Sayısal Değişkenlerin Tanımlayıcı İstatistikleri
 | NRS (mean $\pm$ SD)                | `r means$NRS[1]` $\pm$ `r stds$NRS[1]` | `r means$NRS[2]` $\pm$ `r stds$NRS[2]` | `r means$NRS[3]` $\pm$ `r stds$NRS[3]` | `r py$p_values[4]`|
 | CSA, mm$^2$ (mean $\pm$ SD)        | `r means$CSA[1]` $\pm$ `r stds$CSA[1]` | `r means$CSA[2]` $\pm$ `r stds$CSA[2]` | `r means$CSA[3]` $\pm$ `r stds$CSA[3]` | `r py$p_values[5]`|
 | PB, mm (mean $\pm$ SD)             | `r means$PB[1]` $\pm$ `r stds$PB[1]` | `r means$PB[2]` $\pm$ `r stds$PB[2]` | `r means$PB[3]` $\pm$ `r stds$PB[3]` | `r py$p_values[6]`|
-Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri  
+||||||
+| P-Value Değerleri Tek Yönlü           |||||
+| Varyans Analiz Testi ile Elde           |||||
+| Edilmiştir.           |||||
 
-  \
-  \
-  \  
-  
+Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri  
+\
+\
+\  
+
+
 |                                          | Mild | Moderate | Severe | P value |
 |------------------------------------------|-----:|---------:|-------:|-------:|
 | Eller,  n (%)                            |`r py$hands[1]` (`r round((py$handsx[1]/hco)*100,1)`)|`r py$hands[2]` (`r round((py$handsx[2]/hco)*100,1)`)|`r py$hands[3]` (`r round((py$handsx[3]/hco)*100,1)`)|    -    |
@@ -143,10 +148,58 @@ Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıc
 | Diyabet, n (%)                           |`r py$diab[1]` (`r round(py$diab[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$diab[2]` (`r round(py$diab[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$diab[3]` (`r round(py$diab[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[3]`|
 | Gece Ağrıları, n (%)                     |`r py$np[1]` (`r round(py$np[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$np[2]` (`r round(py$np[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$np[3]` (`r round(py$np[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[4]`|
 | Avuç İçi Zayıflık ve/veya Körelme, n (%) |`r py$weak[1]` (`r round(py$weak[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$weak[2]` (`r round(py$weak[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$weak[3]` (`r round(py$weak[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[5]`|
-Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı\  
+||||||
+| P-Value Değerleri Ki-Kare           |||||
+| Bağımsızlık Testi ile Elde           |||||
+| Edilmiştir.           |||||
+Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı  
+
+```{python,echo=FALSE}
+from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix, ConfusionMatrixDisplay, auc
+import matplotlib.pyplot as plt
+from itertools import cycle
+from sklearn.preprocessing import label_binarize
+def roc(model,y_test):
+    plt.figure()
+    model_name = str(model.__class__).split(".")[-1][:-2]
+    y_pred = model.predict(X_test)
+    y_test_roc = label_binarize(y_test, classes=[0, 1, 2])
+    y_pred_roc = label_binarize(y_pred, classes=[0, 1, 2])
+    fpr = dict()
+    tpr = dict()
+    roc_auc = dict()
+    for i in range(3):
+        fpr[i], tpr[i], _ = roc_curve(y_test_roc[:, i], y_pred_roc[:, i])
+        roc_auc[i] = auc(fpr[i], tpr[i])
+
+    # Compute micro-average ROC curve and ROC area
+    fpr["micro"], tpr["micro"], _ = roc_curve(y_test_roc.ravel(), y_pred_roc.ravel())
+    roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
+    colors = cycle(["aqua", "darkorange", "cornflowerblue"])
+    for i, color, j in zip(range(3), colors,["Mild","Moderate","Severe"]):
+        plt.plot(
+            fpr[i],
+            tpr[i],
+            color=color,
+            lw=2,
+            label="ROC curve of class {0} (area = {1:0.2f})".format(j, roc_auc[i])
+        )
+    plt.plot([0, 1], [0, 1], "k--", lw=2)
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title("Some extension of Receiver operating characteristic to multiclass")
+    plt.legend(loc="lower right")
+    plt.savefig(f'figure/roc_curve_{model_name}.png')
+```
+
 
 ## K-En Yakın Komşuluk Modeli  
-### Hiper Parametre Seçimi
+Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak ve çıktılarını değerlendireceğiz.  
+
+### Hiper Parametre Seçimi  
+Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
 ```{python,out.height="10%",echo=FALSE}
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
@@ -165,6 +218,7 @@ print("En İyi Parametreler : {'algorithm': 'auto', 'n_neighbors': 33, 'weights'
 ```
 
 ### En İyi Parametreli Model
+GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
 ```{python,echo=FALSE}
 KNN_model = KNeighborsClassifier(n_neighbors = 33,
                                  weights ='distance').fit(X_train,y_train)
@@ -180,8 +234,62 @@ knitr::include_graphics(path="figure/knn_metrics.png")
 ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
 plt.savefig("figure/knn_conf.png")
 ```
+```{python,echo=FALSE}
+roc(KNN_model,y_test)
+```
+
 ```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/knn_conf.png")
-``` 
+```
+```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli ROC Eğrisi ve Auc Değeri",out.width="105%",out.height="60%"}
+knitr::include_graphics(path="figure/roc_curve_KNeighborsClassifier.png")
+```
+## Rassal Ormanlar Modeli  
+Bu bölümde veri setimiz üzerinde Rassal Ormanlar modelini kullanacak ve çıktılarını değerlendireceğiz.  
 
+### Hiper Parametre Seçimi  
+Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+```{python,out.height="10%",echo=FALSE}
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report,balanced_accuracy_score
+RFC_model = RandomForestClassifier()
+#param_grid = {"n_estimators":np.arange(350,1000,50),
+              #"criterion":["gini","index"],
+              #"max_features":["auto","sqrt","log2"],
+              #"ccp_alpha":[0.01,0.05,.1,0.3,.5,1],
+              #"max_samples":np.arange(1,X_train.shape[1],1)}
+#GSC = GridSearchCV(RFC_model,param_grid=params,
+                   #cv=10,verbose=1,scoring="accuracy").fit(X_train,y_train)
+```
+```{python echo=FALSE}
+#print(f'En İyi Parametreler : {GSC.best_params_}')
+print("En İyi Parametreler : {'ccp_alpha': 0.01,'criterion': 'gini', 'max_features': 'sqrt',\n'max_samples': 10, 'n_estimators': 900}")
 
+```
+
+### En İyi Parametreli Model
+GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+```{python,echo=FALSE}
+RFC_model = RandomForestClassifier(ccp_alpha=0.01,criterion="gini",max_features="sqrt",
+                                   max_samples=10,n_estimators=900,random_state=13).fit(X_train,y_train)
+y_pred = RFC_model.predict(X_test)
+print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
+print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
+```
+
+```{python,echo=FALSE}
+ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
+plt.savefig("figure/rfc_conf.png")
+```
+```{python,echo=FALSE}
+roc(RFC_model,y_test)
+```
+
+```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+knitr::include_graphics(path="figure/rfc_conf.png")
+```
+```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve Auc Değeri",out.width="105%",out.height="60%"}
+knitr::include_graphics(path="figure/roc_curve_RandomForestClassifier.png")
+```
+## eXtreme Gradient Boosting (Xgboost)

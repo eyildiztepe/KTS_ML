@@ -115,7 +115,7 @@
 %\author{Alper ENGİNAtadeniz SAYARCem GÖRENER} %Tek yazar için
 \author{Alper ENGİN \\ Atadeniz SAYAR \\ Cem GÖRENER} %Çok yazar için
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
-\date{Aralık 2021}
+\date{Ocak 2022}
 \division{İSTATİSTİK BÖLÜMÜ}
 \advisor{Dr.~Engin YILDIZTEPE}
 \institution{FEN FAKÜLTESİ}
@@ -477,7 +477,10 @@ PB, mm (mean \(\pm\) SD) & 2.5 \(\pm\) 1.8 \\
 \bottomrule
 \end{longtable}
 \begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:descrip} Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri}\tabularnewline
+\caption{\label{tab:descrip} Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri\\
+\strut \\
+\strut \\
+\hspace*{0.333em}}\tabularnewline
 \toprule
 & Mild & Moderate & Severe & P Value \\
 \midrule
@@ -492,13 +495,14 @@ Duration, months (mean \(\pm\) SD) & 4.3 \(\pm\) 5 & 8.5 \(\pm\) 8.2 & 15.9 \(\p
 NRS (mean \(\pm\) SD) & 3.3 \(\pm\) 1.3 & 4.9 \(\pm\) 1.5 & 6.1 \(\pm\) 1.5 & 0 \\
 CSA, mm\(^2\) (mean \(\pm\) SD) & 13.2 \(\pm\) 3 & 15.4 \(\pm\) 3.2 & 18.9 \(\pm\) 5 & 0 \\
 PB, mm (mean \(\pm\) SD) & 2.1 \(\pm\) 0.8 & 2.6 \(\pm\) 2.4 & 3.1 \(\pm\) 2.3 & 0 \\
+& & & & \\
+P-Value Değerleri Tek Yönlü & & & & \\
+Varyans Analiz Testi ile Elde & & & & \\
+Edilmiştir. & & & & \\
 \bottomrule
 \end{longtable}
-\hfill\break
-\hfill\break
-~
 \begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:catvar} Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı~}\tabularnewline
+\caption{\label{tab:catvar} Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı}\tabularnewline
 \toprule
 & Mild & Moderate & Severe & P value \\
 \midrule
@@ -513,18 +517,28 @@ Sağ El Kasılması, n (\%) & 243 (47.9) & 149 (54) & 119 (46.9) & 0.181 \\
 Diyabet, n (\%) & 47 (9.3) & 45 (16.3) & 54 (21.3) & 0 \\
 Gece Ağrıları, n (\%) & 102 (20.1) & 142 (51.4) & 212 (83.5) & 0 \\
 Avuç İçi Zayıflık ve/veya Körelme, n (\%) & 1 (0.2) & 24 (8.7) & 169 (66.5) & 0 \\
+& & & & \\
+P-Value Değerleri Ki-Kare & & & & \\
+Bağımsızlık Testi ile Elde & & & & \\
+Edilmiştir. & & & & \\
 \bottomrule
 \end{longtable}
 \hypertarget{k-en-yakux131n-komux15fuluk-modeli}{%
 \section{K-En Yakın Komşuluk Modeli}\label{k-en-yakux131n-komux15fuluk-modeli}}
 
+Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak ve çıktılarını değerlendireceğiz.
+
 \hypertarget{hiper-parametre-seuxe7imi}{%
 \subsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi}}
+
+Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
 \begin{verbatim}
 En İyi Parametreler : {'algorithm': 'auto', 'n_neighbors': 33, 'weights': 'distance'}
 \end{verbatim}
 \hypertarget{en-iyi-parametreli-model}{%
 \subsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model}}
+
+GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
 \begin{verbatim}
               precision    recall  f1-score   support
 
@@ -545,8 +559,66 @@ Balanced Accuracy Score : 0.6718827333790838
 
 }
 
-\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-15}
+\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-17}
 \end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/roc_curve_KNeighborsClassifier} 
+
+}
+
+\caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve Auc Değeri}\label{fig:unnamed-chunk-18}
+\end{figure}
+\hypertarget{rassal-ormanlar-modeli}{%
+\section{Rassal Ormanlar Modeli}\label{rassal-ormanlar-modeli}}
+
+Bu bölümde veri setimiz üzerinde Rassal Ormanlar modelini kullanacak ve çıktılarını değerlendireceğiz.
+
+\hypertarget{hiper-parametre-seuxe7imi-1}{%
+\subsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-1}}
+
+Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+\begin{verbatim}
+En İyi Parametreler : {'ccp_alpha': 0.01,'criterion': 'gini', 'max_features': 'sqrt',
+'max_samples': 10, 'n_estimators': 900}
+\end{verbatim}
+\hypertarget{en-iyi-parametreli-model-1}{%
+\subsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-1}}
+
+GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+\begin{verbatim}
+              precision    recall  f1-score   support
+
+        Mild       0.71      0.99      0.83       137
+    Moderate       0.67      0.31      0.42        65
+      Severe       0.94      0.69      0.80        72
+
+    accuracy                           0.75       274
+   macro avg       0.77      0.66      0.68       274
+weighted avg       0.76      0.75      0.72       274
+\end{verbatim}
+\begin{verbatim}
+Balanced Accuracy Score : 0.6649458273545864
+\end{verbatim}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/rfc_conf} 
+
+}
+
+\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-24}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/roc_curve_RandomForestClassifier} 
+
+}
+
+\caption{Rassal Ormanlar Modeli ROC Eğrisi ve Auc Değeri}\label{fig:unnamed-chunk-25}
+\end{figure}
+\hypertarget{extreme-gradient-boosting-xgboost}{%
+\section{eXtreme Gradient Boosting (Xgboost)}\label{extreme-gradient-boosting-xgboost}}
+
 \hypertarget{Bolum4}{%
 \chapter{Bölüm 4 Başlık}\label{Bolum4}}
 
