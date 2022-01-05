@@ -129,12 +129,9 @@ Table: (\#tab:deneme) Sayısal Değişkenlerin Tanımlayıcı İstatistikleri
 | NRS (mean $\pm$ SD)                | `r means$NRS[1]` $\pm$ `r stds$NRS[1]` | `r means$NRS[2]` $\pm$ `r stds$NRS[2]` | `r means$NRS[3]` $\pm$ `r stds$NRS[3]` | `r py$p_values[4]`|
 | CSA, mm$^2$ (mean $\pm$ SD)        | `r means$CSA[1]` $\pm$ `r stds$CSA[1]` | `r means$CSA[2]` $\pm$ `r stds$CSA[2]` | `r means$CSA[3]` $\pm$ `r stds$CSA[3]` | `r py$p_values[5]`|
 | PB, mm (mean $\pm$ SD)             | `r means$PB[1]` $\pm$ `r stds$PB[1]` | `r means$PB[2]` $\pm$ `r stds$PB[2]` | `r means$PB[3]` $\pm$ `r stds$PB[3]` | `r py$p_values[6]`|
-||||||
-| P-Value Değerleri Tek Yönlü           |||||
-| Varyans Analiz Testi ile Elde           |||||
-| Edilmiştir.           |||||
 
-Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri  
+Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri \tiny (P-Value Değerleri Tek Yönlü Varyans Analiz Testi ile Elde Edilmiştir.)  
+
 \
 \
 \  
@@ -148,33 +145,27 @@ Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıc
 | Diyabet, n (%)                           |`r py$diab[1]` (`r round(py$diab[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$diab[2]` (`r round(py$diab[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$diab[3]` (`r round(py$diab[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[3]`|
 | Gece Ağrıları, n (%)                     |`r py$np[1]` (`r round(py$np[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$np[2]` (`r round(py$np[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$np[3]` (`r round(py$np[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[4]`|
 | Avuç İçi Zayıflık ve/veya Körelme, n (%) |`r py$weak[1]` (`r round(py$weak[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$weak[2]` (`r round(py$weak[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$weak[3]` (`r round(py$weak[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[5]`|
-||||||
-| P-Value Değerleri Ki-Kare           |||||
-| Bağımsızlık Testi ile Elde           |||||
-| Edilmiştir.           |||||
-Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı  
+
+Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı \tiny (P-Value Değerleri Ki-Kare Bağımsızlık Testi ile Elde Edilmiştir.)   
 
 ```{python,echo=FALSE}
 from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix, ConfusionMatrixDisplay, auc
+from sklearn.multiclass import OneVsRestClassifier
 import matplotlib.pyplot as plt
 from itertools import cycle
 from sklearn.preprocessing import label_binarize
-def roc(model,y_test):
-    plt.figure()
+def roc(model):
+    """ Unfitted model"""
     model_name = str(model.__class__).split(".")[-1][:-2]
-    y_pred = model.predict(X_test)
-    y_test_roc = label_binarize(y_test, classes=[0, 1, 2])
-    y_pred_roc = label_binarize(y_pred, classes=[0, 1, 2])
+    model = OneVsRestClassifier(model).fit(X_train,y_train)
+    plt.figure()
+    y_pred = model.predict_proba(X_test)
     fpr = dict()
     tpr = dict()
     roc_auc = dict()
     for i in range(3):
-        fpr[i], tpr[i], _ = roc_curve(y_test_roc[:, i], y_pred_roc[:, i])
+        fpr[i], tpr[i], _ = roc_curve(y_test, y_pred[:, i],pos_label=i)
         roc_auc[i] = auc(fpr[i], tpr[i])
-
-    # Compute micro-average ROC curve and ROC area
-    fpr["micro"], tpr["micro"], _ = roc_curve(y_test_roc.ravel(), y_pred_roc.ravel())
-    roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
     colors = cycle(["aqua", "darkorange", "cornflowerblue"])
     for i, color, j in zip(range(3), colors,["Mild","Moderate","Severe"]):
         plt.plot(
@@ -235,7 +226,8 @@ ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","M
 plt.savefig("figure/knn_conf.png")
 ```
 ```{python,echo=FALSE}
-roc(KNN_model,y_test)
+roc(KNeighborsClassifier(n_neighbors = 33,
+                                 weights ='distance'))
 ```
 
 ```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
@@ -283,7 +275,8 @@ ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","M
 plt.savefig("figure/rfc_conf.png")
 ```
 ```{python,echo=FALSE}
-roc(RFC_model,y_test)
+roc(RandomForestClassifier(ccp_alpha=0.01,criterion="gini",max_features="sqrt",
+                                   max_samples=10,n_estimators=900,random_state=13))
 ```
 
 ```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
