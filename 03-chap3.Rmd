@@ -17,6 +17,7 @@ if(!require(smotefamily))  install.packages("smotefamily",repos = "http://cran.r
 ```
 ```{python,echo=FALSE}
 import numpy as np, pandas as pd, matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.feature_selection import VarianceThreshold
 from scipy.stats import f_oneway, chi2_contingency
 CTS = pd.read_csv("data/CTS.csv",sep=",")
@@ -191,20 +192,31 @@ Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak 
 
 ### Hiper Parametre Seçimi  
 Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
-```{python,out.height="10%",echo=FALSE}
+```{python echo=FALSE}
+import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report,balanced_accuracy_score
 KNN_model = KNeighborsClassifier()
-#params = {"n_neighbors":np.arange(5,200,1),
+#params = {"n_neighbors":np.arange(5,200),
 #          "weights":["uniform", "distance"],
 #          "algorithm":["auto","ball_tree","kd_tree","brute"]}
 #GSC = GridSearchCV(KNN_model,param_grid=params,
-                   #cv=10,verbose=1,scoring="accuracy").fit(X_train,y_train)
+#                   cv=10,verbose=1,scoring="accuracy").fit(X_train,y_train)
+#pd.DataFrame(GSC.cv_results_).to_csv("data/KNN_GridSearch_Results.csv",index=False)
+knn = pd.read_csv("data/KNN_GridSearch_Results.csv")
+plt.figure(figsize=(10,5),dpi=60);
+sns.lineplot(x=knn.param_n_neighbors,y=knn.mean_test_score*100,hue=knn.param_weights);
+plt.ylabel("Train Scores");
+plt.xlabel("Number of Neighbors");
+plt.savefig("figure/KNN_Grid_Graph.png");
+```
+```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="55%"}
+knitr::include_graphics(path="figure/KNN_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {GSC.best_params_}')
-print("En İyi Parametreler : {'algorithm': 'auto', 'n_neighbors': 33, 'weights': 'distance'}")
+print("En İyi Parametreler:{'algorithm':'auto','n_neighbors':33,'weights':'distance'}")
 
 ```
 
@@ -233,7 +245,7 @@ roc(KNeighborsClassifier(n_neighbors = 33,
 ```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/knn_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli ROC Eğrisi ve Auc Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_KNeighborsClassifier.png")
 ```
 ## Rassal Ormanlar Modeli  
@@ -249,22 +261,36 @@ RFC_model = RandomForestClassifier()
 #param_grid = {"n_estimators":np.arange(350,1000,50),
               #"criterion":["gini","index"],
               #"max_features":["auto","sqrt","log2"],
-              #"ccp_alpha":[0.01,0.05,.1,0.3,.5,1],
+              #"ccp_alpha":[0.01,0.05,.1,0.3,.5,.7,.9,1],
               #"max_samples":np.arange(1,X_train.shape[1],1)}
 #GSC = GridSearchCV(RFC_model,param_grid=params,
-                   #cv=10,verbose=1,scoring="accuracy").fit(X_train,y_train)
+                   #cv=10,verbose=1,scoring="accuracy",random_state=13).fit(X_train,y_train)
+results = pd.read_csv("data/RF_GridSearch_Results.csv")
+ginis = results[results["param_criterion"] == "gini"]
+ginis = ginis[ginis["param_ccp_alpha"] <= 0.1]
+ginis = ginis[ginis["mean_test_score"]>=0.704]
+#Grafik Çizimi
+plt.figure(figsize=(10,5),dpi=60);
+plt.ylim(0.703*100,round(ginis.mean_test_score.unique().max()*100,2)+0.1);
+sns.lineplot(y=ginis.mean_test_score*100,x=ginis.param_n_estimators,hue=ginis.param_ccp_alpha,palette=sns.color_palette(n_colors=3),err_style=None);
+plt.ylabel("Train Scores");
+plt.xlabel("Number of Trees in Forest");
+plt.savefig("figure/RF_Grid_Graph.png");
+```
+```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="50%"}
+knitr::include_graphics(path="figure/RF_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {GSC.best_params_}')
-print("En İyi Parametreler : {'ccp_alpha': 0.01,'criterion': 'gini', 'max_features': 'sqrt',\n'max_samples': 10, 'n_estimators': 900}")
+print("En İyi Parametreler:{'ccp_alpha':0.05,'criterion':'gini','max_features':'auto',\n'max_samples':10,'n_estimators':350}")
 
 ```
 
 ### En İyi Parametreli Model
 GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
 ```{python,echo=FALSE}
-RFC_model = RandomForestClassifier(ccp_alpha=0.01,criterion="gini",max_features="sqrt",
-                                   max_samples=10,n_estimators=900,random_state=13).fit(X_train,y_train)
+RFC_model = RandomForestClassifier(ccp_alpha=0.05,criterion="gini",max_features="auto",
+                                   max_samples=10,n_estimators=350,random_state=13).fit(X_train,y_train)
 y_pred = RFC_model.predict(X_test)
 print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
@@ -282,7 +308,7 @@ roc(RandomForestClassifier(ccp_alpha=0.01,criterion="gini",max_features="sqrt",
 ```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/rfc_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve Auc Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_RandomForestClassifier.png")
 ```
 ## eXtreme Gradient Boosting (Xgboost)

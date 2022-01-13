@@ -524,8 +524,16 @@ Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak 
 \subsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi}}
 
 Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+\begin{figure}
+
+{\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/KNN_Grid_Graph} 
+
+}
+
+\caption{Model Train Scores}\label{fig:unnamed-chunk-13}
+\end{figure}
 \begin{verbatim}
-En İyi Parametreler : {'algorithm': 'auto', 'n_neighbors': 33, 'weights': 'distance'}
+En İyi Parametreler:{'algorithm':'auto','n_neighbors':33,'weights':'distance'}
 \end{verbatim}
 \hypertarget{en-iyi-parametreli-model}{%
 \subsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model}}
@@ -551,7 +559,7 @@ Balanced Accuracy Score : 0.6718827333790838
 
 }
 
-\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-17}
+\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-18}
 \end{figure}
 \begin{figure}
 
@@ -559,7 +567,7 @@ Balanced Accuracy Score : 0.6718827333790838
 
 }
 
-\caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve Auc Değeri}\label{fig:unnamed-chunk-18}
+\caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-19}
 \end{figure}
 \hypertarget{rassal-ormanlar-modeli}{%
 \section{Rassal Ormanlar Modeli}\label{rassal-ormanlar-modeli}}
@@ -570,9 +578,17 @@ Bu bölümde veri setimiz üzerinde Rassal Ormanlar modelini kullanacak ve çık
 \subsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-1}}
 
 Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+\begin{figure}
+
+{\centering \includegraphics[width=1.1\linewidth,height=0.5\textheight]{figure/RF_Grid_Graph} 
+
+}
+
+\caption{Model Train Scores}\label{fig:unnamed-chunk-21}
+\end{figure}
 \begin{verbatim}
-En İyi Parametreler : {'ccp_alpha': 0.01,'criterion': 'gini', 'max_features': 'sqrt',
-'max_samples': 10, 'n_estimators': 900}
+En İyi Parametreler:{'ccp_alpha':0.05,'criterion':'gini','max_features':'auto',
+'max_samples':10,'n_estimators':350}
 \end{verbatim}
 \hypertarget{en-iyi-parametreli-model-1}{%
 \subsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-1}}
@@ -581,16 +597,16 @@ GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sı
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.71      0.99      0.83       137
-    Moderate       0.67      0.31      0.42        65
-      Severe       0.94      0.69      0.80        72
+        Mild       0.73      0.99      0.84       137
+    Moderate       0.58      0.34      0.43        65
+      Severe       0.94      0.68      0.79        72
 
     accuracy                           0.75       274
-   macro avg       0.77      0.66      0.68       274
-weighted avg       0.76      0.75      0.72       274
+   macro avg       0.75      0.67      0.69       274
+weighted avg       0.75      0.75      0.73       274
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.6649458273545864
+Balanced Accuracy Score : 0.6681395179570361
 \end{verbatim}
 \begin{figure}
 
@@ -598,7 +614,7 @@ Balanced Accuracy Score : 0.6649458273545864
 
 }
 
-\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-24}
+\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-26}
 \end{figure}
 \begin{figure}
 
@@ -606,7 +622,7 @@ Balanced Accuracy Score : 0.6649458273545864
 
 }
 
-\caption{Rassal Ormanlar Modeli ROC Eğrisi ve Auc Değeri}\label{fig:unnamed-chunk-25}
+\caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-27}
 \end{figure}
 \hypertarget{extreme-gradient-boosting-xgboost}{%
 \section{eXtreme Gradient Boosting (Xgboost)}\label{extreme-gradient-boosting-xgboost}}
