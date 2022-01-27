@@ -151,6 +151,7 @@ Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans 
 
 ```{python,echo=FALSE}
 from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix, ConfusionMatrixDisplay, auc
+import pandas as pd
 from sklearn.multiclass import OneVsRestClassifier
 import matplotlib.pyplot as plt
 from itertools import cycle
@@ -163,10 +164,19 @@ def roc(model):
     y_pred = model.predict_proba(X_test)
     fpr = dict()
     tpr = dict()
+    thresh = dict()
+    thresh_df = pd.DataFrame(columns=["Class","Threshold"])
     roc_auc = dict()
     for i in range(3):
-        fpr[i], tpr[i], _ = roc_curve(y_test, y_pred[:, i],pos_label=i)
+        fpr[i], tpr[i], thresh[i] = roc_curve(y_test, y_pred[:, i],pos_label=i)
         roc_auc[i] = auc(fpr[i], tpr[i])
+    for i,j in zip(thresh.keys(),["mildVsAll","modVsAll","sevVsAll"]):
+        thresh[j] = thresh.pop(i)
+        if j == "sevVsAll" : break
+    for i,j in zip(thresh.keys(),thresh.values()):
+        for x in j:
+            thresh_df = thresh_df.append({"Class":i,"Threshold":x},ignore_index=True)
+    thresh_df.to_csv(f'data/thresholds_{model_name}.csv',index=False)
     colors = cycle(["aqua", "darkorange", "cornflowerblue"])
     for i, color, j in zip(range(3), colors,["Mild","Moderate","Severe"]):
         plt.plot(
@@ -209,6 +219,7 @@ plt.figure(figsize=(10,5),dpi=60);
 sns.lineplot(x=knn.param_n_neighbors,y=knn.mean_test_score*100,hue=knn.param_weights);
 plt.ylabel("Train Scores");
 plt.xlabel("Number of Neighbors");
+plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"])
 plt.savefig("figure/KNN_Grid_Graph.png");
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="55%"}
@@ -275,6 +286,7 @@ plt.ylim(0.703*100,round(ginis.mean_test_score.unique().max()*100,2)+0.1);
 sns.lineplot(y=ginis.mean_test_score*100,x=ginis.param_n_estimators,hue=ginis.param_ccp_alpha,palette=sns.color_palette(n_colors=3),err_style=None);
 plt.ylabel("Train Scores");
 plt.xlabel("Number of Trees in Forest");
+plt.legend(title="Learning Rate",loc="upper right",labels=[0.01,0.05,0.1]);
 plt.savefig("figure/RF_Grid_Graph.png");
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="50%"}
