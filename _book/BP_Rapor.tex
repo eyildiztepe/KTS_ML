@@ -115,7 +115,7 @@
 %\author{Alper ENGİNAtadeniz SAYARCem GÖRENER} %Tek yazar için
 \author{Alper ENGİN \\ Atadeniz SAYAR \\ Cem GÖRENER} %Çok yazar için
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
-\date{Ocak 2022}
+\date{Mart 2022}
 \division{İSTATİSTİK BÖLÜMÜ}
 \advisor{Dr.~Engin YILDIZTEPE}
 \institution{FEN FAKÜLTESİ}
@@ -525,7 +525,7 @@ Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak 
 
 Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
 \begin{verbatim}
-<matplotlib.legend.Legend object at 0x000000006AD5C130>
+<matplotlib.legend.Legend object at 0x000000008791E160>
 \end{verbatim}
 \begin{figure}
 
@@ -630,6 +630,55 @@ Balanced Accuracy Score : 0.6681395179570361
 \hypertarget{extreme-gradient-boosting-xgboost}{%
 \section{eXtreme Gradient Boosting (Xgboost)}\label{extreme-gradient-boosting-xgboost}}
 
+Bu bölümde veri setimiz üzerinde XGBoost modelini kullanacak ve çıktılarını değerlendireceğiz.
+
+\hypertarget{hiper-parametre-seuxe7imi-2}{%
+\subsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-2}}
+
+Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+\begin{figure}
+
+{\centering \includegraphics[width=1.1\linewidth,height=0.5\textheight]{figure/XGB_Grid_Graph} 
+
+}
+
+\caption{Model Train Scores}\label{fig:unnamed-chunk-29}
+\end{figure}
+\begin{verbatim}
+En İyi Parametreler:{'booster':'gbtree2,'eta':0.1,'max_depth':3,'min_child_weight':
+10,'n_estimators':100,'objective':'multi:softprob','sumsample':0.5}
+\end{verbatim}
+GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+\begin{verbatim}
+              precision    recall  f1-score   support
+
+        Mild       0.80      0.89      0.84       137
+    Moderate       0.60      0.57      0.58        65
+      Severe       0.90      0.74      0.81        72
+
+    accuracy                           0.77       274
+   macro avg       0.76      0.73      0.74       274
+weighted avg       0.78      0.77      0.77       274
+\end{verbatim}
+\begin{verbatim}
+Balanced Accuracy Score : 0.7319509430823299
+\end{verbatim}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/xgb_conf} 
+
+}
+
+\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-34}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/roc_curve_XGBClassifier} 
+
+}
+
+\caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-35}
+\end{figure}
 \hypertarget{Bolum4}{%
 \chapter{Bölüm 4 Başlık}\label{Bolum4}}
 

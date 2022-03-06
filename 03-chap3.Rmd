@@ -323,4 +323,67 @@ knitr::include_graphics(path="figure/rfc_conf.png")
 ```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_RandomForestClassifier.png")
 ```
-## eXtreme Gradient Boosting (Xgboost)
+## eXtreme Gradient Boosting (Xgboost)  
+Bu bölümde veri setimiz üzerinde XGBoost modelini kullanacak ve çıktılarını değerlendireceğiz.  
+
+### Hiper Parametre Seçimi  
+Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+```{python,out.height="10%",echo=FALSE}
+from xgboost.sklearn import XGBClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report,balanced_accuracy_score
+XGB_model = XGBClassifier()
+#param_grid = {"booster":["gbtree","gblinear"],
+#              "eta":np.arange(0,1,0.1),
+#              "min_child_weight":np.arange(0,5,1),
+#              "max_depth":np.arange(3,10,1),
+#              "gamma":np.arange(0,1,0.1),
+#              "sumsample":np.arange(0,1,0.1),
+#              "colsample_bytree":np.arange(0,1,.1),
+#              "n_estimators":np.arange(0,1000,50),
+#              "objective":["multi:softmax","multi:softprob"],
+#              "eval_metric":["auc"],
+#              "use_label_encoder":[False]}
+#GSC = GridSearchCV(XGB_model,param_grid=param_grid,cv=10,verbose=1,n_jobs=-1,scoring="accuracy").fit(X_train,y_train)
+resultsxgb = pd.read_csv("data/XGBoost_GridSearch_Results.csv",sep=";")
+resultsxgb = resultsxgb.sort_values("rank_test_score")
+sorted_xgb = resultsxgb[["param_booster","param_eta","param_max_depth","param_min_child_weight","param_n_estimators","param_objective","param_sumsample","mean_test_score","rank_test_score"]]
+#Grafik Çizimi
+plt.figure(figsize=(15,10),dpi=100);
+plt.ylim(0.72*100,round(sorted_xgb.mean_test_score.unique().max()*100,2)+0.05);
+for i in sorted_xgb.param_eta.unique():
+    if i <=0.4:
+        x = sorted_xgb[sorted_xgb.param_eta == i].groupby("param_n_estimators").max()
+        sns.lineplot(x=x.index,y=x.mean_test_score*100);
+plt.legend([.1,.4,.2,.3],loc=1,title="Learning Rate");
+plt.savefig("figure/XGB_Grid_Graph.png");
+```
+```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="50%"}
+knitr::include_graphics(path="figure/XGB_Grid_Graph.png")
+```
+```{python echo=FALSE}
+#print(f'En İyi Parametreler : {GSC.best_params_}')
+print("En İyi Parametreler:{'booster':'gbtree2,'eta':0.1,'max_depth':3,'min_child_weight':\n10,'n_estimators':100,'objective':'multi:softprob','sumsample':0.5}")
+```
+GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+```{python,echo=FALSE}
+XGB_model = XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2).fit(X_train,y_train)
+y_pred = XGB_model.predict(X_test)
+print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
+print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
+```
+
+```{python,echo=FALSE}
+ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
+plt.savefig("figure/xgb_conf.png")
+```
+```{python,echo=FALSE}
+roc(XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2))
+```
+
+```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+knitr::include_graphics(path="figure/xgb_conf.png")
+```
+```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+knitr::include_graphics(path="figure/roc_curve_XGBClassifier.png")
+```
