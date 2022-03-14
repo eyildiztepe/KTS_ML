@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.3.6)  6 MAR 2022 21:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.3.6)  14 MAR 2022 04:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -680,7 +680,7 @@ l.297 ...{Karpal Tünel Sendromu}\label{KTSTanim}}
 
 ]
 Bölüm 1.
-<figure/karpal_tunnel.png, id=272, 255.95625pt x 225.84375pt>
+<figure/karpal_tunnel.png, id=290, 255.95625pt x 225.84375pt>
 File: figure/karpal_tunnel.png Graphic file (type png)
 <use figure/karpal_tunnel.png>
 Package pdftex.def Info: figure/karpal_tunnel.png  used on input line 304.
@@ -689,7 +689,7 @@ Package pdftex.def Info: figure/karpal_tunnel.png  used on input line 304.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [3 <./figure/karpal_tunnel.png>]
-<figure/noropati_test.jpg, id=281, 765.86125pt x 573.14125pt>
+<figure/noropati_test.jpg, id=299, 765.86125pt x 573.14125pt>
 File: figure/noropati_test.jpg Graphic file (type jpg)
 <use figure/noropati_test.jpg>
 Package pdftex.def Info: figure/noropati_test.jpg  used on input line 345.
@@ -706,22 +706,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
-<figure/phalen.png, id=290, 399.4925pt x 331.2375pt>
+<figure/phalen.png, id=308, 399.4925pt x 331.2375pt>
 File: figure/phalen.png Graphic file (type png)
 <use figure/phalen.png>
 Package pdftex.def Info: figure/phalen.png  used on input line 366.
 (pdftex.def)             Requested size: 212.47978pt x 117.07207pt.
-<figure/tinel.jpg, id=291, 451.6875pt x 317.68687pt>
+<figure/tinel.jpg, id=309, 451.6875pt x 317.68687pt>
 File: figure/tinel.jpg Graphic file (type jpg)
 <use figure/tinel.jpg>
 Package pdftex.def Info: figure/tinel.jpg  used on input line 366.
 (pdftex.def)             Requested size: 212.47923pt x 117.07208pt.
-<figure/karpal_komp.jpg, id=292, 186.6975pt x 272.01625pt>
+<figure/karpal_komp.jpg, id=310, 186.6975pt x 272.01625pt>
 File: figure/karpal_komp.jpg Graphic file (type jpg)
 <use figure/karpal_komp.jpg>
 Package pdftex.def Info: figure/karpal_komp.jpg  used on input line 374.
 (pdftex.def)             Requested size: 212.48695pt x 117.07262pt.
-<figure/gerilmis.png, id=293, 271.0125pt x 248.42813pt>
+<figure/gerilmis.png, id=311, 271.0125pt x 248.42813pt>
 File: figure/gerilmis.png Graphic file (type png)
 <use figure/gerilmis.png>
 Package pdftex.def Info: figure/gerilmis.png  used on input line 374.
@@ -738,12 +738,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [5 <./figure/noropati_test.jpg> <./figure/phalen.png> <./figure/tinel.jpg>]
-<figure/ultraradyo.jpg, id=299, 259.97125pt x 194.7275pt>
+<figure/ultraradyo.jpg, id=317, 259.97125pt x 194.7275pt>
 File: figure/ultraradyo.jpg Graphic file (type jpg)
 <use figure/ultraradyo.jpg>
 Package pdftex.def Info: figure/ultraradyo.jpg  used on input line 387.
 (pdftex.def)             Requested size: 212.47566pt x 143.1007pt.
-<figure/radyog.jpg, id=300, 233.87375pt x 217.81375pt>
+<figure/radyog.jpg, id=318, 233.87375pt x 217.81375pt>
 File: figure/radyog.jpg Graphic file (type jpg)
 <use figure/radyog.jpg>
 Package pdftex.def Info: figure/radyog.jpg  used on input line 387.
@@ -753,7 +753,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 380--392
 
  []
 
-<figure/bt.jpg, id=301, 231.86626pt x 218.8175pt>
+<figure/bt.jpg, id=319, 231.86626pt x 218.8175pt>
 File: figure/bt.jpg Graphic file (type jpg)
 <use figure/bt.jpg>
 Package pdftex.def Info: figure/bt.jpg  used on input line 395.
@@ -824,17 +824,17 @@ Overfull \hbox (18.59773pt too wide) in alignment at lines 509--517
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-27.
+30.
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<figure/KNN_Grid_Graph.png, id=339, 722.7pt x 361.35pt>
+<figure/KNN_Grid_Graph.png, id=357, 722.7pt x 361.35pt>
 File: figure/KNN_Grid_Graph.png Graphic file (type png)
 <use figure/KNN_Grid_Graph.png>
-Package pdftex.def Info: figure/KNN_Grid_Graph.png  used on input line 532.
+Package pdftex.def Info: figure/KNN_Grid_Graph.png  used on input line 535.
 (pdftex.def)             Requested size: 476.98347pt x 357.74312pt.
 
-Overfull \hbox (43.36348pt too wide) in paragraph at lines 532--533
+Overfull \hbox (43.36348pt too wide) in paragraph at lines 535--536
  [][] 
  []
 
@@ -851,28 +851,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12]
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-539.
+542.
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<figure/knn_conf.png, id=347, 469.755pt x 325.215pt>
+<figure/knn_conf.png, id=367, 469.755pt x 325.215pt>
 File: figure/knn_conf.png Graphic file (type png)
 <use figure/knn_conf.png>
-Package pdftex.def Info: figure/knn_conf.png  used on input line 561.
+Package pdftex.def Info: figure/knn_conf.png  used on input line 564.
 (pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
 
-Overfull \hbox (21.68343pt too wide) in paragraph at lines 561--562
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 564--565
  [][] 
  []
 
-<figure/roc_curve_KNeighborsClassifier.png, id=348, 469.755pt x 325.215pt>
+<figure/roc_curve_KNeighborsClassifier.png, id=368, 469.755pt x 325.215pt>
 File: figure/roc_curve_KNeighborsClassifier.png Graphic file (type png)
 <use figure/roc_curve_KNeighborsClassifier.png>
 Package pdftex.def Info: figure/roc_curve_KNeighborsClassifier.png  used on inp
-ut line 569.
+ut line 572.
 (pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
 
-Overfull \hbox (21.68343pt too wide) in paragraph at lines 569--570
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 572--573
  [][] 
  []
 
@@ -896,13 +896,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14 <./figure/knn_conf.png>]
-<figure/RF_Grid_Graph.png, id=361, 722.7pt x 361.35pt>
+<figure/RF_Grid_Graph.png, id=382, 722.7pt x 361.35pt>
 File: figure/RF_Grid_Graph.png Graphic file (type png)
 <use figure/RF_Grid_Graph.png>
-Package pdftex.def Info: figure/RF_Grid_Graph.png  used on input line 586.
+Package pdftex.def Info: figure/RF_Grid_Graph.png  used on input line 589.
 (pdftex.def)             Requested size: 476.98347pt x 325.21751pt.
 
-Overfull \hbox (43.36348pt too wide) in paragraph at lines 586--587
+Overfull \hbox (43.36348pt too wide) in paragraph at lines 589--590
  [][] 
  []
 
@@ -918,24 +918,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15 <./figure/roc_curve_KNeighborsClassifier.png>]
-<figure/rfc_conf.png, id=370, 469.755pt x 325.215pt>
+<figure/rfc_conf.png, id=392, 469.755pt x 325.215pt>
 File: figure/rfc_conf.png Graphic file (type png)
 <use figure/rfc_conf.png>
-Package pdftex.def Info: figure/rfc_conf.png  used on input line 616.
+Package pdftex.def Info: figure/rfc_conf.png  used on input line 619.
 (pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
 
-Overfull \hbox (21.68343pt too wide) in paragraph at lines 616--617
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 619--620
  [][] 
  []
 
-<figure/roc_curve_RandomForestClassifier.png, id=371, 469.755pt x 325.215pt>
+<figure/roc_curve_RandomForestClassifier.png, id=393, 469.755pt x 325.215pt>
 File: figure/roc_curve_RandomForestClassifier.png Graphic file (type png)
 <use figure/roc_curve_RandomForestClassifier.png>
 Package pdftex.def Info: figure/roc_curve_RandomForestClassifier.png  used on i
-nput line 624.
+nput line 627.
 (pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
 
-Overfull \hbox (21.68343pt too wide) in paragraph at lines 624--625
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 627--628
  [][] 
  []
 
@@ -959,18 +959,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17 <./figure/rfc_conf.png>]
-<figure/XGB_Grid_Graph.png, id=383, 1084.05pt x 722.7pt>
+<figure/XGB_Grid_Graph.png, id=406, 1084.05pt x 722.7pt>
 File: figure/XGB_Grid_Graph.png Graphic file (type png)
 <use figure/XGB_Grid_Graph.png>
-Package pdftex.def Info: figure/XGB_Grid_Graph.png  used on input line 641.
+Package pdftex.def Info: figure/XGB_Grid_Graph.png  used on input line 647.
 (pdftex.def)             Requested size: 476.98347pt x 325.21199pt.
 
-Overfull \hbox (43.36348pt too wide) in paragraph at lines 641--642
+Overfull \hbox (43.36348pt too wide) in paragraph at lines 647--648
  [][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4205) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -981,24 +981,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18 <./figure/roc_curve_RandomForestClassifier.png>]
-<figure/xgb_conf.png, id=391, 469.755pt x 325.215pt>
+<figure/xgb_conf.png, id=415, 469.755pt x 325.215pt>
 File: figure/xgb_conf.png Graphic file (type png)
 <use figure/xgb_conf.png>
-Package pdftex.def Info: figure/xgb_conf.png  used on input line 668.
+Package pdftex.def Info: figure/xgb_conf.png  used on input line 674.
 (pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
 
-Overfull \hbox (21.68343pt too wide) in paragraph at lines 668--669
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 674--675
  [][] 
  []
 
-<figure/roc_curve_XGBClassifier.png, id=392, 469.755pt x 325.215pt>
+<figure/roc_curve_XGBClassifier.png, id=416, 469.755pt x 325.215pt>
 File: figure/roc_curve_XGBClassifier.png Graphic file (type png)
 <use figure/roc_curve_XGBClassifier.png>
 Package pdftex.def Info: figure/roc_curve_XGBClassifier.png  used on input line
- 676.
+ 682.
 (pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
 
-Overfull \hbox (21.68343pt too wide) in paragraph at lines 676--677
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 682--683
  [][] 
  []
 
@@ -1025,6 +1025,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [20 <./figure/xgb_conf.png>]
+<figure/NN_Grid_Graph.png, id=427, 1084.05pt x 722.7pt>
+File: figure/NN_Grid_Graph.png Graphic file (type png)
+<use figure/NN_Grid_Graph.png>
+Package pdftex.def Info: figure/NN_Grid_Graph.png  used on input line 705.
+(pdftex.def)             Requested size: 476.98347pt x 325.21199pt.
+
+Overfull \hbox (43.36348pt too wide) in paragraph at lines 705--706
+ [][] 
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1033,18 +1043,195 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21 <./figure/roc_curve_XGBClassifier.png>] [22
+[21 <./figure/roc_curve_XGBClassifier.png>]
+<figure/nn_conf.png, id=437, 469.755pt x 325.215pt>
+File: figure/nn_conf.png Graphic file (type png)
+<use figure/nn_conf.png>
+Package pdftex.def Info: figure/nn_conf.png  used on input line 731.
+(pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
 
-]
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 731--732
+ [][] 
+ []
+
+<figure/roc_curve_MLPClassifier.png, id=438, 469.755pt x 325.215pt>
+File: figure/roc_curve_MLPClassifier.png Graphic file (type png)
+<use figure/roc_curve_MLPClassifier.png>
+Package pdftex.def Info: figure/roc_curve_MLPClassifier.png  used on input line
+ 739.
+(pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
+
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 739--740
+ [][] 
+ []
+
+
+Underfull \vbox (badness 3000) has occurred while \output is active []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22 <./figure/NN_Grid_Graph.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23 <./figure/nn_conf.png>]
+<figure/KNN_bin_Grid_Graph.png, id=449, 722.7pt x 361.35pt>
+File: figure/KNN_bin_Grid_Graph.png Graphic file (type png)
+<use figure/KNN_bin_Grid_Graph.png>
+Package pdftex.def Info: figure/KNN_bin_Grid_Graph.png  used on input line 761.
+
+(pdftex.def)             Requested size: 476.98347pt x 357.74312pt.
+
+Overfull \hbox (43.36348pt too wide) in paragraph at lines 761--762
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24 <./figure/roc_curve_MLPClassifier.png>]
+<figure/knn_bin_conf.png, id=459, 469.755pt x 325.215pt>
+File: figure/knn_bin_conf.png Graphic file (type png)
+<use figure/knn_bin_conf.png>
+Package pdftex.def Info: figure/knn_bin_conf.png  used on input line 789.
+(pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
+
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 789--790
+ [][] 
+ []
+
+<figure/KNeighborsClassifier_binary_roc.png, id=460, 722.7pt x 361.35pt>
+File: figure/KNeighborsClassifier_binary_roc.png Graphic file (type png)
+<use figure/KNeighborsClassifier_binary_roc.png>
+Package pdftex.def Info: figure/KNeighborsClassifier_binary_roc.png  used on in
+put line 797.
+(pdftex.def)             Requested size: 455.3034pt x 390.26321pt.
+
+Overfull \hbox (21.68341pt too wide) in paragraph at lines 797--798
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25 <./figure/KNN_bin_Grid_Graph.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26 <./figure/knn_bin_conf.png>]
+<figure/NN_bin_Grid_Graph.png, id=473, 1084.05pt x 722.7pt>
+File: figure/NN_bin_Grid_Graph.png Graphic file (type png)
+<use figure/NN_bin_Grid_Graph.png>
+Package pdftex.def Info: figure/NN_bin_Grid_Graph.png  used on input line 817.
+(pdftex.def)             Requested size: 476.98347pt x 357.74312pt.
+
+Overfull \hbox (43.36348pt too wide) in paragraph at lines 817--818
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27 <./figure/KNeighborsClassifier_binary_roc.png>]
+<figure/nn_bin_conf.png, id=483, 469.755pt x 325.215pt>
+File: figure/nn_bin_conf.png Graphic file (type png)
+<use figure/nn_bin_conf.png>
+Package pdftex.def Info: figure/nn_bin_conf.png  used on input line 845.
+(pdftex.def)             Requested size: 455.30342pt x 390.29079pt.
+
+Overfull \hbox (21.68343pt too wide) in paragraph at lines 845--846
+ [][] 
+ []
+
+<figure/MLPClassifier_binary_roc.png, id=484, 722.7pt x 361.35pt>
+File: figure/MLPClassifier_binary_roc.png Graphic file (type png)
+<use figure/MLPClassifier_binary_roc.png>
+Package pdftex.def Info: figure/MLPClassifier_binary_roc.png  used on input lin
+e 853.
+(pdftex.def)             Requested size: 455.3034pt x 390.26321pt.
+
+Overfull \hbox (21.68341pt too wide) in paragraph at lines 853--854
+ [][] 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28 <./figure/NN_bin_Grid_Graph.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29 <./figure/nn_bin_conf.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30 <./figure/MLPClassifier_binary_roc.png>]
 Bölüm 4.
-[23] [24
+[31
 
-] [25] [26
+] [32
+
+] [33] [34
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[27]
+[35]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1053,32 +1240,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28]
+[36]
 Ek A.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 771.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 948.
 
-LaTeX Warning: Reference `ref-labels' on page 29 undefined on input line 776.
+LaTeX Warning: Reference `ref-labels' on page 37 undefined on input line 953.
 
-[29
+[37
 
-] [30
+] [38
 
 ]
 Ek B.
-[31] (BP_Rapor.aux)
+[39] (BP_Rapor.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
-(rerunfilecheck)             Checksum: B10CB1AA6AABF1782920F0D31051D0E7;4923.
+(rerunfilecheck)             Checksum: 049B7EA9AF6248973A2286F2D02FC954;5267.
  ) 
 Here is how much of TeX's memory you used:
- 16298 strings out of 478659
- 272143 string characters out of 2846869
- 601554 words of memory out of 3000000
- 33797 multiletter control sequences out of 15000+600000
- 460003 words of font info for 137 fonts, out of 8000000 for 9000
+ 16457 strings out of 478659
+ 276625 string characters out of 2846869
+ 602854 words of memory out of 3000000
+ 33906 multiletter control sequences out of 15000+600000
+ 460185 words of font info for 139 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  70i,12n,76p,1007b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Cem/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/
@@ -1095,9 +1282,9 @@ ms/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Cem/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Cem/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Cem/AppData/Local/Programs/MiK
 TeX/fonts/type1/public/lm/lmtti10.pfb>
-Output written on BP_Rapor.pdf (47 pages, 945069 bytes).
+Output written on BP_Rapor.pdf (55 pages, 1338599 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 144 named destinations out of 1000 (max. 500000)
- 31043 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 656 PDF objects out of 1000 (max. 8388607)
+ 181 named destinations out of 1000 (max. 500000)
+ 31088 words of extra memory for PDF output out of 35830 (max. 10000000)
 
