@@ -528,7 +528,7 @@ Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak 
 
 Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
 \begin{verbatim}
-<matplotlib.legend.Legend object at 0x00000000879AC760>
+<matplotlib.legend.Legend object at 0x0000000087A6A760>
 \end{verbatim}
 \begin{figure}
 
@@ -685,8 +685,8 @@ Balanced Accuracy Score : 0.7319509430823299
 
 \caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-35}
 \end{figure}
-\hypertarget{neural-networks-yapay-sinir-aux11flarux131}{%
-\subsection{Neural Networks (Yapay Sinir Ağları)}\label{neural-networks-yapay-sinir-aux11flarux131}}
+\hypertarget{neural-networks-sinir-aux11flarux131}{%
+\subsection{Neural Networks (Sinir Ağları)}\label{neural-networks-sinir-aux11flarux131}}
 
 Bu bölümde veri setimiz üzerinde Neural Networks modelini kullanacak ve çıktılarını değerlendireceğiz.
 
@@ -698,7 +698,7 @@ Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde 
 <AxesSubplot:xlabel='param_hidden_layer_sizes', ylabel='mean_test_score'>
 \end{verbatim}
 \begin{verbatim}
-<matplotlib.legend.Legend object at 0x000000000E4BE2B0>
+<matplotlib.legend.Legend object at 0x000000000B42A520>
 \end{verbatim}
 \begin{figure}
 
@@ -732,7 +732,7 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Yapay Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-42}
+\caption{Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-42}
 \end{figure}
 \begin{figure}
 
@@ -740,12 +740,13 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-43}
+\caption{Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-43}
 \end{figure}
 \hypertarget{iki-sux131nux131flux131-sux131nux131flama}{%
 \section{İki Sınıflı Sınıflama}\label{iki-sux131nux131flux131-sux131nux131flama}}
 
-Bu bölümde orijinal hali 3 sınıftan oluşan veri setimizdeki görece az gözleme sahip olan 2 sınıfı birleştirip, 2 sınıflı probleme çözüm arayacağız.
+Bu bölümde orijinal hali 3. Sınıftan oluşan ilk verimizde orta ve ağır ciddiyet sınıflandırmasına sahip olan gözlemler birleştirilerek sadece iki sınıflı bir sınıflama problemi yapılmıştır.\\
+Verimiz \%70'e \%30 oranında Eğitim ve Test verisi olarak ayrılmıştır.
 
 \hypertarget{k-en-yakux131n-komux15fuluk-modeli-1}{%
 \subsection{K-En Yakın Komşuluk Modeli}\label{k-en-yakux131n-komux15fuluk-modeli-1}}
@@ -800,31 +801,137 @@ Balanced Accuracy Score : 0.8153903070662227
 
 \caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-52}
 \end{figure}
-\hypertarget{neural-network-yapay-sinir-aux11flarux131-modeli}{%
-\subsection{Neural Network (Yapay Sinir Ağları) Modeli}\label{neural-network-yapay-sinir-aux11flarux131-modeli}}
+\hypertarget{rassal-ormanlar-modeli-1}{%
+\subsection{Rassal Ormanlar Modeli}\label{rassal-ormanlar-modeli-1}}
 
-Bu bölümde veri setimiz üzerinde yapar sinir ağları modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri setimiz üzerinde rassal ormanlar modelini kullanacak ve çıktılarını değerlendireceğiz.
 
 \hypertarget{hiper-parametre-seuxe7imi-5}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-5}}
 
 Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.
-\begin{verbatim}
-<AxesSubplot:xlabel='param_hidden_layer_sizes', ylabel='mean_test_score'>
-\end{verbatim}
 \begin{figure}
 
-{\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/NN_bin_Grid_Graph} 
+{\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/RF_bin_Grid_Graph} 
 
 }
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-54}
 \end{figure}
 \begin{verbatim}
-En İyi Parametreler:{'activation': 'relu', 'hidden_layer_sizes': 19, 'learning_rate': 'adaptive'}
+En İyi Parametreler:{'ccp_alpha': 0.01, 'max_features': 'auto', 'max_samples': 10, 'n_estimators': 400}
 \end{verbatim}
 \hypertarget{en-iyi-parametreli-model-3}{%
 \subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-3}}
+
+GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+\begin{verbatim}
+              precision    recall  f1-score   support
+
+        Mild       0.77      0.87      0.82       153
+     Mod+Sev       0.86      0.75      0.80       159
+
+    accuracy                           0.81       312
+   macro avg       0.82      0.81      0.81       312
+weighted avg       0.82      0.81      0.81       312
+\end{verbatim}
+\begin{verbatim}
+Balanced Accuracy Score : 0.8119990134418548
+\end{verbatim}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/rf_bin_conf} 
+
+}
+
+\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-59}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/RandomForestClassifier_binary_roc} 
+
+}
+
+\caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-60}
+\end{figure}
+\hypertarget{xgboost-1}{%
+\subsection{XGBoost}\label{xgboost-1}}
+
+Bu bölümde veri setimiz üzerinde XGBoost modelini kullanacak ve çıktılarını değerlendireceğiz.
+
+\hypertarget{hiper-parametre-seuxe7imi-6}{%
+\subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-6}}
+
+Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.
+\begin{figure}
+
+{\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/XGB_bin_Grid_Graph} 
+
+}
+
+\caption{Model Train Scores}\label{fig:unnamed-chunk-62}
+\end{figure}
+\begin{verbatim}
+En İyi Parametreler:{'eta': 0.2, 'max_depth': 10, 'min_child_weight': 10, 'n_estimators': 400}
+\end{verbatim}
+\hypertarget{en-iyi-parametreli-model-4}{%
+\subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-4}}
+
+GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+\begin{verbatim}
+              precision    recall  f1-score   support
+
+        Mild       0.82      0.82      0.82       153
+     Mod+Sev       0.82      0.83      0.83       159
+
+    accuracy                           0.82       312
+   macro avg       0.82      0.82      0.82       312
+weighted avg       0.82      0.82      0.82       312
+\end{verbatim}
+\begin{verbatim}
+Balanced Accuracy Score : 0.8235910716487853
+\end{verbatim}
+\begin{verbatim}
+<string>:4: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+\end{verbatim}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/XGB_bin_conf} 
+
+}
+
+\caption{XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-67}
+\end{figure}
+\begin{figure}
+
+{\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/XGBClassifier_binary_roc} 
+
+}
+
+\caption{XGBoost Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-68}
+\end{figure}
+\hypertarget{neural-network-sinir-aux11flarux131-modeli}{%
+\subsection{Neural Network (Sinir Ağları) Modeli}\label{neural-network-sinir-aux11flarux131-modeli}}
+
+Bu bölümde veri setimiz üzerinde yapar sinir ağları modelini kullanacak ve çıktılarını değerlendireceğiz.
+
+\hypertarget{hiper-parametre-seuxe7imi-7}{%
+\subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-7}}
+
+Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.
+\begin{figure}
+
+{\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/NN_bin_Grid_Graph} 
+
+}
+
+\caption{Model Train Scores}\label{fig:unnamed-chunk-70}
+\end{figure}
+\begin{verbatim}
+En İyi Parametreler:{'activation': 'relu', 'hidden_layer_sizes': 19, 'learning_rate': 'adaptive'}
+\end{verbatim}
+\hypertarget{en-iyi-parametreli-model-5}{%
+\subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-5}}
 
 GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
 \begin{verbatim}
@@ -846,7 +953,7 @@ Balanced Accuracy Score : 0.8116290541373783
 
 }
 
-\caption{Yapar Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-59}
+\caption{Yapar Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-75}
 \end{figure}
 \begin{figure}
 
@@ -854,7 +961,7 @@ Balanced Accuracy Score : 0.8116290541373783
 
 }
 
-\caption{Yapar Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-60}
+\caption{Yapar Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-76}
 \end{figure}
 \hypertarget{Bolum4}{%
 \chapter{Bölüm 4 Başlık}\label{Bolum4}}
