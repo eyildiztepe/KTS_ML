@@ -418,12 +418,36 @@ Bu bölümde uygulama kısmında kullanmış olduğumuz sınıflama algoritmalar
 \hypertarget{knn}{%
 \section{K - En Yakın Komşuluk Algoritamsı (K-NN)}\label{knn}}
 
-Öklid uzaklığı benzeri uzaklıklar ile tahminlenecek gözleme en yakın k adet gözlemin en fazla olduğu sınıfı atar.
+K-NN algoritması, T. M. Cover ve P. E. Hart tarafından önerilen, örnek veri noktasının bulunduğu sınıfın ve en yakın komşunun, k değerine göre belirlendiği bir sınıflandırma yöntemidir(Cover ve Hart, 1967).\\
+K-NN algoritması, en temel örnek tabanlı öğrenme algoritmaları arasındadır. Örnek tabanlı öğrenme algoritmalarında, öğrenme işlemi eğitim setinde tutulan verilere dayalı olarak gerçekleştirilmektedir. Yeni karşılaşılan bir örnek, eğitim setinde yer alan örnekler ile arasındaki benzerliğe göre sınıflandırılmaktadır (Mitchell ve Learning, 1997). K-NN algoritmasında, eğitim setinde yer alan örnekler n boyutlu sayısal nitelikler ile belirtilir. Her örnek n boyutlu uzayda bir noktayı temsil edecek biçimde tüm eğitim örnekleri n boyutlu bir örnek uzayında tutulur. Bilinmeyen bir örnek ile karşılaşıldığında, eğitim setinden ilgili örneğe en yakın k tane örnek belirlenerek yeni örneğin sınıf etiketi, k en yakın komşusunun sınıf etiketlerinin çoğunluk oylamasına göre atanır (Mining, 2006).
 
-\hypertarget{cart}{%
-\section{Sınıflama ve Regresyon Ağaçları (CART)}\label{cart}}
+\hypertarget{k-nn-parametleri}{%
+\subsection{K-NN Parametleri}\label{k-nn-parametleri}}
 
-İnsanın karar verme süreci olan dallanmış karar verme yapısını taklid eder.
+K-NN algoritmasında performansı etkileyen 3 adet hiper parametre mevcuttur. Bunlar; Uzaklık ölçütü, komşu sayısı(k) ve ağırlıklandırma yöntemidir.
+
+\hypertarget{uzaklux131k-uxf6luxe7uxfctuxfc}{%
+\subsubsection{Uzaklık Ölçütü}\label{uzaklux131k-uxf6luxe7uxfctuxfc}}
+
+En bilinen ve yaygın olarak kullanılan 3 uzaklık;
+\begin{itemize}
+\tightlist
+\item
+  Minkowski Uzaklığı\\
+\item
+  Öklid Uzaklığı\\
+\item
+  Manhattan Uzaklığı
+\end{itemize}
+\hypertarget{komux15fu-sayux131sux131-k}{%
+\subsubsection{Komşu Sayısı (k)}\label{komux15fu-sayux131sux131-k}}
+
+En yakın komşuluk algoritmasında komşu sayısına (k) göre sınıflama yapıldığından algoritma için en önemli parametresi olduğu söylenebilir. k = 5 olarak belirlendiğinde yeni gözlem kendisine en yakın 5 değer baz alınarak sınıflandırılır.
+
+\hypertarget{aux11fux131rlux131klandux131rma}{%
+\subsubsection{Ağırlıklandırma}\label{aux11fux131rlux131klandux131rma}}
+
+Komşular için ağırlık değerleri atanması ile sınıflandırılmakta olan örneğe daha yakın olan komşu örneklerin, çoğunluk oylamasına daha fazla katkı koyması amaçlanır. En çok kullanılan ağırlık değeri atama yöntemleri, her bir komşunun ağırlığının, d, komşular arası uzaklık olmak üzere, 1/d ya da \(1/d^2\) şeklinde alınmasıdır (Doad ve Bartere, 2013).
 
 \hypertarget{random_forest}{%
 \section{Rassal Ormanlar}\label{random_forest}}
@@ -431,7 +455,7 @@ Bu bölümde uygulama kısmında kullanmış olduğumuz sınıflama algoritmalar
 Torbalama yöntemi ile oluşturulmuş n adet karar ağacının sonuca göre çalışır.
 
 \hypertarget{xgboost}{%
-\section{Extreme Gradyan Artışı}\label{xgboost}}
+\section{XGBoost}\label{xgboost}}
 
 NO COMMENT
 
@@ -528,7 +552,7 @@ Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak 
 
 Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
 \begin{verbatim}
-<matplotlib.legend.Legend object at 0x0000000087A6A760>
+<matplotlib.legend.Legend object at 0x000000008797D790>
 \end{verbatim}
 \begin{figure}
 
@@ -685,8 +709,8 @@ Balanced Accuracy Score : 0.7319509430823299
 
 \caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-35}
 \end{figure}
-\hypertarget{neural-networks-sinir-aux11flarux131}{%
-\subsection{Neural Networks (Sinir Ağları)}\label{neural-networks-sinir-aux11flarux131}}
+\hypertarget{neural-networks-yapay-sinir-aux11flarux131}{%
+\subsection{Neural Networks (Yapay Sinir Ağları)}\label{neural-networks-yapay-sinir-aux11flarux131}}
 
 Bu bölümde veri setimiz üzerinde Neural Networks modelini kullanacak ve çıktılarını değerlendireceğiz.
 
@@ -698,7 +722,7 @@ Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde 
 <AxesSubplot:xlabel='param_hidden_layer_sizes', ylabel='mean_test_score'>
 \end{verbatim}
 \begin{verbatim}
-<matplotlib.legend.Legend object at 0x000000000B42A520>
+<matplotlib.legend.Legend object at 0x000000000C3F9520>
 \end{verbatim}
 \begin{figure}
 
@@ -732,7 +756,7 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-42}
+\caption{Yapay Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-42}
 \end{figure}
 \begin{figure}
 
@@ -740,13 +764,12 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-43}
+\caption{Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-43}
 \end{figure}
 \hypertarget{iki-sux131nux131flux131-sux131nux131flama}{%
 \section{İki Sınıflı Sınıflama}\label{iki-sux131nux131flux131-sux131nux131flama}}
 
-Bu bölümde orijinal hali 3. Sınıftan oluşan ilk verimizde orta ve ağır ciddiyet sınıflandırmasına sahip olan gözlemler birleştirilerek sadece iki sınıflı bir sınıflama problemi yapılmıştır.\\
-Verimiz \%70'e \%30 oranında Eğitim ve Test verisi olarak ayrılmıştır.
+Bu bölümde orijinal hali 3 sınıftan oluşan veri setimizdeki görece az gözleme sahip olan 2 sınıfı birleştirip, 2 sınıflı probleme çözüm arayacağız.
 
 \hypertarget{k-en-yakux131n-komux15fuluk-modeli-1}{%
 \subsection{K-En Yakın Komşuluk Modeli}\label{k-en-yakux131n-komux15fuluk-modeli-1}}
@@ -828,15 +851,15 @@ GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sı
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.77      0.87      0.82       153
-     Mod+Sev       0.86      0.75      0.80       159
+        Mild       0.79      0.86      0.82       153
+     Mod+Sev       0.85      0.77      0.81       159
 
-    accuracy                           0.81       312
-   macro avg       0.82      0.81      0.81       312
-weighted avg       0.82      0.81      0.81       312
+    accuracy                           0.82       312
+   macro avg       0.82      0.82      0.82       312
+weighted avg       0.82      0.82      0.82       312
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.8119990134418548
+Balanced Accuracy Score : 0.8181650018497966
 \end{verbatim}
 \begin{figure}
 
@@ -891,9 +914,6 @@ weighted avg       0.82      0.82      0.82       312
 \begin{verbatim}
 Balanced Accuracy Score : 0.8235910716487853
 \end{verbatim}
-\begin{verbatim}
-<string>:4: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
-\end{verbatim}
 \begin{figure}
 
 {\centering \includegraphics[width=1.05\linewidth,height=0.6\textheight]{figure/XGB_bin_conf} 
@@ -910,10 +930,10 @@ Balanced Accuracy Score : 0.8235910716487853
 
 \caption{XGBoost Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-68}
 \end{figure}
-\hypertarget{neural-network-sinir-aux11flarux131-modeli}{%
-\subsection{Neural Network (Sinir Ağları) Modeli}\label{neural-network-sinir-aux11flarux131-modeli}}
+\hypertarget{neural-network-yapay-sinir-aux11flarux131-modeli}{%
+\subsection{Neural Network (Yapay Sinir Ağları) Modeli}\label{neural-network-yapay-sinir-aux11flarux131-modeli}}
 
-Bu bölümde veri setimiz üzerinde yapar sinir ağları modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri setimiz üzerinde yapay sinir ağları modelini kullanacak ve çıktılarını değerlendireceğiz.
 
 \hypertarget{hiper-parametre-seuxe7imi-7}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-7}}
@@ -1001,6 +1021,12 @@ Aroori, S. ve Spence, R. (2008). Carpal Tunnel Syndrome. \emph{The Ulster Medica
 \leavevmode\vadjust pre{\hypertarget{ref-kts_bagatur}{}}%
 Bagatur, A. E. (2006). Karpal Tünel Sendromu. \emph{Türkiye Klinikleri J Surg Med Sci.}, \emph{2}(17), 52-63.
 
+\leavevmode\vadjust pre{\hypertarget{ref-knn-info}{}}%
+Cover, T. ve Hart, P. (1967). Nearest neighbor pattern classification. \emph{IEEE Transactions on Information Theory}, \emph{13}(1), 21-27. doi:\href{https://doi.org/10.1109/TIT.1967.1053964}{10.1109/TIT.1967.1053964}
+
+\leavevmode\vadjust pre{\hypertarget{ref-doad2013review}{}}%
+Doad, P. ve Bartere, M. (2013). A Review: Study of Various Clustering Techniques. \emph{International Journal of Engineering Research \& Technology}, \emph{2}(11), 3141-3145.
+
 \leavevmode\vadjust pre{\hypertarget{ref-ghasemi2014handy}{}}%
 Ghasemi-Rad, M., Nosair, E., Vegh, A., Mohammadi, A., Akkad, A., Lesha, E., \ldots{} others. (2014). A handy review of carpal tunnel syndrome: From anatomy to diagnosis and treatment. \emph{World journal of radiology}, \emph{6}(6), 284.
 
@@ -1018,6 +1044,12 @@ Levine, D. W., Simmons, B. P., Koris, M. J., Daltroy, L. H., Hohl, G. G., Fossel
 
 \leavevmode\vadjust pre{\hypertarget{ref-1995love}{}}%
 Love, J. (1955). Median neuritis or carpal tunnel syndrome; diagnosis and treatment. \emph{North Carolina medical journal}, \emph{16}(10), 463-469.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mining2006data}{}}%
+Mining, W. I. D. (2006). Data mining: Concepts and techniques. \emph{Morgan Kaufinann}, \emph{10}, 559-569.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mlmcgraw}{}}%
+Mitchell, T. M. ve Learning, M. (1997). McGraw-Hill. \emph{New York}, 154-200.
 
 \leavevmode\vadjust pre{\hypertarget{ref-park2021machine}{}}%
 Park, D., Kim, B. H., Lee, S.-E., Kim, D. Y., Kim, M., Kwon, H. D., \ldots{} Lee, J. W. (2021). Machine learning-based approach for disease severity classification of carpal tunnel syndrome. \emph{Scientific Reports}, \emph{11}(1), 1-10.

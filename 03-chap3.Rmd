@@ -392,7 +392,7 @@ knitr::include_graphics(path="figure/xgb_conf.png")
 ```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_XGBClassifier.png")
 ```  
-### Neural Networks (Sinir Ağları) 
+### Neural Networks (Yapay Sinir Ağları) 
 Bu bölümde veri setimiz üzerinde Neural Networks modelini kullanacak ve çıktılarını değerlendireceğiz.  
 
 #### Hiper Parametre Seçimi  
@@ -438,17 +438,16 @@ plt.savefig("figure/nn_conf.png")
 roc(MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",random_state=13,max_iter=3000))
 ```
 
-```{r echo=FALSE,fig.align="center",fig.cap="Sinir Ağları Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Yapay Sinir Ağları Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/nn_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_MLPClassifier.png")
 ```  
 
 ## İki Sınıflı Sınıflama  
 
-Bu bölümde orijinal hali 3. Sınıftan oluşan ilk verimizde orta ve ağır ciddiyet sınıflandırmasına sahip olan gözlemler birleştirilerek sadece iki sınıflı bir sınıflama problemi yapılmıştır.  
-Verimiz %70'e %30 oranında Eğitim ve Test verisi olarak ayrılmıştır.
+Bu bölümde orijinal hali 3 sınıftan oluşan veri setimizdeki görece az gözleme sahip olan 2 sınıfı birleştirip, 2 sınıflı probleme çözüm arayacağız.
 ```{python echo=FALSE}
 from sklearn.model_selection import train_test_split
 bin_data = pd.read_csv("data/binary_data.csv",sep=";")
@@ -653,12 +652,14 @@ print(classification_report(ybin_test,ybin_pred,target_names=["Mild","Mod+Sev"])
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(ybin_test,ybin_pred)}')
 ```
 
-```{python echo=FALSE}
+```{python echo=FALSE,message=FALSE,warning=FALSE}
 ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),display_labels=["Mild","Mod+Sev"]).plot();
 plt.savefig("figure/XGB_bin_conf.png")
+plt.close('all')
 ```
-```{python echo=FALSE}
+```{python echo=FALSE,message=FALSE,warning=FALSE}
 roc_bin(XGB_modelbin)
+plt.close('all')
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="XGBoost Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/XGB_bin_conf.png")
@@ -668,9 +669,9 @@ knitr::include_graphics(path="figure/XGBClassifier_binary_roc.png")
 ```  
 
 
-### Neural Network (Sinir Ağları)  Modeli
+### Neural Network (Yapay Sinir Ağları)  Modeli
 
-Bu bölümde veri setimiz üzerinde yapar sinir ağları modelini kullanacak ve çıktılarını değerlendireceğiz.  
+Bu bölümde veri setimiz üzerinde yapay sinir ağları modelini kullanacak ve çıktılarını değerlendireceğiz.  
 
 #### Hiper Parametre Seçimi  
 

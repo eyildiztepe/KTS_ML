@@ -2,15 +2,29 @@
 Bu bölümde uygulama kısmında kullanmış olduğumuz sınıflama algoritmalarına değineceğiz.  
 
 ## K - En Yakın Komşuluk Algoritamsı (K-NN) {#knn}
-Öklid uzaklığı benzeri uzaklıklar ile tahminlenecek gözleme en yakın k adet gözlemin en fazla olduğu sınıfı atar.  
+K-NN algoritması, T. M. Cover ve P. E. Hart tarafından önerilen, örnek veri noktasının bulunduğu sınıfın ve en yakın komşunun, k değerine göre belirlendiği bir sınıflandırma yöntemidir[@knn-info].  
+K-NN algoritması, en temel örnek tabanlı öğrenme algoritmaları arasındadır. Örnek tabanlı öğrenme algoritmalarında, öğrenme işlemi eğitim setinde tutulan verilere dayalı olarak gerçekleştirilmektedir. Yeni karşılaşılan bir örnek, eğitim setinde yer alan örnekler ile arasındaki benzerliğe göre sınıflandırılmaktadır [@mlmcgraw]. K-NN algoritmasında, eğitim setinde yer alan örnekler n boyutlu sayısal nitelikler ile belirtilir. Her örnek n boyutlu uzayda bir noktayı temsil edecek biçimde tüm eğitim örnekleri n boyutlu bir örnek uzayında tutulur. Bilinmeyen bir örnek ile karşılaşıldığında, eğitim setinden ilgili örneğe en yakın k tane örnek belirlenerek yeni örneğin sınıf etiketi, k en yakın komşusunun sınıf etiketlerinin çoğunluk oylamasına göre atanır [@mining2006data].  
 
-## Sınıflama ve Regresyon Ağaçları (CART) {#cart}
-İnsanın karar verme süreci olan dallanmış karar verme yapısını taklid eder.  
+### K-NN Parametleri
+K-NN algoritmasında performansı etkileyen 3 adet hiper parametre mevcuttur. Bunlar; Uzaklık ölçütü, komşu sayısı(k) ve ağırlıklandırma yöntemidir.  
+
+#### Uzaklık Ölçütü  
+En bilinen ve yaygın olarak kullanılan 3 uzaklık;  
+
+* Minkowski Uzaklığı  
+* Öklid Uzaklığı  
+* Manhattan Uzaklığı  
+
+#### Komşu Sayısı (k)  
+En yakın komşuluk algoritmasında komşu sayısına (k) göre sınıflama yapıldığından algoritma için en önemli parametresi olduğu söylenebilir. k = 5 olarak belirlendiğinde yeni gözlem kendisine en yakın 5 değer baz alınarak sınıflandırılır.  
+
+#### Ağırlıklandırma  
+Komşular için ağırlık değerleri atanması ile sınıflandırılmakta olan örneğe daha yakın olan komşu örneklerin, çoğunluk oylamasına daha fazla katkı koyması amaçlanır. En çok kullanılan ağırlık değeri atama yöntemleri, her bir komşunun ağırlığının, d, komşular arası uzaklık olmak üzere, 1/d ya da $1/d^2$ şeklinde alınmasıdır [@doad2013review].  
 
 ## Rassal Ormanlar {#random_forest}
 Torbalama yöntemi ile oluşturulmuş n adet karar ağacının sonuca göre çalışır.  
 
-## Extreme Gradyan Artışı {#xgboost}
+## XGBoost {#xgboost}
 NO COMMENT  
 
 ## Yapay Sinir Ağları {#nn}
