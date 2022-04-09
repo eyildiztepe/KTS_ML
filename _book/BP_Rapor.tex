@@ -115,7 +115,7 @@
 %\author{Alper ENGİNAtadeniz SAYARCem GÖRENER} %Tek yazar için
 \author{Alper ENGİN \\ Atadeniz SAYAR \\ Cem GÖRENER} %Çok yazar için
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
-\date{Mart 2022}
+\date{Nisan 2022}
 \division{İSTATİSTİK BÖLÜMÜ}
 \advisor{Dr.~Engin YILDIZTEPE}
 \institution{FEN FAKÜLTESİ}
@@ -539,21 +539,27 @@ Gece Ağrıları, n (\%) & 102 (20.1) & 142 (51.4) & 212 (83.5) & 0 \\
 Avuç İçi Zayıflık ve/veya Körelme, n (\%) & 1 (0.2) & 24 (8.7) & 169 (66.5) & 0 \\
 \bottomrule
 \end{longtable}
-\hypertarget{uxe7ok-sux131nux131flux131multiclass-sux131nux131flama-problemi}{%
-\section{Çok Sınıflı(Multiclass) Sınıflama Problemi}\label{uxe7ok-sux131nux131flux131multiclass-sux131nux131flama-problemi}}
+Bu çalışmada, KTS ciddiyet sınıflandırması için K-En Yakın Komşuluk, Rassal Ormanlar, Sinir Ağları ve XGBoost yöntemleri kullanılmıştır.\\
+İlk olarak orijinal verilerdeki 3 sınıf (Mild, Moderate, Severe) için sınıflandırma hedeflenmiştir.\\
+Bölüm \ref{multiclass} de bu problem için farklı modeller ile elde edilen sonuçlara yer verilmiştir.\\
+Uygulamanın ikinci bölümünde hedef değişken iki sınıfa indirgenmiş ve bu probleme ait sonuçlar bölüm \ref{binary} de paylaşılmıştır.\\
+Uygulamada Python programlama dili ve Scikit-Learn, Pandas, Numpy, Matplotlib,XGBoost kütüphanelerinden yararlanılmıştır.\\
+Bu bölümde modellerin performanslarını değerlendirmek üzere kesinlik, duyarlılık, F1-skoru, doğruluk oranı, dengelenmiş doğruluk oranı hesaplanmıştır.
 
-\hypertarget{k-en-yakux131n-komux15fuluk-modeli}{%
-\subsection{K-En Yakın Komşuluk Modeli}\label{k-en-yakux131n-komux15fuluk-modeli}}
+\hypertarget{multiclass}{%
+\section{Çok Sınıflı(Multiclass) Sınıflama Problemi}\label{multiclass}}
 
-Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin 3 farklı ciddiyet düzeyine sahip olduğu durumda farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.
+
+\hypertarget{mult_knn}{%
+\subsection{K-En Yakın Komşuluk Modeli}\label{mult_knn}}
+
+Bu bölümde veri seti üzerinde K - En yakın komşuluk modeli kullanılmış ve çıktıları değerlendirilmiştir.
 
 \hypertarget{hiper-parametre-seuxe7imi}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi}}
 
-Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
-\begin{verbatim}
-<matplotlib.legend.Legend object at 0x000000008797D790>
-\end{verbatim}
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 \begin{figure}
 
 {\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/KNN_Grid_Graph} 
@@ -562,13 +568,22 @@ Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde 
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-13}
 \end{figure}
-\begin{verbatim}
-En İyi Parametreler:{'algorithm':'auto','n_neighbors':33,'weights':'distance'}
-\end{verbatim}
+K-En yakın komşuluk modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
+\begin{itemize}
+\tightlist
+\item
+  `algorithm':`auto'
+\item
+  `n\_neighbors':33
+\item
+  `weights':`distance'
+\end{itemize}
+\newpage
+
 \hypertarget{en-iyi-parametreli-model}{%
 \subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model}}
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 \begin{verbatim}
               precision    recall  f1-score   support
 
@@ -599,15 +614,15 @@ Balanced Accuracy Score : 0.6718827333790838
 
 \caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-19}
 \end{figure}
-\hypertarget{rassal-ormanlar-modeli}{%
-\subsection{Rassal Ormanlar Modeli}\label{rassal-ormanlar-modeli}}
+\hypertarget{mult_rf}{%
+\subsection{Rassal Ormanlar Modeli}\label{mult_rf}}
 
-Bu bölümde veri setimiz üzerinde Rassal Ormanlar modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri seti üzerinde rassal ormanlar modeli kullanılmış ve çıktıları değerlendirilmiştir.
 
 \hypertarget{hiper-parametre-seuxe7imi-1}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-1}}
 
-Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 \begin{figure}
 
 {\centering \includegraphics[width=1.1\linewidth,height=0.5\textheight]{figure/RF_Grid_Graph} 
@@ -616,14 +631,28 @@ Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde 
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-21}
 \end{figure}
-\begin{verbatim}
-En İyi Parametreler:{'ccp_alpha':0.05,'criterion':'gini','max_features':'auto',
-'max_samples':10,'n_estimators':350}
-\end{verbatim}
+Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
+\begin{itemize}
+\tightlist
+\item
+  `ccp\_alpha':0.05
+\item
+  `criterion':`gini'
+\item
+  `weights':`distance'
+\item
+  `max\_features':`auto'
+\item
+  `max\_samples':10
+\item
+  `n\_estimators':350
+\end{itemize}
+\newpage
+
 \hypertarget{en-iyi-parametreli-model-1}{%
 \subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-1}}
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 \begin{verbatim}
               precision    recall  f1-score   support
 
@@ -654,18 +683,15 @@ Balanced Accuracy Score : 0.6681395179570361
 
 \caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-27}
 \end{figure}
-\hypertarget{extreme-gradient-boosting-xgboost}{%
-\subsection{eXtreme Gradient Boosting (Xgboost)}\label{extreme-gradient-boosting-xgboost}}
+\hypertarget{mult_xgb}{%
+\subsection{eXtreme Gradient Boosting (XGBoost)}\label{mult_xgb}}
 
-Bu bölümde veri setimiz üzerinde XGBoost modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri seti üzerinde XGBoost modeli kullanılmış ve çıktıları değerlendirilmiştir.
 
 \hypertarget{hiper-parametre-seuxe7imi-2}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-2}}
 
-Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
-\begin{verbatim}
-Text(0, 0.5, 'Eğitim Verisi Doğruluk Skoru (%)')
-\end{verbatim}
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 \begin{figure}
 
 {\centering \includegraphics[width=1.1\linewidth,height=0.5\textheight]{figure/XGB_Grid_Graph} 
@@ -674,11 +700,25 @@ Text(0, 0.5, 'Eğitim Verisi Doğruluk Skoru (%)')
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-29}
 \end{figure}
-\begin{verbatim}
-En İyi Parametreler:{'booster':'gbtree2,'eta':0.1,'max_depth':3,'min_child_weight':
-10,'n_estimators':100,'objective':'multi:softprob','sumsample':0.5}
-\end{verbatim}
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
+\begin{itemize}
+\tightlist
+\item
+  `eta':0.1
+\item
+  `max\_depth':3
+\item
+  `min\_child\_weight':10
+\item
+  `n\_estimators':100
+\item
+  `objective':`multi:softprob'
+\item
+  `sumsample':0.5
+\end{itemize}
+\newpage
+
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 \begin{verbatim}
               precision    recall  f1-score   support
 
@@ -699,7 +739,7 @@ Balanced Accuracy Score : 0.7319509430823299
 
 }
 
-\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-34}
+\caption{XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-34}
 \end{figure}
 \begin{figure}
 
@@ -707,23 +747,17 @@ Balanced Accuracy Score : 0.7319509430823299
 
 }
 
-\caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-35}
+\caption{XGBoost Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-35}
 \end{figure}
-\hypertarget{neural-networks-yapay-sinir-aux11flarux131}{%
-\subsection{Neural Networks (Yapay Sinir Ağları)}\label{neural-networks-yapay-sinir-aux11flarux131}}
+\hypertarget{mult_nn}{%
+\subsection{Neural Networks (Yapay Sinir Ağları)}\label{mult_nn}}
 
-Bu bölümde veri setimiz üzerinde Neural Networks modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri seti üzerinde sinir ağları modeli kullanılmış ve çıktıları değerlendirilmiştir.
 
 \hypertarget{hiper-parametre-seuxe7imi-3}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-3}}
 
-Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
-\begin{verbatim}
-<AxesSubplot:xlabel='param_hidden_layer_sizes', ylabel='mean_test_score'>
-\end{verbatim}
-\begin{verbatim}
-<matplotlib.legend.Legend object at 0x000000000C3F9520>
-\end{verbatim}
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 \begin{figure}
 
 {\centering \includegraphics[width=1.1\linewidth,height=0.5\textheight]{figure/NN_Grid_Graph} 
@@ -732,10 +766,19 @@ Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde 
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-37}
 \end{figure}
-\begin{verbatim}
-En İyi Parametreler:{'activation':'relu','hidden_layer_sizes':19,'learning_rate':'adaptive'}
-\end{verbatim}
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Yapar sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
+\begin{itemize}
+\tightlist
+\item
+  `activation':`relu'
+\item
+  'hidden\_layer\_sizes:19
+\item
+  `learning\_rate':`adaptive'
+\end{itemize}
+\newpage
+
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 \begin{verbatim}
               precision    recall  f1-score   support
 
@@ -756,7 +799,7 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Yapay Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-42}
+\caption{Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-42}
 \end{figure}
 \begin{figure}
 
@@ -764,15 +807,22 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-43}
+\caption{Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-43}
 \end{figure}
-\hypertarget{iki-sux131nux131flux131-sux131nux131flama}{%
-\section{İki Sınıflı Sınıflama}\label{iki-sux131nux131flux131-sux131nux131flama}}
+\hypertarget{uxe7ok-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}{%
+\subsection{Çok Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}\label{uxe7ok-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}}
+
+Bölüm \ref{mult_knn}, \ref{mult_rf}, \ref{mult_xgb} ve \ref{mult_nn} den elde edilen sonuçlar incelenmiş olup, üç sınıflı problem için \%77 doğru sınıflama oranı ile en iyi model XGBoost olarak bulunmuştur.\\
+Bölüm \ref{mult_xgb} de bulunan performans metrikleri yakından incelendiğinde, duyarlılık metriği `Moderate' ve `Severe' sınıfları için `Mild' sınıfına kıyasla daha düşük kalmıştır.\\
+Duyarlılık metriğindeki düşüklüğün sebep olabileceği yanlış sınıflandırmaların önüne geçebilmek amacı ile bölüm \ref{binary} de problem iki sınıflı probleme indirgenecek ve modeller tekrar çalıştırılacaktır.
+
+\hypertarget{binary}{%
+\section{İki Sınıflı Sınıflama}\label{binary}}
 
 Bu bölümde orijinal hali 3 sınıftan oluşan veri setimizdeki görece az gözleme sahip olan 2 sınıfı birleştirip, 2 sınıflı probleme çözüm arayacağız.
 
-\hypertarget{k-en-yakux131n-komux15fuluk-modeli-1}{%
-\subsection{K-En Yakın Komşuluk Modeli}\label{k-en-yakux131n-komux15fuluk-modeli-1}}
+\hypertarget{k-en-yakux131n-komux15fuluk-modeli}{%
+\subsection{K-En Yakın Komşuluk Modeli}\label{k-en-yakux131n-komux15fuluk-modeli}}
 
 Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak ve çıktılarını değerlendireceğiz.
 
@@ -824,8 +874,8 @@ Balanced Accuracy Score : 0.8153903070662227
 
 \caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-52}
 \end{figure}
-\hypertarget{rassal-ormanlar-modeli-1}{%
-\subsection{Rassal Ormanlar Modeli}\label{rassal-ormanlar-modeli-1}}
+\hypertarget{rassal-ormanlar-modeli}{%
+\subsection{Rassal Ormanlar Modeli}\label{rassal-ormanlar-modeli}}
 
 Bu bölümde veri setimiz üzerinde rassal ormanlar modelini kullanacak ve çıktılarını değerlendireceğiz.
 
@@ -851,15 +901,15 @@ GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sı
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.79      0.86      0.82       153
-     Mod+Sev       0.85      0.77      0.81       159
+        Mild       0.78      0.84      0.81       153
+     Mod+Sev       0.83      0.77      0.80       159
 
-    accuracy                           0.82       312
-   macro avg       0.82      0.82      0.82       312
-weighted avg       0.82      0.82      0.82       312
+    accuracy                           0.80       312
+   macro avg       0.81      0.81      0.80       312
+weighted avg       0.81      0.80      0.80       312
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.8181650018497966
+Balanced Accuracy Score : 0.80509310642496
 \end{verbatim}
 \begin{figure}
 

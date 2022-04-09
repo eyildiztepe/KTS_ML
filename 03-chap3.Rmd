@@ -153,6 +153,13 @@ Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıc
 
 Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı \tiny (P-Value Değerleri Ki-Kare Bağımsızlık Testi ile Elde Edilmiştir.)   
 
+Bu çalışmada, KTS ciddiyet sınıflandırması için K-En Yakın Komşuluk, Rassal Ormanlar, Sinir Ağları ve XGBoost yöntemleri kullanılmıştır.  
+İlk olarak orijinal verilerdeki 3 sınıf (Mild, Moderate, Severe) için sınıflandırma hedeflenmiştir.  
+Bölüm \ref{multiclass} de bu problem için farklı modeller ile elde edilen sonuçlara yer verilmiştir.  
+Uygulamanın ikinci bölümünde hedef değişken iki sınıfa indirgenmiş ve bu probleme ait sonuçlar bölüm \ref{binary} de paylaşılmıştır.  
+Uygulamada Python programlama dili  ve Scikit-Learn, Pandas, Numpy, Matplotlib,XGBoost kütüphanelerinden yararlanılmıştır.  
+Bu bölümde modellerin performanslarını değerlendirmek üzere kesinlik, duyarlılık, F1-skoru, doğruluk oranı, dengelenmiş doğruluk oranı hesaplanmıştır.
+
 ```{python echo=FALSE}
 from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix, ConfusionMatrixDisplay, auc
 import pandas as pd
@@ -199,13 +206,14 @@ def roc(model):
     plt.legend(loc="lower right")
     plt.savefig(f'figure/roc_curve_{model_name}.png')
 ```  
-## Çok Sınıflı(Multiclass) Sınıflama Problemi  
+## Çok Sınıflı(Multiclass) Sınıflama Problemi {#multiclass}
+Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin 3 farklı ciddiyet düzeyine sahip olduğu durumda farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.  
 
-### K-En Yakın Komşuluk Modeli  
-Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak ve çıktılarını değerlendireceğiz.  
+### K-En Yakın Komşuluk Modeli  {#mult_knn}
+Bu bölümde veri seti üzerinde K - En yakın komşuluk modeli kullanılmış ve çıktıları değerlendirilmiştir.  
 
 #### Hiper Parametre Seçimi  
-Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 ```{python echo=FALSE}
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
@@ -223,7 +231,7 @@ plt.figure(figsize=(10,5),dpi=60);
 sns.lineplot(x=knn.param_n_neighbors,y=knn.mean_test_score*100,hue=knn.param_weights);
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.xlabel("Number of Neighbors");
-plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"])
+plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"]);
 plt.savefig("figure/KNN_Grid_Graph.png");
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="55%"}
@@ -231,12 +239,17 @@ knitr::include_graphics(path="figure/KNN_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {GSC.best_params_}')
-print("En İyi Parametreler:{'algorithm':'auto','n_neighbors':33,'weights':'distance'}")
+```  
+K-En yakın komşuluk modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
 
-```
+* 'algorithm':'auto'
+* 'n_neighbors':33
+* 'weights':'distance'  
+
+\newpage
 
 #### En İyi Parametreli Model
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 ```{python echo=FALSE}
 KNN_model = KNeighborsClassifier(n_neighbors = 33,
                                  weights ='distance').fit(X_train,y_train)
@@ -244,13 +257,9 @@ y_pred = KNN_model.predict(X_test)
 print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
 ```
-<!--```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="K-NN Metrikleri",out.height="25%",out.width="70%"}
-knitr::include_graphics(path="figure/knn_metrics.png")
-```-->
-
 ```{python echo=FALSE}
 ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
-plt.savefig("figure/knn_conf.png")
+plt.savefig("figure/knn_conf.png");
 ```
 ```{python echo=FALSE}
 roc(KNeighborsClassifier(n_neighbors = 33,
@@ -263,11 +272,11 @@ knitr::include_graphics(path="figure/knn_conf.png")
 ```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_KNeighborsClassifier.png")
 ```
-### Rassal Ormanlar Modeli  
-Bu bölümde veri setimiz üzerinde Rassal Ormanlar modelini kullanacak ve çıktılarını değerlendireceğiz.  
+### Rassal Ormanlar Modeli  {#mult_rf}
+Bu bölümde veri seti üzerinde rassal ormanlar modeli kullanılmış ve çıktıları değerlendirilmiştir.  
 
 #### Hiper Parametre Seçimi  
-Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 ```{python,out.height="10%",echo=FALSE}
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
@@ -298,12 +307,20 @@ knitr::include_graphics(path="figure/RF_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {GSC.best_params_}')
-print("En İyi Parametreler:{'ccp_alpha':0.05,'criterion':'gini','max_features':'auto',\n'max_samples':10,'n_estimators':350}")
-
 ```
+Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
+
+* 'ccp_alpha':0.05
+* 'criterion':'gini'
+* 'weights':'distance'
+* 'max_features':'auto'
+* 'max_samples':10
+* 'n_estimators':350  
+
+\newpage
 
 #### En İyi Parametreli Model
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 ```{python echo=FALSE}
 RFC_model = RandomForestClassifier(ccp_alpha=0.05,criterion="gini",max_features="auto",
                                    max_samples=10,n_estimators=350,random_state=13).fit(X_train,y_train)
@@ -327,11 +344,11 @@ knitr::include_graphics(path="figure/rfc_conf.png")
 ```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_RandomForestClassifier.png")
 ```
-### eXtreme Gradient Boosting (Xgboost)  
-Bu bölümde veri setimiz üzerinde XGBoost modelini kullanacak ve çıktılarını değerlendireceğiz.  
+### eXtreme Gradient Boosting (XGBoost)  {#mult_xgb}
+Bu bölümde veri seti üzerinde XGBoost modeli kullanılmış ve çıktıları değerlendirilmiştir.    
 
 #### Hiper Parametre Seçimi  
-Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 ```{python,out.height="10%",echo=FALSE}
 from xgboost.sklearn import XGBClassifier
 from sklearn.model_selection import GridSearchCV
@@ -359,7 +376,7 @@ for i in sorted_xgb.param_eta.unique():
     if i <=0.4:
         x = sorted_xgb[sorted_xgb.param_eta == i].groupby("param_n_estimators").max()
         sns.lineplot(x=x.index,y=x.mean_test_score*100);
-plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)")
+plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend([.1,.4,.2,.3],loc=1,title="Learning Rate");
 plt.savefig("figure/XGB_Grid_Graph.png");
 ```
@@ -368,35 +385,43 @@ knitr::include_graphics(path="figure/XGB_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {GSC.best_params_}')
-print("En İyi Parametreler:{'booster':'gbtree2,'eta':0.1,'max_depth':3,'min_child_weight':\n10,'n_estimators':100,'objective':'multi:softprob','sumsample':0.5}")
 ```
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
+
+* 'eta':0.1
+* 'max_depth':3
+* 'min_child_weight':10
+* 'n_estimators':100
+* 'objective':'multi:softprob'
+* 'sumsample':0.5  
+
+\newpage  
+
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 ```{python echo=FALSE}
 XGB_model = XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2).fit(X_train,y_train)
 y_pred = XGB_model.predict(X_test)
 print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
 ```
-
 ```{python echo=FALSE}
 ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
-plt.savefig("figure/xgb_conf.png")
+plt.savefig("figure/xgb_conf.png");
 ```
 ```{python echo=FALSE}
 roc(XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2))
 ```
-
-```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="XGBoost Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/xgb_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="XGBoost Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_XGBClassifier.png")
 ```  
-### Neural Networks (Yapay Sinir Ağları) 
-Bu bölümde veri setimiz üzerinde Neural Networks modelini kullanacak ve çıktılarını değerlendireceğiz.  
+### Neural Networks (Yapay Sinir Ağları) {#mult_nn}
+Bu bölümde veri seti üzerinde sinir ağları modeli kullanılmış ve çıktıları değerlendirilmiştir.  
 
 #### Hiper Parametre Seçimi  
-Daha önce belirlediğimiz parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en uygun doğruluk oranını yakalayana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 ```{python,out.height="10%",echo=FALSE}
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import GridSearchCV
@@ -409,10 +434,10 @@ from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classificati
 result_nn = pd.read_csv("data/NN_GridSearch_Results.csv",sep=";")
 #Grafik Çizimi
 plt.figure(figsize=(15,10),dpi=100);
-sns.lineplot(x=result_nn["param_hidden_layer_sizes"],y=result_nn["mean_test_score"]*100,hue=result_nn["param_activation"])
+sns.lineplot(x=result_nn["param_hidden_layer_sizes"],y=result_nn["mean_test_score"]*100,hue=result_nn["param_activation"]);
 plt.xlabel("Hidden Layer Sizes");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
-plt.legend(title="Aktivasyon Fonksiyonu")
+plt.legend(title="Aktivasyon Fonksiyonu");
 plt.savefig("figure/NN_Grid_Graph.png");
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="50%"}
@@ -420,9 +445,16 @@ knitr::include_graphics(path="figure/NN_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {gridd.best_params_}')
-print("En İyi Parametreler:{'activation':'relu','hidden_layer_sizes':19,'learning_rate':'adaptive'}")
 ```
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Yapar sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
+
+* 'activation':'relu'
+* 'hidden_layer_sizes:19
+* 'learning_rate':'adaptive'  
+
+\newpage  
+
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 ```{python echo=FALSE}
 NN_model = MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",random_state=13,max_iter=3000).fit(X_train,y_train)
 y_pred = NN_model.predict(X_test)
@@ -438,14 +470,18 @@ plt.savefig("figure/nn_conf.png")
 roc(MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",random_state=13,max_iter=3000))
 ```
 
-```{r echo=FALSE,fig.align="center",fig.cap="Yapay Sinir Ağları Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Sinir Ağları Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/nn_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_MLPClassifier.png")
 ```  
+### Çok Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi  
+Bölüm \ref{mult_knn}, \ref{mult_rf}, \ref{mult_xgb} ve \ref{mult_nn} den elde edilen sonuçlar incelenmiş olup, üç sınıflı problem için %77 doğru sınıflama oranı ile en iyi model XGBoost olarak bulunmuştur.  
+Bölüm \ref{mult_xgb} de bulunan performans metrikleri yakından incelendiğinde, duyarlılık metriği 'Moderate' ve 'Severe' sınıfları için 'Mild' sınıfına kıyasla daha düşük kalmıştır.  
+Duyarlılık metriğindeki düşüklüğün sebep olabileceği yanlış sınıflandırmaların önüne geçebilmek amacı ile bölüm \ref{binary} de problem iki sınıflı probleme indirgenecek ve modeller tekrar çalıştırılacaktır.
 
-## İki Sınıflı Sınıflama  
+## İki Sınıflı Sınıflama  {#binary}
 
 Bu bölümde orijinal hali 3 sınıftan oluşan veri setimizdeki görece az gözleme sahip olan 2 sınıfı birleştirip, 2 sınıflı probleme çözüm arayacağız.
 ```{python echo=FALSE}
