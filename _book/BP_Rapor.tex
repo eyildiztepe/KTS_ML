@@ -485,32 +485,38 @@ Komşular için ağırlık değerleri atanması ile sınıflandırılmakta olan 
 \hypertarget{random_forest}{%
 \section{Rassal Ormanlar}\label{random_forest}}
 
-Torbalama yöntemi ile oluşturulmuş n adet karar ağacının sonuca göre çalışır.
+Rassal ormanlar sınıflandırıcısı, her biri farklı girdi vektörlerinden oluşan ve her ağacın yalnızca bir sınıfa oy verdiği karar ağaçlarının kombinasyonudur(Leo Breiman, 1999). Rassal ormanlar sınıflandırması ağaç derinliğini büyütmek için her dalda rastgele değişkenleri içerir.
 
+Karar ağaçlarını modellemek,bir budama metodu ve nitelik seçme ölçütü seçmeyi gerektirir.Karar ağacının tüme varımı için kullanınlan bir sürü nitelik seçme yaklaşımı vardır ve çoğu yaklaşımlar niteliğe direkt olarak kalite ölçümü belirler.Karar ağacının tümü varmında ki en sık kullanılan nitelik seçme ölçümleri Information gain ratio kriteri(Quinlan 1993)ve Gini indexidir(L. Breiman, Friedman, Olshen ve Stone, t.y.).
+
+Verilen herhangi bir eğitim verisi için gini index o verinin hangi sınıfa ait olduğu olasılığını hesaplar.
+
+\[\begin{aligned}
+\sum \sum_{j \neq i}(f(C_{i}, T) /|T|)(f(C_{j}, T) /|T|)
+\end{aligned}\]
+Bu denklemde \(f(C_{i}, T) /|T|)\) seçilen gözlemin \(C_{i}\) sınıfa ait olma olasılığıdır.
+
+Her seferinde bir ağaç, değişkenlerin bir kombinasyonunu kullanarak yeni eğitim verisi üzerinde en büyük derinliğe kadar büyür.Son derinliğine ulaşmış bu ağaçlar budanmamıştır.Bu durum, (Quinlan, 2014) veya diğer karar ağacı methodlarına göre rassal ormanlanların en büyük avantajıdır.Bazı durumlarda maliyet ve karmaşıklığı minimum yapabilmek için rassal ormanlar içerisindeki karar ağaçlarına budama yapılır.Budama parametresi olan `ccp\_alpha' değerinden daha küçük olan en büyük maliyet ve karmaşıklık değerini bulunana kadar karar ağacı budanır.
+
+Sonuç olarak,rastgele ağaçlar methodu,kullanıcının herhangi bir değer belirleyebildiği, N kadar büyüyecek karar ağaçları içerir.Yeni veri setini sınıflandırmak için,seçilen maksimum değişken sayısına göre veri setinde ki rastgele olarak paylaştırılmış her gözlem ,N kadar karar ağacının her biri tarafından sınıflandırılır.Bu durum için ormanlar en fazla oya sahip sınıfı seçer.\\
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth,height=0.5\textheight]{figure/rf_example} 
+
+}
+
+\caption{Rassal Ormanlar Model Örneği}\label{fig:unnamed-chunk-7}
+\end{figure}
 \hypertarget{xgboost}{%
 \section{XGBoost}\label{xgboost}}
 
 NO COMMENT
 
 \hypertarget{nn}{%
-\section{Yapay Sinir Ağları}\label{nn}}
+\section{Sinir Ağları}\label{nn}}
 
 NO COMMENT
 
-\hypertarget{deneme}{%
-\section{DENEME}\label{deneme}}
-\begin{itemize}
-\tightlist
-\item
-  Liste1
-\item
-  Liste2
-  \begin{itemize}
-  \tightlist
-  \item
-    liste3
-  \end{itemize}
-\end{itemize}
 \hypertarget{veri_seti}{%
 \chapter{Veri Seti}\label{veri_seti}}
 
@@ -599,7 +605,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Model Train Scores}\label{fig:unnamed-chunk-13}
+\caption{Model Train Scores}\label{fig:unnamed-chunk-14}
 \end{figure}
 K-En yakın komşuluk modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -637,7 +643,7 @@ Balanced Accuracy Score : 0.6718827333790838
 
 }
 
-\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-18}
+\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-19}
 \end{figure}
 \begin{figure}
 
@@ -645,7 +651,7 @@ Balanced Accuracy Score : 0.6718827333790838
 
 }
 
-\caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-19}
+\caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-20}
 \end{figure}
 \hypertarget{mult_rf}{%
 \subsection{Rassal Ormanlar Modeli}\label{mult_rf}}
@@ -662,7 +668,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Model Train Scores}\label{fig:unnamed-chunk-21}
+\caption{Model Train Scores}\label{fig:unnamed-chunk-22}
 \end{figure}
 Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -706,7 +712,7 @@ Balanced Accuracy Score : 0.6681395179570361
 
 }
 
-\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-26}
+\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-27}
 \end{figure}
 \begin{figure}
 
@@ -714,7 +720,7 @@ Balanced Accuracy Score : 0.6681395179570361
 
 }
 
-\caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-27}
+\caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-28}
 \end{figure}
 \hypertarget{mult_xgb}{%
 \subsection{eXtreme Gradient Boosting (XGBoost)}\label{mult_xgb}}
@@ -731,7 +737,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Model Train Scores}\label{fig:unnamed-chunk-29}
+\caption{Model Train Scores}\label{fig:unnamed-chunk-30}
 \end{figure}
 XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -772,7 +778,7 @@ Balanced Accuracy Score : 0.7319509430823299
 
 }
 
-\caption{XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-34}
+\caption{XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-35}
 \end{figure}
 \begin{figure}
 
@@ -780,7 +786,7 @@ Balanced Accuracy Score : 0.7319509430823299
 
 }
 
-\caption{XGBoost Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-35}
+\caption{XGBoost Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-36}
 \end{figure}
 \hypertarget{mult_nn}{%
 \subsection{Neural Networks (Yapay Sinir Ağları)}\label{mult_nn}}
@@ -797,7 +803,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Model Train Scores}\label{fig:unnamed-chunk-37}
+\caption{Model Train Scores}\label{fig:unnamed-chunk-38}
 \end{figure}
 Yapar sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -832,7 +838,7 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-42}
+\caption{Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-43}
 \end{figure}
 \begin{figure}
 
@@ -840,7 +846,7 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-43}
+\caption{Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-44}
 \end{figure}
 \hypertarget{uxe7ok-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}{%
 \subsection{Çok Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}\label{uxe7ok-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}}
@@ -869,7 +875,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Model Train Scores}\label{fig:unnamed-chunk-46}
+\caption{Model Train Scores}\label{fig:unnamed-chunk-47}
 \end{figure}
 \newpage
 
@@ -906,7 +912,7 @@ Balanced Accuracy Score : 0.8153903070662227
 
 }
 
-\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-51}
+\caption{K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-52}
 \end{figure}
 \begin{figure}
 
@@ -914,7 +920,7 @@ Balanced Accuracy Score : 0.8153903070662227
 
 }
 
-\caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-52}
+\caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-53}
 \end{figure}
 \hypertarget{bin_rf}{%
 \subsection{Rassal Ormanlar Modeli}\label{bin_rf}}
@@ -931,7 +937,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Model Train Scores}\label{fig:unnamed-chunk-54}
+\caption{Model Train Scores}\label{fig:unnamed-chunk-55}
 \end{figure}
 Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -953,15 +959,15 @@ Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki 
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.77      0.86      0.81       153
-     Mod+Sev       0.85      0.75      0.80       159
+        Mild       0.78      0.83      0.80       153
+     Mod+Sev       0.83      0.77      0.80       159
 
-    accuracy                           0.81       312
-   macro avg       0.81      0.81      0.81       312
-weighted avg       0.81      0.81      0.81       312
+    accuracy                           0.80       312
+   macro avg       0.80      0.80      0.80       312
+weighted avg       0.80      0.80      0.80       312
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.8087310395856456
+Balanced Accuracy Score : 0.8018251325687509
 \end{verbatim}
 \begin{figure}
 
@@ -969,7 +975,7 @@ Balanced Accuracy Score : 0.8087310395856456
 
 }
 
-\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-59}
+\caption{Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-60}
 \end{figure}
 \begin{figure}
 
@@ -977,7 +983,7 @@ Balanced Accuracy Score : 0.8087310395856456
 
 }
 
-\caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-60}
+\caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-61}
 \end{figure}
 \hypertarget{bin_xgb}{%
 \subsection{XGBoost}\label{bin_xgb}}
@@ -994,7 +1000,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Model Train Scores}\label{fig:unnamed-chunk-62}
+\caption{Model Train Scores}\label{fig:unnamed-chunk-63}
 \end{figure}
 XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -1032,7 +1038,7 @@ Balanced Accuracy Score : 0.8235910716487853
 
 }
 
-\caption{XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-67}
+\caption{XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-68}
 \end{figure}
 \begin{figure}
 
@@ -1040,7 +1046,7 @@ Balanced Accuracy Score : 0.8235910716487853
 
 }
 
-\caption{XGBoost Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-68}
+\caption{XGBoost Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-69}
 \end{figure}
 \hypertarget{bin_nn}{%
 \subsection{Neural Network (Yapay Sinir Ağları) Modeli}\label{bin_nn}}
@@ -1057,7 +1063,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Model Train Scores}\label{fig:unnamed-chunk-70}
+\caption{Model Train Scores}\label{fig:unnamed-chunk-71}
 \end{figure}
 Sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -1093,7 +1099,7 @@ Balanced Accuracy Score : 0.8116290541373783
 
 }
 
-\caption{Yapar Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-75}
+\caption{Yapar Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-76}
 \end{figure}
 \begin{figure}
 
@@ -1101,7 +1107,7 @@ Balanced Accuracy Score : 0.8116290541373783
 
 }
 
-\caption{Yapar Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-76}
+\caption{Yapar Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-77}
 \end{figure}
 \hypertarget{iki-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}{%
 \subsection{İki Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}\label{iki-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}}
@@ -1148,6 +1154,12 @@ Aroori, S. ve Spence, R. (2008). Carpal Tunnel Syndrome. \emph{The Ulster Medica
 \leavevmode\vadjust pre{\hypertarget{ref-kts_bagatur}{}}%
 Bagatur, A. E. (2006). Karpal Tünel Sendromu. \emph{Türkiye Klinikleri J Surg Med Sci.}, \emph{2}(17), 52-63.
 
+\leavevmode\vadjust pre{\hypertarget{ref-breiman1991}{}}%
+Breiman, Leo. (1999). 1 RANDOM FORESTS--RANDOM FEATURES.
+
+\leavevmode\vadjust pre{\hypertarget{ref-breimanclassification}{}}%
+Breiman, L., Friedman, J., Olshen, R. ve Stone, C. (t.y.). \emph{Classification and Regression Trees. 1984 Monterey, CA Wadsworth \& Brooks}. \emph{Cole Advanced Books \& Software Google Scholar}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-knn-info}{}}%
 Cover, T. ve Hart, P. (1967). Nearest neighbor pattern classification. \emph{IEEE Transactions on Information Theory}, \emph{13}(1), 21-27. doi:\href{https://doi.org/10.1109/TIT.1967.1053964}{10.1109/TIT.1967.1053964}
 
@@ -1184,11 +1196,17 @@ Park, D., Kim, B. H., Lee, S.-E., Kim, D. Y., Kim, M., Kwon, H. D., \ldots{} Lee
 \leavevmode\vadjust pre{\hypertarget{ref-history1988}{}}%
 Pfeffer, G., Gelberman, R., Boyes, J. ve Rydevik, B. (1988). The history of carpal tunnnel syndrome. \emph{The Journal of Hand Surgery: British \& European Volume}, \emph{13}(1), 28-34.
 
+\leavevmode\vadjust pre{\hypertarget{ref-quinlan2014c4}{}}%
+Quinlan, J. R. (2014). \emph{C4. 5: programs for machine learning}. Elsevier.
+
 \leavevmode\vadjust pre{\hypertarget{ref-robbins1963anatomical}{}}%
 Robbins, H. (1963). Anatomical study of the median nerve in the carpal tunnel and etiologies of the carpal-tunnel syndrome. \emph{JBJS}, \emph{45}(5), 953-966.
 
 \leavevmode\vadjust pre{\hypertarget{ref-sezgi2006assessment}{}}%
 Sezgin, M.,.Incel, N. A., Sevi˙ m, S., ren, H. Çamdevi˙, As, I. ve ErdoĞan, C. (2006). Assessment of symptom severity and functional status in patients with carpal tunnel syndrome: reliability and validity of the Turkish version of the Boston Questionnaire. \emph{Disability and rehabilitation}, \emph{28}(20), 1281-1286.
+
+\leavevmode\vadjust pre{\hypertarget{ref-tibco}{}}%
+TIBCO. (t.y.). Rassal Ormanlar Modeli. 13 Nisan 2022 tarihinde \url{https://www.tibco.com/reference-center/what-is-a-random-forest} adresinden erişildi.
 
 \leavevmode\vadjust pre{\hypertarget{ref-werner2002carpal}{}}%
 Werner, R. A. ve Andary, M. (2002). Carpal tunnel syndrome: pathophysiology and clinical neurophysiology. \emph{Clinical Neurophysiology}, \emph{113}(9), 1373-1381.

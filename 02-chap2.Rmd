@@ -22,16 +22,29 @@ En yakın komşuluk algoritmasında komşu sayısına (k) göre sınıflama yap�
 Komşular için ağırlık değerleri atanması ile sınıflandırılmakta olan örneğe daha yakın olan komşu örneklerin, çoğunluk oylamasına daha fazla katkı koyması amaçlanır. En çok kullanılan ağırlık değeri atama yöntemleri, her bir komşunun ağırlığının, d, komşular arası uzaklık olmak üzere, 1/d ya da $1/d^2$ şeklinde alınmasıdır [@doad2013review].  
 
 ## Rassal Ormanlar {#random_forest}
-Rassal ormanlar sınıflandırıcısı, her biri farklı girdi vektörlerinden oluşan ve her ağacın yalnızca bir sınıfa oy verdiği karar ağaçlarının kombinasyonudur[@breiman1991].
+Rassal ormanlar sınıflandırıcısı, her biri farklı girdi vektörlerinden oluşan ve her ağacın yalnızca bir sınıfa oy verdiği karar ağaçlarının kombinasyonudur[@breiman1991]. Rassal ormanlar sınıflandırması ağaç derinliğini büyütmek için her dalda rastgele değişkenleri içerir.  
+
+Karar ağaçlarını modellemek,bir budama metodu ve nitelik seçme ölçütü seçmeyi gerektirir.Karar ağacının tüme varımı için kullanınlan bir sürü nitelik seçme yaklaşımı vardır ve çoğu yaklaşımlar niteliğe direkt olarak kalite ölçümü belirler.Karar ağacının tümü varmında ki en sık kullanılan nitelik seçme ölçümleri Information gain ratio kriteri(Quinlan 1993)ve Gini indexidir[@breimanclassification].  
+
+Verilen herhangi bir eğitim verisi için gini index o verinin hangi sınıfa ait olduğu olasılığını hesaplar.  
+
+$$\begin{aligned}
+\sum \sum_{j \neq i}(f(C_{i}, T) /|T|)(f(C_{j}, T) /|T|)
+\end{aligned}$$  
+
+Bu denklemde $f(C_{i}, T) /|T|)$ seçilen gözlemin $C_{i}$ sınıfa ait olma olasılığıdır.
+
+Her seferinde bir ağaç, değişkenlerin bir kombinasyonunu kullanarak yeni eğitim verisi üzerinde en büyük derinliğe kadar büyür.Son derinliğine ulaşmış bu ağaçlar budanmamıştır.Bu durum, [@quinlan2014c4] veya diğer karar ağacı methodlarına göre rassal ormanlanların en büyük avantajıdır.Bazı durumlarda maliyet ve karmaşıklığı minimum yapabilmek için rassal ormanlar içerisindeki karar ağaçlarına budama yapılır.Budama parametresi olan 'ccp_alpha' değerinden daha küçük olan en büyük maliyet ve karmaşıklık değerini bulunana kadar karar ağacı budanır.  
+
+Sonuç olarak,rastgele ağaçlar methodu,kullanıcının  herhangi bir değer belirleyebildiği, N kadar büyüyecek karar ağaçları içerir.Yeni veri setini sınıflandırmak için,seçilen maksimum değişken sayısına göre veri setinde ki rastgele olarak paylaştırılmış her gözlem ,N kadar karar ağacının her biri tarafından sınıflandırılır.Bu durum için ormanlar en fazla oya sahip sınıfı seçer.  
+```{r echo=FALSE,fig.align='center',fig.cap="Rassal Ormanlar Model Örneği",out.width="100%",out.height="50%"}
+knitr::include_graphics(path="figure/rf_example.jpeg")
+```
+
+
 
 ## XGBoost {#xgboost}
 NO COMMENT  
 
-## Yapay Sinir Ağları {#nn}
+##  Sinir Ağları {#nn}
 NO COMMENT  
-
-## DENEME
-
-* Liste1
-* Liste2
-  + liste3
