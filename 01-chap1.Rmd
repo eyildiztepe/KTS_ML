@@ -41,17 +41,28 @@ knitr::include_graphics(path="figure/noropati_test.jpg")
 ```  
 Provokatif testler hastanın bilek ve parmak eklemlerine fiziksel baskı uygulayacak şekilde bir takım
 testler uygulanması ve alınan sonuçların değerlendirmesine dayanan deneysel test yöntemleridir.
-Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.\
-* Phalen Testi\
-  + 60 saniye boyunca parmaklar ayak ucuna bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\
-* Ters Phalen testi\
-    + 60 saniye boyunca parmaklar yukarı bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\
-* Tinel testi\
-    + Uygulayıcı tarafından karpal tünelin üstüne perküsyon yapılır. Medyan sinir bölgesinde karıncalanma ve elektrik şoku hissi oluşursa test pozitiftir [@kurt2020karpal].\
-* Karpal kompresyon testi\
-    + El bileği düz tutulurken medyan sinirin yakınına başparmak ile bastırılır. Medyan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\
-* Gerilmiş median sinir stres (GMSS) testi\
-  + Medyan sinir hareketliliğinin azaldığı durumlarda medyan sinirin gerilerek lokal iskeminin arttırılması mantığına dayanır.
+Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.  
+
+* Phalen Testi  
+
+  + 60 saniye boyunca parmaklar ayak ucuna bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.  
+
+* Ters Phalen testi  
+
+    + 60 saniye boyunca parmaklar yukarı bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.  
+
+* Tinel testi  
+
+    + Uygulayıcı tarafından karpal tünelin üstüne perküsyon yapılır. Medyan sinir bölgesinde karıncalanma ve elektrik şoku hissi oluşursa test pozitiftir [@kurt2020karpal].  
+
+* Karpal kompresyon testi  
+
+    + El bileği düz tutulurken medyan sinirin yakınına başparmak ile bastırılır. Medyan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.  
+
+* Gerilmiş median sinir stres (GMSS) testi  
+
+  + Medyan sinir hareketliliğinin azaldığı durumlarda medyan sinirin gerilerek lokal iskeminin arttırılması mantığına dayanır.  
+
 ```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="Phalen ve Tinel Testi",out.width="49%",out.height="18%"}
 knitr::include_graphics("figure/phalen.png")
 knitr::include_graphics(path="figure/tinel.jpg")
@@ -60,11 +71,16 @@ knitr::include_graphics(path="figure/tinel.jpg")
 knitr::include_graphics("figure/karpal_komp.jpg")
 knitr::include_graphics(path="figure/gerilmis.png")
 ```  
-Görüntülemeye dayalı testlerde el bileği ve parmakların hareketi sırasında karpal tünel içerisindeki değişiklikleri ve medyan sinirin hareketlerini yorumlayarak hastaya tanı koymayı kolaylaştırır fakat hastalığın şiddeti hakkında bilgi vermez.\
+Görüntülemeye dayalı testlerde el bileği ve parmakların hareketi sırasında karpal tünel içerisindeki değişiklikleri ve medyan sinirin hareketlerini yorumlayarak hastaya tanı koymayı kolaylaştırır fakat hastalığın şiddeti hakkında bilgi vermez.  
+
 * Ultrasonografi  
+
 * Düz radyografi  
+
 * Bilgisayarlı tomografi  
+
 * Manyetik rezonans görüntüleme  
+
 ```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="Ultrasonografi ve Düz radyografi ",out.width="49%",out.height="22%"}
 knitr::include_graphics("figure/ultraradyo.jpg")
 knitr::include_graphics(path="figure/radyog.jpg")

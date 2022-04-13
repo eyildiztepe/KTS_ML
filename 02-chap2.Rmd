@@ -22,7 +22,7 @@ En yakın komşuluk algoritmasında komşu sayısına (k) göre sınıflama yap�
 Komşular için ağırlık değerleri atanması ile sınıflandırılmakta olan örneğe daha yakın olan komşu örneklerin, çoğunluk oylamasına daha fazla katkı koyması amaçlanır. En çok kullanılan ağırlık değeri atama yöntemleri, her bir komşunun ağırlığının, d, komşular arası uzaklık olmak üzere, 1/d ya da $1/d^2$ şeklinde alınmasıdır [@doad2013review].  
 
 ## Rassal Ormanlar {#random_forest}
-Torbalama yöntemi ile oluşturulmuş n adet karar ağacının sonuca göre çalışır.  
+Rassal ormanlar sınıflandırıcısı, her biri farklı girdi vektörlerinden oluşan ve her ağacın yalnızca bir sınıfa oy verdiği karar ağaçlarının kombinasyonudur[@breiman1991].
 
 ## XGBoost {#xgboost}
 NO COMMENT  

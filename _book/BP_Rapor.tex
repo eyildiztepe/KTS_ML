@@ -350,17 +350,44 @@ Elektronörofizyolojik testler karpal Tünel'e bağlanan elektrotlar ile elektri
 \end{figure}
 Provokatif testler hastanın bilek ve parmak eklemlerine fiziksel baskı uygulayacak şekilde bir takım
 testler uygulanması ve alınan sonuçların değerlendirmesine dayanan deneysel test yöntemleridir.
-Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.\\
-* Phalen Testi\\
-+ 60 saniye boyunca parmaklar ayak ucuna bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\\
-* Ters Phalen testi\\
-+ 60 saniye boyunca parmaklar yukarı bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\\
-* Tinel testi\\
-+ Uygulayıcı tarafından karpal tünelin üstüne perküsyon yapılır. Medyan sinir bölgesinde karıncalanma ve elektrik şoku hissi oluşursa test pozitiftir (Kurt, 2020).\\
-* Karpal kompresyon testi\\
-+ El bileği düz tutulurken medyan sinirin yakınına başparmak ile bastırılır. Medyan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.\\
-* Gerilmiş median sinir stres (GMSS) testi\\
-+ Medyan sinir hareketliliğinin azaldığı durumlarda medyan sinirin gerilerek lokal iskeminin arttırılması mantığına dayanır.
+Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.
+\begin{itemize}
+\item
+  Phalen Testi
+  \begin{itemize}
+  \tightlist
+  \item
+    60 saniye boyunca parmaklar ayak ucuna bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.
+  \end{itemize}
+\item
+  Ters Phalen testi
+  \begin{itemize}
+  \tightlist
+  \item
+    60 saniye boyunca parmaklar yukarı bakacak şekilde el dış yüzleri birleştirilir. Meydan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.
+  \end{itemize}
+\item
+  Tinel testi
+  \begin{itemize}
+  \tightlist
+  \item
+    Uygulayıcı tarafından karpal tünelin üstüne perküsyon yapılır. Medyan sinir bölgesinde karıncalanma ve elektrik şoku hissi oluşursa test pozitiftir (Kurt, 2020).
+  \end{itemize}
+\item
+  Karpal kompresyon testi
+  \begin{itemize}
+  \tightlist
+  \item
+    El bileği düz tutulurken medyan sinirin yakınına başparmak ile bastırılır. Medyan sinir bölgesinde karıncalanma oluşur veya artarsa test pozitiftir.
+  \end{itemize}
+\item
+  Gerilmiş median sinir stres (GMSS) testi
+  \begin{itemize}
+  \tightlist
+  \item
+    Medyan sinir hareketliliğinin azaldığı durumlarda medyan sinirin gerilerek lokal iskeminin arttırılması mantığına dayanır.
+  \end{itemize}
+\end{itemize}
 \begin{figure}
 
 {\centering \includegraphics[width=0.49\linewidth,height=0.18\textheight]{figure/phalen} \includegraphics[width=0.49\linewidth,height=0.18\textheight]{figure/tinel} 
@@ -377,11 +404,17 @@ Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.\
 
 \caption{Karpal kompresyon ve GMSS Testi }\label{fig:unnamed-chunk-4}
 \end{figure}
-Görüntülemeye dayalı testlerde el bileği ve parmakların hareketi sırasında karpal tünel içerisindeki değişiklikleri ve medyan sinirin hareketlerini yorumlayarak hastaya tanı koymayı kolaylaştırır fakat hastalığın şiddeti hakkında bilgi vermez.\\
-* Ultrasonografi\\
-* Düz radyografi\\
-* Bilgisayarlı tomografi\\
-* Manyetik rezonans görüntüleme\\
+Görüntülemeye dayalı testlerde el bileği ve parmakların hareketi sırasında karpal tünel içerisindeki değişiklikleri ve medyan sinirin hareketlerini yorumlayarak hastaya tanı koymayı kolaylaştırır fakat hastalığın şiddeti hakkında bilgi vermez.
+\begin{itemize}
+\item
+  Ultrasonografi
+\item
+  Düz radyografi
+\item
+  Bilgisayarlı tomografi
+\item
+  Manyetik rezonans görüntüleme
+\end{itemize}
 \begin{figure}
 
 {\centering \includegraphics[width=0.49\linewidth,height=0.22\textheight]{figure/ultraradyo} \includegraphics[width=0.49\linewidth,height=0.22\textheight]{figure/radyog} 
@@ -819,17 +852,17 @@ Duyarlılık metriğindeki düşüklüğün sebep olabileceği yanlış sınıfl
 \hypertarget{binary}{%
 \section{İki Sınıflı Sınıflama}\label{binary}}
 
-Bu bölümde orijinal hali 3 sınıftan oluşan veri setimizdeki görece az gözleme sahip olan 2 sınıfı birleştirip, 2 sınıflı probleme çözüm arayacağız.
+Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin 3 farklı ciddiyet düzeyine sahip olduğu veri seti `Moderate' ve `Severe' ciddiyet düzeyleri birleştirilerek problemin 2 farklı ciddiyet düzeyine indirgenip farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.
 
-\hypertarget{k-en-yakux131n-komux15fuluk-modeli}{%
-\subsection{K-En Yakın Komşuluk Modeli}\label{k-en-yakux131n-komux15fuluk-modeli}}
+\hypertarget{bin_knn}{%
+\subsection{K-En Yakın Komşuluk Modeli}\label{bin_knn}}
 
-Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri seti üzerinde K - En yakın komşuluk modeli kullanılmış ve çıktıları değerlendirilmiştir.
 
 \hypertarget{hiper-parametre-seuxe7imi-4}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-4}}
 
-Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 \begin{figure}
 
 {\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/KNN_bin_Grid_Graph} 
@@ -838,13 +871,22 @@ Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğru
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-46}
 \end{figure}
-\begin{verbatim}
-En İyi Parametreler:{'algorithm':'auto','n_neighbors':23,'weights':'uniform'}
-\end{verbatim}
+\newpage
+
+K-En yakın komşuluk modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
+\begin{itemize}
+\tightlist
+\item
+  `algorithm':`auto'\\
+\item
+  `n\_neighbors':23\\
+\item
+  `weights':`uniform'
+\end{itemize}
 \hypertarget{en-iyi-parametreli-model-2}{%
 \subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-2}}
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 \begin{verbatim}
               precision    recall  f1-score   support
 
@@ -874,15 +916,15 @@ Balanced Accuracy Score : 0.8153903070662227
 
 \caption{K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-52}
 \end{figure}
-\hypertarget{rassal-ormanlar-modeli}{%
-\subsection{Rassal Ormanlar Modeli}\label{rassal-ormanlar-modeli}}
+\hypertarget{bin_rf}{%
+\subsection{Rassal Ormanlar Modeli}\label{bin_rf}}
 
-Bu bölümde veri setimiz üzerinde rassal ormanlar modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri seti üzerinde rassal ormanlar modeli kullanılmış ve çıktıları değerlendirilmiştir.
 
 \hypertarget{hiper-parametre-seuxe7imi-5}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-5}}
 
-Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 \begin{figure}
 
 {\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/RF_bin_Grid_Graph} 
@@ -891,25 +933,35 @@ Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğru
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-54}
 \end{figure}
-\begin{verbatim}
-En İyi Parametreler:{'ccp_alpha': 0.01, 'max_features': 'auto', 'max_samples': 10, 'n_estimators': 400}
-\end{verbatim}
+Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
+\begin{itemize}
+\tightlist
+\item
+  `ccp\_alpha': 0.01\\
+\item
+  `max\_features': `auto'\\
+\item
+  `max\_samples': 10\\
+\item
+  `n\_estimators': 400\\
+  \newpage  
+\end{itemize}
 \hypertarget{en-iyi-parametreli-model-3}{%
 \subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-3}}
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.78      0.84      0.81       153
-     Mod+Sev       0.83      0.77      0.80       159
+        Mild       0.77      0.86      0.81       153
+     Mod+Sev       0.85      0.75      0.80       159
 
-    accuracy                           0.80       312
-   macro avg       0.81      0.81      0.80       312
-weighted avg       0.81      0.80      0.80       312
+    accuracy                           0.81       312
+   macro avg       0.81      0.81      0.81       312
+weighted avg       0.81      0.81      0.81       312
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.80509310642496
+Balanced Accuracy Score : 0.8087310395856456
 \end{verbatim}
 \begin{figure}
 
@@ -927,15 +979,15 @@ Balanced Accuracy Score : 0.80509310642496
 
 \caption{Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-60}
 \end{figure}
-\hypertarget{xgboost-1}{%
-\subsection{XGBoost}\label{xgboost-1}}
+\hypertarget{bin_xgb}{%
+\subsection{XGBoost}\label{bin_xgb}}
 
-Bu bölümde veri setimiz üzerinde XGBoost modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri seti üzerinde xgboost modeli kullanılmış ve çıktıları değerlendirilmiştir.
 
 \hypertarget{hiper-parametre-seuxe7imi-6}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-6}}
 
-Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 \begin{figure}
 
 {\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/XGB_bin_Grid_Graph} 
@@ -944,13 +996,23 @@ Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğru
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-62}
 \end{figure}
-\begin{verbatim}
-En İyi Parametreler:{'eta': 0.2, 'max_depth': 10, 'min_child_weight': 10, 'n_estimators': 400}
-\end{verbatim}
+XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
+\begin{itemize}
+\tightlist
+\item
+  `eta': 0.2\\
+\item
+  `max\_depth': 10\\
+\item
+  `min\_child\_weight': 10\\
+\item
+  `n\_estimators': 400\\
+  \newpage  
+\end{itemize}
 \hypertarget{en-iyi-parametreli-model-4}{%
 \subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-4}}
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 \begin{verbatim}
               precision    recall  f1-score   support
 
@@ -980,15 +1042,15 @@ Balanced Accuracy Score : 0.8235910716487853
 
 \caption{XGBoost Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-68}
 \end{figure}
-\hypertarget{neural-network-yapay-sinir-aux11flarux131-modeli}{%
-\subsection{Neural Network (Yapay Sinir Ağları) Modeli}\label{neural-network-yapay-sinir-aux11flarux131-modeli}}
+\hypertarget{bin_nn}{%
+\subsection{Neural Network (Yapay Sinir Ağları) Modeli}\label{bin_nn}}
 
-Bu bölümde veri setimiz üzerinde yapay sinir ağları modelini kullanacak ve çıktılarını değerlendireceğiz.
+Bu bölümde veri seti üzerinde sinir ağları modeli kullanılmış ve çıktıları değerlendirilmiştir.
 
 \hypertarget{hiper-parametre-seuxe7imi-7}{%
 \subsubsection{Hiper Parametre Seçimi}\label{hiper-parametre-seuxe7imi-7}}
 
-Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
 \begin{figure}
 
 {\centering \includegraphics[width=1.1\linewidth,height=0.55\textheight]{figure/NN_bin_Grid_Graph} 
@@ -997,13 +1059,21 @@ Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğru
 
 \caption{Model Train Scores}\label{fig:unnamed-chunk-70}
 \end{figure}
-\begin{verbatim}
-En İyi Parametreler:{'activation': 'relu', 'hidden_layer_sizes': 19, 'learning_rate': 'adaptive'}
-\end{verbatim}
+Sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
+\begin{itemize}
+\tightlist
+\item
+  `activation': `relu'\\
+\item
+  `hidden\_layer\_sizes': 19\\
+\item
+  `learning\_rate': `adaptive'\\
+  \newpage  
+\end{itemize}
 \hypertarget{en-iyi-parametreli-model-5}{%
 \subsubsection{En İyi Parametreli Model}\label{en-iyi-parametreli-model-5}}
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 \begin{verbatim}
               precision    recall  f1-score   support
 
@@ -1033,6 +1103,13 @@ Balanced Accuracy Score : 0.8116290541373783
 
 \caption{Yapar Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri}\label{fig:unnamed-chunk-76}
 \end{figure}
+\hypertarget{iki-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}{%
+\subsection{İki Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}\label{iki-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}}
+
+Bölüm \ref{bin_knn}, \ref{bin_rf}, \ref{bin_xgb} ve \ref{bin_nn} den elde edilen sonuçlar incelenmiş olup, iki sınıflı problem için \%82 doğru sınıflama oranları ile XGBoost ve Rassal Ormanlar modelleri en iyi modeller olarak bulunmuştur.\\
+Bölüm \ref{bin_rf} ve \ref{bin_xgb} de bulunan performans metrikleri yakından incelendiğinde, XGBoost modeli kesinlik, duyarlılık ve f1-skor metrikleri bakımından Rassal Ormanlar modelinden daha iyi sonuç vermiştir.\\
+Ciddiyet sınıflandırma probleminin `Mild' ve `Moderate + Severe' olacak şekilde 2 sınıfa indirgendiği durumda XGBoost modeli diğer modellerden daha iyi sonuç vermektedir.
+
 \hypertarget{Bolum4}{%
 \chapter{Bölüm 4 Başlık}\label{Bolum4}}
 
@@ -1123,28 +1200,636 @@ Werner, R. A. ve Andary, M. (2002). Carpal tunnel syndrome: pathophysiology and 
 
 \appendix
 
-\hypertarget{ilk-ek-baux15flux131ux11fux131}{%
-\chapter{İlk Ek Başlığı}\label{ilk-ek-baux15flux131ux11fux131}}
-
-This first appendix includes all of the R chunks of code that were hidden throughout the document (using the \texttt{include\ =\ FALSE} chunk tag) to help with readibility and/or setup.
-
-\textbf{In the main Rmd file}
+\hypertarget{gerekli-paketlerin-yuxfcklenmesi-ve-verilerin-iux15flenmesi}{%
+\chapter{Gerekli Paketlerin Yüklenmesi ve Verilerin İşlenmesi}\label{gerekli-paketlerin-yuxfcklenmesi-ve-verilerin-iux15flenmesi}}
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# This chunk ensures that the thesisdown package is}
-\CommentTok{\# installed and loaded. This thesisdown package includes}
-\CommentTok{\# the template files for the thesis.}
- \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(remotes)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"remotes"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
- \ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(thesisdown))remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"ismayc/thesisdown"}\NormalTok{)}
- \FunctionTok{library}\NormalTok{(thesisdown)}
+\CommentTok{\# R için gerekli paketlerin kurulması}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(reticulate)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"reticulate"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(tidyverse)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{, }\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(caret)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"caret"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(caretEnsemble))  }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"caretEnsemble"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(doParallel))  }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"doParallel"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(data.table))  }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"data.table"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(dplyr))  }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(e1071))  }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"e1071"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\CommentTok{\#if(!require(gbm))  install.packages("gbm",repos = "http://cran.rstudio.com")}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(kernlab))  }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"kernlab"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\CommentTok{\#if(!require(randomForest))  install.packages("randomForest",repos = "http://cran.rstudio.com")}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(tidyverse))  }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
+\CommentTok{\#if(!require(xgboost))  install.packages("xgboost",repos = "http://cran.rstudio.com")}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(smotefamily))  }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"smotefamily"}\NormalTok{,}\AttributeTok{repos =} \StringTok{"http://cran.rstudio.com"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
-\textbf{In Chapter \ref{ref-labels}:}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Python için gerekli paketlerin ve veri setinin yüklenmesi}
+\ImportTok{import}\NormalTok{ warnings}
+\NormalTok{warnings.filterwarnings(}\StringTok{"ignore"}\NormalTok{, category}\OperatorTok{=}\PreprocessorTok{FutureWarning}\NormalTok{)}
+\ImportTok{from}\NormalTok{ warnings }\ImportTok{import}\NormalTok{ simplefilter}
+\NormalTok{simplefilter(action}\OperatorTok{=}\StringTok{\textquotesingle{}ignore\textquotesingle{}}\NormalTok{, category}\OperatorTok{=}\PreprocessorTok{FutureWarning}\NormalTok{)}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np, pandas }\ImportTok{as}\NormalTok{ pd, matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{import}\NormalTok{ seaborn }\ImportTok{as}\NormalTok{ sns}
+\ImportTok{from}\NormalTok{ sklearn.feature\_selection }\ImportTok{import}\NormalTok{ VarianceThreshold}
+\ImportTok{from}\NormalTok{ scipy.stats }\ImportTok{import}\NormalTok{ f\_oneway, chi2\_contingency}
+\NormalTok{CTS }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/CTS.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{","}\NormalTok{)}
+\NormalTok{dataGroup }\OperatorTok{=}\NormalTok{ CTS[[}\StringTok{"Severity"}\NormalTok{,}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]]}
+\NormalTok{dataOverall }\OperatorTok{=}\NormalTok{ CTS[[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]]}
+\NormalTok{meanoval, stdoval }\OperatorTok{=} \BuiltInTok{round}\NormalTok{(dataOverall.mean(),}\DecValTok{1}\NormalTok{), }\BuiltInTok{round}\NormalTok{(dataOverall.std(ddof}\OperatorTok{=}\DecValTok{1}\NormalTok{),}\DecValTok{1}\NormalTok{)}
+\NormalTok{means }\OperatorTok{=} \BuiltInTok{round}\NormalTok{(dataGroup.groupby(}\StringTok{"Severity"}\NormalTok{).mean(),}\DecValTok{1}\NormalTok{)}
+\NormalTok{stds }\OperatorTok{=} \BuiltInTok{round}\NormalTok{(dataGroup.groupby(}\StringTok{"Severity"}\NormalTok{).std(ddof}\OperatorTok{=}\DecValTok{1}\NormalTok{),}\DecValTok{1}\NormalTok{)}
+\CommentTok{\#\#}
+\NormalTok{mild }\OperatorTok{=}\NormalTok{ CTS[CTS.Severity }\OperatorTok{==} \StringTok{"mild"}\NormalTok{]}
+\NormalTok{moderate }\OperatorTok{=}\NormalTok{ CTS[CTS.Severity }\OperatorTok{==} \StringTok{"moderate"}\NormalTok{]}
+\NormalTok{severe }\OperatorTok{=}\NormalTok{ CTS[CTS.Severity }\OperatorTok{==} \StringTok{"severe"}\NormalTok{]}
+\NormalTok{numVar }\OperatorTok{=}\NormalTok{ [}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]}
+\NormalTok{catVar }\OperatorTok{=}\NormalTok{ [}\StringTok{"Sex"}\NormalTok{,}\StringTok{"Side"}\NormalTok{,}\StringTok{"Diabetes"}\NormalTok{,}\StringTok{"NP"}\NormalTok{,}\StringTok{"Weakness"}\NormalTok{]}
+\NormalTok{p\_values }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{p\_vals2 }\OperatorTok{=}\NormalTok{ []}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ numVar:}
+\NormalTok{    \_,p\_val }\OperatorTok{=}\NormalTok{ f\_oneway(mild[i],moderate[i],severe[i])}
+\NormalTok{    p\_values.append(}\BuiltInTok{round}\NormalTok{(p\_val,}\DecValTok{3}\NormalTok{))}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ catVar:}
+\NormalTok{    var\_0 }\OperatorTok{=}\NormalTok{ np.array([}\BuiltInTok{sum}\NormalTok{(mild[i] }\OperatorTok{==} \DecValTok{0}\NormalTok{),}\BuiltInTok{sum}\NormalTok{(moderate[i] }\OperatorTok{==} \DecValTok{0}\NormalTok{),}\BuiltInTok{sum}\NormalTok{(severe[i] }\OperatorTok{==} \DecValTok{0}\NormalTok{)])}
+\NormalTok{    var\_1 }\OperatorTok{=}\NormalTok{ np.array([}\BuiltInTok{sum}\NormalTok{(mild[i] }\OperatorTok{==} \DecValTok{1}\NormalTok{),}\BuiltInTok{sum}\NormalTok{(moderate[i] }\OperatorTok{==} \DecValTok{1}\NormalTok{),}\BuiltInTok{sum}\NormalTok{(severe[i] }\OperatorTok{==} \DecValTok{1}\NormalTok{)])}
+\NormalTok{    p\_vals2.append(}\BuiltInTok{round}\NormalTok{(chi2\_contingency(np.array([var\_1,var\_0]),correction}\OperatorTok{=}\VariableTok{False}\NormalTok{)[}\DecValTok{1}\NormalTok{],}\DecValTok{3}\NormalTok{))}
+\NormalTok{CTS\_kor }\OperatorTok{=}\NormalTok{ CTS.drop([}\StringTok{"Severity"}\NormalTok{,}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod"}\NormalTok{,}\StringTok{"Sev"}\NormalTok{],axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{zeroVar }\OperatorTok{=}\NormalTok{ CTS\_kor.shape[}\DecValTok{1}\NormalTok{]}\OperatorTok{{-}}\NormalTok{((VarianceThreshold(threshold}\OperatorTok{=}\DecValTok{0}\NormalTok{).fit(CTS\_kor)).get\_support()).}\BuiltInTok{sum}\NormalTok{()    }
+\CommentTok{\#\#\#\#\#\#}
+\NormalTok{catDF }\OperatorTok{=}\NormalTok{ CTS.groupby(}\StringTok{"Severity"}\NormalTok{).}\BuiltInTok{sum}\NormalTok{()[[}\StringTok{"Sex"}\NormalTok{,}\StringTok{"Side"}\NormalTok{,}\StringTok{"Diabetes"}\NormalTok{,}\StringTok{"NP"}\NormalTok{,}\StringTok{"Weakness"}\NormalTok{]]}
+\NormalTok{sex, rside, diab, np, weak }\OperatorTok{=}\NormalTok{ catDF[}\StringTok{"Sex"}\NormalTok{],catDF[}\StringTok{"Side"}\NormalTok{],catDF[}\StringTok{"Diabetes"}\NormalTok{],catDF[}\StringTok{"NP"}\NormalTok{],catDF[}\StringTok{"Weakness"}\NormalTok{]}
+\NormalTok{hands }\OperatorTok{=}\NormalTok{ CTS.groupby(}\StringTok{"Severity"}\NormalTok{).count()[}\StringTok{"NP"}\NormalTok{]}
+\NormalTok{handsx }\OperatorTok{=}\NormalTok{ hands}\OperatorTok{*}\DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# R için veri setinin tanıtılması ve Rastgele olarak ayrılması}
+\NormalTok{  means }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(py}\SpecialCharTok{$}\NormalTok{means)}
+\NormalTok{  stds }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(py}\SpecialCharTok{$}\NormalTok{stds)}
+\NormalTok{  meanOval }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{t}\NormalTok{(py}\SpecialCharTok{$}\NormalTok{meanoval))}
+\NormalTok{  stdOval }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{t}\NormalTok{(py}\SpecialCharTok{$}\NormalTok{stdoval))}
+\NormalTok{  CTS }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{"data/CTS.csv"}\NormalTok{))}
+\NormalTok{  seed}\OtherTok{\textless{}{-}}\DecValTok{0923}
+  \FunctionTok{set.seed}\NormalTok{(seed)}
+\NormalTok{  ind}\OtherTok{\textless{}{-}}\FunctionTok{sample}\NormalTok{(}\DecValTok{2}\NormalTok{,}\FunctionTok{nrow}\NormalTok{(CTS),}\AttributeTok{replace =}\NormalTok{ T,}\AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.7}\NormalTok{,}\FloatTok{0.3}\NormalTok{))}
+\NormalTok{  traindata\_top }\OtherTok{\textless{}{-}}\NormalTok{ CTS[ind}\SpecialCharTok{==}\DecValTok{1}\NormalTok{,]}
+\NormalTok{  testdata\_top }\OtherTok{\textless{}{-}}\NormalTok{ CTS[ind}\SpecialCharTok{==}\DecValTok{2}\NormalTok{,]}
+\CommentTok{\# BURADAN SORNASI R VERİ ÖNİŞLEME}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{Severity}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{Severity)}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{Mild}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{Mild)}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{Mod}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{Mod)}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{Sev}\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{Sev)}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{Sex }\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{Sex)}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{Side }\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{Side)}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{Diabetes }\OtherTok{\textless{}{-}}\FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{Diabetes)}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{NP }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{NP)}
+\NormalTok{  CTS}\SpecialCharTok{$}\NormalTok{Weakness }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(CTS}\SpecialCharTok{$}\NormalTok{Weakness)}
+\NormalTok{  predata}\OtherTok{\textless{}{-}}\NormalTok{CTS}
+\NormalTok{  st\_model}\OtherTok{\textless{}{-}}\FunctionTok{preProcess}\NormalTok{(predata[,}\DecValTok{5}\SpecialCharTok{:}\DecValTok{10}\NormalTok{], }\AttributeTok{method=}\FunctionTok{c}\NormalTok{(}\StringTok{"center"}\NormalTok{,}\StringTok{"scale"}\NormalTok{))}
+\NormalTok{  data}\OtherTok{\textless{}{-}}\FunctionTok{predict}\NormalTok{(st\_model, predata)}
+\NormalTok{  data}\OtherTok{=}\FunctionTok{as.data.frame}\NormalTok{(data)}
+\NormalTok{  ohe\_feats }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}Sex\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Side\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Diabetes\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}NP\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}Weakness\textquotesingle{}}\NormalTok{)}
+\NormalTok{  dummies }\OtherTok{=} \FunctionTok{dummyVars}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{ Sex}\SpecialCharTok{+}\NormalTok{Side}\SpecialCharTok{+}\NormalTok{Diabetes}\SpecialCharTok{+}\NormalTok{NP}\SpecialCharTok{+}\NormalTok{Weakness, }\AttributeTok{data =}\NormalTok{ data)}
+\NormalTok{  df\_ohe }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(}\FunctionTok{predict}\NormalTok{(dummies, }\AttributeTok{newdata =}\NormalTok{ data))}
+\NormalTok{  df\_combined }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(data[,}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\FunctionTok{which}\NormalTok{(}\FunctionTok{colnames}\NormalTok{(data) }\SpecialCharTok{\%in\%}\NormalTok{ ohe\_feats))],df\_ohe)}
+\NormalTok{  dat }\OtherTok{=} \FunctionTok{as.data.table}\NormalTok{(df\_combined)}
+\NormalTok{  traindata}\OtherTok{\textless{}{-}}\NormalTok{dat[ind}\SpecialCharTok{==}\DecValTok{1}\NormalTok{,]}
+\NormalTok{  testdata}\OtherTok{\textless{}{-}}\NormalTok{dat[ind}\SpecialCharTok{==}\DecValTok{2}\NormalTok{,]}
+\NormalTok{  trainmc}\OtherTok{\textless{}{-}}\NormalTok{traindata}
+\NormalTok{  testmc}\OtherTok{\textless{}{-}}\NormalTok{testdata}
+\NormalTok{  trainmc}\SpecialCharTok{$}\NormalTok{Mild}\OtherTok{=}\ConstantTok{NULL}
+\NormalTok{  trainmc}\SpecialCharTok{$}\NormalTok{Mod}\OtherTok{=}\ConstantTok{NULL}
+\NormalTok{  trainmc}\SpecialCharTok{$}\NormalTok{Sev}\OtherTok{=}\ConstantTok{NULL}
+\NormalTok{  testmc}\SpecialCharTok{$}\NormalTok{Mild}\OtherTok{=}\ConstantTok{NULL}
+\NormalTok{  testmc}\SpecialCharTok{$}\NormalTok{Mod}\OtherTok{=}\ConstantTok{NULL}
+\NormalTok{  testmc}\SpecialCharTok{$}\NormalTok{Sev}\OtherTok{=}\ConstantTok{NULL}
+\NormalTok{  hco }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(CTS)}
+\NormalTok{  hco }\OtherTok{\textless{}{-}}\NormalTok{ hco }\SpecialCharTok{*} \DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Python için Veri Önişleme }
+\ImportTok{from}\NormalTok{ sklearn.preprocessing }\ImportTok{import}\NormalTok{ LabelEncoder}
+\ImportTok{from}\NormalTok{ sklearn.preprocessing }\ImportTok{import}\NormalTok{ StandardScaler}
+\NormalTok{LE }\OperatorTok{=}\NormalTok{ LabelEncoder().fit([}\StringTok{"mild"}\NormalTok{,}\StringTok{"moderate"}\NormalTok{,}\StringTok{"severe"}\NormalTok{])}
+\NormalTok{traindata\_P }\OperatorTok{=}\NormalTok{ pd.DataFrame(r.traindata\_top)}
+\NormalTok{traindata\_P.drop([}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod"}\NormalTok{,}\StringTok{"Sev"}\NormalTok{],axis}\OperatorTok{=}\DecValTok{1}\NormalTok{,inplace}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{testdata\_P }\OperatorTok{=}\NormalTok{ pd.DataFrame(r.testdata\_top)}
+\NormalTok{testdata\_P.drop([}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod"}\NormalTok{,}\StringTok{"Sev"}\NormalTok{],axis}\OperatorTok{=}\DecValTok{1}\NormalTok{,inplace}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{X\_train, X\_test, y\_train, y\_test }\OperatorTok{=}\NormalTok{ traindata\_P.drop([}\StringTok{"Severity"}\NormalTok{],axis}\OperatorTok{=}\DecValTok{1}\NormalTok{),testdata\_P.drop([}\StringTok{"Severity"}\NormalTok{],axis}\OperatorTok{=}\DecValTok{1}\NormalTok{),pd.DataFrame(LE.transform(traindata\_P.Severity)),pd.DataFrame(LE.transform(testdata\_P.Severity))}
+\NormalTok{Stand }\OperatorTok{=}\NormalTok{ StandardScaler().fit(r.CTS[[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]])}
+\NormalTok{X\_train[[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]]}\OperatorTok{=}\NormalTok{pd.DataFrame(Stand.transform(X\_train[[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]]),columns}\OperatorTok{=}\NormalTok{[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{])}
+\NormalTok{y\_train }\OperatorTok{=}\NormalTok{ y\_train.to\_numpy().ravel()}
+\NormalTok{X\_test[[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]] }\OperatorTok{=}\NormalTok{ pd.DataFrame(Stand.transform(X\_test[[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{]]),columns}\OperatorTok{=}\NormalTok{[}\StringTok{"Age"}\NormalTok{,}\StringTok{"BMI"}\NormalTok{,}\StringTok{"CSA"}\NormalTok{,}\StringTok{"PB"}\NormalTok{,}\StringTok{"Duration"}\NormalTok{,}\StringTok{"NRS"}\NormalTok{])}
+\NormalTok{y\_test }\OperatorTok{=}\NormalTok{ y\_test.to\_numpy().ravel()}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{sux131nux131flux131}{%
+\chapter{3 Sınıflı}\label{sux131nux131flux131}}
 
-\hypertarget{ikinci-ek-baux15flux131ux11fux131}{%
-\chapter{İkinci Ek Başlığı}\label{ikinci-ek-baux15flux131ux11fux131}}
+\hypertarget{roc-curve-ve-onevsrest}{%
+\section{Roc Curve ve OneVsRest}\label{roc-curve-ve-onevsrest}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# OneVsRest Modellerin ve ROC curvelerin oluşturulması}
+\ImportTok{from}\NormalTok{ sklearn.metrics }\ImportTok{import}\NormalTok{ roc\_auc\_score, roc\_curve, classification\_report, confusion\_matrix, ConfusionMatrixDisplay, auc}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{from}\NormalTok{ sklearn.multiclass }\ImportTok{import}\NormalTok{ OneVsRestClassifier}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{from}\NormalTok{ itertools }\ImportTok{import}\NormalTok{ cycle}
+\ImportTok{from}\NormalTok{ sklearn.preprocessing }\ImportTok{import}\NormalTok{ label\_binarize}
+\KeywordTok{def}\NormalTok{ roc(model):}
+    \CommentTok{""" Unfitted model"""}
+\NormalTok{    model\_name }\OperatorTok{=} \BuiltInTok{str}\NormalTok{(model.\_\_class\_\_).split(}\StringTok{"."}\NormalTok{)[}\OperatorTok{{-}}\DecValTok{1}\NormalTok{][:}\OperatorTok{{-}}\DecValTok{2}\NormalTok{]}
+\NormalTok{    model }\OperatorTok{=}\NormalTok{ OneVsRestClassifier(model).fit(X\_train,y\_train)}
+\NormalTok{    plt.figure()}
+\NormalTok{    y\_pred }\OperatorTok{=}\NormalTok{ model.predict\_proba(X\_test)}
+\NormalTok{    fpr }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{()}
+\NormalTok{    tpr }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{()}
+\NormalTok{    thresh }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{()}
+\NormalTok{    thresh\_df }\OperatorTok{=}\NormalTok{ pd.DataFrame(columns}\OperatorTok{=}\NormalTok{[}\StringTok{"Class"}\NormalTok{,}\StringTok{"Threshold"}\NormalTok{])}
+\NormalTok{    roc\_auc }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{()}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{3}\NormalTok{):}
+\NormalTok{        fpr[i], tpr[i], thresh[i] }\OperatorTok{=}\NormalTok{ roc\_curve(y\_test, y\_pred[:, i],pos\_label}\OperatorTok{=}\NormalTok{i)}
+\NormalTok{        roc\_auc[i] }\OperatorTok{=}\NormalTok{ auc(fpr[i], tpr[i])}
+    \ControlFlowTok{for}\NormalTok{ i,j }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(thresh.keys(),[}\StringTok{"mildVsAll"}\NormalTok{,}\StringTok{"modVsAll"}\NormalTok{,}\StringTok{"sevVsAll"}\NormalTok{]):}
+\NormalTok{        thresh[j] }\OperatorTok{=}\NormalTok{ thresh.pop(i)}
+        \ControlFlowTok{if}\NormalTok{ j }\OperatorTok{==} \StringTok{"sevVsAll"}\NormalTok{ : }\ControlFlowTok{break}
+    \ControlFlowTok{for}\NormalTok{ i,j }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(thresh.keys(),thresh.values()):}
+        \ControlFlowTok{for}\NormalTok{ x }\KeywordTok{in}\NormalTok{ j:}
+\NormalTok{            thresh\_df }\OperatorTok{=}\NormalTok{ thresh\_df.append(\{}\StringTok{"Class"}\NormalTok{:i,}\StringTok{"Threshold"}\NormalTok{:x\},ignore\_index}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{    thresh\_df.to\_csv(}\SpecialStringTok{f\textquotesingle{}data/thresholds\_}\SpecialCharTok{\{}\NormalTok{model\_name}\SpecialCharTok{\}}\SpecialStringTok{.csv\textquotesingle{}}\NormalTok{,index}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{    colors }\OperatorTok{=}\NormalTok{ cycle([}\StringTok{"aqua"}\NormalTok{, }\StringTok{"darkorange"}\NormalTok{, }\StringTok{"cornflowerblue"}\NormalTok{])}
+    \ControlFlowTok{for}\NormalTok{ i, color, j }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(}\BuiltInTok{range}\NormalTok{(}\DecValTok{3}\NormalTok{), colors,[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]):}
+\NormalTok{        plt.plot(}
+\NormalTok{            fpr[i],}
+\NormalTok{            tpr[i],}
+\NormalTok{            color}\OperatorTok{=}\NormalTok{color,}
+\NormalTok{            lw}\OperatorTok{=}\DecValTok{2}\NormalTok{,}
+\NormalTok{            label}\OperatorTok{=}\StringTok{"ROC curve of class }\SpecialCharTok{\{0\}}\StringTok{ (area = }\SpecialCharTok{\{1:0.2f\}}\StringTok{)"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(j, roc\_auc[i])}
+\NormalTok{        )}
+\NormalTok{    plt.plot([}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{], [}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{], }\StringTok{"k{-}{-}"}\NormalTok{, lw}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{    plt.xlim([}\FloatTok{0.0}\NormalTok{, }\FloatTok{1.0}\NormalTok{])}
+\NormalTok{    plt.ylim([}\FloatTok{0.0}\NormalTok{, }\FloatTok{1.05}\NormalTok{])}
+\NormalTok{    plt.xlabel(}\StringTok{"False Positive Rate"}\NormalTok{)}
+\NormalTok{    plt.ylabel(}\StringTok{"True Positive Rate"}\NormalTok{)}
+\NormalTok{    plt.title(}\StringTok{"Some extension of Receiver operating characteristic to multiclass"}\NormalTok{)}
+\NormalTok{    plt.legend(loc}\OperatorTok{=}\StringTok{"lower right"}\NormalTok{)}
+\NormalTok{    plt.savefig(}\SpecialStringTok{f\textquotesingle{}figure/roc\_curve\_}\SpecialCharTok{\{}\NormalTok{model\_name}\SpecialCharTok{\}}\SpecialStringTok{.png\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{knn-1}{%
+\section{KNN}\label{knn-1}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3 sınıf için KNN Modeli kurma ve GridSearchCV algoritmasını hazırlama}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{from}\NormalTok{ sklearn.neighbors }\ImportTok{import}\NormalTok{ KNeighborsClassifier}
+\ImportTok{from}\NormalTok{ sklearn.model\_selection }\ImportTok{import}\NormalTok{ GridSearchCV}
+\ImportTok{from}\NormalTok{ sklearn.metrics }\ImportTok{import}\NormalTok{ ConfusionMatrixDisplay,confusion\_matrix,classification\_report,balanced\_accuracy\_score}
+\NormalTok{KNN\_model }\OperatorTok{=}\NormalTok{ KNeighborsClassifier()}
+\NormalTok{params }\OperatorTok{=}\NormalTok{ \{}\StringTok{"n\_neighbors"}\NormalTok{:np.arange(}\DecValTok{5}\NormalTok{,}\DecValTok{200}\NormalTok{),}
+          \StringTok{"weights"}\NormalTok{:[}\StringTok{"uniform"}\NormalTok{, }\StringTok{"distance"}\NormalTok{],}
+          \StringTok{"algorithm"}\NormalTok{:[}\StringTok{"auto"}\NormalTok{,}\StringTok{"ball\_tree"}\NormalTok{,}\StringTok{"kd\_tree"}\NormalTok{,}\StringTok{"brute"}\NormalTok{]\}}
+\NormalTok{GSC }\OperatorTok{=}\NormalTok{ GridSearchCV(KNN\_model,param\_grid}\OperatorTok{=}\NormalTok{params,}
+\NormalTok{                   cv}\OperatorTok{=}\DecValTok{10}\NormalTok{,verbose}\OperatorTok{=}\DecValTok{1}\NormalTok{,scoring}\OperatorTok{=}\StringTok{"accuracy"}\NormalTok{).fit(X\_train,y\_train)}
+\NormalTok{pd.DataFrame(GSC.cv\_results\_).to\_csv(}\StringTok{"data/KNN\_GridSearch\_Results.csv"}\NormalTok{,index}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{knn }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/KNN\_GridSearch\_Results.csv"}\NormalTok{)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{60}\NormalTok{)}\OperatorTok{;}
+\NormalTok{sns.lineplot(x}\OperatorTok{=}\NormalTok{knn.param\_n\_neighbors,y}\OperatorTok{=}\NormalTok{knn.mean\_test\_score}\OperatorTok{*}\DecValTok{100}\NormalTok{,hue}\OperatorTok{=}\NormalTok{knn.param\_weights)}\OperatorTok{;}
+\NormalTok{plt.ylabel(}\StringTok{"Eğitim Verisi Doğruluk Skoru (\%)"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.xlabel(}\StringTok{"Number of Neighbors"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.legend(title}\OperatorTok{=}\StringTok{"Ağırlıklandırma"}\NormalTok{,loc}\OperatorTok{=}\StringTok{"upper right"}\NormalTok{,labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Eşit Ağırlıklandırma"}\NormalTok{,}\StringTok{"Uzaklığa Göre Ağırlıklandırma"}\NormalTok{])}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/KNN\_Grid\_Graph.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}En İyi Parametreler : }\SpecialCharTok{\{}\NormalTok{GSC}\SpecialCharTok{.}\NormalTok{best\_params\_}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# En iyi parametreler ile modelin tekrar kurulması}
+\NormalTok{KNN\_model }\OperatorTok{=}\NormalTok{ KNeighborsClassifier(n\_neighbors }\OperatorTok{=} \DecValTok{33}\NormalTok{,}
+\NormalTok{                                 weights }\OperatorTok{=}\StringTok{\textquotesingle{}distance\textquotesingle{}}\NormalTok{).fit(X\_train,y\_train)}
+\NormalTok{y\_pred }\OperatorTok{=}\NormalTok{ KNN\_model.predict(X\_test)}
+\BuiltInTok{print}\NormalTok{(classification\_report(y\_test,y\_pred,target\_names}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]))}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Balanced Accuracy Score : }\SpecialCharTok{\{}\NormalTok{balanced\_accuracy\_score(y\_test,y\_pred)}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3 sınıflı KNN için ConfusionMatrix}
+\NormalTok{ConfusionMatrixDisplay(confusion\_matrix(y\_test,y\_pred),display\_labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]).plot()}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/knn\_conf.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3 sınıflı KNN için ROC curve}
+\NormalTok{roc(KNeighborsClassifier(n\_neighbors }\OperatorTok{=} \DecValTok{33}\NormalTok{,}
+\NormalTok{                         weights }\OperatorTok{=}\StringTok{\textquotesingle{}distance\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{rassal-ormanlar}{%
+\section{Rassal Ormanlar}\label{rassal-ormanlar}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3 sınıf için rassal ormanlar Modeli kurma ve GridSearchCV algoritmasını hazırlama}
+\ImportTok{from}\NormalTok{ sklearn.ensemble }\ImportTok{import}\NormalTok{ RandomForestClassifier}
+\ImportTok{from}\NormalTok{ sklearn.model\_selection }\ImportTok{import}\NormalTok{ GridSearchCV}
+\ImportTok{from}\NormalTok{ sklearn.metrics }\ImportTok{import}\NormalTok{ ConfusionMatrixDisplay,confusion\_matrix,classification\_report,balanced\_accuracy\_score}
+\NormalTok{RFC\_model }\OperatorTok{=}\NormalTok{ RandomForestClassifier()}
+\NormalTok{param\_grid }\OperatorTok{=}\NormalTok{ \{}\StringTok{"n\_estimators"}\NormalTok{:np.arange(}\DecValTok{350}\NormalTok{,}\DecValTok{1000}\NormalTok{,}\DecValTok{50}\NormalTok{),}
+              \StringTok{"criterion"}\NormalTok{:[}\StringTok{"gini"}\NormalTok{,}\StringTok{"index"}\NormalTok{],}
+              \StringTok{"max\_features"}\NormalTok{:[}\StringTok{"auto"}\NormalTok{,}\StringTok{"sqrt"}\NormalTok{,}\StringTok{"log2"}\NormalTok{],}
+              \StringTok{"ccp\_alpha"}\NormalTok{:[}\FloatTok{0.01}\NormalTok{,}\FloatTok{0.05}\NormalTok{,}\FloatTok{.1}\NormalTok{,}\FloatTok{0.3}\NormalTok{,}\FloatTok{.5}\NormalTok{,}\FloatTok{.7}\NormalTok{,}\FloatTok{.9}\NormalTok{,}\DecValTok{1}\NormalTok{],}
+              \StringTok{"max\_samples"}\NormalTok{:np.arange(}\DecValTok{1}\NormalTok{,X\_train.shape[}\DecValTok{1}\NormalTok{],}\DecValTok{1}\NormalTok{)\}}
+\NormalTok{GSC }\OperatorTok{=}\NormalTok{ GridSearchCV(RFC\_model,param\_grid}\OperatorTok{=}\NormalTok{params,}
+\NormalTok{                   cv}\OperatorTok{=}\DecValTok{10}\NormalTok{,verbose}\OperatorTok{=}\DecValTok{1}\NormalTok{,scoring}\OperatorTok{=}\StringTok{"accuracy"}\NormalTok{,random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{).fit(X\_train,y\_train)}
+\NormalTok{results }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/RF\_GridSearch\_Results.csv"}\NormalTok{)}
+\NormalTok{ginis }\OperatorTok{=}\NormalTok{ results[results[}\StringTok{"param\_criterion"}\NormalTok{] }\OperatorTok{==} \StringTok{"gini"}\NormalTok{]}
+\NormalTok{ginis }\OperatorTok{=}\NormalTok{ ginis[ginis[}\StringTok{"param\_ccp\_alpha"}\NormalTok{] }\OperatorTok{\textless{}=} \FloatTok{0.1}\NormalTok{]}
+\NormalTok{ginis }\OperatorTok{=}\NormalTok{ ginis[ginis[}\StringTok{"mean\_test\_score"}\NormalTok{]}\OperatorTok{\textgreater{}=}\FloatTok{0.704}\NormalTok{]}
+\CommentTok{\#Grafik Çizimi}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{60}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.ylim(}\FloatTok{0.703}\OperatorTok{*}\DecValTok{100}\NormalTok{,}\BuiltInTok{round}\NormalTok{(ginis.mean\_test\_score.unique().}\BuiltInTok{max}\NormalTok{()}\OperatorTok{*}\DecValTok{100}\NormalTok{,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\FloatTok{0.1}\NormalTok{)}\OperatorTok{;}
+\NormalTok{sns.lineplot(y}\OperatorTok{=}\NormalTok{ginis.mean\_test\_score}\OperatorTok{*}\DecValTok{100}\NormalTok{,x}\OperatorTok{=}\NormalTok{ginis.param\_n\_estimators,hue}\OperatorTok{=}\NormalTok{ginis.param\_ccp\_alpha,palette}\OperatorTok{=}\NormalTok{sns.color\_palette(n\_colors}\OperatorTok{=}\DecValTok{3}\NormalTok{),err\_style}\OperatorTok{=}\VariableTok{None}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.ylabel(}\StringTok{"Eğitim Verisi Doğruluk Skoru (\%)"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.xlabel(}\StringTok{"Number of Trees in Forest"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.legend(title}\OperatorTok{=}\StringTok{"Learning Rate"}\NormalTok{,loc}\OperatorTok{=}\StringTok{"upper right"}\NormalTok{,labels}\OperatorTok{=}\NormalTok{[}\FloatTok{0.01}\NormalTok{,}\FloatTok{0.05}\NormalTok{,}\FloatTok{0.1}\NormalTok{])}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/RF\_Grid\_Graph.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}En İyi Parametreler : }\SpecialCharTok{\{}\NormalTok{GSC}\SpecialCharTok{.}\NormalTok{best\_params\_}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{RFC\_model }\OperatorTok{=}\NormalTok{ RandomForestClassifier(ccp\_alpha}\OperatorTok{=}\FloatTok{0.05}\NormalTok{,criterion}\OperatorTok{=}\StringTok{"gini"}\NormalTok{,max\_features}\OperatorTok{=}\StringTok{"auto"}\NormalTok{,}
+\NormalTok{                                   max\_samples}\OperatorTok{=}\DecValTok{10}\NormalTok{,n\_estimators}\OperatorTok{=}\DecValTok{350}\NormalTok{,random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{).fit(X\_train,y\_train)}
+\NormalTok{y\_pred }\OperatorTok{=}\NormalTok{ RFC\_model.predict(X\_test)}
+\BuiltInTok{print}\NormalTok{(classification\_report(y\_test,y\_pred,target\_names}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]))}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Balanced Accuracy Score : }\SpecialCharTok{\{}\NormalTok{balanced\_accuracy\_score(y\_test,y\_pred)}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ConfusionMatrixDisplay(confusion\_matrix(y\_test,y\_pred),display\_labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]).plot()}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/rfc\_conf.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{roc(RandomForestClassifier(ccp\_alpha}\OperatorTok{=}\FloatTok{0.01}\NormalTok{,criterion}\OperatorTok{=}\StringTok{"gini"}\NormalTok{,max\_features}\OperatorTok{=}\StringTok{"sqrt"}\NormalTok{,}
+\NormalTok{                                   max\_samples}\OperatorTok{=}\DecValTok{10}\NormalTok{,n\_estimators}\OperatorTok{=}\DecValTok{900}\NormalTok{,random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{xgboost-1}{%
+\section{XGBoost}\label{xgboost-1}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3 sınıf için XGB Modeli}
+\ImportTok{from}\NormalTok{ xgboost.sklearn }\ImportTok{import}\NormalTok{ XGBClassifier}
+\ImportTok{from}\NormalTok{ sklearn.model\_selection }\ImportTok{import}\NormalTok{ GridSearchCV}
+\ImportTok{from}\NormalTok{ sklearn.metrics }\ImportTok{import}\NormalTok{ ConfusionMatrixDisplay,confusion\_matrix,classification\_report,balanced\_accuracy\_score}
+\NormalTok{XGB\_model }\OperatorTok{=}\NormalTok{ XGBClassifier()}
+\NormalTok{param\_grid }\OperatorTok{=}\NormalTok{ \{}\StringTok{"booster"}\NormalTok{:[}\StringTok{"gbtree"}\NormalTok{,}\StringTok{"gblinear"}\NormalTok{],}
+              \StringTok{"eta"}\NormalTok{:np.arange(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.1}\NormalTok{),}
+              \StringTok{"min\_child\_weight"}\NormalTok{:np.arange(}\DecValTok{0}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+              \StringTok{"max\_depth"}\NormalTok{:np.arange(}\DecValTok{3}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+              \StringTok{"gamma"}\NormalTok{:np.arange(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.1}\NormalTok{),}
+              \StringTok{"sumsample"}\NormalTok{:np.arange(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.1}\NormalTok{),}
+              \StringTok{"colsample\_bytree"}\NormalTok{:np.arange(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{.1}\NormalTok{),}
+              \StringTok{"n\_estimators"}\NormalTok{:np.arange(}\DecValTok{0}\NormalTok{,}\DecValTok{1000}\NormalTok{,}\DecValTok{50}\NormalTok{),}
+              \StringTok{"objective"}\NormalTok{:[}\StringTok{"multi:softmax"}\NormalTok{,}\StringTok{"multi:softprob"}\NormalTok{],}
+              \StringTok{"eval\_metric"}\NormalTok{:[}\StringTok{"auc"}\NormalTok{],}
+              \StringTok{"use\_label\_encoder"}\NormalTok{:[}\VariableTok{False}\NormalTok{]\}}
+\NormalTok{GSC }\OperatorTok{=}\NormalTok{ GridSearchCV(XGB\_model,param\_grid}\OperatorTok{=}\NormalTok{param\_grid,cv}\OperatorTok{=}\DecValTok{10}\NormalTok{,verbose}\OperatorTok{=}\DecValTok{1}\NormalTok{,n\_jobs}\OperatorTok{={-}}\DecValTok{1}\NormalTok{,scoring}\OperatorTok{=}\StringTok{"accuracy"}\NormalTok{).fit(X\_train,y\_train)}
+\NormalTok{resultsxgb }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/XGBoost\_GridSearch\_Results.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{";"}\NormalTok{)}
+\NormalTok{resultsxgb }\OperatorTok{=}\NormalTok{ resultsxgb.sort\_values(}\StringTok{"rank\_test\_score"}\NormalTok{)}
+\NormalTok{sorted\_xgb }\OperatorTok{=}\NormalTok{ resultsxgb[[}\StringTok{"param\_booster"}\NormalTok{,}\StringTok{"param\_eta"}\NormalTok{,}\StringTok{"param\_max\_depth"}\NormalTok{,}\StringTok{"param\_min\_child\_weight"}\NormalTok{,}\StringTok{"param\_n\_estimators"}\NormalTok{,}\StringTok{"param\_objective"}\NormalTok{,}\StringTok{"mean\_test\_score"}\NormalTok{,}\StringTok{"rank\_test\_score"}\NormalTok{]]}
+\CommentTok{\#Grafik Çizimi}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{10}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{100}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.ylim(}\FloatTok{0.72}\OperatorTok{*}\DecValTok{100}\NormalTok{,}\BuiltInTok{round}\NormalTok{(sorted\_xgb.mean\_test\_score.unique().}\BuiltInTok{max}\NormalTok{()}\OperatorTok{*}\DecValTok{100}\NormalTok{,}\DecValTok{2}\NormalTok{)}\OperatorTok{+}\FloatTok{0.05}\NormalTok{)}\OperatorTok{;}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in}\NormalTok{ sorted\_xgb.param\_eta.unique():}
+    \ControlFlowTok{if}\NormalTok{ i }\OperatorTok{\textless{}=}\FloatTok{0.4}\NormalTok{:}
+\NormalTok{        x }\OperatorTok{=}\NormalTok{ sorted\_xgb[sorted\_xgb.param\_eta }\OperatorTok{==}\NormalTok{ i].groupby(}\StringTok{"param\_n\_estimators"}\NormalTok{).}\BuiltInTok{max}\NormalTok{()}
+\NormalTok{        sns.lineplot(x}\OperatorTok{=}\NormalTok{x.index,y}\OperatorTok{=}\NormalTok{x.mean\_test\_score}\OperatorTok{*}\DecValTok{100}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.ylabel(}\StringTok{"Eğitim Verisi Doğruluk Skoru (\%)"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.legend([}\FloatTok{.1}\NormalTok{,}\FloatTok{.4}\NormalTok{,}\FloatTok{.2}\NormalTok{,}\FloatTok{.3}\NormalTok{],loc}\OperatorTok{=}\DecValTok{1}\NormalTok{,title}\OperatorTok{=}\StringTok{"Learning Rate"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/XGB\_Grid\_Graph.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}En İyi Parametreler : }\SpecialCharTok{\{}\NormalTok{GSC}\SpecialCharTok{.}\NormalTok{best\_params\_}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{XGB\_model }\OperatorTok{=}\NormalTok{ XGBClassifier(booster}\OperatorTok{=}\StringTok{"gbtree"}\NormalTok{,eta}\OperatorTok{=}\StringTok{"0.1"}\NormalTok{,max\_depth}\OperatorTok{=}\DecValTok{3}\NormalTok{,min\_child\_weight}\OperatorTok{=}\DecValTok{10}\NormalTok{,n\_estimators}\OperatorTok{=}\DecValTok{100}\NormalTok{,objective}\OperatorTok{=}\StringTok{"multi:softprob"}\NormalTok{,eval\_metric}\OperatorTok{=}\StringTok{"auc"}\NormalTok{,use\_label\_encoder}\OperatorTok{=}\VariableTok{False}\NormalTok{,num\_class}\OperatorTok{=}\DecValTok{2}\NormalTok{).fit(X\_train,y\_train)}
+\NormalTok{y\_pred }\OperatorTok{=}\NormalTok{ XGB\_model.predict(X\_test)}
+\BuiltInTok{print}\NormalTok{(classification\_report(y\_test,y\_pred,target\_names}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]))}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Balanced Accuracy Score : }\SpecialCharTok{\{}\NormalTok{balanced\_accuracy\_score(y\_test,y\_pred)}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ConfusionMatrixDisplay(confusion\_matrix(y\_test,y\_pred),display\_labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]).plot()}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/xgb\_conf.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{roc(XGBClassifier(booster}\OperatorTok{=}\StringTok{"gbtree"}\NormalTok{,eta}\OperatorTok{=}\StringTok{"0.1"}\NormalTok{,max\_depth}\OperatorTok{=}\DecValTok{3}\NormalTok{,min\_child\_weight}\OperatorTok{=}\DecValTok{10}\NormalTok{,n\_estimators}\OperatorTok{=}\DecValTok{100}\NormalTok{,objective}\OperatorTok{=}\StringTok{"multi:softprob"}\NormalTok{,eval\_metric}\OperatorTok{=}\StringTok{"auc"}\NormalTok{,use\_label\_encoder}\OperatorTok{=}\VariableTok{False}\NormalTok{,num\_class}\OperatorTok{=}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{neural-network}{%
+\section{Neural Network}\label{neural-network}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3 sınıflı sinir ağları modeli}
+\ImportTok{from}\NormalTok{ sklearn.neural\_network }\ImportTok{import}\NormalTok{ MLPClassifier}
+\ImportTok{from}\NormalTok{ sklearn.model\_selection }\ImportTok{import}\NormalTok{ GridSearchCV}
+\ImportTok{from}\NormalTok{ sklearn.metrics }\ImportTok{import}\NormalTok{ ConfusionMatrixDisplay,confusion\_matrix,classification\_report,balanced\_accuracy\_score}
+\NormalTok{params }\OperatorTok{=}\NormalTok{ \{}\StringTok{"hidden\_layer\_sizes"}\NormalTok{:np.arange(}\DecValTok{1}\NormalTok{,}\DecValTok{26}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+          \StringTok{"learning\_rate"}\NormalTok{:[}\StringTok{"adaptive"}\NormalTok{,}\StringTok{"constant"}\NormalTok{,}\StringTok{"invscaling"}\NormalTok{],}
+          \StringTok{"activation"}\NormalTok{:[}\StringTok{"identity"}\NormalTok{,}\StringTok{"logistic"}\NormalTok{,}\StringTok{"tanh"}\NormalTok{,}\StringTok{"relu"}\NormalTok{]\}}
+\NormalTok{gridd }\OperatorTok{=}\NormalTok{ GridSearchCV(MLPClassifier(random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{),param\_grid}\OperatorTok{=}\NormalTok{params,cv}\OperatorTok{=}\DecValTok{10}\NormalTok{,verbose}\OperatorTok{=}\DecValTok{1}\NormalTok{,n\_jobs}\OperatorTok{={-}}\DecValTok{1}\NormalTok{,scoring}\OperatorTok{=}\StringTok{"accuracy"}\NormalTok{).fit(X\_train,y\_train)}
+\NormalTok{pd.DataFrame(gridd.cv\_results\_).to\_csv(}\StringTok{"NN\_GridSearch\_Results.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{";"}\NormalTok{,index}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{result\_nn }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/NN\_GridSearch\_Results.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{";"}\NormalTok{)}
+\CommentTok{\#Grafik Çizimi}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{10}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{100}\NormalTok{)}\OperatorTok{;}
+\NormalTok{sns.lineplot(x}\OperatorTok{=}\NormalTok{result\_nn[}\StringTok{"param\_hidden\_layer\_sizes"}\NormalTok{],y}\OperatorTok{=}\NormalTok{result\_nn[}\StringTok{"mean\_test\_score"}\NormalTok{]}\OperatorTok{*}\DecValTok{100}\NormalTok{,hue}\OperatorTok{=}\NormalTok{result\_nn[}\StringTok{"param\_activation"}\NormalTok{])}\OperatorTok{;}
+\NormalTok{plt.xlabel(}\StringTok{"Hidden Layer Sizes"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.ylabel(}\StringTok{"Eğitim Verisi Doğruluk Skoru (\%)"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.legend(title}\OperatorTok{=}\StringTok{"Aktivasyon Fonksiyonu"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/NN\_Grid\_Graph.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}En İyi Parametreler : }\SpecialCharTok{\{}\NormalTok{gridd}\SpecialCharTok{.}\NormalTok{best\_params\_}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{NN\_model }\OperatorTok{=}\NormalTok{ MLPClassifier(activation}\OperatorTok{=}\StringTok{"relu"}\NormalTok{,hidden\_layer\_sizes}\OperatorTok{=}\DecValTok{19}\NormalTok{,learning\_rate}\OperatorTok{=}\StringTok{"adaptive"}\NormalTok{,random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{,max\_iter}\OperatorTok{=}\DecValTok{3000}\NormalTok{).fit(X\_train,y\_train)}
+\NormalTok{y\_pred }\OperatorTok{=}\NormalTok{ NN\_model.predict(X\_test)}
+\BuiltInTok{print}\NormalTok{(classification\_report(y\_test,y\_pred,target\_names}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]))}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Balanced Accuracy Score : }\SpecialCharTok{\{}\NormalTok{balanced\_accuracy\_score(y\_test,y\_pred)}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ConfusionMatrixDisplay(confusion\_matrix(y\_test,y\_pred),display\_labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Moderate"}\NormalTok{,}\StringTok{"Severe"}\NormalTok{]).plot()}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/nn\_conf.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{roc(MLPClassifier(activation}\OperatorTok{=}\StringTok{"relu"}\NormalTok{,hidden\_layer\_sizes}\OperatorTok{=}\DecValTok{19}\NormalTok{,learning\_rate}\OperatorTok{=}\StringTok{"adaptive"}\NormalTok{,random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{,max\_iter}\OperatorTok{=}\DecValTok{3000}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{iki-sinifli}{%
+\chapter{İKİ SINIFLI}\label{iki-sinifli}}
 
-İkinci Ek
+\hypertarget{preprocess}{%
+\section{Preprocess}\label{preprocess}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3 sınıfı 2 sınıfa indirgeme}
+\ImportTok{from}\NormalTok{ sklearn.model\_selection }\ImportTok{import}\NormalTok{ train\_test\_split}
+\NormalTok{bin\_data }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/binary\_data.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{";"}\NormalTok{)}
+\NormalTok{X\_bin }\OperatorTok{=}\NormalTok{ bin\_data.drop([}\StringTok{"Severity"}\NormalTok{,}\StringTok{"New\_Sev"}\NormalTok{],axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{y\_bin }\OperatorTok{=}\NormalTok{ bin\_data[}\StringTok{"New\_Sev"}\NormalTok{]}
+\NormalTok{Xbin\_train, Xbin\_test, ybin\_train, ybin\_test }\OperatorTok{=}\NormalTok{ train\_test\_split(X\_bin,y\_bin,test\_size}\OperatorTok{=}\FloatTok{0.3}\NormalTok{,stratify}\OperatorTok{=}\NormalTok{y\_bin,random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{)}
+\KeywordTok{def}\NormalTok{ roc\_bin(model):}
+\NormalTok{    model\_name }\OperatorTok{=} \BuiltInTok{str}\NormalTok{(model.\_\_class\_\_).split(}\StringTok{"."}\NormalTok{)[}\OperatorTok{{-}}\DecValTok{1}\NormalTok{][:}\OperatorTok{{-}}\DecValTok{2}\NormalTok{]}
+\NormalTok{    ybin\_pred2 }\OperatorTok{=}\NormalTok{ model.predict\_proba(Xbin\_test)}
+\NormalTok{    plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{100}\NormalTok{)}
+\NormalTok{    fpr }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{()}
+\NormalTok{    tpr }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{()}
+\NormalTok{    thresh }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{()}
+\NormalTok{    roc\_auc }\OperatorTok{=} \BuiltInTok{dict}\NormalTok{()}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{2}\NormalTok{):}
+\NormalTok{        fpr[i], tpr[i], thresh[i] }\OperatorTok{=}\NormalTok{ roc\_curve(ybin\_test, ybin\_pred2[:, i],pos\_label}\OperatorTok{=}\NormalTok{i)}
+\NormalTok{        roc\_auc[i] }\OperatorTok{=}\NormalTok{ auc(fpr[i], tpr[i])}
+\NormalTok{    colors }\OperatorTok{=}\NormalTok{ cycle([}\StringTok{"aqua"}\NormalTok{, }\StringTok{"darkorange"}\NormalTok{, }\StringTok{"cornflowerblue"}\NormalTok{])}
+    \ControlFlowTok{for}\NormalTok{ i, color, j }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(}\BuiltInTok{range}\NormalTok{(}\DecValTok{2}\NormalTok{), colors,[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod + Sev"}\NormalTok{]):}
+\NormalTok{        plt.plot(}
+\NormalTok{        fpr[i],}
+\NormalTok{        tpr[i],}
+\NormalTok{        color}\OperatorTok{=}\NormalTok{color,}
+\NormalTok{        lw}\OperatorTok{=}\DecValTok{2}\NormalTok{,}
+\NormalTok{        label}\OperatorTok{=}\StringTok{"ROC curve of class }\SpecialCharTok{\{0\}}\StringTok{ (area = }\SpecialCharTok{\{1:0.2f\}}\StringTok{)"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(j, roc\_auc[i])}
+\NormalTok{        )}
+\NormalTok{    plt.plot([}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{], [}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{], }\StringTok{"k{-}{-}"}\NormalTok{, lw}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{    plt.xlim([}\FloatTok{0.0}\NormalTok{, }\FloatTok{1.0}\NormalTok{])}
+\NormalTok{    plt.ylim([}\FloatTok{0.0}\NormalTok{, }\FloatTok{1.05}\NormalTok{])}
+\NormalTok{    plt.xlabel(}\StringTok{"False Positive Rate"}\NormalTok{)}
+\NormalTok{    plt.ylabel(}\StringTok{"True Positive Rate"}\NormalTok{)}
+\NormalTok{    plt.title(}\StringTok{"Some extension of Receiver operating characteristic to multiclass"}\NormalTok{)}
+\NormalTok{    plt.legend(loc}\OperatorTok{=}\StringTok{"lower right"}\NormalTok{)}
+\NormalTok{    plt.savefig(}\SpecialStringTok{f\textquotesingle{}figure/}\SpecialCharTok{\{}\NormalTok{model\_name}\SpecialCharTok{\}}\SpecialStringTok{\_binary\_roc.png\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{knn-2}{%
+\section{KNN}\label{knn-2}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{KNN\_model\_bin }\OperatorTok{=}\NormalTok{ KNeighborsClassifier()}
+\NormalTok{params }\OperatorTok{=}\NormalTok{ \{}\StringTok{"n\_neighbors"}\NormalTok{:np.arange(}\DecValTok{5}\NormalTok{,}\DecValTok{200}\NormalTok{),}
+          \StringTok{"weights"}\NormalTok{:[}\StringTok{"uniform"}\NormalTok{, }\StringTok{"distance"}\NormalTok{],}
+          \StringTok{"algorithm"}\NormalTok{:[}\StringTok{"auto"}\NormalTok{,}\StringTok{"ball\_tree"}\NormalTok{,}\StringTok{"kd\_tree"}\NormalTok{,}\StringTok{"brute"}\NormalTok{]\}}
+\NormalTok{GSC }\OperatorTok{=}\NormalTok{ GridSearchCV(KNN\_model\_bin,param\_grid}\OperatorTok{=}\NormalTok{params,cv}\OperatorTok{=}\DecValTok{10}\NormalTok{,verbose}\OperatorTok{=}\DecValTok{1}\NormalTok{,scoring}\OperatorTok{=}\StringTok{"accuracy"}\NormalTok{,n\_jobs}\OperatorTok{={-}}\DecValTok{1}\NormalTok{).fit(Xbin\_train,ybin\_train)}
+\NormalTok{pd.DataFrame(GSC.cv\_results\_).to\_csv(}\StringTok{"data/KNN\_bin\_GridSearch\_Results.csv"}\NormalTok{,index}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{knn\_bin }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/KNN\_bin\_GridSearch\_Results.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{";"}\NormalTok{)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{5}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{60}\NormalTok{)}\OperatorTok{;}
+\NormalTok{sns.lineplot(x}\OperatorTok{=}\NormalTok{knn\_bin[}\StringTok{"param\_n\_neighbors"}\NormalTok{],y}\OperatorTok{=}\NormalTok{knn\_bin[}\StringTok{"mean\_test\_score"}\NormalTok{]}\OperatorTok{*}\DecValTok{100}\NormalTok{,hue}\OperatorTok{=}\NormalTok{knn\_bin[}\StringTok{"param\_weights"}\NormalTok{])}\OperatorTok{;}
+\NormalTok{plt.ylabel(}\StringTok{"Eğitim Verisi Doğruluk Skoru (\%)"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.xlabel(}\StringTok{"Number of Neighbors"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.legend(title}\OperatorTok{=}\StringTok{"Ağırlıklandırma"}\NormalTok{,loc}\OperatorTok{=}\StringTok{"upper right"}\NormalTok{,labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Eşit Ağırlıklandırma"}\NormalTok{,}\StringTok{"Uzaklığa Göre Ağırlıklandırma"}\NormalTok{])}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/KNN\_bin\_Grid\_Graph.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}En İyi Parametreler : }\SpecialCharTok{\{}\NormalTok{GSC}\SpecialCharTok{.}\NormalTok{best\_params\_}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{KNN\_modelbin }\OperatorTok{=}\NormalTok{ KNeighborsClassifier(n\_neighbors }\OperatorTok{=} \DecValTok{23}\NormalTok{,}
+\NormalTok{                                 weights }\OperatorTok{=}\StringTok{\textquotesingle{}uniform\textquotesingle{}}\NormalTok{).fit(Xbin\_train,ybin\_train)}
+\NormalTok{ybin\_pred }\OperatorTok{=}\NormalTok{ KNN\_modelbin.predict(Xbin\_test)}
+\BuiltInTok{print}\NormalTok{(classification\_report(ybin\_test,ybin\_pred,target\_names}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod+Sev"}\NormalTok{]))}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Balanced Accuracy Score : }\SpecialCharTok{\{}\NormalTok{balanced\_accuracy\_score(ybin\_test,ybin\_pred)}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ConfusionMatrixDisplay(confusion\_matrix(ybin\_test,ybin\_pred),display\_labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod+Sev"}\NormalTok{]).plot()}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/knn\_bin\_conf.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{roc\_bin(KNN\_modelbin)}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{rassal-ormanlar-1}{%
+\section{Rassal Ormanlar}\label{rassal-ormanlar-1}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#param\_grid = \{"n\_estimators":np.arange(350,700,50),}
+              \CommentTok{\#"max\_features":["auto","sqrt","log2"],}
+              \CommentTok{\#"ccp\_alpha":[0.01,0.05,.1,0.3,.5],}
+              \CommentTok{\#"max\_samples":np.arange(1,X\_train.shape[1],1)\}}
+\CommentTok{\#GSC = GridSearchCV(RandomForestClassifier(random\_state=13,criterion="gini"),param\_grid=param\_grid,cv=10,verbose=1,n\_jobs={-}1,scoring="accuracy").fit(Xbin\_train,ybin\_train)}
+\NormalTok{pd.DataFrame(GSC.cv\_results\_).to\_csv(}\StringTok{"data/RF\_bin\_Grid\_Res.csv"}\NormalTok{,index}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{rf\_bin }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/RF\_bin\_Grid\_Res.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{";"}\NormalTok{)}
+\NormalTok{maxed }\OperatorTok{=}\NormalTok{ rf\_bin.groupby(}\StringTok{"rank\_test\_score"}\NormalTok{).}\BuiltInTok{max}\NormalTok{()}
+\NormalTok{maxed }\OperatorTok{=}\NormalTok{ maxed[maxed[}\StringTok{"mean\_test\_score"}\NormalTok{] }\OperatorTok{\textgreater{}} \FloatTok{0.75}\NormalTok{]}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{10}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{100}\NormalTok{)}\OperatorTok{;}
+\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{"param\_n\_estimators"}\NormalTok{,y}\OperatorTok{=}\StringTok{"mean\_test\_score"}\NormalTok{,hue}\OperatorTok{=}\StringTok{"param\_ccp\_alpha"}\NormalTok{,data}\OperatorTok{=}\NormalTok{maxed,err\_style}\OperatorTok{=}\VariableTok{None}\NormalTok{,palette}\OperatorTok{=}\StringTok{"husl"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.xlabel(}\StringTok{"Ormandaki Ağaç Sayısı"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.ylabel(}\StringTok{"Eğitim Verisi Doğruluk Skoru (\%)"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.legend(title}\OperatorTok{=}\StringTok{"Öğrenme Düzeyi"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/RF\_bin\_Grid\_Graph.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}En İyi Parametreler : }\SpecialCharTok{\{}\NormalTok{GSC}\SpecialCharTok{.}\NormalTok{best\_params\_}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{RF\_modelbin }\OperatorTok{=}\NormalTok{ RandomForestClassifier(ccp\_alpha }\OperatorTok{=} \FloatTok{0.01}\NormalTok{, }
+\NormalTok{                                     max\_features }\OperatorTok{=} \StringTok{"auto"}\NormalTok{,}
+\NormalTok{                                     max\_samples }\OperatorTok{=} \DecValTok{10}\NormalTok{,}
+\NormalTok{                                     n\_estimators }\OperatorTok{=} \DecValTok{400}\NormalTok{).fit(Xbin\_train,ybin\_train)}
+\NormalTok{ybin\_pred }\OperatorTok{=}\NormalTok{ RF\_modelbin.predict(Xbin\_test)}
+\BuiltInTok{print}\NormalTok{(classification\_report(ybin\_test,ybin\_pred,target\_names}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod+Sev"}\NormalTok{]))}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Balanced Accuracy Score : }\SpecialCharTok{\{}\NormalTok{balanced\_accuracy\_score(ybin\_test,ybin\_pred)}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ConfusionMatrixDisplay(confusion\_matrix(ybin\_test,ybin\_pred),display\_labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod+Sev"}\NormalTok{]).plot()}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/rf\_bin\_conf.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{roc\_bin(RF\_modelbin)}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{xgboost-2}{%
+\section{XGBoost}\label{xgboost-2}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{param\_grid }\OperatorTok{=}\NormalTok{ \{}\StringTok{"eta"}\NormalTok{:np.arange(}\DecValTok{0}\NormalTok{,}\FloatTok{.5}\NormalTok{,}\FloatTok{0.1}\NormalTok{),}
+              \StringTok{"min\_child\_weight"}\NormalTok{:np.arange(}\DecValTok{1}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+              \StringTok{"max\_depth"}\NormalTok{:np.arange(}\DecValTok{3}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+              \StringTok{"n\_estimators"}\NormalTok{:np.arange(}\DecValTok{0}\NormalTok{,}\DecValTok{500}\NormalTok{,}\DecValTok{50}\NormalTok{)\}}
+\NormalTok{GSC }\OperatorTok{=}\NormalTok{ GridSearchCV(XGBClassifier(eval\_metric}\OperatorTok{=}\StringTok{"auc"}\NormalTok{,use\_label\_encoder}\OperatorTok{=}\VariableTok{False}\NormalTok{,booster}\OperatorTok{=}\StringTok{"gbtree"}\NormalTok{),param\_grid}\OperatorTok{=}\NormalTok{param\_grid,cv}\OperatorTok{=}\DecValTok{10}\NormalTok{,verbose}\OperatorTok{=}\DecValTok{1}\NormalTok{,n\_jobs}\OperatorTok{={-}}\DecValTok{1}\NormalTok{,scoring}\OperatorTok{=}\StringTok{"accuracy"}\NormalTok{).fit(Xbin\_train,ybin\_train)}
+\NormalTok{pd.DataFrame(GSC.cv\_results\_).to\_csv(}\StringTok{"data/XGB\_bin\_Grid\_Res.csv"}\NormalTok{,index}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{XGB\_bin }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/XGB\_bin\_Grid\_Res.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{";"}\NormalTok{)}
+\NormalTok{maxed }\OperatorTok{=}\NormalTok{ XGB\_bin.groupby(}\StringTok{"rank\_test\_score"}\NormalTok{).}\BuiltInTok{max}\NormalTok{()}
+\NormalTok{maxed }\OperatorTok{=}\NormalTok{ maxed[maxed[}\StringTok{"mean\_test\_score"}\NormalTok{] }\OperatorTok{\textgreater{}} \FloatTok{0.75}\NormalTok{]}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{10}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{100}\NormalTok{)}\OperatorTok{;}
+\NormalTok{sns.lineplot(x}\OperatorTok{=}\StringTok{"param\_n\_estimators"}\NormalTok{,y}\OperatorTok{=}\StringTok{"mean\_test\_score"}\NormalTok{,hue}\OperatorTok{=}\StringTok{"param\_eta"}\NormalTok{,data}\OperatorTok{=}\NormalTok{maxed,err\_style}\OperatorTok{=}\VariableTok{None}\NormalTok{,palette}\OperatorTok{=}\StringTok{"husl"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.xlabel(}\StringTok{"Tahminleyici Sayısı"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.ylabel(}\StringTok{"Eğitim Verisi Doğruluk Skoru (\%)"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.legend(title}\OperatorTok{=}\StringTok{"Öğrenme Düzeyi"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/XGB\_bin\_Grid\_Graph.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}En İyi Parametreler : }\SpecialCharTok{\{}\NormalTok{GSC}\SpecialCharTok{.}\NormalTok{best\_params\_}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{XGB\_modelbin }\OperatorTok{=}\NormalTok{ XGBClassifier(eval\_metric}\OperatorTok{=}\StringTok{"auc"}\NormalTok{,}
+\NormalTok{                             use\_label\_encoder}\OperatorTok{=}\VariableTok{False}\NormalTok{,}
+\NormalTok{                             booster}\OperatorTok{=}\StringTok{"gbtree"}\NormalTok{,}
+\NormalTok{                             eta}\OperatorTok{=}\FloatTok{0.2}\NormalTok{,}
+\NormalTok{                             max\_depth}\OperatorTok{=}\DecValTok{10}\NormalTok{,}
+\NormalTok{                             min\_child\_weight}\OperatorTok{=}\DecValTok{10}\NormalTok{,}
+\NormalTok{                             n\_estimators}\OperatorTok{=}\DecValTok{400}\NormalTok{).fit(Xbin\_train,ybin\_train)}
+\NormalTok{ybin\_pred }\OperatorTok{=}\NormalTok{ XGB\_modelbin.predict(Xbin\_test)}
+\BuiltInTok{print}\NormalTok{(classification\_report(ybin\_test,ybin\_pred,target\_names}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod+Sev"}\NormalTok{]))}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Balanced Accuracy Score : }\SpecialCharTok{\{}\NormalTok{balanced\_accuracy\_score(ybin\_test,ybin\_pred)}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ConfusionMatrixDisplay(confusion\_matrix(ybin\_test,ybin\_pred),display\_labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod+Sev"}\NormalTok{]).plot()}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/XGB\_bin\_conf.png"}\NormalTok{)}
+\NormalTok{plt.close(}\StringTok{\textquotesingle{}all\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{roc\_bin(XGB\_modelbin)}
+\NormalTok{plt.close(}\StringTok{\textquotesingle{}all\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\hypertarget{neural-networks}{%
+\section{Neural Networks}\label{neural-networks}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{params }\OperatorTok{=}\NormalTok{ \{}\StringTok{"hidden\_layer\_sizes"}\NormalTok{:np.arange(}\DecValTok{1}\NormalTok{,}\DecValTok{26}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+          \StringTok{"learning\_rate"}\NormalTok{:[}\StringTok{"adaptive"}\NormalTok{,}\StringTok{"constant"}\NormalTok{,}\StringTok{"invscaling"}\NormalTok{],}
+          \StringTok{"activation"}\NormalTok{:[}\StringTok{"identity"}\NormalTok{,}\StringTok{"logistic"}\NormalTok{,}\StringTok{"tanh"}\NormalTok{,}\StringTok{"relu"}\NormalTok{]\}}
+\NormalTok{grid2 }\OperatorTok{=}\NormalTok{ GridSearchCV(MLPClassifier(random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{),param\_grid}\OperatorTok{=}\NormalTok{params,cv}\OperatorTok{=}\DecValTok{10}\NormalTok{,verbose}\OperatorTok{=}\DecValTok{1}\NormalTok{,n\_jobs}\OperatorTok{={-}}\DecValTok{1}\NormalTok{,scoring}\OperatorTok{=}\StringTok{"accuracy"}\NormalTok{).fit(Xbin\_train,ybin\_train)}
+\NormalTok{pd.DataFrame(grid2.cv\_results\_).to\_csv(}\StringTok{"data/NN\_bin\_Grid\_Res.csv"}\NormalTok{,index}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\NormalTok{nn\_bin }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"data/NN\_bin\_Grid\_Res.csv"}\NormalTok{,sep}\OperatorTok{=}\StringTok{";"}\NormalTok{)}
+\NormalTok{plt.figure(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{15}\NormalTok{,}\DecValTok{10}\NormalTok{),dpi}\OperatorTok{=}\DecValTok{100}\NormalTok{)}\OperatorTok{;}
+\NormalTok{sns.lineplot(x}\OperatorTok{=}\NormalTok{nn\_bin[}\StringTok{"param\_hidden\_layer\_sizes"}\NormalTok{],y}\OperatorTok{=}\NormalTok{nn\_bin[}\StringTok{"mean\_test\_score"}\NormalTok{]}\OperatorTok{*}\DecValTok{100}\NormalTok{,hue}\OperatorTok{=}\NormalTok{nn\_bin[}\StringTok{"param\_activation"}\NormalTok{])}\OperatorTok{;}
+\NormalTok{plt.xlabel(}\StringTok{"Hidden Layer Sizes"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.ylabel(}\StringTok{"Eğitim Verisi Doğruluk Skoru (\%)"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.legend(title}\OperatorTok{=}\StringTok{"Aktivasyon Fonksiyonu"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/NN\_bin\_Grid\_Graph.png"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}En İyi Parametreler : }\SpecialCharTok{\{}\NormalTok{grid2}\SpecialCharTok{.}\NormalTok{best\_params\_}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{NN\_modelbin }\OperatorTok{=}\NormalTok{ MLPClassifier(hidden\_layer\_sizes}\OperatorTok{=}\DecValTok{19}\NormalTok{,}
+\NormalTok{                            learning\_rate}\OperatorTok{=}\StringTok{\textquotesingle{}adaptive\textquotesingle{}}\NormalTok{,}
+\NormalTok{                            random\_state}\OperatorTok{=}\DecValTok{13}\NormalTok{,}
+\NormalTok{                            max\_iter}\OperatorTok{=}\DecValTok{3000}\NormalTok{).fit(Xbin\_train,ybin\_train)}
+\NormalTok{ybin\_pred }\OperatorTok{=}\NormalTok{ NN\_modelbin.predict(Xbin\_test)}
+\BuiltInTok{print}\NormalTok{(classification\_report(ybin\_test,ybin\_pred,target\_names}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod+Sev"}\NormalTok{]))}
+\BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f\textquotesingle{}Balanced Accuracy Score : }\SpecialCharTok{\{}\NormalTok{balanced\_accuracy\_score(ybin\_test,ybin\_pred)}\SpecialCharTok{\}}\SpecialStringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ConfusionMatrixDisplay(confusion\_matrix(ybin\_test,ybin\_pred),display\_labels}\OperatorTok{=}\NormalTok{[}\StringTok{"Mild"}\NormalTok{,}\StringTok{"Mod+Sev"}\NormalTok{]).plot()}\OperatorTok{;}
+\NormalTok{plt.savefig(}\StringTok{"figure/nn\_bin\_conf.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{roc\_bin(NN\_modelbin)}
+\end{Highlighting}
+\end{Shaded}
 
 
 

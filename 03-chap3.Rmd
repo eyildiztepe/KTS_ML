@@ -482,8 +482,8 @@ Bölüm \ref{mult_xgb} de bulunan performans metrikleri yakından incelendiğind
 Duyarlılık metriğindeki düşüklüğün sebep olabileceği yanlış sınıflandırmaların önüne geçebilmek amacı ile bölüm \ref{binary} de problem iki sınıflı probleme indirgenecek ve modeller tekrar çalıştırılacaktır.
 
 ## İki Sınıflı Sınıflama  {#binary}
+Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin 3 farklı ciddiyet düzeyine sahip olduğu veri seti 'Moderate' ve 'Severe' ciddiyet düzeyleri birleştirilerek problemin 2 farklı ciddiyet düzeyine indirgenip farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.  
 
-Bu bölümde orijinal hali 3 sınıftan oluşan veri setimizdeki görece az gözleme sahip olan 2 sınıfı birleştirip, 2 sınıflı probleme çözüm arayacağız.
 ```{python echo=FALSE}
 from sklearn.model_selection import train_test_split
 bin_data = pd.read_csv("data/binary_data.csv",sep=";")
@@ -520,15 +520,16 @@ def roc_bin(model):
     plt.savefig(f'figure/{model_name}_binary_roc.png')
 ```
 
-### K-En Yakın Komşuluk Modeli  
+### K-En Yakın Komşuluk Modeli  {#bin_knn}
 
-Bu bölümde veri setimiz üzerinde K - En yakın komşuluk modelini kullanacak ve çıktılarını değerlendireceğiz.  
+Bu bölümde veri seti üzerinde K - En yakın komşuluk modeli kullanılmış ve çıktıları değerlendirilmiştir.  
 
 #### Hiper Parametre Seçimi  
 
-Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.  
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.    
 
 ```{python echo=FALSE}
+#KNN_model_bin = KNeighborsClassifier()
 #params = {"n_neighbors":np.arange(5,200),
           #"weights":["uniform", "distance"],
           #"algorithm":["auto","ball_tree","kd_tree","brute"]}
@@ -547,12 +548,17 @@ knitr::include_graphics(path="figure/KNN_bin_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {GSC.best_params_}')
-print("En İyi Parametreler:{'algorithm':'auto','n_neighbors':23,'weights':'uniform'}")
-
 ```
+\newpage  
+K-En yakın komşuluk modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
+
+* 'algorithm':'auto'    
+* 'n_neighbors':23  
+* 'weights':'uniform'  
+
 #### En İyi Parametreli Model  
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.  
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.    
 
 ```{python echo=FALSE}
 KNN_modelbin = KNeighborsClassifier(n_neighbors = 23,
@@ -575,13 +581,13 @@ knitr::include_graphics(path="figure/knn_bin_conf.png")
 ```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/KNeighborsClassifier_binary_roc.png")
 ```  
-### Rassal Ormanlar Modeli
+### Rassal Ormanlar Modeli {#bin_rf}
 
-Bu bölümde veri setimiz üzerinde rassal ormanlar modelini kullanacak ve çıktılarını değerlendireceğiz.  
+Bu bölümde veri seti üzerinde rassal ormanlar modeli kullanılmış ve çıktıları değerlendirilmiştir.    
 
 #### Hiper Parametre Seçimi  
 
-Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.  
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.  
 
 ```{python echo=FALSE}
 #param_grid = {"n_estimators":np.arange(350,700,50),
@@ -607,12 +613,18 @@ knitr::include_graphics(path="figure/RF_bin_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {GSC.best_params_}')
-print("En İyi Parametreler:{'ccp_alpha': 0.01, 'max_features': 'auto', 'max_samples': 10, 'n_estimators': 400}")
+```  
+Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
 
-```
+* 'ccp_alpha': 0.01  
+* 'max_features': 'auto'  
+* 'max_samples': 10  
+* 'n_estimators': 400  
+\newpage  
+
 #### En İyi Parametreli Model  
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.  
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.   
 
 ```{python echo=FALSE}
 RF_modelbin = RandomForestClassifier(ccp_alpha = 0.01, 
@@ -637,13 +649,13 @@ knitr::include_graphics(path="figure/rf_bin_conf.png")
 ```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/RandomForestClassifier_binary_roc.png")
 ```  
-### XGBoost
+### XGBoost {#bin_xgb}
 
-Bu bölümde veri setimiz üzerinde XGBoost modelini kullanacak ve çıktılarını değerlendireceğiz.  
+Bu bölümde veri seti üzerinde xgboost modeli kullanılmış ve çıktıları değerlendirilmiştir.    
 
 #### Hiper Parametre Seçimi  
 
-Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.  
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.    
 
 ```{python echo=FALSE}
 #param_grid = {"eta":np.arange(0,.5,0.1),
@@ -669,11 +681,18 @@ knitr::include_graphics(path="figure/XGB_bin_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {GSC.best_params_}')
-print("En İyi Parametreler:{'eta': 0.2, 'max_depth': 10, 'min_child_weight': 10, 'n_estimators': 400}")
 ```
+XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
+
+* 'eta': 0.2  
+* 'max_depth': 10  
+* 'min_child_weight': 10  
+* 'n_estimators': 400  
+\newpage  
+
 #### En İyi Parametreli Model  
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.  
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.  
 
 ```{python echo=FALSE}
 XGB_modelbin = XGBClassifier(eval_metric="auc",
@@ -705,13 +724,13 @@ knitr::include_graphics(path="figure/XGBClassifier_binary_roc.png")
 ```  
 
 
-### Neural Network (Yapay Sinir Ağları)  Modeli
+### Neural Network (Yapay Sinir Ağları)  Modeli {#bin_nn}
 
-Bu bölümde veri setimiz üzerinde yapay sinir ağları modelini kullanacak ve çıktılarını değerlendireceğiz.  
+Bu bölümde veri seti üzerinde sinir ağları modeli kullanılmış ve çıktıları değerlendirilmiştir.  
 
 #### Hiper Parametre Seçimi  
 
-Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritmasın en uygun doğruluk oranı bulunana kadar çalışması sağlandı.  
+Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.  
 
 ```{python echo=FALSE}
 #params = {"hidden_layer_sizes":np.arange(1,26,1),
@@ -732,12 +751,17 @@ knitr::include_graphics(path="figure/NN_bin_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {grid2.best_params_}')
-print("En İyi Parametreler:{'activation': 'relu', 'hidden_layer_sizes': 19, 'learning_rate': 'adaptive'}")
+```  
+Sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
 
-```
+* 'activation': 'relu'  
+* 'hidden_layer_sizes': 19  
+* 'learning_rate': 'adaptive'  
+\newpage  
+
 #### En İyi Parametreli Model  
 
-GridSearchCV algoritması ile bulduğumuz parametrelerle kurulan modelimizin sınıflandırma metrikleri.  
+Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.    
 
 ```{python echo=FALSE}
 NN_modelbin = MLPClassifier(hidden_layer_sizes=19,
@@ -762,3 +786,7 @@ knitr::include_graphics(path="figure/nn_bin_conf.png")
 ```{r echo=FALSE,fig.align="center",fig.cap="Yapar Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/MLPClassifier_binary_roc.png")
 ```
+### İki Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi
+Bölüm \ref{bin_knn}, \ref{bin_rf}, \ref{bin_xgb} ve \ref{bin_nn} den elde edilen sonuçlar incelenmiş olup, iki sınıflı problem için %82 doğru sınıflama oranları ile XGBoost ve Rassal Ormanlar modelleri en iyi modeller olarak bulunmuştur.  
+Bölüm \ref{bin_rf} ve \ref{bin_xgb} de bulunan performans metrikleri yakından incelendiğinde, XGBoost modeli kesinlik, duyarlılık ve f1-skor metrikleri bakımından Rassal Ormanlar modelinden daha iyi sonuç vermiştir.  
+Ciddiyet sınıflandırma probleminin 'Mild' ve 'Moderate + Severe' olacak şekilde 2 sınıfa indirgendiği durumda XGBoost modeli diğer modellerden daha iyi sonuç vermektedir.
