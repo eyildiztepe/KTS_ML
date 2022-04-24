@@ -1,7 +1,9 @@
 `r if(knitr:::is_latex_output()) '\\appendix'`
 
-`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'` 
-# Gerekli Paketlerin Yüklenmesi ve Verilerin İşlenmesi
+`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
+
+# Gerekli Paketlerin Yüklenmesi ve Verilerin Okunması ve Veri Önişleme
+\scriptsize
 ```{r echo=TRUE, eval=FALSE,warning=FALSE,message=FALSE}
 # R için gerekli paketlerin kurulması
 if(!require(reticulate)) install.packages("reticulate", repos = "http://cran.rstudio.com")
@@ -57,7 +59,6 @@ catDF = CTS.groupby("Severity").sum()[["Sex","Side","Diabetes","NP","Weakness"]]
 sex, rside, diab, np, weak = catDF["Sex"],catDF["Side"],catDF["Diabetes"],catDF["NP"],catDF["Weakness"]
 hands = CTS.groupby("Severity").count()["NP"]
 handsx = hands*100
-
 ```
 ```{r, echo=TRUE, eval=FALSE,warning=FALSE,message=FALSE}
 # R için veri setinin tanıtılması ve Rastgele olarak ayrılması
@@ -112,20 +113,27 @@ traindata_P = pd.DataFrame(r.traindata_top)
 traindata_P.drop(["Mild","Mod","Sev"],axis=1,inplace=True)
 testdata_P = pd.DataFrame(r.testdata_top)
 testdata_P.drop(["Mild","Mod","Sev"],axis=1,inplace=True)
-X_train, X_test, y_train, y_test = traindata_P.drop(["Severity"],axis=1),testdata_P.drop(["Severity"],axis=1),pd.DataFrame(LE.transform(traindata_P.Severity)),pd.DataFrame(LE.transform(testdata_P.Severity))
+X_train, X_test, y_train, y_test = traindata_P.drop(["Severity"],axis=1),testdata_P.drop(["Severity"],
+axis=1),pd.DataFrame(LE.transform(traindata_P.Severity)),
+pd.DataFrame(LE.transform(testdata_P.Severity))
 Stand = StandardScaler().fit(r.CTS[["Age","BMI","CSA","PB","Duration","NRS"]])
-X_train[["Age","BMI","CSA","PB","Duration","NRS"]]=pd.DataFrame(Stand.transform(X_train[["Age","BMI","CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
+X_train[["Age","BMI","CSA","PB","Duration","NRS"]]=pd.DataFrame(Stand.transform(X_train[["Age","BMI",
+"CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
 y_train = y_train.to_numpy().ravel()
-X_test[["Age","BMI","CSA","PB","Duration","NRS"]] = pd.DataFrame(Stand.transform(X_test[["Age","BMI","CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
+X_test[["Age","BMI","CSA","PB","Duration","NRS"]] = pd.DataFrame(Stand.transform(X_test[["Age","BMI",
+"CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
 y_test = y_test.to_numpy().ravel()
 ```
-# 3 Sınıflı  
+\normalsize
+# Sınıflandırma (Üç Sınıf)  
 
 ## Roc Curve ve OneVsRest  
 
+\scriptsize
 ```{python echo=TRUE, eval=FALSE}
 # OneVsRest Modellerin ve ROC curvelerin oluşturulması
-from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix, ConfusionMatrixDisplay, auc
+from sklearn.metrics import roc_auc_score, roc_curve, classification_report, confusion_matrix
+from sklearn.metrics import ConfusionMatrixDisplay, auc
 import pandas as pd
 from sklearn.multiclass import OneVsRestClassifier
 import matplotlib.pyplot as plt
@@ -169,15 +177,17 @@ def roc(model):
     plt.title("Some extension of Receiver operating characteristic to multiclass")
     plt.legend(loc="lower right")
     plt.savefig(f'figure/roc_curve_{model_name}.png')
-```  
+```
+\normalsize
 ## KNN  
-
+\scriptsize
 ```{python echo=TRUE, eval=FALSE}
 # 3 sınıf için KNN Modeli kurma ve GridSearchCV algoritmasını hazırlama
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report,balanced_accuracy_score
+from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report
+from sklearn.metrics import balanced_accuracy_score
 KNN_model = KNeighborsClassifier()
 params = {"n_neighbors":np.arange(5,200),
           "weights":["uniform", "distance"],
@@ -190,7 +200,8 @@ plt.figure(figsize=(10,5),dpi=60);
 sns.lineplot(x=knn.param_n_neighbors,y=knn.mean_test_score*100,hue=knn.param_weights);
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.xlabel("Number of Neighbors");
-plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"]);
+plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma",
+"Uzaklığa Göre Ağırlıklandırma"]);
 plt.savefig("figure/KNN_Grid_Graph.png");
 ```
 ```{python echo=TRUE, eval=FALSE}
@@ -206,7 +217,8 @@ print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
 ```
 ```{python echo=TRUE, eval=FALSE}
 # 3 sınıflı KNN için ConfusionMatrix
-ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
+ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),
+display_labels=["Mild","Moderate","Severe"]).plot();
 plt.savefig("figure/knn_conf.png");
 ```
 ```{python echo=TRUE, eval=FALSE}
@@ -214,13 +226,15 @@ plt.savefig("figure/knn_conf.png");
 roc(KNeighborsClassifier(n_neighbors = 33,
                          weights ='distance'))
 ```
+\normalsize
 ## Rassal Ormanlar  
-
+\scriptsize
 ```{python,out.height="10%",echo=TRUE, eval=FALSE}
 # 3 sınıf için rassal ormanlar Modeli kurma ve GridSearchCV algoritmasını hazırlama
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report,balanced_accuracy_score
+from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report
+from sklearn.metrics import balanced_accuracy_score
 RFC_model = RandomForestClassifier()
 param_grid = {"n_estimators":np.arange(350,1000,50),
               "criterion":["gini","index"],
@@ -236,7 +250,8 @@ ginis = ginis[ginis["mean_test_score"]>=0.704]
 #Grafik Çizimi
 plt.figure(figsize=(10,5),dpi=60);
 plt.ylim(0.703*100,round(ginis.mean_test_score.unique().max()*100,2)+0.1);
-sns.lineplot(y=ginis.mean_test_score*100,x=ginis.param_n_estimators,hue=ginis.param_ccp_alpha,palette=sns.color_palette(n_colors=3),err_style=None);
+sns.lineplot(y=ginis.mean_test_score*100,x=ginis.param_n_estimators,hue=ginis.param_ccp_alpha,
+palette=sns.color_palette(n_colors=3),err_style=None);
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.xlabel("Number of Trees in Forest");
 plt.legend(title="Learning Rate",loc="upper right",labels=[0.01,0.05,0.1]);
@@ -247,26 +262,29 @@ print(f'En İyi Parametreler : {GSC.best_params_}')
 ```
 ```{python echo=TRUE, eval=FALSE}
 RFC_model = RandomForestClassifier(ccp_alpha=0.05,criterion="gini",max_features="auto",
-                                   max_samples=10,n_estimators=350,random_state=13).fit(X_train,y_train)
+                                max_samples=10,n_estimators=350,random_state=13).fit(X_train,y_train)
 y_pred = RFC_model.predict(X_test)
 print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
 ```
 ```{python echo=TRUE, eval=FALSE}
-ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
+ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),
+display_labels=["Mild","Moderate","Severe"]).plot();
 plt.savefig("figure/rfc_conf.png")
 ```
 ```{python echo=TRUE, eval=FALSE}
 roc(RandomForestClassifier(ccp_alpha=0.01,criterion="gini",max_features="sqrt",
                                    max_samples=10,n_estimators=900,random_state=13))
 ```
+\normalsize
 ## XGBoost  
-
+\scriptsize
 ```{python,out.height="10%",echo=TRUE, eval=FALSE}
 # 3 sınıf için XGB Modeli
 from xgboost.sklearn import XGBClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report,balanced_accuracy_score
+from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report
+from sklearn.metrics import balanced_accuracy_score
 XGB_model = XGBClassifier()
 param_grid = {"booster":["gbtree","gblinear"],
               "eta":np.arange(0,1,0.1),
@@ -279,10 +297,12 @@ param_grid = {"booster":["gbtree","gblinear"],
               "objective":["multi:softmax","multi:softprob"],
               "eval_metric":["auc"],
               "use_label_encoder":[False]}
-GSC = GridSearchCV(XGB_model,param_grid=param_grid,cv=10,verbose=1,n_jobs=-1,scoring="accuracy").fit(X_train,y_train)
+GSC = GridSearchCV(XGB_model,param_grid=param_grid,cv=10,verbose=1,n_jobs=-1,scoring="accuracy")
+GSC.fit(X_train,y_train)
 resultsxgb = pd.read_csv("data/XGBoost_GridSearch_Results.csv",sep=";")
 resultsxgb = resultsxgb.sort_values("rank_test_score")
-sorted_xgb = resultsxgb[["param_booster","param_eta","param_max_depth","param_min_child_weight","param_n_estimators","param_objective","mean_test_score","rank_test_score"]]
+sorted_xgb = resultsxgb[["param_booster","param_eta","param_max_depth","param_min_child_weight",
+"param_n_estimators","param_objective","mean_test_score","rank_test_score"]]
 #Grafik Çizimi
 plt.figure(figsize=(15,10),dpi=100);
 plt.ylim(0.72*100,round(sorted_xgb.mean_test_score.unique().max()*100,2)+0.05);
@@ -298,34 +318,42 @@ plt.savefig("figure/XGB_Grid_Graph.png");
 print(f'En İyi Parametreler : {GSC.best_params_}')
 ```
 ```{python echo=TRUE, eval=FALSE}
-XGB_model = XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2).fit(X_train,y_train)
+XGB_model = XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,
+objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2).fit(X_train,y_train)
 y_pred = XGB_model.predict(X_test)
 print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
 ```
 ```{python echo=TRUE, eval=FALSE}
-ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
+ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),
+                       display_labels=["Mild","Moderate","Severe"]).plot();
 plt.savefig("figure/xgb_conf.png");
 ```
 ```{python echo=TRUE, eval=FALSE}
-roc(XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2))
+roc(XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,
+objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2))
 ```
+\normalsize
 ## Neural Network  
-
+\scriptsize
 ```{python,out.height="10%",echo=TRUE, eval=FALSE}
 # 3 sınıflı sinir ağları modeli
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report,balanced_accuracy_score
+from sklearn.metrics import ConfusionMatrixDisplay,confusion_matrix,classification_report
+from sklearn.metrics import balanced_accuracy_score
 params = {"hidden_layer_sizes":np.arange(1,26,1),
           "learning_rate":["adaptive","constant","invscaling"],
           "activation":["identity","logistic","tanh","relu"]}
-gridd = GridSearchCV(MLPClassifier(random_state=13),param_grid=params,cv=10,verbose=1,n_jobs=-1,scoring="accuracy").fit(X_train,y_train)
+gridd = GridSearchCV(MLPClassifier(random_state=13),param_grid=params,cv=10,
+                                   verbose=1,n_jobs=-1,scoring="accuracy")
+gridd.fit(X_train,y_train)                                  
 pd.DataFrame(gridd.cv_results_).to_csv("NN_GridSearch_Results.csv",sep=";",index=False)
 result_nn = pd.read_csv("data/NN_GridSearch_Results.csv",sep=";")
 #Grafik Çizimi
 plt.figure(figsize=(15,10),dpi=100);
-sns.lineplot(x=result_nn["param_hidden_layer_sizes"],y=result_nn["mean_test_score"]*100,hue=result_nn["param_activation"]);
+sns.lineplot(x=result_nn["param_hidden_layer_sizes"],y=result_nn["mean_test_score"]*100,
+             hue=result_nn["param_activation"]);
 plt.xlabel("Hidden Layer Sizes");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Aktivasyon Fonksiyonu");
@@ -335,29 +363,34 @@ plt.savefig("figure/NN_Grid_Graph.png");
 print(f'En İyi Parametreler : {gridd.best_params_}')
 ```
 ```{python echo=TRUE, eval=FALSE}
-NN_model = MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",random_state=13,max_iter=3000).fit(X_train,y_train)
+NN_model = MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",
+                         random_state=13,max_iter=3000).fit(X_train,y_train)
 y_pred = NN_model.predict(X_test)
 print(classification_report(y_test,y_pred,target_names=["Mild","Moderate","Severe"]))
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(y_test,y_pred)}')
 ```
 ```{python echo=TRUE, eval=FALSE}
-ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),display_labels=["Mild","Moderate","Severe"]).plot();
+ConfusionMatrixDisplay(confusion_matrix(y_test,y_pred),
+                       display_labels=["Mild","Moderate","Severe"]).plot();
 plt.savefig("figure/nn_conf.png")
 ```
 ```{python echo=TRUE, eval=FALSE}
-roc(MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",random_state=13,max_iter=3000))
+roc(MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",
+                  random_state=13,max_iter=3000))
 ```
-# İKİ SINIFLI  
+\normalsize
+# Sınıflandırma (İki Sınıf)  
 
 ## Preprocess  
-
-```{python echo=TRUE, eval=FALSE}
+\scriptsize
+```{python echo=TRUE, eval=FALSE, fig.width=15}
 # 3 sınıfı 2 sınıfa indirgeme
 from sklearn.model_selection import train_test_split
 bin_data = pd.read_csv("data/binary_data.csv",sep=";")
 X_bin = bin_data.drop(["Severity","New_Sev"],axis=1)
 y_bin = bin_data["New_Sev"]
-Xbin_train, Xbin_test, ybin_train, ybin_test = train_test_split(X_bin,y_bin,test_size=0.3,stratify=y_bin,random_state=13)
+Xbin_train, Xbin_test, ybin_train, ybin_test = train_test_split(X_bin,y_bin,test_size=0.3,
+                                                                stratify=y_bin,random_state=13)
 def roc_bin(model):
     model_name = str(model.__class__).split(".")[-1][:-2]
     ybin_pred2 = model.predict_proba(Xbin_test)
@@ -387,21 +420,25 @@ def roc_bin(model):
     plt.legend(loc="lower right")
     plt.savefig(f'figure/{model_name}_binary_roc.png')
 ```
+\normalsize
 ## KNN  
-
+\scriptsize
 ```{python echo=TRUE, eval=FALSE}
 KNN_model_bin = KNeighborsClassifier()
 params = {"n_neighbors":np.arange(5,200),
           "weights":["uniform", "distance"],
           "algorithm":["auto","ball_tree","kd_tree","brute"]}
-GSC = GridSearchCV(KNN_model_bin,param_grid=params,cv=10,verbose=1,scoring="accuracy",n_jobs=-1).fit(Xbin_train,ybin_train)
+GSC = GridSearchCV(KNN_model_bin,param_grid=params,cv=10,verbose=1,scoring="accuracy",n_jobs=-1)
+GSC.fit(Xbin_train,ybin_train)
 pd.DataFrame(GSC.cv_results_).to_csv("data/KNN_bin_GridSearch_Results.csv",index=False)
 knn_bin = pd.read_csv("data/KNN_bin_GridSearch_Results.csv",sep=";")
 plt.figure(figsize=(10,5),dpi=60);
-sns.lineplot(x=knn_bin["param_n_neighbors"],y=knn_bin["mean_test_score"]*100,hue=knn_bin["param_weights"]);
+sns.lineplot(x=knn_bin["param_n_neighbors"],y=knn_bin["mean_test_score"]*100,
+             hue=knn_bin["param_weights"]);
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.xlabel("Number of Neighbors");
-plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"]);
+plt.legend(title="Ağırlıklandırma",loc="upper right",
+           labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"]);
 plt.savefig("figure/KNN_bin_Grid_Graph.png");
 ```
 ```{python echo=TRUE, eval=FALSE}
@@ -415,26 +452,31 @@ print(classification_report(ybin_test,ybin_pred,target_names=["Mild","Mod+Sev"])
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(ybin_test,ybin_pred)}')
 ```
 ```{python echo=TRUE, eval=FALSE}
-ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),display_labels=["Mild","Mod+Sev"]).plot();
+ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),
+                       display_labels=["Mild","Mod+Sev"]).plot();
 plt.savefig("figure/knn_bin_conf.png")
 ```
 ```{python echo=TRUE, eval=FALSE}
 roc_bin(KNN_modelbin)
 ```
+\normalsize
 ## Rassal Ormanlar  
-
+\scriptsize
 ```{python echo=TRUE, eval=FALSE}
-#param_grid = {"n_estimators":np.arange(350,700,50),
-              #"max_features":["auto","sqrt","log2"],
-              #"ccp_alpha":[0.01,0.05,.1,0.3,.5],
-              #"max_samples":np.arange(1,X_train.shape[1],1)}
-#GSC = GridSearchCV(RandomForestClassifier(random_state=13,criterion="gini"),param_grid=param_grid,cv=10,verbose=1,n_jobs=-1,scoring="accuracy").fit(Xbin_train,ybin_train)
+param_grid = {"n_estimators":np.arange(350,700,50),
+              "max_features":["auto","sqrt","log2"],
+              "ccp_alpha":[0.01,0.05,.1,0.3,.5],
+              "max_samples":np.arange(1,X_train.shape[1],1)}
+GSC = GridSearchCV(RandomForestClassifier(random_state=13,criterion="gini"),
+                   param_grid=param_grid,cv=10,verbose=1,n_jobs=-1,scoring="accuracy")
+GSC.fit(Xbin_train,ybin_train)                   
 pd.DataFrame(GSC.cv_results_).to_csv("data/RF_bin_Grid_Res.csv",index=False)
 rf_bin = pd.read_csv("data/RF_bin_Grid_Res.csv",sep=";")
 maxed = rf_bin.groupby("rank_test_score").max()
 maxed = maxed[maxed["mean_test_score"] > 0.75]
 plt.figure(figsize=(15,10),dpi=100);
-sns.lineplot(x="param_n_estimators",y="mean_test_score",hue="param_ccp_alpha",data=maxed,err_style=None,palette="husl");
+sns.lineplot(x="param_n_estimators",y="mean_test_score",hue="param_ccp_alpha",data=maxed,
+             err_style=None,palette="husl");
 plt.xlabel("Ormandaki Ağaç Sayısı");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Öğrenme Düzeyi");
@@ -453,26 +495,31 @@ print(classification_report(ybin_test,ybin_pred,target_names=["Mild","Mod+Sev"])
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(ybin_test,ybin_pred)}')
 ```
 ```{python echo=TRUE, eval=FALSE}
-ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),display_labels=["Mild","Mod+Sev"]).plot();
+ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),
+                       display_labels=["Mild","Mod+Sev"]).plot();
 plt.savefig("figure/rf_bin_conf.png");
 ```
 ```{python echo=TRUE, eval=FALSE}
 roc_bin(RF_modelbin)
 ```
+\normalsize
 ## XGBoost  
-
+\scriptsize
 ```{python echo=TRUE, eval=FALSE}
 param_grid = {"eta":np.arange(0,.5,0.1),
               "min_child_weight":np.arange(1,11,1),
               "max_depth":np.arange(3,11,1),
               "n_estimators":np.arange(0,500,50)}
-GSC = GridSearchCV(XGBClassifier(eval_metric="auc",use_label_encoder=False,booster="gbtree"),param_grid=param_grid,cv=10,verbose=1,n_jobs=-1,scoring="accuracy").fit(Xbin_train,ybin_train)
+GSC = GridSearchCV(XGBClassifier(eval_metric="auc",use_label_encoder=False,booster="gbtree"),
+                                param_grid=param_grid,cv=10,verbose=1,n_jobs=-1,scoring="accuracy")
+GSC.fit(Xbin_train,ybin_train)                                
 pd.DataFrame(GSC.cv_results_).to_csv("data/XGB_bin_Grid_Res.csv",index=False)
 XGB_bin = pd.read_csv("data/XGB_bin_Grid_Res.csv",sep=";")
 maxed = XGB_bin.groupby("rank_test_score").max()
 maxed = maxed[maxed["mean_test_score"] > 0.75]
 plt.figure(figsize=(15,10),dpi=100);
-sns.lineplot(x="param_n_estimators",y="mean_test_score",hue="param_eta",data=maxed,err_style=None,palette="husl");
+sns.lineplot(x="param_n_estimators",y="mean_test_score",hue="param_eta",data=maxed,
+             err_style=None,palette="husl");
 plt.xlabel("Tahminleyici Sayısı");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Öğrenme Düzeyi");
@@ -494,7 +541,8 @@ print(classification_report(ybin_test,ybin_pred,target_names=["Mild","Mod+Sev"])
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(ybin_test,ybin_pred)}')
 ```
 ```{python echo=TRUE, eval=FALSE,message=FALSE,warning=FALSE}
-ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),display_labels=["Mild","Mod+Sev"]).plot();
+ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),
+                       display_labels=["Mild","Mod+Sev"]).plot();
 plt.savefig("figure/XGB_bin_conf.png")
 plt.close('all')
 ```
@@ -502,17 +550,20 @@ plt.close('all')
 roc_bin(XGB_modelbin)
 plt.close('all')
 ```
+\normalsize
 ## Neural Networks  
-
+\scriptsize
 ```{python echo=TRUE, eval=FALSE}
 params = {"hidden_layer_sizes":np.arange(1,26,1),
           "learning_rate":["adaptive","constant","invscaling"],
           "activation":["identity","logistic","tanh","relu"]}
-grid2 = GridSearchCV(MLPClassifier(random_state=13),param_grid=params,cv=10,verbose=1,n_jobs=-1,scoring="accuracy").fit(Xbin_train,ybin_train)
+grid2 = GridSearchCV(MLPClassifier(random_state=13),param_grid=params,cv=10,verbose=1,
+                     n_jobs=-1,scoring="accuracy").fit(Xbin_train,ybin_train)
 pd.DataFrame(grid2.cv_results_).to_csv("data/NN_bin_Grid_Res.csv",index=False)
 nn_bin = pd.read_csv("data/NN_bin_Grid_Res.csv",sep=";")
 plt.figure(figsize=(15,10),dpi=100);
-sns.lineplot(x=nn_bin["param_hidden_layer_sizes"],y=nn_bin["mean_test_score"]*100,hue=nn_bin["param_activation"]);
+sns.lineplot(x=nn_bin["param_hidden_layer_sizes"],y=nn_bin["mean_test_score"]*100,
+             hue=nn_bin["param_activation"]);
 plt.xlabel("Hidden Layer Sizes");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Aktivasyon Fonksiyonu");
@@ -531,9 +582,11 @@ print(classification_report(ybin_test,ybin_pred,target_names=["Mild","Mod+Sev"])
 print(f'Balanced Accuracy Score : {balanced_accuracy_score(ybin_test,ybin_pred)}')
 ```
 ```{python echo=TRUE, eval=FALSE}
-ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),display_labels=["Mild","Mod+Sev"]).plot();
+ConfusionMatrixDisplay(confusion_matrix(ybin_test,ybin_pred),
+                       display_labels=["Mild","Mod+Sev"]).plot();
 plt.savefig("figure/nn_bin_conf.png")
 ```
 ```{python echo=TRUE, eval=FALSE}
 roc_bin(NN_modelbin)
 ```
+\normalsize

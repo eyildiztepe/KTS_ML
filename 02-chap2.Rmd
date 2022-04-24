@@ -1,9 +1,9 @@
 # Yöntem {#yontem}
-Bu bölümde uygulama kısmında kullanmış olduğumuz sınıflama algoritmalarına değineceğiz.  
+Bu bölümde uygulama kısmında kullanılan sınıflama algoritmalarına değinilmiştir.    
 
 ## K - En Yakın Komşuluk Algoritamsı (K-NN) {#knn}
-K-NN algoritması, T. M. Cover ve P. E. Hart tarafından önerilen, örnek veri noktasının bulunduğu sınıfın ve en yakın komşunun, k değerine göre belirlendiği bir sınıflandırma yöntemidir[@knn-info].  
-K-NN algoritması, en temel örnek tabanlı öğrenme algoritmaları arasındadır. Örnek tabanlı öğrenme algoritmalarında, öğrenme işlemi eğitim setinde tutulan verilere dayalı olarak gerçekleştirilmektedir. Yeni karşılaşılan bir örnek, eğitim setinde yer alan örnekler ile arasındaki benzerliğe göre sınıflandırılmaktadır [@mlmcgraw]. K-NN algoritmasında, eğitim setinde yer alan örnekler n boyutlu sayısal nitelikler ile belirtilir. Her örnek n boyutlu uzayda bir noktayı temsil edecek biçimde tüm eğitim örnekleri n boyutlu bir örnek uzayında tutulur. Bilinmeyen bir örnek ile karşılaşıldığında, eğitim setinden ilgili örneğe en yakın k tane örnek belirlenerek yeni örneğin sınıf etiketi, k en yakın komşusunun sınıf etiketlerinin çoğunluk oylamasına göre atanır [@mining2006data].  
+K-NN algoritması, Cover ve Hart tarafından önerilen, örnek veri noktasının bulunduğu sınıfın ve en yakın komşunun, k değerine göre belirlendiği bir sınıflandırma yöntemidir [@knn-info].  
+K-NN algoritması, en temel örnek tabanlı öğrenme algoritmaları arasındadır. Örnek tabanlı öğrenme algoritmalarında, öğrenme işlemi eğitim setinde tutulan verilere dayalı olarak gerçekleştirilmektedir. Yeni karşılaşılan bir örnek, eğitim setinde yer alan örnekler ile arasındaki benzerliğe göre sınıflandırılmaktadır [@mlmcgraw]. K-NN algoritmasında, eğitim setinde yer alan örnekler n boyutlu sayısal nitelikler ile belirtilir. Her örnek n boyutlu uzayda bir noktayı temsil edecek biçimde tüm eğitim örnekleri n boyutlu bir örnek uzayında tutulur.  Bilinmeyen bir örnek ile karşılaşıldığında, eğitim setinden ilgili örneğe en yakın k tane örnek belirlenerek yeni örneğin sınıf etiketi, k en yakın komşusunun sınıf etiketlerinin çoğunluk oylamasına göre atanır [@mining2006data].  
 
 ### K-NN Parametleri
 K-NN algoritmasında performansı etkileyen 3 adet hiper parametre mevcuttur. Bunlar; Uzaklık ölçütü, komşu sayısı(k) ve ağırlıklandırma yöntemidir.  
@@ -22,9 +22,9 @@ En yakın komşuluk algoritmasında komşu sayısına (k) göre sınıflama yap�
 Komşular için ağırlık değerleri atanması ile sınıflandırılmakta olan örneğe daha yakın olan komşu örneklerin, çoğunluk oylamasına daha fazla katkı koyması amaçlanır. En çok kullanılan ağırlık değeri atama yöntemleri, her bir komşunun ağırlığının, d, komşular arası uzaklık olmak üzere, 1/d ya da $1/d^2$ şeklinde alınmasıdır [@doad2013review].  
 
 ## Rassal Ormanlar {#random_forest}
-Rassal ormanlar sınıflandırıcısı, her biri farklı girdi vektörlerinden oluşan ve her ağacın yalnızca bir sınıfa oy verdiği karar ağaçlarının kombinasyonudur[@breiman1991]. Rassal ormanlar sınıflandırması ağaç derinliğini büyütmek için her dalda rastgele değişkenleri içerir.  
+Rassal ormanlar sınıflandırıcısı, her biri farklı girdi vektörlerinden oluşan ve her ağacın yalnızca bir sınıfa oy verdiği karar ağaçlarının kombinasyonudur [@breiman1991]. Rassal ormanlar sınıflandırması ağaç derinliğini büyütmek için her dalda rastgele değişkenleri içerir.  
 
-Karar ağaçlarını modellemek,bir budama metodu ve nitelik seçme ölçütü seçmeyi gerektirir.Karar ağacının tüme varımı için kullanınlan bir sürü nitelik seçme yaklaşımı vardır ve çoğu yaklaşımlar niteliğe direkt olarak kalite ölçümü belirler.Karar ağacının tümü varmında ki en sık kullanılan nitelik seçme ölçümleri Information gain ratio kriteri(Quinlan 1993)ve Gini indexidir[@breimanclassification].  
+Karar ağaçlarını modellemek, bir budama metodu ve nitelik seçme ölçütü seçmeyi gerektirir. Karar ağacının tüme varımı için kullanınlan bir sürü nitelik seçme yaklaşımı vardır ve çoğu yaklaşımlar niteliğe direkt olarak kalite ölçümü belirler. Karar ağacının tümü varmında ki en sık kullanılan nitelik seçme ölçümleri Information gain ratio kriteri ve Gini indexidir [@breimanclassification].  
 
 Verilen herhangi bir eğitim verisi için gini index o verinin hangi sınıfa ait olduğu olasılığını hesaplar.  
 
@@ -34,17 +34,62 @@ $$\begin{aligned}
 
 Bu denklemde $f(C_{i}, T) /|T|)$ seçilen gözlemin $C_{i}$ sınıfa ait olma olasılığıdır.
 
-Her seferinde bir ağaç, değişkenlerin bir kombinasyonunu kullanarak yeni eğitim verisi üzerinde en büyük derinliğe kadar büyür.Son derinliğine ulaşmış bu ağaçlar budanmamıştır.Bu durum, [@quinlan2014c4] veya diğer karar ağacı methodlarına göre rassal ormanlanların en büyük avantajıdır.Bazı durumlarda maliyet ve karmaşıklığı minimum yapabilmek için rassal ormanlar içerisindeki karar ağaçlarına budama yapılır.Budama parametresi olan 'ccp_alpha' değerinden daha küçük olan en büyük maliyet ve karmaşıklık değerini bulunana kadar karar ağacı budanır.  
+Her seferinde bir ağaç, değişkenlerin bir kombinasyonunu kullanarak yeni eğitim verisi üzerinde en büyük derinliğe kadar büyür. Son derinliğine ulaşmış bu ağaçlar budanmamıştır. Bu durum,  [@quinlan2014c4] veya diğer karar ağacı methodlarına göre rassal ormanlanların en büyük avantajıdır. Bazı durumlarda maliyet ve karmaşıklığı minimum yapabilmek için rassal ormanlar içerisindeki karar ağaçlarına budama yapılır. Budama parametresi olan 'ccp_alpha' değerinden daha küçük olan en büyük maliyet ve karmaşıklık değerini bulunana kadar karar ağacı budanır.  
 
-Sonuç olarak,rastgele ağaçlar methodu,kullanıcının  herhangi bir değer belirleyebildiği, N kadar büyüyecek karar ağaçları içerir.Yeni veri setini sınıflandırmak için,seçilen maksimum değişken sayısına göre veri setinde ki rastgele olarak paylaştırılmış her gözlem ,N kadar karar ağacının her biri tarafından sınıflandırılır.Bu durum için ormanlar en fazla oya sahip sınıfı seçer.  
-```{r echo=FALSE,fig.align='center',fig.cap="Rassal Ormanlar Model Örneği",out.width="100%",out.height="50%"}
+Sonuç olarak, rastgele ağaçlar methodu, kullanıcının herhangi bir değer belirleyebildiği, N kadar büyüyecek karar ağaçları içerir. Yeni veri setini sınıflandırmak için, seçilen maksimum değişken sayısına göre veri setinde ki rastgele olarak paylaştırılmış her gözlem, N kadar karar ağacının her biri tarafından sınıflandırılır. Bu durum için ormanlar en fazla oya sahip sınıfı seçer.  
+(ref:rfex) [@tibco]
+```{r echo=FALSE,fig.align='center',fig.cap="Rassal Ormanlar Model Örneği (ref:rfex)",out.width="100%",out.height="50%"}
 knitr::include_graphics(path="figure/rf_example.jpeg")
 ```
-
 
 
 ## XGBoost {#xgboost}
 NO COMMENT  
 
-##  Sinir Ağları {#nn}
-NO COMMENT  
+## Yapay Sinir Ağları {#nn}
+Yapay Sinir ağları insan beyninin en temel özelliği olan öğrenme fonksiyonunu gerçekleştiren bilgisayar sistemleridir. Öğrenme işlemini örnekler yardımı ile gerçekleştirirler. Bu ağlar birbirine bağlı yapay sinir hücrelerinden oluşur. Yapay sinir ağları biyolojik sinir sisteminden etkilenerek geliştirilmiştir. Biyolojik sinir hücreleri birbirleri ile sinapsisler vasıtası ile iletişim kurarlar. Bir sinir hücresi işlediği bilgileri Axon’ları yolu ile diğer hücrelere gönderirler [@oztemel2003yapay].  
+(ref:sahu2021) [@sahu_2021]
+```{r echo=FALSE,fig.align='center',fig.cap="Basit Bir Yapay Nöron Örneği (ref:sahu2021)",out.width="100%",out.height="40%"}
+knitr::include_graphics(path="figure/basic_neuron.jpg")
+```
+Benzer şekilde yapay sinir hücreleri dışarıdan gelen bilgileri bir toplama fonksiyonu ile toplar ve aktivasyon fonksiyonundan geçirerek çıktıyı üretip ağın bağlantılarının üzerinden diğer hücrelere gönderir. Temel bir ağ 3 katmandan meydana gelir;  
+
+* Girdi Katmanı  
+
+* Ara Katmanlar  
+
+* Çıktı Katmanı  
+
+Her ara katmanın sonunda olabileceği gibi yalnızca çıktı katmanının sonunda da aktivasyon fonksiyonu olabilir. Literatürde en yaygın kullanılan 4 adet aktivasyon fonksiyonu mevcuttur;  
+
+* ReLU  
+
+* Sigmoid (Lojistik)  
+
+* Step  
+
+* tanh  
+
+```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="ReLU ve Sigmoid Fonksiyonu",out.width="49%",out.height="18%"}
+knitr::include_graphics("figure/relu.png")
+knitr::include_graphics(path="figure/sigmoid.png")
+```
+```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="Step ve Tanh Fonksiyonu ",out.width="49%",out.height="18%"}
+knitr::include_graphics("figure/step.png")
+knitr::include_graphics(path="figure/tanh.png")
+```
+```{r echo=FALSE,fig.align='center',fig.cap="Çok Katmanlı Yapay Sinir Ağı Örneği (ref:sahu2021)",out.width="100%",out.height="40%"}
+knitr::include_graphics(path="figure/cok_katmanli.jpg")
+```
+\  
+\  
+
+
+Başlangıçta girdi katmanından alınan verilerin ağırlıkları (weights) rastgele olarak atanır ve ağ çalıştırılır. Çıktı katmanından sonra elde edilen sonuç orijinal verinin bağımlı değişkeni ile en yakın değeri üretene kadar sinir ağı geri yayılım yöntemi ile ağırlıkları optimize etmeye çalışır. Maliyet fonksiyonun türevleri alınarak ağırlıkları optimize etmeyi amaçlayan geri yayılım algoritması orijinal verinin bağımlı değişkeni ile tahmin değeri arasında en düşük hata değerini bulduğu zaman ağın yeni ağırlıklarını son bulduğu ağırlıklar olarak tayin eder.  
+(ref:backprob) [@avi2022]
+```{r echo=FALSE,fig.align='center',fig.cap="Geri Yaylım Örneği (ref:backprob)",out.width="100%",out.height="40%"}
+knitr::include_graphics(path="figure/back_prob.jpg")
+```
+
+Ağın ağırlıkları belirlendikten sonra her bir ağırlığın ne anlama geldiği bilinmemektedir. Bu nedenle yapay sinir ağlarına “kara kutu” yakıştırması yapılmaktadır. Ağın performansını etkileyen bağlıca faktörler kullanılan aktivasyon fonksiyonu, öğrenme stratejisi ve öğrenme kuralıdır [@oztemel2003yapay].
+

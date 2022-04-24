@@ -1,4 +1,4 @@
-# Veri Seti {#veri_seti}
+# Uygulama {#uygulama}
 ```{r echo=FALSE,warning=FALSE,message=FALSE}
 if(!require(reticulate)) install.packages("reticulate", repos = "http://cran.rstudio.com")
 if(!require(tidyverse)) install.packages("tidyverse", repos = "http://cran.rstudio.com")
@@ -112,7 +112,36 @@ y_train = y_train.to_numpy().ravel()
 X_test[["Age","BMI","CSA","PB","Duration","NRS"]] = pd.DataFrame(Stand.transform(X_test[["Age","BMI","CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
 y_test = y_test.to_numpy().ravel()
 ```  
-Veri setindeki düşük varyanslı değişken sayısı : `r py$zeroVar`
+Bu bölümde yapılan uygulama sunulmuştur.  
+\  
+
+Uygulamada kullanılan veriler 2021 yılında Güney Kore'de yapılan bir araştırmadan alınmıştır [@park2021machine]. Uzmanlar tarafından yapılan tetkikler ile her bir hasta için (her bir el için) ciddiyet sınıflandırılması mild, moderate, severe olarak belirlenmiştir. Çalışmada 1037 elden alınan verilerin 405 (39.05%) adedi erkek hastalardan,  632 (60.95%) adedi kadın hastalardan elde edilmiştir. Uzmanlar tarafından 1037 adet elin, 507 (48.9%) adedi mild, 276 (26.6%) adedi moderate ve 254 (24.5%) adedi severe olarak sınıflandırılmıştır.  
+
+Araştırmada uzman hekimler tarafından hastalara yöneltilen sorular ile şikayetleri olan ellerine ilişkin aşağıdaki değişkenler için veri toplanmıştır;  
+
+* Hands (Eller)  
+
+* Age (Yaş)  
+
+* Sex (Cinsiyet)  
+
+* BMI (Body-mass index, Vücut kitle indeksi)  
+
+* Side (Right side involvement, Sağ Elde Bulgu)  
+
+* Diabetes (Diyabet Hastalığı Durumu)  
+
+* Duration (Duration in months, Dayanma süresi (Aylık))  
+
+* NRS (Numeric rating scale of pain, Hissedilen acının numerik karşılığı)  
+
+* NP (Noctural Pain, Gece Ağrıları)  
+
+* Weakness (Tenar weakness and/or atrophy, Avuç İçi Zayıflık ve/veya Körelme)  
+
+* CSA (Cyclosporine dosage in $mm^2$, Siklosporin dozu ($mm^2$))  
+
+* PB (fexor retinaculum in mm, Fleksör retinakulum (mm))  
 
 
 |                                    | Overall |
@@ -124,7 +153,7 @@ Veri setindeki düşük varyanslı değişken sayısı : `r py$zeroVar`
 | CSA, mm$^2$ (mean $\pm$ SD)        | `r meanOval$CSA` $\pm$ `r stdOval$CSA` |
 | PB, mm (mean $\pm$ SD)             | `r meanOval$PB` $\pm$ `r stdOval$PB` |
 
-Table: (\#tab:deneme) Sayısal Değişkenlerin Tanımlayıcı İstatistikleri
+Table: (\#tab:overall) Sayısal Değişkenlerin Tanımlayıcı İstatistikleri
 
 |                                    | Mild                                | Moderate                            | Severe                              | P Value |
 |:-----------------------------------|------------------------------------:|------------------------------------:|------------------------------------:|--------:|
@@ -135,7 +164,7 @@ Table: (\#tab:deneme) Sayısal Değişkenlerin Tanımlayıcı İstatistikleri
 | CSA, mm$^2$ (mean $\pm$ SD)        | `r means$CSA[1]` $\pm$ `r stds$CSA[1]` | `r means$CSA[2]` $\pm$ `r stds$CSA[2]` | `r means$CSA[3]` $\pm$ `r stds$CSA[3]` | `r py$p_values[5]`|
 | PB, mm (mean $\pm$ SD)             | `r means$PB[1]` $\pm$ `r stds$PB[1]` | `r means$PB[2]` $\pm$ `r stds$PB[2]` | `r means$PB[3]` $\pm$ `r stds$PB[3]` | `r py$p_values[6]`|
 
-Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri \tiny (P-Value Değerleri Tek Yönlü Varyans Analiz Testi ile Elde Edilmiştir.)  
+Table: (\#tab:sayisal) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıcı İstatistikleri \footnotesize (P-Value Değerleri Tek Yönlü Varyans Analiz Testi ile Elde Edilmiştir.)  
 
 \
 \
@@ -146,17 +175,24 @@ Table: (\#tab:descrip) Değişkenlerin Bağımlı Değişkene Göre Tanımlayıc
 |------------------------------------------|-----:|---------:|-------:|-------:|
 | Eller,  n (%)                            |`r py$hands[1]` (`r round((py$handsx[1]/hco)*100,1)`)|`r py$hands[2]` (`r round((py$handsx[2]/hco)*100,1)`)|`r py$hands[3]` (`r round((py$handsx[3]/hco)*100,1)`)|    -    |
 | Cinsiyet (Kadın), n (%)                  |`r py$sex[1]` (`r round(py$sex[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$sex[2]` (`r round(py$sex[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$sex[3]` (`r round(py$sex[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[1]`|
-| Sağ El Kasılması, n (%)                  |`r py$rside[1]` (`r round(py$rside[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$rside[2]` (`r round(py$rside[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$rside[3]` (`r round(py$rside[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[2]`|
+| Sağ Elde Bulgu, n (%)                  |`r py$rside[1]` (`r round(py$rside[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$rside[2]` (`r round(py$rside[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$rside[3]` (`r round(py$rside[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[2]`|
 | Diyabet, n (%)                           |`r py$diab[1]` (`r round(py$diab[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$diab[2]` (`r round(py$diab[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$diab[3]` (`r round(py$diab[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[3]`|
 | Gece Ağrıları, n (%)                     |`r py$np[1]` (`r round(py$np[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$np[2]` (`r round(py$np[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$np[3]` (`r round(py$np[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[4]`|
 | Avuç İçi Zayıflık ve/veya Körelme, n (%) |`r py$weak[1]` (`r round(py$weak[1]/sum(CTS["Mild"] == "mild")*100,1)`)|`r py$weak[2]` (`r round(py$weak[2]/sum(CTS["Mod"] == "moderate")*100,1)`)|`r py$weak[3]` (`r round(py$weak[3]/sum(CTS["Sev"] == "severe")*100,1)`)| `r py$p_vals2[5]`|
 
-Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı \tiny (P-Value Değerleri Ki-Kare Bağımsızlık Testi ile Elde Edilmiştir.)   
+Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans Dağılımı \footnotesize (P-Value Değerleri Ki-Kare Bağımsızlık Testi ile Elde Edilmiştir.)   
 
-Bu çalışmada, KTS ciddiyet sınıflandırması için K-En Yakın Komşuluk, Rassal Ormanlar, Sinir Ağları ve XGBoost yöntemleri kullanılmıştır.  
+Kullanılan verilere ait tanımlayıcı istatistikler Tablo \ref{tab:overall}, Tablo \ref{tab:sayisal} ve Tablo \ref{tab:catvar} de verilmiştir. Varsayım kontrollerinin ardından sayısal değişkenlerin ciddiyet sınıflarına göre farklılık gösterip göstermediği tek yönlü varyans analizi ile araştırılmıştır ($\alpha = 0.05$). Tablo \ref{tab:sayisal}'de yer alan P-Value değerleri incelendiğinde ciddiyet sınıflamasının yaşa göre anlamlı bir değişim göstermediği diğer tüm değişkenler için anlamlı bir fark olduğu görülmüştür.  
+
+Tablo \ref{tab:catvar}'de yer alan P-Value değerleri incelendiğinde ciddiyet sınıflamasının KTS'nin sağ veya sol elde görülmesine göre anlamlı bir değişim göstermediği diğer tüm değişkenler için anlamlı bir fark olduğu görülmüştür.  
+
+\  
+\  
+
+Bu çalışmada, KTS ciddiyet sınıflandırması için K-En Yakın Komşuluk, Rassal Ormanlar, Yapay Sinir Ağları ve XGBoost yöntemleri kullanılmıştır.  
 İlk olarak orijinal verilerdeki 3 sınıf (Mild, Moderate, Severe) için sınıflandırma hedeflenmiştir.  
-Bölüm \ref{multiclass} de bu problem için farklı modeller ile elde edilen sonuçlara yer verilmiştir.  
-Uygulamanın ikinci bölümünde hedef değişken iki sınıfa indirgenmiş ve bu probleme ait sonuçlar bölüm \ref{binary} de paylaşılmıştır.  
+Bölüm \ref{multiclass}'de bu problem için farklı modeller ile elde edilen sonuçlara yer verilmiştir.  
+Uygulamanın ikinci bölümünde hedef değişken iki sınıfa indirgenmiş ve bu probleme ait sonuçlar bölüm \ref{binary}'de paylaşılmıştır.  
 Uygulamada Python programlama dili  ve Scikit-Learn, Pandas, Numpy, Matplotlib,XGBoost kütüphanelerinden yararlanılmıştır.  
 Bu bölümde modellerin performanslarını değerlendirmek üzere kesinlik, duyarlılık, F1-skoru, doğruluk oranı, dengelenmiş doğruluk oranı hesaplanmıştır.
 
@@ -234,7 +270,7 @@ plt.xlabel("Number of Neighbors");
 plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"]);
 plt.savefig("figure/KNN_Grid_Graph.png");
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="55%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı K-NN Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="55%"}
 knitr::include_graphics(path="figure/KNN_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
@@ -266,10 +302,10 @@ roc(KNeighborsClassifier(n_neighbors = 33,
                                  weights ='distance'))
 ```
 
-```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı K-NN Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/knn_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı K-NN Modeli ROC Eğrisi ve AUC Değerleri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_KNeighborsClassifier.png")
 ```
 ### Rassal Ormanlar Modeli  {#mult_rf}
@@ -302,7 +338,7 @@ plt.xlabel("Number of Trees in Forest");
 plt.legend(title="Learning Rate",loc="upper right",labels=[0.01,0.05,0.1]);
 plt.savefig("figure/RF_Grid_Graph.png");
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="50%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="50%"}
 knitr::include_graphics(path="figure/RF_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
@@ -338,10 +374,10 @@ roc(RandomForestClassifier(ccp_alpha=0.01,criterion="gini",max_features="sqrt",
                                    max_samples=10,n_estimators=900,random_state=13))
 ```
 
-```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/rfc_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değerleri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_RandomForestClassifier.png")
 ```
 ### eXtreme Gradient Boosting (XGBoost)  {#mult_xgb}
@@ -380,7 +416,7 @@ plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend([.1,.4,.2,.3],loc=1,title="Learning Rate");
 plt.savefig("figure/XGB_Grid_Graph.png");
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="50%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="50%"}
 knitr::include_graphics(path="figure/XGB_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
@@ -411,14 +447,14 @@ plt.savefig("figure/xgb_conf.png");
 ```{python echo=FALSE}
 roc(XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2))
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="XGBoost Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı XGBoost Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/xgb_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="XGBoost Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı XGBoost Modeli ROC Eğrisi ve AUC Değerleri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_XGBClassifier.png")
 ```  
-### Neural Networks (Yapay Sinir Ağları) {#mult_nn}
-Bu bölümde veri seti üzerinde sinir ağları modeli kullanılmış ve çıktıları değerlendirilmiştir.  
+### Yapay Sinir Ağları (Neural Networks) {#mult_nn}
+Bu bölümde veri seti üzerinde yapay sinir ağları modeli kullanılmış ve çıktıları değerlendirilmiştir.  
 
 #### Hiper Parametre Seçimi  
 Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
@@ -440,13 +476,13 @@ plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Aktivasyon Fonksiyonu");
 plt.savefig("figure/NN_Grid_Graph.png");
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="50%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı Yapay Sinir Ağları Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="50%"}
 knitr::include_graphics(path="figure/NN_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {gridd.best_params_}')
 ```
-Yapar sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
+Yapay sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
 
 * 'activation':'relu'
 * 'hidden_layer_sizes:19
@@ -470,16 +506,16 @@ plt.savefig("figure/nn_conf.png")
 roc(MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",random_state=13,max_iter=3000))
 ```
 
-```{r echo=FALSE,fig.align="center",fig.cap="Sinir Ağları Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı Yapay Sinir Ağları Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/nn_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değerleri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/roc_curve_MLPClassifier.png")
 ```  
 ### Çok Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi  
-Bölüm \ref{mult_knn}, \ref{mult_rf}, \ref{mult_xgb} ve \ref{mult_nn} den elde edilen sonuçlar incelenmiş olup, üç sınıflı problem için %77 doğru sınıflama oranı ile en iyi model XGBoost olarak bulunmuştur.  
-Bölüm \ref{mult_xgb} de bulunan performans metrikleri yakından incelendiğinde, duyarlılık metriği 'Moderate' ve 'Severe' sınıfları için 'Mild' sınıfına kıyasla daha düşük kalmıştır.  
-Duyarlılık metriğindeki düşüklüğün sebep olabileceği yanlış sınıflandırmaların önüne geçebilmek amacı ile bölüm \ref{binary} de problem iki sınıflı probleme indirgenecek ve modeller tekrar çalıştırılacaktır.
+Bölüm \ref{mult_knn}, \ref{mult_rf}, \ref{mult_xgb} ve \ref{mult_nn}'den elde edilen sonuçlar incelenmiş olup, üç sınıflı problem için %77 doğru sınıflama oranı ile en iyi model XGBoost olarak bulunmuştur.  
+Bölüm \ref{mult_xgb}'de bulunan performans metrikleri yakından incelendiğinde, duyarlılık metriği 'Moderate' ve 'Severe' sınıfları için 'Mild' sınıfına kıyasla daha düşük kalmıştır.  
+Duyarlılık metriğindeki düşüklüğün sebep olabileceği yanlış sınıflandırmaların önüne geçebilmek amacı ile bölüm \ref{binary}'de problem iki sınıflı probleme indirgenecek ve modeller tekrar çalıştırılacaktır.
 
 ## İki Sınıflı Sınıflama  {#binary}
 Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin 3 farklı ciddiyet düzeyine sahip olduğu veri seti 'Moderate' ve 'Severe' ciddiyet düzeyleri birleştirilerek problemin 2 farklı ciddiyet düzeyine indirgenip farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.  
@@ -543,7 +579,7 @@ plt.xlabel("Number of Neighbors");
 plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"]);
 plt.savefig("figure/KNN_bin_Grid_Graph.png");
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="55%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı K-NN Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="55%"}
 knitr::include_graphics(path="figure/KNN_bin_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
@@ -575,10 +611,10 @@ plt.savefig("figure/knn_bin_conf.png")
 ```{python echo=FALSE}
 roc_bin(KNN_modelbin)
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı K-NN Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/knn_bin_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="K-En Yakın Komşuluk Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı K-NN Modeli ROC Eğrisi ve AUC Değerleri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/KNeighborsClassifier_binary_roc.png")
 ```  
 ### Rassal Ormanlar Modeli {#bin_rf}
@@ -608,7 +644,7 @@ plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Öğrenme Düzeyi");
 plt.savefig("figure/RF_bin_Grid_Graph.png");
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="55%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="55%"}
 knitr::include_graphics(path="figure/RF_bin_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
@@ -643,10 +679,10 @@ plt.savefig("figure/rf_bin_conf.png");
 ```{python echo=FALSE}
 roc_bin(RF_modelbin)
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı Rassal Ormanlar Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/rf_bin_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değerleri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/RandomForestClassifier_binary_roc.png")
 ```  
 ### XGBoost {#bin_xgb}
@@ -676,7 +712,7 @@ plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Öğrenme Düzeyi");
 plt.savefig("figure/XGB_bin_Grid_Graph.png");
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="55%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="55%"}
 knitr::include_graphics(path="figure/XGB_bin_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
@@ -716,17 +752,17 @@ plt.close('all')
 roc_bin(XGB_modelbin)
 plt.close('all')
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="XGBoost Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı XGBoost Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/XGB_bin_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="XGBoost Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı XGBoost Modeli ROC Eğrisi ve AUC Değerleri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/XGBClassifier_binary_roc.png")
 ```  
 
 
 ### Neural Network (Yapay Sinir Ağları)  Modeli {#bin_nn}
 
-Bu bölümde veri seti üzerinde sinir ağları modeli kullanılmış ve çıktıları değerlendirilmiştir.  
+Bu bölümde veri seti üzerinde yapay sinir ağları modeli kullanılmış ve çıktıları değerlendirilmiştir.  
 
 #### Hiper Parametre Seçimi  
 
@@ -746,13 +782,13 @@ plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Aktivasyon Fonksiyonu");
 plt.savefig("figure/NN_bin_Grid_Graph.png");
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Model Train Scores",out.width="110%",out.height="55%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı Yapay Sinir Ağları Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="55%"}
 knitr::include_graphics(path="figure/NN_bin_Grid_Graph.png")
 ```
 ```{python echo=FALSE}
 #print(f'En İyi Parametreler : {grid2.best_params_}')
 ```  
-Sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
+Yapay sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;  
 
 * 'activation': 'relu'  
 * 'hidden_layer_sizes': 19  
@@ -780,13 +816,13 @@ plt.savefig("figure/nn_bin_conf.png")
 ```{python echo=FALSE}
 roc_bin(NN_modelbin)
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Yapar Sinir Ağları Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı Yapay Sinir Ağları Modeli Karmaşıklık Matrisi",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/nn_bin_conf.png")
 ```
-```{r echo=FALSE,fig.align="center",fig.cap="Yapar Sinir Ağları Modeli ROC Eğrisi ve AUC Değeri",out.width="105%",out.height="60%"}
+```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değerleri",out.width="105%",out.height="60%"}
 knitr::include_graphics(path="figure/MLPClassifier_binary_roc.png")
 ```
 ### İki Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi
-Bölüm \ref{bin_knn}, \ref{bin_rf}, \ref{bin_xgb} ve \ref{bin_nn} den elde edilen sonuçlar incelenmiş olup, iki sınıflı problem için %82 doğru sınıflama oranları ile XGBoost ve Rassal Ormanlar modelleri en iyi modeller olarak bulunmuştur.  
-Bölüm \ref{bin_rf} ve \ref{bin_xgb} de bulunan performans metrikleri yakından incelendiğinde, XGBoost modeli kesinlik, duyarlılık ve f1-skor metrikleri bakımından Rassal Ormanlar modelinden daha iyi sonuç vermiştir.  
+Bölüm \ref{bin_knn}, \ref{bin_rf}, \ref{bin_xgb} ve \ref{bin_nn}'den elde edilen sonuçlar incelenmiş olup, iki sınıflı problem için %82 doğru sınıflama oranları ile XGBoost ve Rassal Ormanlar modelleri en iyi modeller olarak bulunmuştur.  
+Bölüm \ref{bin_rf} ve \ref{bin_xgb}'de bulunan performans metrikleri yakından incelendiğinde, XGBoost modeli kesinlik, duyarlılık ve f1-skor metrikleri bakımından Rassal Ormanlar modelinden daha iyi sonuç vermiştir.  
 Ciddiyet sınıflandırma probleminin 'Mild' ve 'Moderate + Severe' olacak şekilde 2 sınıfa indirgendiği durumda XGBoost modeli diğer modellerden daha iyi sonuç vermektedir.
