@@ -43,8 +43,34 @@ knitr::include_graphics(path="figure/rf_example.jpeg")
 ```
 
 
-## XGBoost {#xgboost}
-NO COMMENT  
+## XGBoost {#xgboost}  
+Bu bölümde XGboost algoritmasına ve XGBoost algoritmasının daha iyi anlaşabilmesi için XGBoost'un altyapısını oluşturan gradyan arttırma algoritmasına değinilmiştir.  
+
+### Gradyan Arttırımı  
+Gradyan artırma fikri, Leo Breiman'ın , artırmanın uygun bir maliyet fonksiyonu üzerinde bir optimizasyon algoritması olarak yorumlanabileceği gözleminden kaynaklanmıştır [@breiman1997arcing]. Açık regresyon gradyan artırma algoritmaları daha sonra Jerome H. Friedman [@greedy], tarafından Llew Mason, Jonathan Baxter, Peter Bartlett ve Marcus Frean'ın daha genel fonksiyonel gradyan artırma perspektifiyle eş zamanlı olarak geliştirildi [@mason1999boosting].  
+
+Gradyan artırma, genellikle karar ağaçları gibi zayıf tahmin modelleri topluluğu şeklinde bir tahmin modeli üreten, regresyon, sınıflandırma ve diğer görevler için bir makine öğrenimi tekniğidir. Bir karar ağacı zayıf öğrenen ise, ortaya çıkan algoritmaya genellikle rastgele ormandan daha iyi performans gösteren gradyan destekli ağaçlar denir [@hastie_tibshirani_friedman_2009]. Modeli, diğer artırma yöntemlerinin yaptığı gibi aşamalı bir şekilde oluşturur ve keyfi bir türevlenebilir kayıp fonksiyonun optimizasyonuna izin vererek bunları genelleştirir.  
+Gradyan Arttırımı Algoritması ;  
+
+* Adım 1 : $\{(x_i,y_i)\}_{i=1}^n$ şeklinde veri ve türevlenebilir bir kayıp fonksiyonu $L(y_i,F(x))$ tanımlanır.  
+
+* Adım 2 : $F_0(x) = \min\limits_{\gamma}\,\sum_{i=1}^{n}L(y_i,\gamma)$ $\gamma$ = Tahmin Değeri olacak şekilde başlangıç değeri ($F_0(x)$) minumum olacak şekilde türevlenip 0'a eşitlenir ve $F_0(x)$'in minumum değeri elde edilir.  
+
+* Adım 3 :  
+
+    + Adım 3.1 : m=1 $\to$ M'e kadar bir önceki tahmin değerine göre hatalar hesaplanır. (M burada sınıflandırma veya regresyon ağacı sayısıdır)
+	$$r_{im} = -\left[\frac{\partial L(y_i,F(x_i)}{\partial F(x_i)}\right]_{F(x)=F_{m-1}(x)}\:\,i=1 \to n$$
+	+ Adım 3.2 : $r_{im}$ değerlerine göre regresyon veya sınıflandırma ağacı eğitilir ve $R_{jm}$ terminal bölgeleri oluşturulur.  
+
+	+ Adım 3.3 : Her bir yaprak için çıktı değeri hesaplanır.
+	$$\gamma_{jm} = \min\limits_{\gamma}\,\sum_{x_i\in R_{ij}}L(y_i,F_{m-1}(x_i)+\gamma)$$
+	Yine aynı şekilde kayıp fonksiyonunun türevi alınır ve değerler toplanıp sınıfa eşitlenir. Çıkan sayı yaprağın değeridir.  
+
+	+ Adım 3.4 : Her gözlem için tahmin oluşturulur.
+	$$F_m(x) = F_{m-1}(x) + \nu\sum_{j=1}^{J_m}\gamma_{jm}I(x\in R_{jm})$$
+Formül incelendiğinde yeni ağacın tahmin değerinin önceki ağacın tahmin değeri + (öğrenme düzeyi $\times$ yeni ağacın değeri) olduğu görülmektedir.  
+
+### XGBoost (Aşırı Gradyan Arttırımı)
 
 ## Yapay Sinir Ağları {#nn}
 Yapay Sinir ağları insan beyninin en temel özelliği olan öğrenme fonksiyonunu gerçekleştiren bilgisayar sistemleridir. Öğrenme işlemini örnekler yardımı ile gerçekleştirirler. Bu ağlar birbirine bağlı yapay sinir hücrelerinden oluşur. Yapay sinir ağları biyolojik sinir sisteminden etkilenerek geliştirilmiştir. Biyolojik sinir hücreleri birbirleri ile sinapsisler vasıtası ile iletişim kurarlar. Bir sinir hücresi işlediği bilgileri Axon’ları yolu ile diğer hücrelere gönderirler [@oztemel2003yapay].  

@@ -115,7 +115,7 @@
 %\author{Alper ENGİNAtadeniz SAYARCem GÖRENER} %Tek yazar için
 \author{Alper ENGİN \\ Atadeniz SAYAR \\ Cem GÖRENER} %Çok yazar için
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
-\date{Nisan 2022}
+\date{Mayıs 2022}
 \division{İSTATİSTİK BÖLÜMÜ}
 \advisor{Dr.~Engin YILDIZTEPE}
 \institution{FEN FAKÜLTESİ}
@@ -512,7 +512,40 @@ Sonuç olarak, rastgele ağaçlar methodu, kullanıcının herhangi bir değer b
 \hypertarget{xgboost}{%
 \section{XGBoost}\label{xgboost}}
 
-NO COMMENT
+Bu bölümde XGboost algoritmasına ve XGBoost algoritmasının daha iyi anlaşabilmesi için XGBoost'un altyapısını oluşturan gradyan arttırma algoritmasına değinilmiştir.
+
+\hypertarget{gradyan-arttux131rux131mux131}{%
+\subsection{Gradyan Arttırımı}\label{gradyan-arttux131rux131mux131}}
+
+Gradyan artırma fikri, Leo Breiman'ın , artırmanın uygun bir maliyet fonksiyonu üzerinde bir optimizasyon algoritması olarak yorumlanabileceği gözleminden kaynaklanmıştır (Leo Breiman, 1997). Açık regresyon gradyan artırma algoritmaları daha sonra Jerome H. Friedman (Friedman, 2001), tarafından Llew Mason, Jonathan Baxter, Peter Bartlett ve Marcus Frean'ın daha genel fonksiyonel gradyan artırma perspektifiyle eş zamanlı olarak geliştirildi (Mason, Baxter, Bartlett ve Frean, 1999).
+
+Gradyan artırma, genellikle karar ağaçları gibi zayıf tahmin modelleri topluluğu şeklinde bir tahmin modeli üreten, regresyon, sınıflandırma ve diğer görevler için bir makine öğrenimi tekniğidir. Bir karar ağacı zayıf öğrenen ise, ortaya çıkan algoritmaya genellikle rastgele ormandan daha iyi performans gösteren gradyan destekli ağaçlar denir (Hastie, Tibshirani ve Friedman, 2009). Modeli, diğer artırma yöntemlerinin yaptığı gibi aşamalı bir şekilde oluşturur ve keyfi bir türevlenebilir kayıp fonksiyonun optimizasyonuna izin vererek bunları genelleştirir.\\
+Gradyan Arttırımı Algoritması ;
+\begin{itemize}
+\item
+  Adım 1 : \(\{(x_i,y_i)\}_{i=1}^n\) şeklinde veri ve türevlenebilir bir kayıp fonksiyonu \(L(y_i,F(x))\) tanımlanır.
+\item
+  Adım 2 : \(F_0(x) = \min\limits_{\gamma}\,\sum_{i=1}^{n}L(y_i,\gamma)\) \(\gamma\) = Tahmin Değeri olacak şekilde başlangıç değeri (\(F_0(x)\)) minumum olacak şekilde türevlenip 0'a eşitlenir ve \(F_0(x)\)'in minumum değeri elde edilir.
+\item
+  Adım 3 :
+  \begin{itemize}
+  \item
+    Adım 3.1 : m=1 \(\to\) M'e kadar bir önceki tahmin değerine göre hatalar hesaplanır. (M burada sınıflandırma veya regresyon ağacı sayısıdır)
+    \[r_{im} = -\left[\frac{\partial L(y_i,F(x_i)}{\partial F(x_i)}\right]_{F(x)=F_{m-1}(x)}\:\,i=1 \to n\]
+  \item
+    Adım 3.2 : \(r_{im}\) değerlerine göre regresyon veya sınıflandırma ağacı eğitilir ve \(R_{jm}\) terminal bölgeleri oluşturulur.
+  \item
+    Adım 3.3 : Her bir yaprak için çıktı değeri hesaplanır.
+    \[\gamma_{jm} = \min\limits_{\gamma}\,\sum_{x_i\in R_{ij}}L(y_i,F_{m-1}(x_i)+\gamma)\]
+    Yine aynı şekilde kayıp fonksiyonunun türevi alınır ve değerler toplanıp sınıfa eşitlenir. Çıkan sayı yaprağın değeridir.
+  \item
+    Adım 3.4 : Her gözlem için tahmin oluşturulur.
+    \[F_m(x) = F_{m-1}(x) + \nu\sum_{j=1}^{J_m}\gamma_{jm}I(x\in R_{jm})\]
+    Formül incelendiğinde yeni ağacın tahmin değerinin önceki ağacın tahmin değeri + (öğrenme düzeyi \(\times\) yeni ağacın değeri) olduğu görülmektedir.
+  \end{itemize}
+\end{itemize}
+\hypertarget{xgboost-aux15fux131rux131-gradyan-arttux131rux131mux131}{%
+\subsection{XGBoost (Aşırı Gradyan Arttırımı)}\label{xgboost-aux15fux131rux131-gradyan-arttux131rux131mux131}}
 
 \hypertarget{nn}{%
 \section{Yapay Sinir Ağları}\label{nn}}
@@ -1066,15 +1099,15 @@ Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki 
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.77      0.87      0.82       153
-     Mod+Sev       0.86      0.75      0.80       159
+        Mild       0.78      0.84      0.81       153
+     Mod+Sev       0.84      0.77      0.80       159
 
     accuracy                           0.81       312
-   macro avg       0.82      0.81      0.81       312
-weighted avg       0.82      0.81      0.81       312
+   macro avg       0.81      0.81      0.81       312
+weighted avg       0.81      0.81      0.81       312
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.8119990134418548
+Balanced Accuracy Score : 0.8083610802811692
 \end{verbatim}
 \begin{figure}
 
@@ -1240,7 +1273,7 @@ And here's some other random info: the first paragraph after a chapter title or 
 \markboth{Kaynaklar}{Kaynaklar}
 
 \hypertarget{refs}{}
-\begin{CSLReferences}
+\begin{CSLReferences}{1}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-ardakani2020diagnosis}{}}%
 Ardakani, A. A., Afshar, A., Bhatt, S., Bureau, N. J., Tahmasebi, A., Acharya, U. R. ve Mohammadi, A. (2020). Diagnosis of carpal tunnel syndrome: A comparative study of shear wave elastography, morphometry and artificial intelligence techniques. \emph{Pattern Recognition Letters}, \emph{133}, 77-85.
 
@@ -1252,6 +1285,9 @@ Arora, A. (2022, Mart). 8 unique machine learning interview questions on backpro
 
 \leavevmode\vadjust pre{\hypertarget{ref-kts_bagatur}{}}%
 Bagatur, A. E. (2006). Karpal Tünel Sendromu. \emph{Türkiye Klinikleri J Surg Med Sci.}, \emph{2}(17), 52-63.
+
+\leavevmode\vadjust pre{\hypertarget{ref-breiman1997arcing}{}}%
+Breiman, Leo. (1997). \emph{Arcing the edge}. Technical Report 486, Statistics Department, University of California.
 
 \leavevmode\vadjust pre{\hypertarget{ref-breiman1991}{}}%
 Breiman, Leo. (1999). 1 RANDOM FORESTS--RANDOM FEATURES.
@@ -1265,8 +1301,14 @@ Cover, T. ve Hart, P. (1967). Nearest neighbor pattern classification. \emph{IEE
 \leavevmode\vadjust pre{\hypertarget{ref-doad2013review}{}}%
 Doad, P. ve Bartere, M. (2013). A Review: Study of Various Clustering Techniques. \emph{International Journal of Engineering Research \& Technology}, \emph{2}(11), 3141-3145.
 
+\leavevmode\vadjust pre{\hypertarget{ref-greedy}{}}%
+Friedman, J. H. (2001). Greedy function approximation: A gradient boosting machine. \emph{The Annals of Statistics}, \emph{29}(5).
+
 \leavevmode\vadjust pre{\hypertarget{ref-ghasemi2014handy}{}}%
 Ghasemi-Rad, M., Nosair, E., Vegh, A., Mohammadi, A., Akkad, A., Lesha, E., \ldots{} others. (2014). A handy review of carpal tunnel syndrome: From anatomy to diagnosis and treatment. \emph{World journal of radiology}, \emph{6}(6), 284.
+
+\leavevmode\vadjust pre{\hypertarget{ref-hastie_tibshirani_friedman_2009}{}}%
+Hastie, T., Tibshirani, R. ve Friedman, J. (2009). \emph{The elements of Statistical Learning, second edition: Data Mining, Inference, and prediction}. Springer.
 
 \leavevmode\vadjust pre{\hypertarget{ref-koyama2021screening}{}}%
 Koyama, T., Sato, S., Toriumi, M., Watanabe, T., Nimura, A., Okawa, A., \ldots{} Fujita, K. (2021). A Screening Method Using Anomaly Detection on a Smartphone for Patients With Carpal Tunnel Syndrome: Diagnostic Case-Control Study. \emph{JMIR mHealth and uHealth}, \emph{9}(3), e26320.
@@ -1282,6 +1324,9 @@ Levine, D. W., Simmons, B. P., Koris, M. J., Daltroy, L. H., Hohl, G. G., Fossel
 
 \leavevmode\vadjust pre{\hypertarget{ref-1995love}{}}%
 Love, J. (1955). Median neuritis or carpal tunnel syndrome; diagnosis and treatment. \emph{North Carolina medical journal}, \emph{16}(10), 463-469.
+
+\leavevmode\vadjust pre{\hypertarget{ref-mason1999boosting}{}}%
+Mason, L., Baxter, J., Bartlett, P. ve Frean, M. (1999). Boosting algorithms as gradient descent. \emph{Advances in neural information processing systems}, \emph{12}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-mining2006data}{}}%
 Mining, W. I. D. (2006). Data mining: Concepts and techniques. \emph{Morgan Kaufinann}, \emph{10}, 559-569.
