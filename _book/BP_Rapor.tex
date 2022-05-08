@@ -278,22 +278,6 @@ Second paragraph of abstract starts here.\\
 \pagestyle{fancyplain} % turns page numbering back on
 
 
-\hypertarget{introduction}{%
-\chapter*{Introduction}\label{introduction}}
-\addcontentsline{toc}{chapter}{Introduction}
-
-Welcome to the \emph{R Markdown} thesis template. This template is based on (and in many places copied directly from) the Reed College LaTeX template, but hopefully it will provide a nicer interface for those that have never used TeX or LaTeX before. Using \emph{R Markdown} will also allow you to easily keep track of your analyses in \textbf{R} chunks of code, with the resulting plots and output included as well. The hope is this \emph{R Markdown} template gets you in the habit of doing reproducible research, which benefits you long-term as a researcher, but also will greatly help anyone that is trying to reproduce or build onto your results down the road.
-
-Hopefully, you won't have much of a learning period to go through and you will reap the benefits of a nicely formatted thesis. The use of LaTeX in combination with \emph{Markdown} is more consistent than the output of a word processor, much less prone to corruption or cbulrashing, and the resulting file is smaller than a Word file. While you may have never had problems using Word in the past, your thesis is likely going to be about twice as large and complex as anything you've written before, taxing Word's capabilities. After working with \emph{Markdown} and \textbf{R} together for a few weeks, we are confident this will be your reporting style of choice going forward.
-
-\textbf{Why use it?}
-
-\emph{R Markdown} creates a simple and straightforward way to interface with the beauty of LaTeX. Packages have been written in \textbf{R} to work directly with LaTeX to produce nicely formatting tables and paragraphs. In addition to creating a user friendly interface to LaTeX, \emph{R Markdown} also allows you to read in your data, to analyze it and to visualize it using \textbf{R} functions, and also to provide the documentation and commentary on the results of your project. Further, it allows for \textbf{R} results to be passed inline to the commentary of your results. You'll see more on this later.
-
-\textbf{Who should use it?}
-
-Anyone who needs to use data analysis, math, tables, a lot of figures, complex cross-references, or who just cares about the final appearance of their document should use \emph{R Markdown}. Of particular use should be anyone in the sciences, but the user-friendly nature of \emph{Markdown} and its ability to keep track of and easily include figures, automatically generate a table of contents, index, references, table of figures, etc. should make it of great benefit to nearly anyone writing a thesis project.
-
 \hypertarget{KTSTanim}{%
 \chapter{Karpal Tünel Sendromu}\label{KTSTanim}}
 
@@ -503,7 +487,7 @@ Sonuç olarak, rastgele ağaçlar methodu, kullanıcının herhangi bir değer b
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,height=0.5\textheight]{figure/rf_example} 
+{\centering \includegraphics[width=1\linewidth,height=0.48\textheight]{figure/rf_example} 
 
 }
 
@@ -544,9 +528,79 @@ Gradyan Arttırımı Algoritması ;
     Formül incelendiğinde yeni ağacın tahmin değerinin önceki ağacın tahmin değeri + (öğrenme düzeyi \(\times\) yeni ağacın değeri) olduğu görülmektedir.
   \end{itemize}
 \end{itemize}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth,height=0.4\textheight]{figure/gb-dixit} 
+
+}
+
+\caption{Gradyan Arttırma Çalışma Mantığı (Dikker, 2017)}\label{fig:unnamed-chunk-8}
+\end{figure}
 \hypertarget{xgboost-aux15fux131rux131-gradyan-arttux131rux131mux131}{%
 \subsection{XGBoost (Aşırı Gradyan Arttırımı)}\label{xgboost-aux15fux131rux131-gradyan-arttux131rux131mux131}}
 
+XGBoost, temeli gradyan arttırımı ve karar ağacı algoritmalarına dayanan bir makine gözetimli öğrenme tekniğidir.
+XGBoost algoritmasının orijinal hali Friedman tarafından 2002 yılında geliştirilmiştir (Dikker, 2017). Sonrasında Washington Üniversitesi'nde iki araştırmacı olan TianqiChen ve Carlos Guestrin tarafından SIGKDD (Bilgi İşlem Makinalarının Bilgi Keşfi ve Veri Madenciliği Özel İlgi Grubu Derneği) 2016 konferansında makale olarak sunulmuştur ve makine öğrenme dünyasında çok popüler olmuştur (Chen ve Guestrin, 2016).
+
+XGBoost, yüksek tahmin etme gücüne sahip olup, diğer algoritmalardan 10 kat daha hızlıdır. Ayrıca XGBoost, genel performansı iyileştiren ve aşırı uyum ya da aşırı öğrenmeyi azaltan bir dizi düzetlme işlemleri içermektedir (Yangın, 2019).
+
+Gradyan arttırımı, güçlü bir sınıflandırıcı oluşturmak için, bir dizi zayıf sınıflandırıcıyı arttırma ile birleştiren topluluk yöntemidir. Güçlü öğrenici, temel bir öğrenici ile başlayarak yinelemeli olarak eğitilmektedir. Hem gradyan arttırımı hem de XGBoost aynı prensibi izlemektedir. Aralarındaki temel farklar uygulama detaylarında yatmaktadır. XGBoost, farklı düzeltme teknikleri kullanarak, ağaçların karmaşıklığını kontrol ederek daha iyi bir performans elde etmeyi başarmaktadır (Salam Patrous, 2018).
+\begin{itemize}
+\item
+  Adım 1 : \(\{(x_i,y_i)\}_{i=1}^n\) şeklinde veri ve türevlenebilir bir kayıp fonksiyonu \(L(y_i,F(x))\) tanımlanır. XGBoost algoritması kayıp fonksiyonu olarak \[L(y_i,P_i) = -[y_{i}log(P_i)+(1-y_i)log(1-P_i)]\] fonksiyonunu kullanır burada \(P_i\) tahmin değerine eşittir.
+\item
+  Adım 2 : \(F_0(x) = \min\limits_{\gamma}\,\sum_{i=1}^{n}L(y_i,\gamma)\), \(\gamma\) = Tahmin Değeri olacak şekilde başlangıç değeri (\(F_0(x)\)) minumum olacak şekilde türevlenip 0'a eşitlenir ve \(F_0(x)\)'in minumum değeri elde edilir.
+\item
+  Adım 3 : Her bir yaprak için optimal çıktı değerini elde etmek amacı ile aşağıdaki denklemden yararlanılır.
+  \begin{equation}
+    \label{eq1}
+    L(y,P_i+0_{value}) \approx L(y,P_i) + gO_{value} + \frac{1}{2}hO_{value}^2
+  \end{equation}
+  \[
+  L(y,P_i) = L(y_i,log(Odds)_i) = -y_{i}log(Odds) + log\left(1 + e^{log(Odds)}\right)
+  \]
+  \[
+    g = \left[\frac{d}{dlog(Odds)}L(y_i,log(Odds)_i)\right] = -y_i + \frac{e^{log(Odds)_i}}{1 + e^{log(Odds)_i}} = -(y_i - P_i)
+  \]
+  \[
+    h = \left[\frac{d^2}{dlog(Odds)^2}L(y_i,log(Odds)_i)\right] = \frac{e^{log(Odds)_i}}{(1 + e^{log(Odds)_i})^2} = P_i\times (1-P_i)
+  \]
+  \begin{itemize}
+  \tightlist
+  \item
+    Adım 3.1 : Denlem \ref{eq1}'den yararlanıldığı takdirde aşağıdaki denklem elde edilmektedir.
+    \begin{equation}
+      (g_1 + g_2 + \ldots + g_n)O_{value} + \frac{1}{2}(h_1 + h_2 + \ldots + h_n + \lambda)O_{value}^2
+      \label{eq2}
+      \end{equation}
+  \item
+    Adım 3.2 : Çıktı değerini elde edebilmek için Denklem \ref{eq2}'de elde edilen denklemin \(O_{value}\)'ya göre türevi alınarak 0'a eşitlenir.
+    \[
+      \frac{d}{dO_{value}} (g_1 + g_2 + \ldots + g_n)O_{value} + \frac{1}{2}(h_1 + h_2 + \ldots + h_n + \lambda)O_{value}^2 = 0
+      \]
+    \begin{equation}
+      O_{value} = \frac{-(g_1 + g_2 + \ldots + g_n)}{(h_1 + h_2 + \ldots + h_n + \lambda)}
+      \label{eq3}
+      \end{equation}
+  \item
+    Adım 3.3 : Elde edilen Denklem \ref{eq3} yardımı ile benzerlik skoru hesaplanabilir. Bu nokta Benzerlik skoru yardımı ile karar noktasına karar verilir. Benzerlik skoru ne kadar düşükse o karar noktasının veri setini daha keskin bir biçimde ayrıştırdığı düşünülür.
+    \begin{equation}
+      \label{eq4}
+      \textrm{Benzerlik Skoru} = \frac{(g_1 + g_2 + \ldots + g_n)^2}{(h_1 + h_2 + \ldots + h_n + \lambda)}
+      \end{equation}
+  \end{itemize}
+\item
+  Adım 4 : Sırası ile Denklem \ref{eq4} ve \ref{eq3}, M adet ağaç için hesaplandıktan sonra her ağacın çıktı sonucu eta (öğrenme düzeyi) ile çarpılıp kümülatif olarak toplanır. Son olarak elde edilen ağaçların kümülatif toplamı başta hesaplanan ilk değer ile toplanıp gözlem için tahmin verisi oluşturulur.
+\end{itemize}
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth,height=0.3\textheight]{figure/xgb} 
+
+}
+
+\caption{XGBoost Çalışma Mantığı}\label{fig:unnamed-chunk-9}
+\end{figure}
 \hypertarget{nn}{%
 \section{Yapay Sinir Ağları}\label{nn}}
 
@@ -554,11 +608,11 @@ Yapay Sinir ağları insan beyninin en temel özelliği olan öğrenme fonksiyon
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,height=0.4\textheight]{figure/basic_neuron} 
+{\centering \includegraphics[width=0.8\linewidth,height=0.3\textheight]{figure/basic_neuron} 
 
 }
 
-\caption{Basit Bir Yapay Nöron Örneği (Sahu, 2021)}\label{fig:unnamed-chunk-8}
+\caption{Basit Bir Yapay Nöron Örneği (Sahu, 2021)}\label{fig:unnamed-chunk-10}
 \end{figure}
 Benzer şekilde yapay sinir hücreleri dışarıdan gelen bilgileri bir toplama fonksiyonu ile toplar ve aktivasyon fonksiyonundan geçirerek çıktıyı üretip ağın bağlantılarının üzerinden diğer hücrelere gönderir. Temel bir ağ 3 katmandan meydana gelir;
 \begin{itemize}
@@ -586,7 +640,7 @@ Her ara katmanın sonunda olabileceği gibi yalnızca çıktı katmanının sonu
 
 }
 
-\caption{ReLU ve Sigmoid Fonksiyonu}\label{fig:unnamed-chunk-9}
+\caption{ReLU ve Sigmoid Fonksiyonu}\label{fig:unnamed-chunk-11}
 \end{figure}
 \begin{figure}
 
@@ -594,28 +648,27 @@ Her ara katmanın sonunda olabileceği gibi yalnızca çıktı katmanının sonu
 
 }
 
-\caption{Step ve Tanh Fonksiyonu }\label{fig:unnamed-chunk-10}
+\caption{Step ve Tanh Fonksiyonu }\label{fig:unnamed-chunk-12}
 \end{figure}
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,height=0.4\textheight]{figure/cok_katmanli} 
+{\centering \includegraphics[width=1\linewidth,height=0.3\textheight]{figure/cok_katmanli} 
 
 }
 
-\caption{Çok Katmanlı Yapay Sinir Ağı Örneği (Sahu, 2021)}\label{fig:unnamed-chunk-11}
+\caption{Çok Katmanlı Yapay Sinir Ağı Örneği (Sahu, 2021)}\label{fig:unnamed-chunk-13}
 \end{figure}
 ~
 ~
 
-Başlangıçta girdi katmanından alınan verilerin ağırlıkları (weights) rastgele olarak atanır ve ağ çalıştırılır. Çıktı katmanından sonra elde edilen sonuç orijinal verinin bağımlı değişkeni ile en yakın değeri üretene kadar sinir ağı geri yayılım yöntemi ile ağırlıkları optimize etmeye çalışır. Maliyet fonksiyonun türevleri alınarak ağırlıkları optimize etmeyi amaçlayan geri yayılım algoritması orijinal verinin bağımlı değişkeni ile tahmin değeri arasında en düşük hata değerini bulduğu zaman ağın yeni ağırlıklarını son bulduğu ağırlıklar olarak tayin eder.\\
-
+Başlangıçta girdi katmanından alınan verilerin ağırlıkları (weights) rastgele olarak atanır ve ağ çalıştırılır. Çıktı katmanından sonra elde edilen sonuç orijinal verinin bağımlı değişkeni ile en yakın değeri üretene kadar sinir ağı geri yayılım yöntemi ile ağırlıkları optimize etmeye çalışır. Maliyet fonksiyonun türevleri alınarak ağırlıkları optimize etmeyi amaçlayan geri yayılım algoritması orijinal verinin bağımlı değişkeni ile tahmin değeri arasında en düşük hata değerini bulduğu zaman ağın yeni ağırlıklarını son bulduğu ağırlıklar olarak tayin eder.
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth,height=0.4\textheight]{figure/back_prob} 
+{\centering \includegraphics[width=0.85\linewidth,height=0.3\textheight]{figure/geri_yayilim} 
 
 }
 
-\caption{Geri Yaylım Örneği (Arora, 2022)}\label{fig:unnamed-chunk-12}
+\caption{Geri Yaylım Örneği}\label{fig:unnamed-chunk-14}
 \end{figure}
 Ağın ağırlıkları belirlendikten sonra her bir ağırlığın ne anlama geldiği bilinmemektedir. Bu nedenle yapay sinir ağlarına ``kara kutu'' yakıştırması yapılmaktadır. Ağın performansını etkileyen bağlıca faktörler kullanılan aktivasyon fonksiyonu, öğrenme stratejisi ve öğrenme kuralıdır (Öztemel, 2003).
 
@@ -745,7 +798,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Üç Sınıflı K-NN Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-19}
+\caption{Üç Sınıflı K-NN Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-21}
 \end{figure}
 K-En yakın komşuluk modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -783,7 +836,7 @@ Balanced Accuracy Score : 0.6718827333790838
 
 }
 
-\caption{Üç Sınıflı K-NN Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-24}
+\caption{Üç Sınıflı K-NN Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-26}
 \end{figure}
 \begin{figure}
 
@@ -791,7 +844,7 @@ Balanced Accuracy Score : 0.6718827333790838
 
 }
 
-\caption{Üç Sınıflı K-NN Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-25}
+\caption{Üç Sınıflı K-NN Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-27}
 \end{figure}
 \hypertarget{mult_rf}{%
 \subsection{Rassal Ormanlar Modeli}\label{mult_rf}}
@@ -808,7 +861,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Üç Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-27}
+\caption{Üç Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-29}
 \end{figure}
 Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -852,7 +905,7 @@ Balanced Accuracy Score : 0.6681395179570361
 
 }
 
-\caption{Üç Sınıflı Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-32}
+\caption{Üç Sınıflı Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-34}
 \end{figure}
 \begin{figure}
 
@@ -860,7 +913,7 @@ Balanced Accuracy Score : 0.6681395179570361
 
 }
 
-\caption{Üç Sınıflı Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-33}
+\caption{Üç Sınıflı Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-35}
 \end{figure}
 \hypertarget{mult_xgb}{%
 \subsection{eXtreme Gradient Boosting (XGBoost)}\label{mult_xgb}}
@@ -877,7 +930,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Üç Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-35}
+\caption{Üç Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-37}
 \end{figure}
 XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -918,7 +971,7 @@ Balanced Accuracy Score : 0.7319509430823299
 
 }
 
-\caption{Üç Sınıflı XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-40}
+\caption{Üç Sınıflı XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-42}
 \end{figure}
 \begin{figure}
 
@@ -926,7 +979,7 @@ Balanced Accuracy Score : 0.7319509430823299
 
 }
 
-\caption{Üç Sınıflı XGBoost Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-41}
+\caption{Üç Sınıflı XGBoost Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-43}
 \end{figure}
 \hypertarget{mult_nn}{%
 \subsection{Yapay Sinir Ağları (Neural Networks)}\label{mult_nn}}
@@ -943,7 +996,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{Üç Sınıflı Yapay Sinir Ağları Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-43}
+\caption{Üç Sınıflı Yapay Sinir Ağları Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-45}
 \end{figure}
 Yapay sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -978,7 +1031,7 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Üç Sınıflı Yapay Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-48}
+\caption{Üç Sınıflı Yapay Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-50}
 \end{figure}
 \begin{figure}
 
@@ -986,7 +1039,7 @@ Balanced Accuracy Score : 0.7205206188782832
 
 }
 
-\caption{Üç Sınıflı Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-49}
+\caption{Üç Sınıflı Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-51}
 \end{figure}
 \hypertarget{uxe7ok-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}{%
 \subsection{Çok Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}\label{uxe7ok-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}}
@@ -1015,7 +1068,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{İki Sınıflı K-NN Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-52}
+\caption{İki Sınıflı K-NN Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-54}
 \end{figure}
 \newpage
 
@@ -1052,7 +1105,7 @@ Balanced Accuracy Score : 0.8153903070662227
 
 }
 
-\caption{İki Sınıflı K-NN Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-57}
+\caption{İki Sınıflı K-NN Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-59}
 \end{figure}
 \begin{figure}
 
@@ -1060,7 +1113,7 @@ Balanced Accuracy Score : 0.8153903070662227
 
 }
 
-\caption{İki Sınıflı K-NN Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-58}
+\caption{İki Sınıflı K-NN Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-60}
 \end{figure}
 \hypertarget{bin_rf}{%
 \subsection{Rassal Ormanlar Modeli}\label{bin_rf}}
@@ -1077,7 +1130,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{İki Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-60}
+\caption{İki Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-62}
 \end{figure}
 Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -1099,15 +1152,15 @@ Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki 
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.78      0.84      0.81       153
-     Mod+Sev       0.84      0.77      0.80       159
+        Mild       0.78      0.87      0.82       153
+     Mod+Sev       0.86      0.77      0.81       159
 
-    accuracy                           0.81       312
-   macro avg       0.81      0.81      0.81       312
-weighted avg       0.81      0.81      0.81       312
+    accuracy                           0.82       312
+   macro avg       0.82      0.82      0.82       312
+weighted avg       0.82      0.82      0.82       312
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.8083610802811692
+Balanced Accuracy Score : 0.8182883216179554
 \end{verbatim}
 \begin{figure}
 
@@ -1115,7 +1168,7 @@ Balanced Accuracy Score : 0.8083610802811692
 
 }
 
-\caption{İki Sınıflı Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-65}
+\caption{İki Sınıflı Rassal Ormanlar Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-67}
 \end{figure}
 \begin{figure}
 
@@ -1123,7 +1176,7 @@ Balanced Accuracy Score : 0.8083610802811692
 
 }
 
-\caption{İki Sınıflı Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-66}
+\caption{İki Sınıflı Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-68}
 \end{figure}
 \hypertarget{bin_xgb}{%
 \subsection{XGBoost}\label{bin_xgb}}
@@ -1140,7 +1193,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{İki Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-68}
+\caption{İki Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-70}
 \end{figure}
 XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -1178,7 +1231,7 @@ Balanced Accuracy Score : 0.8235910716487853
 
 }
 
-\caption{İki Sınıflı XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-73}
+\caption{İki Sınıflı XGBoost Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-75}
 \end{figure}
 \begin{figure}
 
@@ -1186,7 +1239,7 @@ Balanced Accuracy Score : 0.8235910716487853
 
 }
 
-\caption{İki Sınıflı XGBoost Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-74}
+\caption{İki Sınıflı XGBoost Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-76}
 \end{figure}
 \hypertarget{bin_nn}{%
 \subsection{Neural Network (Yapay Sinir Ağları) Modeli}\label{bin_nn}}
@@ -1203,7 +1256,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 
 }
 
-\caption{İki Sınıflı Yapay Sinir Ağları Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-76}
+\caption{İki Sınıflı Yapay Sinir Ağları Modeli Eğitim Verisi Doğruluk Skorları}\label{fig:unnamed-chunk-78}
 \end{figure}
 Yapay sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile bulunmuştur;
 \begin{itemize}
@@ -1239,7 +1292,7 @@ Balanced Accuracy Score : 0.8116290541373783
 
 }
 
-\caption{İki Sınıflı Yapay Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-81}
+\caption{İki Sınıflı Yapay Sinir Ağları Modeli Karmaşıklık Matrisi}\label{fig:unnamed-chunk-83}
 \end{figure}
 \begin{figure}
 
@@ -1247,7 +1300,7 @@ Balanced Accuracy Score : 0.8116290541373783
 
 }
 
-\caption{İki Sınıflı Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-82}
+\caption{İki Sınıflı Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değerleri}\label{fig:unnamed-chunk-84}
 \end{figure}
 \hypertarget{iki-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}{%
 \subsection{İki Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}\label{iki-sux131nux131flux131-sux131nux131flama-probleminin-modellerinin-deux11ferlendirdirilmesi}}
@@ -1295,8 +1348,14 @@ Breiman, Leo. (1999). 1 RANDOM FORESTS--RANDOM FEATURES.
 \leavevmode\vadjust pre{\hypertarget{ref-breimanclassification}{}}%
 Breiman, L., Friedman, J., Olshen, R. ve Stone, C. (t.y.). \emph{Classification and Regression Trees. 1984 Monterey, CA Wadsworth \& Brooks}. \emph{Cole Advanced Books \& Software Google Scholar}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-chen2016xgboost}{}}%
+Chen, T. ve Guestrin, C. (2016). Xgboost: A scalable tree boosting system. \emph{Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining} içinde (ss. 785-794).
+
 \leavevmode\vadjust pre{\hypertarget{ref-knn-info}{}}%
 Cover, T. ve Hart, P. (1967). Nearest neighbor pattern classification. \emph{IEEE Transactions on Information Theory}, \emph{13}(1), 21-27. doi:\href{https://doi.org/10.1109/TIT.1967.1053964}{10.1109/TIT.1967.1053964}
+
+\leavevmode\vadjust pre{\hypertarget{ref-dikker2017master}{}}%
+Dikker, J. (2017). Master thesis Boosted tree learning for balanced item recommendation in online retail.
 
 \leavevmode\vadjust pre{\hypertarget{ref-doad2013review}{}}%
 Doad, P. ve Bartere, M. (2013). A Review: Study of Various Clustering Techniques. \emph{International Journal of Engineering Research \& Technology}, \emph{2}(11), 3141-3145.
@@ -1352,6 +1411,9 @@ Robbins, H. (1963). Anatomical study of the median nerve in the carpal tunnel an
 \leavevmode\vadjust pre{\hypertarget{ref-sahu_2021}{}}%
 Sahu, V. (2021, Haziran). Power of a single neuron. \emph{Medium}. Towards Data Science. \url{https://towardsdatascience.com/power-of-a-single-neuron-perceptron-c418ba445095} adresinden erişildi.
 
+\leavevmode\vadjust pre{\hypertarget{ref-salam2018evaluating}{}}%
+Salam Patrous, Z. (2018). Evaluating XGBoost for user classification by using behavioral features extracted from smartphone sensors.
+
 \leavevmode\vadjust pre{\hypertarget{ref-sezgi2006assessment}{}}%
 Sezgin, M., İncel, N. A., Sevim, S., Çamdeviren, H., As, İ. ve Erdoğan, C. (2006). Assessment of symptom severity and functional status in patients with carpal tunnel syndrome: reliability and validity of the Turkish version of the Boston Questionnaire. \emph{Disability and rehabilitation}, \emph{28}(20), 1281-1286.
 
@@ -1360,6 +1422,9 @@ TIBCO. (t.y.). What is a random forest? \emph{TIBCO Software}. \url{https://www.
 
 \leavevmode\vadjust pre{\hypertarget{ref-werner2002carpal}{}}%
 Werner, R. A. ve Andary, M. (2002). Carpal tunnel syndrome: pathophysiology and clinical neurophysiology. \emph{Clinical Neurophysiology}, \emph{113}(9), 1373-1381.
+
+\leavevmode\vadjust pre{\hypertarget{ref-yangin2019xgboost}{}}%
+Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların diyabet veri setleri üzerine uygulaması}. (Yayımlanmamış doktora tezi). Yüksek Lisans Tezi, Mimar Sinan Güzel Sanatlar Üniversitesi Fen Bilimleri.
 
 \end{CSLReferences}
 \setlength{\parindent}{-0.20in}

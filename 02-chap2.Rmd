@@ -38,7 +38,7 @@ Her seferinde bir ağaç, değişkenlerin bir kombinasyonunu kullanarak yeni eğ
 
 Sonuç olarak, rastgele ağaçlar methodu, kullanıcının herhangi bir değer belirleyebildiği, N kadar büyüyecek karar ağaçları içerir. Yeni veri setini sınıflandırmak için, seçilen maksimum değişken sayısına göre veri setinde ki rastgele olarak paylaştırılmış her gözlem, N kadar karar ağacının her biri tarafından sınıflandırılır. Bu durum için ormanlar en fazla oya sahip sınıfı seçer.  
 (ref:rfex) [@tibco]
-```{r echo=FALSE,fig.align='center',fig.cap="Rassal Ormanlar Model Örneği (ref:rfex)",out.width="100%",out.height="50%"}
+```{r echo=FALSE,fig.align='center',fig.cap="Rassal Ormanlar Model Örneği (ref:rfex)",out.width="100%",out.height="48%"}
 knitr::include_graphics(path="figure/rf_example.jpeg")
 ```
 
@@ -70,12 +70,69 @@ Gradyan Arttırımı Algoritması ;
 	$$F_m(x) = F_{m-1}(x) + \nu\sum_{j=1}^{J_m}\gamma_{jm}I(x\in R_{jm})$$
 Formül incelendiğinde yeni ağacın tahmin değerinin önceki ağacın tahmin değeri + (öğrenme düzeyi $\times$ yeni ağacın değeri) olduğu görülmektedir.  
 
-### XGBoost (Aşırı Gradyan Arttırımı)
+(ref:gboost) [@dikker2017master]
+```{r echo=FALSE,fig.align='center',fig.cap="Gradyan Arttırma Çalışma Mantığı (ref:gboost)",out.width="100%",out.height="40%"}
+knitr::include_graphics(path="figure/gb-dixit.png")
+```
+
+### XGBoost (Aşırı Gradyan Arttırımı)  
+
+
+XGBoost, temeli gradyan arttırımı ve karar ağacı algoritmalarına dayanan bir makine gözetimli öğrenme tekniğidir.
+XGBoost algoritmasının orijinal hali Friedman tarafından 2002 yılında geliştirilmiştir [@dikker2017master]. Sonrasında Washington Üniversitesi’nde iki araştırmacı olan TianqiChen ve Carlos Guestrin tarafından SIGKDD (Bilgi İşlem Makinalarının Bilgi Keşfi ve Veri Madenciliği Özel İlgi Grubu Derneği) 2016 konferansında makale olarak sunulmuştur ve makine öğrenme dünyasında çok popüler olmuştur [@chen2016xgboost].  
+
+XGBoost, yüksek tahmin etme gücüne sahip olup, diğer algoritmalardan 10 kat daha hızlıdır. Ayrıca XGBoost, genel performansı iyileştiren ve aşırı uyum ya da aşırı öğrenmeyi azaltan bir dizi düzetlme işlemleri içermektedir [@yangin2019xgboost].   
+
+Gradyan arttırımı, güçlü bir sınıflandırıcı oluşturmak için, bir dizi zayıf sınıflandırıcıyı arttırma ile birleştiren topluluk yöntemidir. Güçlü öğrenici, temel bir öğrenici ile başlayarak yinelemeli olarak eğitilmektedir. Hem gradyan arttırımı hem de XGBoost aynı prensibi izlemektedir. Aralarındaki temel farklar uygulama detaylarında yatmaktadır. XGBoost, farklı düzeltme teknikleri kullanarak, ağaçların karmaşıklığını kontrol ederek daha iyi bir performans elde etmeyi başarmaktadır [@salam2018evaluating].  
+
+* Adım 1 : $\{(x_i,y_i)\}_{i=1}^n$ şeklinde veri ve türevlenebilir bir kayıp fonksiyonu $L(y_i,F(x))$ tanımlanır. XGBoost algoritması kayıp fonksiyonu olarak $$L(y_i,P_i) = -[y_{i}log(P_i)+(1-y_i)log(1-P_i)]$$ fonksiyonunu kullanır burada $P_i$ tahmin değerine eşittir.  
+
+* Adım 2 : $F_0(x) = \min\limits_{\gamma}\,\sum_{i=1}^{n}L(y_i,\gamma)$, $\gamma$ = Tahmin Değeri olacak şekilde başlangıç değeri ($F_0(x)$) minumum olacak şekilde türevlenip 0'a eşitlenir ve $F_0(x)$'in minumum değeri elde edilir.  
+
+* Adım 3 : Her bir yaprak için optimal çıktı değerini elde etmek amacı ile aşağıdaki denklemden yararlanılır. 
+\begin{equation}
+	\label{eq1}
+	L(y,P_i+0_{value}) \approx L(y,P_i) + gO_{value} + \frac{1}{2}hO_{value}^2
+\end{equation}
+$$
+L(y,P_i) = L(y_i,log(Odds)_i) = -y_{i}log(Odds) + log\left(1 + e^{log(Odds)}\right)
+$$
+$$
+	g = \left[\frac{d}{dlog(Odds)}L(y_i,log(Odds)_i)\right] = -y_i + \frac{e^{log(Odds)_i}}{1 + e^{log(Odds)_i}} = -(y_i - P_i)
+$$
+$$
+	h = \left[\frac{d^2}{dlog(Odds)^2}L(y_i,log(Odds)_i)\right] = \frac{e^{log(Odds)_i}}{(1 + e^{log(Odds)_i})^2} = P_i\times (1-P_i)
+$$
+
+	+ Adım 3.1 : Denlem \ref{eq1}'den yararlanıldığı takdirde aşağıdaki denklem elde edilmektedir.
+	\begin{equation}
+		(g_1 + g_2 + \ldots + g_n)O_{value} + \frac{1}{2}(h_1 + h_2 + \ldots + h_n + \lambda)O_{value}^2
+		\label{eq2}
+	\end{equation}
+	+ Adım 3.2 : Çıktı değerini elde edebilmek için Denklem \ref{eq2}'de elde edilen denklemin $O_{value}$'ya göre türevi alınarak 0'a eşitlenir.
+	$$
+		\frac{d}{dO_{value}} (g_1 + g_2 + \ldots + g_n)O_{value} + \frac{1}{2}(h_1 + h_2 + \ldots + h_n + \lambda)O_{value}^2 = 0
+	$$
+	\begin{equation}
+		O_{value} = \frac{-(g_1 + g_2 + \ldots + g_n)}{(h_1 + h_2 + \ldots + h_n + \lambda)}
+		\label{eq3}
+	\end{equation}
+	+ Adım 3.3 : Elde edilen Denklem \ref{eq3} yardımı ile benzerlik skoru hesaplanabilir. Bu nokta Benzerlik skoru yardımı ile karar noktasına karar verilir. Benzerlik skoru ne kadar düşükse o karar noktasının veri setini daha keskin bir biçimde ayrıştırdığı düşünülür.
+	\begin{equation}
+	\label{eq4}
+	\textrm{Benzerlik Skoru} = \frac{(g_1 + g_2 + \ldots + g_n)^2}{(h_1 + h_2 + \ldots + h_n + \lambda)}
+	\end{equation}
+
+* Adım 4 : Sırası ile Denklem \ref{eq4} ve \ref{eq3}, M adet ağaç için hesaplandıktan sonra her ağacın çıktı sonucu eta (öğrenme düzeyi) ile çarpılıp kümülatif olarak toplanır. Son olarak elde edilen ağaçların kümülatif toplamı başta hesaplanan ilk değer ile toplanıp gözlem için tahmin verisi oluşturulur.  
+
+```{r echo=FALSE,fig.align='center',fig.cap="XGBoost Çalışma Mantığı",out.width="80%",out.height="30%"}
+knitr::include_graphics(path="figure/xgb.png")
+```
 
 ## Yapay Sinir Ağları {#nn}
 Yapay Sinir ağları insan beyninin en temel özelliği olan öğrenme fonksiyonunu gerçekleştiren bilgisayar sistemleridir. Öğrenme işlemini örnekler yardımı ile gerçekleştirirler. Bu ağlar birbirine bağlı yapay sinir hücrelerinden oluşur. Yapay sinir ağları biyolojik sinir sisteminden etkilenerek geliştirilmiştir. Biyolojik sinir hücreleri birbirleri ile sinapsisler vasıtası ile iletişim kurarlar. Bir sinir hücresi işlediği bilgileri Axon’ları yolu ile diğer hücrelere gönderirler [@oztemel2003yapay].  
 (ref:sahu2021) [@sahu_2021]
-```{r echo=FALSE,fig.align='center',fig.cap="Basit Bir Yapay Nöron Örneği (ref:sahu2021)",out.width="100%",out.height="40%"}
+```{r echo=FALSE,fig.align='center',fig.cap="Basit Bir Yapay Nöron Örneği (ref:sahu2021)",out.width="80%",out.height="30%"}
 knitr::include_graphics(path="figure/basic_neuron.jpg")
 ```
 Benzer şekilde yapay sinir hücreleri dışarıdan gelen bilgileri bir toplama fonksiyonu ile toplar ve aktivasyon fonksiyonundan geçirerek çıktıyı üretip ağın bağlantılarının üzerinden diğer hücrelere gönderir. Temel bir ağ 3 katmandan meydana gelir;  
@@ -104,7 +161,7 @@ knitr::include_graphics(path="figure/sigmoid.png")
 knitr::include_graphics("figure/step.png")
 knitr::include_graphics(path="figure/tanh.png")
 ```
-```{r echo=FALSE,fig.align='center',fig.cap="Çok Katmanlı Yapay Sinir Ağı Örneği (ref:sahu2021)",out.width="100%",out.height="40%"}
+```{r echo=FALSE,fig.align='center',fig.cap="Çok Katmanlı Yapay Sinir Ağı Örneği (ref:sahu2021)",out.width="100%",out.height="30%"}
 knitr::include_graphics(path="figure/cok_katmanli.jpg")
 ```
 \  
@@ -112,9 +169,9 @@ knitr::include_graphics(path="figure/cok_katmanli.jpg")
 
 
 Başlangıçta girdi katmanından alınan verilerin ağırlıkları (weights) rastgele olarak atanır ve ağ çalıştırılır. Çıktı katmanından sonra elde edilen sonuç orijinal verinin bağımlı değişkeni ile en yakın değeri üretene kadar sinir ağı geri yayılım yöntemi ile ağırlıkları optimize etmeye çalışır. Maliyet fonksiyonun türevleri alınarak ağırlıkları optimize etmeyi amaçlayan geri yayılım algoritması orijinal verinin bağımlı değişkeni ile tahmin değeri arasında en düşük hata değerini bulduğu zaman ağın yeni ağırlıklarını son bulduğu ağırlıklar olarak tayin eder.  
-(ref:backprob) [@avi2022]
-```{r echo=FALSE,fig.align='center',fig.cap="Geri Yaylım Örneği (ref:backprob)",out.width="100%",out.height="40%"}
-knitr::include_graphics(path="figure/back_prob.jpg")
+
+```{r echo=FALSE,fig.align='center',fig.cap="Geri Yaylım Örneği",out.height="30%",out.width="85%"}
+knitr::include_graphics(path="figure/geri_yayilim.png")
 ```
 
 Ağın ağırlıkları belirlendikten sonra her bir ağırlığın ne anlama geldiği bilinmemektedir. Bu nedenle yapay sinir ağlarına “kara kutu” yakıştırması yapılmaktadır. Ağın performansını etkileyen bağlıca faktörler kullanılan aktivasyon fonksiyonu, öğrenme stratejisi ve öğrenme kuralıdır [@oztemel2003yapay].

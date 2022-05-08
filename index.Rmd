@@ -106,4 +106,3 @@ If you receive a duplicate label error after knitting, make sure to delete the i
 on chapters.
 -->
 
-# Giriş {.unnumbered}

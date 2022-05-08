@@ -1,0 +1,45 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Karpal Tünel Anatomisi ve Medyan Sinirin Sıkışması\relax }}{1}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Elektronörofizyolojik Test (Kumaş, 2005)\relax }}{3}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Phalen ve Tinel Testi\relax }}{4}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Karpal kompresyon ve GMSS Testi \relax }}{4}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Ultrasonografi ve Düz radyografi \relax }}{4}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Bilgisayarlı tomografi \relax }}{5}{figure.caption.13}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Rassal Ormanlar Model Örneği (TIBCO, t.y.)\relax }}{9}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Gradyan Arttırma Çalışma Mantığı (Dikker, 2017)\relax }}{11}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces XGBoost Çalışma Mantığı\relax }}{13}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Basit Bir Yapay Nöron Örneği (Sahu, 2021)\relax }}{13}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces ReLU ve Sigmoid Fonksiyonu\relax }}{14}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Step ve Tanh Fonksiyonu \relax }}{14}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Çok Katmanlı Yapay Sinir Ağı Örneği (Sahu, 2021)\relax }}{15}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Geri Yaylım Örneği\relax }}{15}{figure.caption.24}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Üç Sınıflı K-NN Eğitim Verisi Doğruluk Skorları\relax }}{20}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Üç Sınıflı K-NN Modeli Karmaşıklık Matrisi\relax }}{21}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Üç Sınıflı K-NN Modeli ROC Eğrisi ve AUC Değerleri\relax }}{22}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Üç Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları\relax }}{23}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Üç Sınıflı Rassal Ormanlar Modeli Karmaşıklık Matrisi\relax }}{24}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Üç Sınıflı Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değerleri\relax }}{25}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Üç Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları\relax }}{26}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Üç Sınıflı XGBoost Modeli Karmaşıklık Matrisi\relax }}{27}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Üç Sınıflı XGBoost Modeli ROC Eğrisi ve AUC Değerleri\relax }}{28}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Üç Sınıflı Yapay Sinir Ağları Modeli Eğitim Verisi Doğruluk Skorları\relax }}{29}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Üç Sınıflı Yapay Sinir Ağları Modeli Karmaşıklık Matrisi\relax }}{30}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Üç Sınıflı Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değerleri\relax }}{31}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces İki Sınıflı K-NN Modeli Eğitim Verisi Doğruluk Skorları\relax }}{32}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces İki Sınıflı K-NN Modeli Karmaşıklık Matrisi\relax }}{34}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces İki Sınıflı K-NN Modeli ROC Eğrisi ve AUC Değerleri\relax }}{35}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces İki Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları\relax }}{36}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces İki Sınıflı Rassal Ormanlar Modeli Karmaşıklık Matrisi\relax }}{37}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces İki Sınıflı Rassal Ormanlar Modeli ROC Eğrisi ve AUC Değerleri\relax }}{38}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces İki Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları\relax }}{39}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces İki Sınıflı XGBoost Modeli Karmaşıklık Matrisi\relax }}{40}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces İki Sınıflı XGBoost Modeli ROC Eğrisi ve AUC Değerleri\relax }}{41}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces İki Sınıflı Yapay Sinir Ağları Modeli Eğitim Verisi Doğruluk Skorları\relax }}{42}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces İki Sınıflı Yapay Sinir Ağları Modeli Karmaşıklık Matrisi\relax }}{43}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces İki Sınıflı Yapay Sinir Ağları Modeli ROC Eğrisi ve AUC Değerleri\relax }}{44}{figure.caption.62}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
