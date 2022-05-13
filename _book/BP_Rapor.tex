@@ -278,6 +278,36 @@ Second paragraph of abstract starts here.\\
 \pagestyle{fancyplain} % turns page numbering back on
 
 
+\hypertarget{giriux15f}{%
+\chapter*{Giriş}\label{giriux15f}}
+\addcontentsline{toc}{chapter}{Giriş}
+
+Makine öğrenmesi yöntemleri günümüzde hastalıkların belirlenmesinde ve sınıflandırmasında yaygın olarak kullanılmaktadır. Hastalığı belirlemede ve sınıflandırmada kullanılan makine öğrenmesi modelleri ne yazık ki eğitim verisine ihtiyaç duymaktadır. Günümüz yaşam koşullarında çalışma hayatı genellikle ofiste ve bilgisayar başında geçmektedir. Bu tarz işlerin yaygınlaşıp popüler hale gelmesi ile birlikte karpal tünel sendromunun (KTS) görülme sıklığı ciddi oranda artmıştır.
+
+~
+
+~
+
+~
+
+Karpal tünel sendromu, medyan sinirin karpal tüneli içerisinde baskıya uğraması sonucu ortaya çıkan semptomların genel adıdır. Karpal tünel sendromunun görülme sıkılığı kadınlarda \%3-\%3.4 arasında iken erkeklerde \%0.6-\%2.7 arasında olarak belirlenmiş ve genelde baskın elde semptomlara rastlanmıştır. Her ne kadar görülme sıklıkları cinsiyetler bazında farklı olsa bile gözlenme sıklığı yaş ile doğru orantılıdır ve özellikle 20li ile 50li yaşlar arasında görülür.
+
+~
+
+~
+
+~
+
+KTS için makine öğrenmesi yöntemleri ile sınıflandırma modelleri kurabilmek ancak sınıflandırıcı ve karar vermeye yarayacak verilerin toplanması ile mümkün olabilir. Hekimler hastanın cerrahi müdahaleye ihtiyacı olup olmadığı belirleyebilmek için tanısal testler yapabilmektedir ve bu test sonuçları makine öğrenmesi modelleri için eğitim verisi olarak kullanılabilir. Bu veriler toplandıktan sonra farklı sınıflandırma algoritmaları XGBoost, Rassal Ormanlar, K-En Yakın Komşuluk ve Yapay Sinir Ağları gibi algoritmalar ile modeller kurularak sınıflandırma yapılmaktadır. Burada başarılı bir model kurulur ise, hastanın yaptırdığı testleri dikkate alınarak hastalığının ciddiyetini sınıflayabilir ve doktora başvurmasının gerekip gerekmediği kararı verilebilir. Bu yöntemin önemi hastanın erken tanı sayesinde tedavi için zemin hazırlama ve gereksiz girişimsel müdahalelerden kaçınmasıdır. Erken tanı sayesinde hastanın maddi, manevi çıkarları korunurken aynı zamanda acılı olabilecek girişimsel test süreçlerinden kaçınmaları sağlanabilir, hasta bazlı düşünce biçiminin yanı sıra erken tanı sayesinde doktorlar üzerindeki iş yükü de azaltılabilir.
+
+~
+
+~
+
+~
+
+Bu projede Güney Kore'deki bir hastaneden alınan ve 1037 adet hastadan elde edilen el örneği ile üç(mild, moderate, severe) sınıfa sahip veri seti için kts ciddiyet sınıflandırma tahminlemesi yapılmıştır. XGBoost, Rassal Ormanlar, K-En Yakın Komşuluk ve Yapay Sinir Ağları sınıflandırma algoritmaları ile modeller kurulduktan sonra ciddiyet sınıflandırması için tahminler yapılmaya çalışılmıştır. Bölüm \ref{KTSTanim}'de karpal tünel hastalığı Epidemiyoloji, Etiyoloji, Semptomlardan bahsedilmiş ve tanı değerlendirilmesi yapılmıştır. Bölüm \ref{yontem}'de ise uygulamada kullanılan sınıflandırma algoritmalarından bahsedilmiştir. Bölüm \ref{uygulama} yapılan uygulamayı içermektedir ve Uygulama 2 bölüme ayrılmıştır. Uygulamanın birinci (\ref{multiclass}) bölümünde üç ayrı sınıf için sınıflandırma sonuçlarına yer verilmiştir. Uygulamanın ikinci (\ref{binary}) bölümünde ise veri üç sınıftan iki sınıfa indirgenmiş ve indirgenmiş verilere ait sınıflandırma sonuçları paylaşılmıştır.
+
 \hypertarget{KTSTanim}{%
 \chapter{Karpal Tünel Sendromu}\label{KTSTanim}}
 
@@ -434,7 +464,7 @@ Güncel bir çalışmada Park ve ark. (Park ve diğerleri, 2021) 1037 hastadan e
 Bu bölümde uygulama kısmında kullanılan sınıflama algoritmalarına değinilmiştir.
 
 \hypertarget{knn}{%
-\section{K - En Yakın Komşuluk Algoritamsı (K-NN)}\label{knn}}
+\section{K - En Yakın Komşuluk Algoritması (K-NN)}\label{knn}}
 
 K-NN algoritması, Cover ve Hart tarafından önerilen, örnek veri noktasının bulunduğu sınıfın ve en yakın komşunun, k değerine göre belirlendiği bir sınıflandırma yöntemidir (Cover ve Hart, 1967).\\
 K-NN algoritması, en temel örnek tabanlı öğrenme algoritmaları arasındadır. Örnek tabanlı öğrenme algoritmalarında, öğrenme işlemi eğitim setinde tutulan verilere dayalı olarak gerçekleştirilmektedir. Yeni karşılaşılan bir örnek, eğitim setinde yer alan örnekler ile arasındaki benzerliğe göre sınıflandırılmaktadır (Mitchell ve Learning, 1997). K-NN algoritmasında, eğitim setinde yer alan örnekler n boyutlu sayısal nitelikler ile belirtilir. Her örnek n boyutlu uzayda bir noktayı temsil edecek biçimde tüm eğitim örnekleri n boyutlu bir örnek uzayında tutulur. Bilinmeyen bir örnek ile karşılaşıldığında, eğitim setinden ilgili örneğe en yakın k tane örnek belirlenerek yeni örneğin sınıf etiketi, k en yakın komşusunun sınıf etiketlerinin çoğunluk oylamasına göre atanır (Mining, 2006).
@@ -1152,15 +1182,15 @@ Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki 
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.78      0.87      0.82       153
-     Mod+Sev       0.86      0.77      0.81       159
+        Mild       0.76      0.86      0.81       153
+     Mod+Sev       0.85      0.74      0.79       159
 
-    accuracy                           0.82       312
-   macro avg       0.82      0.82      0.82       312
-weighted avg       0.82      0.82      0.82       312
+    accuracy                           0.80       312
+   macro avg       0.81      0.80      0.80       312
+weighted avg       0.81      0.80      0.80       312
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.8182883216179554
+Balanced Accuracy Score : 0.8024417314095449
 \end{verbatim}
 \begin{figure}
 
@@ -1433,8 +1463,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 
 \appendix
 
-\hypertarget{gerekli-paketlerin-yuxfcklenmesi-ve-verilerin-okunmasux131-ve-veri-uxf6niux15fleme}{%
-\chapter{Gerekli Paketlerin Yüklenmesi ve Verilerin Okunması ve Veri Önişleme}\label{gerekli-paketlerin-yuxfcklenmesi-ve-verilerin-okunmasux131-ve-veri-uxf6niux15fleme}}
+\hypertarget{gerekli-paketlerin-yuxfcklenmesi-verilerin-okunmasux131-ve-veri-uxf6niux15fleme}{%
+\chapter{Gerekli Paketlerin Yüklenmesi, Verilerin Okunması ve Veri Önişleme}\label{gerekli-paketlerin-yuxfcklenmesi-verilerin-okunmasux131-ve-veri-uxf6niux15fleme}}
 
 \scriptsize
 \begin{Shaded}
@@ -1570,8 +1600,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \hypertarget{sux131nux131flandux131rma-uxfcuxe7-sux131nux131f}{%
 \chapter{Sınıflandırma (Üç Sınıf)}\label{sux131nux131flandux131rma-uxfcuxe7-sux131nux131f}}
 
-\hypertarget{roc-curve-ve-onevsrest}{%
-\section{Roc Curve ve OneVsRest}\label{roc-curve-ve-onevsrest}}
+\hypertarget{roc-curve-grafiux11fi-ve-onevsrest-model-kurulmasux131}{%
+\section{Roc Curve Grafiği ve OneVsRest Model Kurulması}\label{roc-curve-grafiux11fi-ve-onevsrest-model-kurulmasux131}}
 
 \scriptsize
 \begin{Shaded}
@@ -1626,8 +1656,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \end{Shaded}
 \normalsize
 
-\hypertarget{knn-1}{%
-\section{KNN}\label{knn-1}}
+\hypertarget{k-en-yakux131n-komux15fuluk-modeli-kurulmasux131}{%
+\section{K-En Yakın Komşuluk Modeli Kurulması}\label{k-en-yakux131n-komux15fuluk-modeli-kurulmasux131}}
 
 \scriptsize
 \begin{Shaded}
@@ -1687,8 +1717,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \end{Shaded}
 \normalsize
 
-\hypertarget{rassal-ormanlar}{%
-\section{Rassal Ormanlar}\label{rassal-ormanlar}}
+\hypertarget{rassal-ormanlar-modeli-kurulmasux131}{%
+\section{Rassal Ormanlar Modeli Kurulması}\label{rassal-ormanlar-modeli-kurulmasux131}}
 
 \scriptsize
 \begin{Shaded}
@@ -1750,8 +1780,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \end{Shaded}
 \normalsize
 
-\hypertarget{xgboost-1}{%
-\section{XGBoost}\label{xgboost-1}}
+\hypertarget{xgboost-modeli-kurulmasux131}{%
+\section{XGBoost Modeli Kurulması}\label{xgboost-modeli-kurulmasux131}}
 
 \scriptsize
 \begin{Shaded}
@@ -1820,8 +1850,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \end{Shaded}
 \normalsize
 
-\hypertarget{neural-network}{%
-\section{Neural Network}\label{neural-network}}
+\hypertarget{yapay-sinir-aux11flarux131-modeli-kurulmasux131}{%
+\section{Yapay Sinir Ağları Modeli Kurulması}\label{yapay-sinir-aux11flarux131-modeli-kurulmasux131}}
 
 \scriptsize
 \begin{Shaded}
@@ -1881,8 +1911,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \hypertarget{sux131nux131flandux131rma-iki-sux131nux131f}{%
 \chapter{Sınıflandırma (İki Sınıf)}\label{sux131nux131flandux131rma-iki-sux131nux131f}}
 
-\hypertarget{preprocess}{%
-\section{Preprocess}\label{preprocess}}
+\hypertarget{iki-sux131nux131flux131-iuxe7in-veri-uxf6niux15fleme}{%
+\section{İki Sınıflı İçin Veri Önişleme}\label{iki-sux131nux131flux131-iuxe7in-veri-uxf6niux15fleme}}
 
 \scriptsize
 \begin{Shaded}
@@ -1926,8 +1956,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \end{Shaded}
 \normalsize
 
-\hypertarget{knn-2}{%
-\section{KNN}\label{knn-2}}
+\hypertarget{k-en-yakux131n-komux15fuluk-modeli-kurulmasux131-1}{%
+\section{K-En Yakın Komşuluk Modeli Kurulması}\label{k-en-yakux131n-komux15fuluk-modeli-kurulmasux131-1}}
 
 \scriptsize
 \begin{Shaded}
@@ -1978,8 +2008,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \end{Shaded}
 \normalsize
 
-\hypertarget{rassal-ormanlar-1}{%
-\section{Rassal Ormanlar}\label{rassal-ormanlar-1}}
+\hypertarget{rassal-ormanlar-modeli-kurulmasux131-1}{%
+\section{Rassal Ormanlar Modeli Kurulması}\label{rassal-ormanlar-modeli-kurulmasux131-1}}
 
 \scriptsize
 \begin{Shaded}
@@ -2034,8 +2064,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \end{Shaded}
 \normalsize
 
-\hypertarget{xgboost-2}{%
-\section{XGBoost}\label{xgboost-2}}
+\hypertarget{xgboost-modeli-kurulmasux131-1}{%
+\section{XGBoost Modeli Kurulması}\label{xgboost-modeli-kurulmasux131-1}}
 
 \scriptsize
 \begin{Shaded}
@@ -2095,8 +2125,8 @@ Yangın, G. (2019). \emph{Xgboost ve karar ağaçları tabanlı algoritmaların 
 \end{Shaded}
 \normalsize
 
-\hypertarget{neural-networks}{%
-\section{Neural Networks}\label{neural-networks}}
+\hypertarget{yapay-sinir-aux11flarux131-modeli-kurulmasux131-1}{%
+\section{Yapay Sinir Ağları Modeli Kurulması}\label{yapay-sinir-aux11flarux131-modeli-kurulmasux131-1}}
 
 \scriptsize
 \begin{Shaded}

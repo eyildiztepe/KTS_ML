@@ -1,59 +1,60 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Bölüm 1: Karpal Tünel Sendromu}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Epidemiyoloji}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Etiyoloji}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Semptomlar}{2}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Tanı ve Ciddiyet Değerlendirmesi}{2}{section.1.4}%
-\contentsline {chapter}{Bölüm 2: Yöntem}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}K - En Yakın Komşuluk Algoritamsı (K-NN)}{7}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}K-NN Parametleri}{7}{subsection.2.1.1}%
-\contentsline {subsubsection}{Uzaklık Ölçütü}{7}{section*.14}%
-\contentsline {subsubsection}{Komşu Sayısı (k)}{8}{section*.15}%
-\contentsline {subsubsection}{Ağırlıklandırma}{8}{section*.16}%
-\contentsline {section}{\numberline {2.2}Rassal Ormanlar}{8}{section.2.2}%
-\contentsline {section}{\numberline {2.3}XGBoost}{9}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Gradyan Arttırımı}{9}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}XGBoost (Aşırı Gradyan Arttırımı)}{11}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Yapay Sinir Ağları}{13}{section.2.4}%
-\contentsline {chapter}{Bölüm 3: Uygulama}{17}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Çok Sınıflı(Multiclass) Sınıflama Problemi}{19}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}K-En Yakın Komşuluk Modeli}{19}{subsection.3.1.1}%
-\contentsline {subsubsection}{Hiper Parametre Seçimi}{19}{section*.25}%
-\contentsline {subsubsection}{En İyi Parametreli Model}{21}{section*.27}%
-\contentsline {subsection}{\numberline {3.1.2}Rassal Ormanlar Modeli}{22}{subsection.3.1.2}%
-\contentsline {subsubsection}{Hiper Parametre Seçimi}{22}{section*.30}%
-\contentsline {subsubsection}{En İyi Parametreli Model}{24}{section*.32}%
-\contentsline {subsection}{\numberline {3.1.3}eXtreme Gradient Boosting (XGBoost)}{25}{subsection.3.1.3}%
-\contentsline {subsubsection}{Hiper Parametre Seçimi}{25}{section*.35}%
-\contentsline {subsection}{\numberline {3.1.4}Yapay Sinir Ağları (Neural Networks)}{28}{subsection.3.1.4}%
-\contentsline {subsubsection}{Hiper Parametre Seçimi}{28}{section*.39}%
-\contentsline {subsection}{\numberline {3.1.5}Çok Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}{31}{subsection.3.1.5}%
-\contentsline {section}{\numberline {3.2}İki Sınıflı Sınıflama}{32}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}K-En Yakın Komşuluk Modeli}{32}{subsection.3.2.1}%
-\contentsline {subsubsection}{Hiper Parametre Seçimi}{32}{section*.43}%
-\contentsline {subsubsection}{En İyi Parametreli Model}{33}{section*.45}%
-\contentsline {subsection}{\numberline {3.2.2}Rassal Ormanlar Modeli}{35}{subsection.3.2.2}%
-\contentsline {subsubsection}{Hiper Parametre Seçimi}{35}{section*.48}%
-\contentsline {subsubsection}{En İyi Parametreli Model}{37}{section*.50}%
-\contentsline {subsection}{\numberline {3.2.3}XGBoost}{38}{subsection.3.2.3}%
-\contentsline {subsubsection}{Hiper Parametre Seçimi}{38}{section*.53}%
-\contentsline {subsubsection}{En İyi Parametreli Model}{40}{section*.55}%
-\contentsline {subsection}{\numberline {3.2.4}Neural Network (Yapay Sinir Ağları) Modeli}{41}{subsection.3.2.4}%
-\contentsline {subsubsection}{Hiper Parametre Seçimi}{41}{section*.58}%
-\contentsline {subsubsection}{En İyi Parametreli Model}{43}{section*.60}%
-\contentsline {subsection}{\numberline {3.2.5}İki Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}{44}{subsection.3.2.5}%
-\contentsline {chapter}{Sonuç}{45}{chapter*.63}%
-\contentsline {chapter}{Kaynaklar}{47}{chapter*.64}%
-\contentsline {chapter}{Ek A: Gerekli Paketlerin Yüklenmesi ve Verilerin Okunması ve Veri Önişleme}{49}{appendix.A}%
-\contentsline {chapter}{Ek B: Sınıflandırma (Üç Sınıf)}{53}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Roc Curve ve OneVsRest}{53}{section.B.1}%
-\contentsline {section}{\numberline {B.2}KNN}{54}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Rassal Ormanlar}{54}{section.B.3}%
-\contentsline {section}{\numberline {B.4}XGBoost}{55}{section.B.4}%
-\contentsline {section}{\numberline {B.5}Neural Network}{56}{section.B.5}%
-\contentsline {chapter}{Ek C: Sınıflandırma (İki Sınıf)}{59}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Preprocess}{59}{section.C.1}%
-\contentsline {section}{\numberline {C.2}KNN}{60}{section.C.2}%
-\contentsline {section}{\numberline {C.3}Rassal Ormanlar}{60}{section.C.3}%
-\contentsline {section}{\numberline {C.4}XGBoost}{61}{section.C.4}%
-\contentsline {section}{\numberline {C.5}Neural Networks}{62}{section.C.5}%
+\contentsline {chapter}{Giriş}{1}{chapter*.8}%
+\contentsline {chapter}{Bölüm 1: Karpal Tünel Sendromu}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Epidemiyoloji}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Etiyoloji}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Semptomlar}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Tanı ve Ciddiyet Değerlendirmesi}{4}{section.1.4}%
+\contentsline {chapter}{Bölüm 2: Yöntem}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}K - En Yakın Komşuluk Algoritması (K-NN)}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}K-NN Parametleri}{9}{subsection.2.1.1}%
+\contentsline {subsubsection}{Uzaklık Ölçütü}{9}{section*.15}%
+\contentsline {subsubsection}{Komşu Sayısı (k)}{10}{section*.16}%
+\contentsline {subsubsection}{Ağırlıklandırma}{10}{section*.17}%
+\contentsline {section}{\numberline {2.2}Rassal Ormanlar}{10}{section.2.2}%
+\contentsline {section}{\numberline {2.3}XGBoost}{11}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Gradyan Arttırımı}{11}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}XGBoost (Aşırı Gradyan Arttırımı)}{13}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Yapay Sinir Ağları}{15}{section.2.4}%
+\contentsline {chapter}{Bölüm 3: Uygulama}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Çok Sınıflı(Multiclass) Sınıflama Problemi}{21}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}K-En Yakın Komşuluk Modeli}{21}{subsection.3.1.1}%
+\contentsline {subsubsection}{Hiper Parametre Seçimi}{21}{section*.26}%
+\contentsline {subsubsection}{En İyi Parametreli Model}{23}{section*.28}%
+\contentsline {subsection}{\numberline {3.1.2}Rassal Ormanlar Modeli}{24}{subsection.3.1.2}%
+\contentsline {subsubsection}{Hiper Parametre Seçimi}{24}{section*.31}%
+\contentsline {subsubsection}{En İyi Parametreli Model}{26}{section*.33}%
+\contentsline {subsection}{\numberline {3.1.3}eXtreme Gradient Boosting (XGBoost)}{27}{subsection.3.1.3}%
+\contentsline {subsubsection}{Hiper Parametre Seçimi}{27}{section*.36}%
+\contentsline {subsection}{\numberline {3.1.4}Yapay Sinir Ağları (Neural Networks)}{30}{subsection.3.1.4}%
+\contentsline {subsubsection}{Hiper Parametre Seçimi}{30}{section*.40}%
+\contentsline {subsection}{\numberline {3.1.5}Çok Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}{33}{subsection.3.1.5}%
+\contentsline {section}{\numberline {3.2}İki Sınıflı Sınıflama}{34}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}K-En Yakın Komşuluk Modeli}{34}{subsection.3.2.1}%
+\contentsline {subsubsection}{Hiper Parametre Seçimi}{34}{section*.44}%
+\contentsline {subsubsection}{En İyi Parametreli Model}{35}{section*.46}%
+\contentsline {subsection}{\numberline {3.2.2}Rassal Ormanlar Modeli}{37}{subsection.3.2.2}%
+\contentsline {subsubsection}{Hiper Parametre Seçimi}{37}{section*.49}%
+\contentsline {subsubsection}{En İyi Parametreli Model}{39}{section*.51}%
+\contentsline {subsection}{\numberline {3.2.3}XGBoost}{40}{subsection.3.2.3}%
+\contentsline {subsubsection}{Hiper Parametre Seçimi}{40}{section*.54}%
+\contentsline {subsubsection}{En İyi Parametreli Model}{42}{section*.56}%
+\contentsline {subsection}{\numberline {3.2.4}Neural Network (Yapay Sinir Ağları) Modeli}{43}{subsection.3.2.4}%
+\contentsline {subsubsection}{Hiper Parametre Seçimi}{43}{section*.59}%
+\contentsline {subsubsection}{En İyi Parametreli Model}{45}{section*.61}%
+\contentsline {subsection}{\numberline {3.2.5}İki Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi}{46}{subsection.3.2.5}%
+\contentsline {chapter}{Sonuç}{47}{chapter*.64}%
+\contentsline {chapter}{Kaynaklar}{49}{chapter*.65}%
+\contentsline {chapter}{Ek A: Gerekli Paketlerin Yüklenmesi, Verilerin Okunması ve Veri Önişleme}{51}{appendix.A}%
+\contentsline {chapter}{Ek B: Sınıflandırma (Üç Sınıf)}{55}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Roc Curve Grafiği ve OneVsRest Model Kurulması}{55}{section.B.1}%
+\contentsline {section}{\numberline {B.2}K-En Yakın Komşuluk Modeli Kurulması}{56}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Rassal Ormanlar Modeli Kurulması}{56}{section.B.3}%
+\contentsline {section}{\numberline {B.4}XGBoost Modeli Kurulması}{57}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Yapay Sinir Ağları Modeli Kurulması}{58}{section.B.5}%
+\contentsline {chapter}{Ek C: Sınıflandırma (İki Sınıf)}{61}{appendix.C}%
+\contentsline {section}{\numberline {C.1}İki Sınıflı İçin Veri Önişleme}{61}{section.C.1}%
+\contentsline {section}{\numberline {C.2}K-En Yakın Komşuluk Modeli Kurulması}{62}{section.C.2}%
+\contentsline {section}{\numberline {C.3}Rassal Ormanlar Modeli Kurulması}{62}{section.C.3}%
+\contentsline {section}{\numberline {C.4}XGBoost Modeli Kurulması}{63}{section.C.4}%
+\contentsline {section}{\numberline {C.5}Yapay Sinir Ağları Modeli Kurulması}{64}{section.C.5}%

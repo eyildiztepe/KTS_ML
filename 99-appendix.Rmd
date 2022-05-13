@@ -2,7 +2,7 @@
 
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
-# Gerekli Paketlerin Yüklenmesi ve Verilerin Okunması ve Veri Önişleme
+# Gerekli Paketlerin Yüklenmesi, Verilerin Okunması ve Veri Önişleme
 \scriptsize
 ```{r echo=TRUE, eval=FALSE,warning=FALSE,message=FALSE}
 # R için gerekli paketlerin kurulması
@@ -127,7 +127,7 @@ y_test = y_test.to_numpy().ravel()
 \normalsize
 # Sınıflandırma (Üç Sınıf)  
 
-## Roc Curve ve OneVsRest  
+## Roc Curve Grafiği ve OneVsRest Model Kurulması
 
 \scriptsize
 ```{python echo=TRUE, eval=FALSE}
@@ -179,7 +179,7 @@ def roc(model):
     plt.savefig(f'figure/roc_curve_{model_name}.png')
 ```
 \normalsize
-## KNN  
+## K-En Yakın Komşuluk Modeli Kurulması  
 \scriptsize
 ```{python echo=TRUE, eval=FALSE}
 # 3 sınıf için KNN Modeli kurma ve GridSearchCV algoritmasını hazırlama
@@ -227,7 +227,7 @@ roc(KNeighborsClassifier(n_neighbors = 33,
                          weights ='distance'))
 ```
 \normalsize
-## Rassal Ormanlar  
+## Rassal Ormanlar Modeli Kurulması
 \scriptsize
 ```{python,out.height="10%",echo=TRUE, eval=FALSE}
 # 3 sınıf için rassal ormanlar Modeli kurma ve GridSearchCV algoritmasını hazırlama
@@ -277,7 +277,7 @@ roc(RandomForestClassifier(ccp_alpha=0.01,criterion="gini",max_features="sqrt",
                                    max_samples=10,n_estimators=900,random_state=13))
 ```
 \normalsize
-## XGBoost  
+## XGBoost Modeli Kurulması
 \scriptsize
 ```{python,out.height="10%",echo=TRUE, eval=FALSE}
 # 3 sınıf için XGB Modeli
@@ -334,7 +334,7 @@ roc(XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_e
 objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2))
 ```
 \normalsize
-## Neural Network  
+## Yapay Sinir Ağları Modeli Kurulması
 \scriptsize
 ```{python,out.height="10%",echo=TRUE, eval=FALSE}
 # 3 sınıflı sinir ağları modeli
@@ -381,7 +381,7 @@ roc(MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptiv
 \normalsize
 # Sınıflandırma (İki Sınıf)  
 
-## Preprocess  
+## İki Sınıflı İçin Veri Önişleme  
 \scriptsize
 ```{python echo=TRUE, eval=FALSE, fig.width=15}
 # 3 sınıfı 2 sınıfa indirgeme
@@ -421,7 +421,7 @@ def roc_bin(model):
     plt.savefig(f'figure/{model_name}_binary_roc.png')
 ```
 \normalsize
-## KNN  
+## K-En Yakın Komşuluk Modeli Kurulması
 \scriptsize
 ```{python echo=TRUE, eval=FALSE}
 KNN_model_bin = KNeighborsClassifier()
@@ -460,7 +460,7 @@ plt.savefig("figure/knn_bin_conf.png")
 roc_bin(KNN_modelbin)
 ```
 \normalsize
-## Rassal Ormanlar  
+## Rassal Ormanlar Modeli Kurulması
 \scriptsize
 ```{python echo=TRUE, eval=FALSE}
 param_grid = {"n_estimators":np.arange(350,700,50),
@@ -503,7 +503,7 @@ plt.savefig("figure/rf_bin_conf.png");
 roc_bin(RF_modelbin)
 ```
 \normalsize
-## XGBoost  
+## XGBoost Modeli Kurulması
 \scriptsize
 ```{python echo=TRUE, eval=FALSE}
 param_grid = {"eta":np.arange(0,.5,0.1),
@@ -551,7 +551,7 @@ roc_bin(XGB_modelbin)
 plt.close('all')
 ```
 \normalsize
-## Neural Networks  
+## Yapay Sinir Ağları Modeli Kurulması
 \scriptsize
 ```{python echo=TRUE, eval=FALSE}
 params = {"hidden_layer_sizes":np.arange(1,26,1),
