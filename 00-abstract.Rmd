@@ -1,5 +1,5 @@
-The preface pretty much says it all.  \par
+In this project, the Epidemiology, Etiology and Symptoms of carpal tunnel disease were mentioned and the diagnosis was evaluated.  \par
 
-Second paragraph of abstract starts here.\
+Carpal tunnel syndrome severity classification estimation was made for the dataset, which was reduced to three classes and two classes, with hand samples obtained from a hospital in South Korea and obtained from 1037 patients. After establishing the models with XGBoost, Random Forests, K-Nearest Neighborhood and Artificial Neural Networks classification algorithms, predictions were made for severity classification.\
 \
-**Keywords:** keyword1, keyword2, keyword3
+**Keywords:** Machine Learning, Classification, Karpal Tunnel Syndrome, XGBoost, Artificial Neural Networks 

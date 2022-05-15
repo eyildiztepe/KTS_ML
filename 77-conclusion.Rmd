@@ -1,8 +1,20 @@
-# Sonuç {-}
+# Sonuç {-}  
+Bu çalışmamızda genel hatları ile karpal tünel sendromundan bahsedilmiştir. Çalışmamızda Güney Kore’deki bir hastaneden elde edilen 1037 adet el verisi üzerinde karpal tünel hastalığının ciddiyet düzeylerinin tahminlenmesi amacı ile farklı sınıflama modelleri kurulmuş olup bu modellerin kendi aralarında değerlendirmesi yapılmıştır.  
 
-If we don't want Conclusion to have a chapter number next to it, we can add the `{-}` attribute.
+\  
 
-**More info**
+Hastalığın maddi, manevi ve zaman kayıpları göz önüne alındığında hastaların bir takım acılı girişimsel testlerden geçmesine engel olabilmek amacı ile çalışmamızın ikinci uygulama kısmında mild ve diğer sınıflar olacak şekilde veri seti 2 sınıfa indirgenmiş daha sonrasında sınıflandırma modelleri kurulmuştur.    
+
+\  
+  
+İki ve Üç sınıflı veri setleri için kurulan modeller arasında Karmaşık veri yapıları ile kolaylıkla baş edebilen XGBoost algoritması en yüksek doğruluk oranlarını yakalayabilmiştir. Uygulamanın 2. bölümünde veri seti üç sınıflıdan iki sınıflıya indirgenmesi ile doğruluk oranlarında ciddi artışlar gerçekleşmiş ve bu durum da hastanın evde kendi imkanları ile hastaneye gidip gitmemesi gerektiği hakkında hastaya %82 oranında doğru teşhis koyabilmektedir.  
+
+\
+
+Bu çalışmanın sürdürebilmesi için, uzman bir nörolog hekim tarafından daha fazla hastadan veri toplanabilir ve bu veriler kurulan modele katılarak model iyileştirebilir. Bunun yanı sıra 2021 yılında Japonya’da karpal tünel sendromunu mobil uygulama ile tespit etmek için geliştirilmiş ve geliştirilmeye devam eden projeye [@koyama2021screening] katkı sağlamak amacı ile elde olan veriler ve model parametreleri paylaşılabilir.  
+
+
+<!--**More info**
 
 And here's some other random info: the first paragraph after a chapter title or section head _shouldn't be_ indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
-
+-->

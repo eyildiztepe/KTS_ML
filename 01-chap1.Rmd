@@ -17,7 +17,7 @@ gözlenme sıklığı yaş ile doğru orantılıdır. Özellikle 20 ila 50 yaş 
 ## Etiyoloji {#KTSEtiyoloji}  
 
 Karpal tünel sendromunun en sık nedeni; herhangi bir etiyolojik etkenin saptanamadığı idiopatik KTS’dir. İdiopatik KTS’de ailesel yatkınlık, obezite, VKİ fazla olması, kara şeklinde bilek yapısı gibi
-kişisel faktörlerin etken olduğu düşünülmektedir. Günlük yaşamda ki mekanik etkenler de idiopatik KTS
+kişisel faktörlerin etken olduğu düşünülmektedir. Günlük yaşamdaki mekanik etkenler de idiopatik KTS
 üzerinde etkin rol oynamaktadır. Montaj işinde çalışan işçiler, fabrika çalışanları, klavye ve bilgisayar
 kullananlarda olduğu gibi el bilek fleksiyonun aktif olarak yapıldığı belli hareketlerin çok sık
 tekrarlanması da KTS ile ilişkili bulunmuştur [@robbins1963anatomical].  
@@ -28,7 +28,7 @@ Hastalığın şiddetine bağlı olarak semptomlar değişkendir. Erken evrelerd
 liflerinin tutulumuna bağlı şikayetler görülür. En yaygın semptom el bileğinin merkezinden uzak
 dokularda sızlama ve uyuşuklukla beraber yanıcı tarzda ağrıdır. Başparmak tarafından itibaren ilk üç
 parmak ve dördüncü parmağın yanal yarısı etkilenir. Daha ileri dönemlerde el ayasında kas
-güçsüzlüğü ve körelme meydana gelir . Bu hastalarda elde, özellikle aktivite ile artan beceriksizlik ve objeleri kavramada kuvvetsizlik görülür [@aroori77carpal].  
+güçsüzlüğü ve körelme meydana gelir. Bu hastalarda elde, özellikle aktivite ile artan beceriksizlik ve objeleri kavramada kuvvetsizlik görülür [@aroori77carpal].  
 
 ## Tanı ve Ciddiyet Değerlendirmesi {#KTSTani_Ciddi}  
 
@@ -39,7 +39,7 @@ Elektronörofizyolojik testler karpal Tünel'e bağlanan elektrotlar ile elektri
 ```{r echo=FALSE,fig.align='center',fig.cap="Elektronörofizyolojik Test (ref:noropati)",out.width="49%",out.height="18%"}
 knitr::include_graphics(path="figure/noropati_test.jpg")
 ```  
-Provokatif testler hastanın bilek ve parmak eklemlerine fiziksel baskı uygulayacak şekilde bir takım
+Provokatif testler hastanın bilek ve parmak eklemlerine fiziksel baskı uygulayacak şekilde birtakım
 testler uygulanması ve alınan sonuçların değerlendirmesine dayanan deneysel test yöntemleridir.
 Tanısal testler genellikle karpal tüneli görüntülemeye dayanan testlerdir.  
 
@@ -89,13 +89,13 @@ knitr::include_graphics(path="figure/radyog.jpg")
 knitr::include_graphics("figure/bt.jpg")
 ```
 İdiopatik karpal tünel sendromunda hastalığın tanımlanmasında Boston Karpal Tünel Sendromu
-Anketi(BKTSA) kullanılmaktadır [@levine1993self]. Bu ankete farklı dillere çevrilmiş ve ülkelere göre uyarlanmıştır. Anketin amacı hastanın yanıtlarına göre bir ciddiyet sınıflandırması yapmaktır. Anketin Türkçe versiyonu Sezgin ve ark. [@sezgi2006assessment] tarafından yayımlanmıştır , ancak  BKTSA sadece hastaların verdiği yanıtlara dayanarak bir semptom şiddeti belirlemeyi amaçlar.  
+Anketi (BKTSA) kullanılmaktadır [@levine1993self]. Bu ankete farklı dillere çevrilmiş ve ülkelere göre uyarlanmıştır. Anketin amacı hastanın yanıtlarına göre bir ciddiyet sınıflandırması yapmaktır. Anketin Türkçe versiyonu Sezgin ve ark. [@sezgi2006assessment] tarafından yayımlanmıştır, ancak  BKTSA sadece hastaların verdiği yanıtlara dayanarak bir semptom şiddeti belirlemeyi amaçlar.  
 
 Teknolojinin hızla gelişmesi ile birlikte hastalara uygulanan testlerin sonuçlarının toplanmasının kolaylaşmasının yanı sıra testlerin sonuçlarına bağlı olarak hastaya tanı koymak ve tanının şiddetini ve derecesini tespit etmek oldukça kolaylaşmıştır.  
 Makine öğrenmesi ve Yapay zeka uygulamalarının yaygınlaşması ile birlikte bu yöntemlerin tıp alanında da kullanımı artmıştır.  
 
-Makine öğrenmesi yöntemlerinin KTS tanısında kullanılmaına örnek olarak.
-Ardakani ve ark. [@ardakani2020diagnosis] tarafından hasta olduğu bilinen kişilerden elde edilen bilgisayarlı tomografi görüntüleri, derin öğrenme metodları kullanılarak başka kişilerin hasta olup olmadığını tespit etmek için kullanılmıştır.  
+Makine öğrenmesi yöntemlerinin KTS tanısında kullanılmasına örnek olarak.
+Ardakani ve ark. [@ardakani2020diagnosis] tarafından hasta olduğu bilinen kişilerden elde edilen bilgisayarlı tomografi görüntüleri, derin öğrenme metotları kullanılarak başka kişilerin hasta olup olmadığını tespit etmek için kullanılmıştır.  
 Bir diğer çalışma ise 2021 yılında Koyama  ve ark. [@koyama2021screening] tarafından geliştirilen bir mobil uygulama sayesinde hastaların ekranın farklı yerlerinde çıkan cisimlere ulaşma sürelerini baz alarak hastalığın evresini tahminlemeyi amaçlamıştır. Bu uygulama hastanın kendi kendine ev ortamında hastalığına ön tanı koyabilmesi açısından yararlı olabilir.\
 Bunların yanı sıra KTS ciddiyet skoru belirlemek için makine öğrenmesi yöntemlerini kullanan çalışmalar da yapılmaktadır.
 Güncel bir çalışmada Park ve ark. [@park2021machine] 1037 hastadan elde edilen verileri farklı makine öğrenmesi yöntemlerinde kullanarak KTS ciddiyet sınıflandırmasını tahmin etmeyi amaçlamışlardır.

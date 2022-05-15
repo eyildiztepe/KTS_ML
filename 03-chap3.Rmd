@@ -184,7 +184,7 @@ Table: (\#tab:catvar) Katagorik Değişkenlerin Bağımlı Değişkence Frekans 
 
 Kullanılan verilere ait tanımlayıcı istatistikler Tablo \ref{tab:overall}, Tablo \ref{tab:sayisal} ve Tablo \ref{tab:catvar} de verilmiştir. Varsayım kontrollerinin ardından sayısal değişkenlerin ciddiyet sınıflarına göre farklılık gösterip göstermediği tek yönlü varyans analizi ile araştırılmıştır ($\alpha = 0.05$). Tablo \ref{tab:sayisal}'de yer alan P-Value değerleri incelendiğinde ciddiyet sınıflamasının yaşa göre anlamlı bir değişim göstermediği diğer tüm değişkenler için anlamlı bir fark olduğu görülmüştür.  
 
-Tablo \ref{tab:catvar}'de yer alan P-Value değerleri incelendiğinde ciddiyet sınıflamasının KTS'nin sağ veya sol elde görülmesine göre anlamlı bir değişim göstermediği diğer tüm değişkenler için anlamlı bir fark olduğu görülmüştür.  
+Tablo \ref{tab:catvar}'te yer alan P-Value değerleri incelendiğinde ciddiyet sınıflamasının KTS'nin sağ veya sol elde görülmesine göre anlamlı bir değişim göstermediği diğer tüm değişkenler için anlamlı bir fark olduğu görülmüştür.  
 
 \  
 \  
@@ -193,7 +193,7 @@ Bu çalışmada, KTS ciddiyet sınıflandırması için K-En Yakın Komşuluk, R
 İlk olarak orijinal verilerdeki 3 sınıf (Mild, Moderate, Severe) için sınıflandırma hedeflenmiştir.  
 Bölüm \ref{multiclass}'de bu problem için farklı modeller ile elde edilen sonuçlara yer verilmiştir.  
 Uygulamanın ikinci bölümünde hedef değişken iki sınıfa indirgenmiş ve bu probleme ait sonuçlar bölüm \ref{binary}'de paylaşılmıştır.  
-Uygulamada Python programlama dili  ve Scikit-Learn, Pandas, Numpy, Matplotlib,XGBoost kütüphanelerinden yararlanılmıştır.  
+Uygulamada Python programlama dili  ve Scikit-Learn, Pandas, Numpy, Matplotlib, XGBoost kütüphanelerinden yararlanılmıştır.  
 Bu bölümde modellerin performanslarını değerlendirmek üzere kesinlik, duyarlılık, F1-skoru, doğruluk oranı, dengelenmiş doğruluk oranı hesaplanmıştır.
 
 ```{python echo=FALSE}
@@ -266,7 +266,7 @@ knn = pd.read_csv("data/KNN_GridSearch_Results.csv")
 plt.figure(figsize=(10,5),dpi=60);
 sns.lineplot(x=knn.param_n_neighbors,y=knn.mean_test_score*100,hue=knn.param_weights);
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
-plt.xlabel("Number of Neighbors");
+plt.xlabel("Komşu Sayısı");
 plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"]);
 plt.savefig("figure/KNN_Grid_Graph.png");
 ```
@@ -334,8 +334,8 @@ plt.figure(figsize=(10,5),dpi=60);
 plt.ylim(0.703*100,round(ginis.mean_test_score.unique().max()*100,2)+0.1);
 sns.lineplot(y=ginis.mean_test_score*100,x=ginis.param_n_estimators,hue=ginis.param_ccp_alpha,palette=sns.color_palette(n_colors=3),err_style=None);
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
-plt.xlabel("Number of Trees in Forest");
-plt.legend(title="Learning Rate",loc="upper right",labels=[0.01,0.05,0.1]);
+plt.xlabel("Ormandaki Ağaç Sayısı");
+plt.legend(title="Ccp Alpha",loc="upper right",labels=[0.01,0.05,0.1]);
 plt.savefig("figure/RF_Grid_Graph.png");
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="50%"}
@@ -413,7 +413,8 @@ for i in sorted_xgb.param_eta.unique():
         x = sorted_xgb[sorted_xgb.param_eta == i].groupby("param_n_estimators").max()
         sns.lineplot(x=x.index,y=x.mean_test_score*100);
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
-plt.legend([.1,.4,.2,.3],loc=1,title="Learning Rate");
+plt.xlabel("Ağaç Sayısı");
+plt.legend([.1,.4,.2,.3],loc=1,title="Learning Rate (eta)");
 plt.savefig("figure/XGB_Grid_Graph.png");
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="Üç Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="50%"}
@@ -471,7 +472,7 @@ result_nn = pd.read_csv("data/NN_GridSearch_Results.csv",sep=";")
 #Grafik Çizimi
 plt.figure(figsize=(15,10),dpi=100);
 sns.lineplot(x=result_nn["param_hidden_layer_sizes"],y=result_nn["mean_test_score"]*100,hue=result_nn["param_activation"]);
-plt.xlabel("Hidden Layer Sizes");
+plt.xlabel("Katman Sayısı");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Aktivasyon Fonksiyonu");
 plt.savefig("figure/NN_Grid_Graph.png");
@@ -575,7 +576,7 @@ knn_bin = pd.read_csv("data/KNN_bin_GridSearch_Results.csv",sep=";")
 plt.figure(figsize=(10,5),dpi=60);
 sns.lineplot(x=knn_bin["param_n_neighbors"],y=knn_bin["mean_test_score"]*100,hue=knn_bin["param_weights"]);
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
-plt.xlabel("Number of Neighbors");
+plt.xlabel("Komşu Sayısı");
 plt.legend(title="Ağırlıklandırma",loc="upper right",labels=["Eşit Ağırlıklandırma","Uzaklığa Göre Ağırlıklandırma"]);
 plt.savefig("figure/KNN_bin_Grid_Graph.png");
 ```
@@ -641,7 +642,7 @@ plt.figure(figsize=(15,10),dpi=100);
 sns.lineplot(x="param_n_estimators",y="mean_test_score",hue="param_ccp_alpha",data=maxed,err_style=None,palette="husl");
 plt.xlabel("Ormandaki Ağaç Sayısı");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
-plt.legend(title="Öğrenme Düzeyi");
+plt.legend(title="Ccp Alpha");
 plt.savefig("figure/RF_bin_Grid_Graph.png");
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı Rassal Ormanlar Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="55%"}
@@ -687,7 +688,7 @@ knitr::include_graphics(path="figure/RandomForestClassifier_binary_roc.png")
 ```  
 ### XGBoost {#bin_xgb}
 
-Bu bölümde veri seti üzerinde xgboost modeli kullanılmış ve çıktıları değerlendirilmiştir.    
+Bu bölümde veri seti üzerinde XGBoost modeli kullanılmış ve çıktıları değerlendirilmiştir.    
 
 #### Hiper Parametre Seçimi  
 
@@ -707,9 +708,9 @@ maxed = XGB_bin.groupby("rank_test_score").max()
 maxed = maxed[maxed["mean_test_score"] > 0.75]
 plt.figure(figsize=(15,10),dpi=100);
 sns.lineplot(x="param_n_estimators",y="mean_test_score",hue="param_eta",data=maxed,err_style=None,palette="husl");
-plt.xlabel("Tahminleyici Sayısı");
+plt.xlabel("Ağaç Sayısı");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
-plt.legend(title="Öğrenme Düzeyi");
+plt.legend(title="Learning Rate (eta)");
 plt.savefig("figure/XGB_bin_Grid_Graph.png");
 ```
 ```{r echo=FALSE,fig.align="center",fig.cap="İki Sınıflı XGBoost Modeli Eğitim Verisi Doğruluk Skorları",out.width="110%",out.height="55%"}
@@ -777,7 +778,7 @@ Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulun
 nn_bin = pd.read_csv("data/NN_bin_Grid_Res.csv",sep=";")
 plt.figure(figsize=(15,10),dpi=100);
 sns.lineplot(x=nn_bin["param_hidden_layer_sizes"],y=nn_bin["mean_test_score"]*100,hue=nn_bin["param_activation"]);
-plt.xlabel("Hidden Layer Sizes");
+plt.xlabel("Katman Sayısı");
 plt.ylabel("Eğitim Verisi Doğruluk Skoru (%)");
 plt.legend(title="Aktivasyon Fonksiyonu");
 plt.savefig("figure/NN_bin_Grid_Graph.png");

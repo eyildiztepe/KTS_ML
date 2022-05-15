@@ -1,10 +1,7 @@
-Özet, çalışmanın önemini ve faydasını anlatan bir bölüm degildir. Çalısmayı ana
-hatlarıyla anlatacak ve 300 kelimeyi aşmayacak şekilde hazırlanmalıdır. En az üç en
-çok beş anahtar kelime ilgili yere yazılmalıdır.  \par
-
-ikinci paragraf buradan başlar\
+Bu projemizde, karpal tünel hastalığının Epidemiyolojisi, Etiyolojisi, Semptomlarından bahsedilmiş ve tanı değerlendirilmesi yapılmıştır. \par
+Güney Kore’deki bir hastaneden alınan ve 1037 adet hastadan elde edilen el örneği ile üç sınıfa ve iki sınıfa indirgenmiş veri seti için karpal tünel sendromu ciddiyet sınıflandırma tahminlemesi yapılmıştır. XGBoost, Rassal Ormanlar, K-En Yakın Komşuluk ve Yapay Sinir Ağları sınıflandırma algoritmaları ile modeller kurulduktan sonra ciddiyet sınıflandırması için tahminler yapılmaya çalışılmıştır.  
 \
-**Anahtar Kelimeler:** anahtar kelime 1, anahtar kelime 2, anahtar kelime 3
+**Anahtar Kelimeler:** Makine Öğrenmesi, Sınıflandırma, Karpal Tünel Sendromu, XGBoost, Yapay Sinir Ağları 
  <!-- 
  Türkçe anahtar kelimeler küçük harfler ile(özel isimler hariç). virgülle ayır, en az üç tane. 
  -->
