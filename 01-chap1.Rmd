@@ -12,11 +12,11 @@ knitr::include_graphics(path = "figure/karpal_tunnel.png")
 KTS prevalansı kadınlarda %3 ila %3.4 arasında, erkeklerde ise %0.6 ila % 2.7 arasında olarak
 belirlenmiştir. İnsidans ise kadınlarda 100.000’de 140, erkeklerde 100.000’de 52 olarak saptanmıştır.
 Kadınlarda genellikle menopoz dönemimde sıklıkla görülmüş olsa da hem erkek hem de kadınlarda
-gözlenme sıklığı yaş ile doğru orantılıdır. Özellikle 20 ila 50 yaş arasında daha sıktır. KTS’nin %40 ila %60 oranında her iki elde de başlayabileceği çeşitli yayınlarda bildirilmiş olup, iki elde de görüldüğü olgularda baskın elin genellikle semptomları daha önce ve daha şiddetli gösterdiği söylenebilir. KTS tek elde görüldüğü durumlarda ise genellikle semptomlar baskın elde görülür [@kts_bagatur].  
+gözlenme sıklığı yaş ile doğru orantılıdır [@kts_mustafa]. KTS’nin %40 ila %60 oranında her iki elde de başlayabileceği çeşitli yayınlarda bildirilmiş olup, iki elde de görüldüğü olgularda baskın elin genellikle semptomları daha önce ve daha şiddetli gösterdiği söylenebilir. KTS tek elde görüldüğü durumlarda ise genellikle semptomlar baskın elde görülür [@kts_bagatur].  
 
 ## Etiyoloji {#KTSEtiyoloji}  
 
-Karpal tünel sendromunun en sık nedeni; herhangi bir etiyolojik etkenin saptanamadığı idiopatik KTS’dir. İdiopatik KTS’de ailesel yatkınlık, obezite, VKİ fazla olması, kara şeklinde bilek yapısı gibi
+Karpal tünel sendromunun en sık nedeni; herhangi bir etiyolojik etkenin saptanamadığı idiopatik KTS’dir. İdiopatik KTS’de ailesel yatkınlık, obezite, VKİ fazla olması, kare şeklinde bilek yapısı gibi
 kişisel faktörlerin etken olduğu düşünülmektedir. Günlük yaşamdaki mekanik etkenler de idiopatik KTS
 üzerinde etkin rol oynamaktadır. Montaj işinde çalışan işçiler, fabrika çalışanları, klavye ve bilgisayar
 kullananlarda olduğu gibi el bilek fleksiyonun aktif olarak yapıldığı belli hareketlerin çok sık

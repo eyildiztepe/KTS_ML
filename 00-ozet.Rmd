@@ -1,7 +1,11 @@
-Bu projemizde, karpal tünel hastalığının Epidemiyolojisi, Etiyolojisi, Semptomlarından bahsedilmiş ve tanı değerlendirilmesi yapılmıştır. \par
-Güney Kore’deki bir hastaneden alınan ve 1037 adet hastadan elde edilen el örneği ile üç sınıfa ve iki sınıfa indirgenmiş veri seti için karpal tünel sendromu ciddiyet sınıflandırma tahminlemesi yapılmıştır. XGBoost, Rassal Ormanlar, K-En Yakın Komşuluk ve Yapay Sinir Ağları sınıflandırma algoritmaları ile modeller kurulduktan sonra ciddiyet sınıflandırması için tahminler yapılmaya çalışılmıştır.  
-\
-**Anahtar Kelimeler:** Makine Öğrenmesi, Sınıflandırma, Karpal Tünel Sendromu, XGBoost, Yapay Sinir Ağları 
+Günümüz yaşam koşullarında çalışma hayatı genellikle ofiste ve bilgisayar başında geçmektedir. Bu tarz işlerin yaygınlaşıp popüler hale gelmesi ile birlikte karpal tünel sendromunun (KTS) görülme sıklığı ciddi oranda artmıştır. Bu projede karpal tünel sendromu tanıtılmış, ciddiyet skorlamasında makine öğrenmesi yöntemlerinin kullanına ilişkin örnek niteliğinde iki adet uygulama yapılmıştır.  
+\  
+\par
+Güney Kore’deki bir hastanede yapılan çalışmadan elde edilen 1037 el örneği [@park2021machine] ile üç sınıflı ve iki sınıfa indirgenmiş veri seti için karpal tünel sendromu ciddiyet sınıflandırma tahminlemesi yapılmıştır. XGBoost, Rassal Ormanlar, K-En Yakın Komşuluk ve Yapay Sinir Ağları sınıflandırma algoritmaları ile modeller kurulduktan sonra ciddiyet sınıflandırması için tahminler yapılmaya çalışılmıştır. Uygulama sonucunda %82 doğru tahmin oranı ile en iyi sonuçlar iki sınıflı sınıflama durumunda ve XGBoost algoritması ile elde edilmiştir.  
+
+\  
+
+**Anahtar Kelimeler:** Karpal Tünel Sendromu, Çok Sınıflı Sınıflandırma, İki Sınıflı Sınıflandırma, XGBoost, Yapay Sinir Ağları
  <!-- 
  Türkçe anahtar kelimeler küçük harfler ile(özel isimler hariç). virgülle ayır, en az üç tane. 
  -->

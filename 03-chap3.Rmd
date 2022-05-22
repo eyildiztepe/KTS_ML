@@ -112,10 +112,7 @@ y_train = y_train.to_numpy().ravel()
 X_test[["Age","BMI","CSA","PB","Duration","NRS"]] = pd.DataFrame(Stand.transform(X_test[["Age","BMI","CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
 y_test = y_test.to_numpy().ravel()
 ```  
-Bu bölümde yapılan uygulama sunulmuştur.  
-\  
-
-Uygulamada kullanılan veriler 2021 yılında Güney Kore'de yapılan bir araştırmadan alınmıştır [@park2021machine]. Uzmanlar tarafından yapılan tetkikler ile her bir hasta için (her bir el için) ciddiyet sınıflandırılması mild, moderate, severe olarak belirlenmiştir. Çalışmada 1037 elden alınan verilerin 405 (39.05%) adedi erkek hastalardan,  632 (60.95%) adedi kadın hastalardan elde edilmiştir. Uzmanlar tarafından 1037 adet elin, 507 (48.9%) adedi mild, 276 (26.6%) adedi moderate ve 254 (24.5%) adedi severe olarak sınıflandırılmıştır.  
+Bu bölümde yapılan uygulama sunulmuştur. Uygulamada kullanılan veriler 2021 yılında Güney Kore'de yapılan bir araştırmadan alınmıştır [@park2021machine]. Uzmanlar tarafından yapılan tetkikler ile her bir hasta için (her bir el için) ciddiyet sınıflandırılması mild, moderate, severe olarak belirlenmiştir. Çalışmada 1037 elden alınan verilerin 405 (39.05%) adedi erkek hastalardan,  632 (60.95%) adedi kadın hastalardan elde edilmiştir. Uzmanlar tarafından 1037 adet elin, 507 (48.9%) adedi mild, 276 (26.6%) adedi moderate ve 254 (24.5%) adedi severe olarak sınıflandırılmıştır.  
 
 Araştırmada uzman hekimler tarafından hastalara yöneltilen sorular ile şikayetleri olan ellerine ilişkin aşağıdaki değişkenler için veri toplanmıştır;  
 
@@ -529,23 +526,15 @@ y_bin = bin_data["New_Sev"]
 Xbin_train, Xbin_test, ybin_train, ybin_test = train_test_split(X_bin,y_bin,test_size=0.3,stratify=y_bin,random_state=13)
 def roc_bin(model):
     model_name = str(model.__class__).split(".")[-1][:-2]
-    ybin_pred2 = model.predict_proba(Xbin_test)
+    ybin_pred2 = model.predict_proba(Xbin_test)[::, 1]
     plt.figure(figsize=(10,5),dpi=100)
-    fpr = dict()
-    tpr = dict()
-    thresh = dict()
-    roc_auc = dict()
-    for i in range(2):
-        fpr[i], tpr[i], thresh[i] = roc_curve(ybin_test, ybin_pred2[:, i],pos_label=i)
-        roc_auc[i] = auc(fpr[i], tpr[i])
-    colors = cycle(["aqua", "darkorange", "cornflowerblue"])
-    for i, color, j in zip(range(2), colors,["Mild","Mod + Sev"]):
-        plt.plot(
-        fpr[i],
-        tpr[i],
-        color=color,
+    fpr, tpr, thresh = roc_curve(ybin_test, ybin_pred2)
+    roc_auc = auc(fpr, tpr)
+    plt.plot(
+        fpr,
+        tpr,
         lw=2,
-        label="ROC curve of class {0} (area = {1:0.2f})".format(j, roc_auc[i])
+        label=f"AUC = {roc_auc}"
         )
     plt.plot([0, 1], [0, 1], "k--", lw=2)
     plt.xlim([0.0, 1.0])

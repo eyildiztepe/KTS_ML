@@ -108,7 +108,14 @@ on chapters.
 
 # Giriş {.unnumbered}  
 
-Makine öğrenmesi yöntemleri günümüzde hastalıkların belirlenmesinde ve sınıflandırmasında yaygın olarak kullanılmaktadır. Hastalığı belirlemede ve sınıflandırmada kullanılan makine öğrenmesi modelleri ne yazık ki eğitim verisine ihtiyaç duymaktadır.  Günümüz yaşam koşullarında çalışma hayatı genellikle ofiste ve bilgisayar başında geçmektedir. Bu tarz işlerin yaygınlaşıp popüler hale gelmesi ile birlikte karpal tünel sendromunun (KTS) görülme sıklığı ciddi oranda artmıştır.  
+Makine öğrenmesi yöntemleri günümüzde hastalıkların belirlenmesinde ve sınıflandırmasında yaygın olarak kullanılmaktadır. Hastalığı belirlemede ve sınıflandırmada kullanılan makine öğrenmesi modelleri eğitim verisine ihtiyaç duymaktadır.  Günümüz yaşam koşullarında çalışma hayatı genellikle ofiste ve bilgisayar başında geçmektedir. Bu tarz işlerin yaygınlaşıp popüler hale gelmesi ile birlikte karpal tünel sendromunun (KTS) görülme sıklığı ciddi oranda artmıştır. Karpal tünel sendromu, medyan sinirin karpal tüneli içerisinde baskıya uğraması sonucu ortaya çıkan semptomların genel adıdır. Karpal tünel sendromunun görülme sıkılığı kadınlarda %3-%3.4 arasında iken erkeklerde %0.6-%2.7 arasında olarak belirlenmiş [@kts_mustafa] ve genelde baskın elde semptomlara rastlanmıştır [@kts_bagatur]. Her ne kadar görülme sıklıkları cinsiyetler bazında farklı olsa bile gözlenme sıklığı yaş ile doğru orantılıdır.
+\  
+
+\  
+
+\  
+
+KTS için makine öğrenmesi yöntemleri ile sınıflandırma modelleri kurabilmek ancak sınıflandırıcı ve karar vermeye yarayacak verilerin toplanması ile mümkün olabilir. Hekimler hastanın cerrahi müdahaleye ihtiyacı olup olmadığı belirleyebilmek için tanısal testler yapabilmektedir ve bu test sonuçları makine öğrenmesi modelleri için eğitim verisi olarak kullanılabilir. Bu veriler toplandıktan sonra farklı sınıflandırma algoritmaları ile modeller kurularak sınıflandırma yapılmaktadır. Burada başarılı bir model kurulur ise, hastanın yaptırdığı testleri dikkate alınarak hastalığının ciddiyetini sınıflayabilir ve doktora başvurmasının gerekip gerekmediği kararı verilebilir. Bu yöntemin önemi hastanın erken tanı sayesinde tedavi için zemin hazırlama ve gereksiz girişimsel müdahalelerden kaçınmasıdır. Erken tanı sayesinde hastanın maddi, manevi çıkarları korunurken aynı zamanda acılı olabilecek girişimsel test süreçlerinden kaçınmaları sağlanabilir, hasta bazlı düşünce biçiminin yanı sıra erken tanı sayesinde doktorlar üzerindeki iş yükü de azaltılabilir.  
 
 \  
 
@@ -116,20 +123,4 @@ Makine öğrenmesi yöntemleri günümüzde hastalıkların belirlenmesinde ve s
 
 \  
 
-Karpal tünel sendromu, medyan sinirin karpal tüneli içerisinde baskıya uğraması sonucu ortaya çıkan semptomların genel adıdır. Karpal tünel sendromunun görülme sıkılığı kadınlarda %3-%3.4 arasında iken erkeklerde %0.6-%2.7 arasında olarak belirlenmiş ve genelde baskın elde semptomlara rastlanmıştır. Her ne kadar görülme sıklıkları cinsiyetler bazında farklı olsa bile gözlenme sıklığı yaş ile doğru orantılıdır ve özellikle 20li ile 50li yaşlar arasında görülür.  
-
-\  
-
-\  
-
-\  
-
-KTS için makine öğrenmesi yöntemleri ile sınıflandırma modelleri kurabilmek ancak sınıflandırıcı ve karar vermeye yarayacak verilerin toplanması ile mümkün olabilir. Hekimler hastanın cerrahi müdahaleye ihtiyacı olup olmadığı belirleyebilmek için tanısal testler yapabilmektedir ve bu test sonuçları makine öğrenmesi modelleri için eğitim verisi olarak kullanılabilir. Bu veriler toplandıktan sonra farklı sınıflandırma algoritmaları XGBoost, Rassal Ormanlar, K-En Yakın Komşuluk ve Yapay Sinir Ağları gibi algoritmalar ile modeller kurularak sınıflandırma yapılmaktadır. Burada başarılı bir model kurulur ise, hastanın yaptırdığı testleri dikkate alınarak hastalığının ciddiyetini sınıflayabilir ve doktora başvurmasının gerekip gerekmediği kararı verilebilir. Bu yöntemin önemi hastanın erken tanı sayesinde tedavi için zemin hazırlama ve gereksiz girişimsel müdahalelerden kaçınmasıdır. Erken tanı sayesinde hastanın maddi, manevi çıkarları korunurken aynı zamanda acılı olabilecek girişimsel test süreçlerinden kaçınmaları sağlanabilir, hasta bazlı düşünce biçiminin yanı sıra erken tanı sayesinde doktorlar üzerindeki iş yükü de azaltılabilir.  
-
-\  
-
-\  
-
-\  
-
-Bu projede Güney Kore’deki bir hastaneden alınan ve 1037 adet hastadan elde edilen el örneği ile üç (mild, moderate, severe) sınıfa sahip veri seti için KTS ciddiyet sınıflandırma tahminlemesi yapılmıştır. XGBoost, Rassal Ormanlar, K-En Yakın Komşuluk ve Yapay Sinir Ağları sınıflandırma algoritmaları ile modeller kurulduktan sonra ciddiyet sınıflandırması için tahminler yapılmaya çalışılmıştır. Bölüm \ref{KTSTanim}'de karpal tünel hastalığı Epidemiyoloji, Etiyoloji, Semptomlardan bahsedilmiş ve tanı değerlendirilmesi yapılmıştır. Bölüm \ref{yontem}'de ise uygulamada kullanılan sınıflandırma algoritmalarından bahsedilmiştir. Bölüm \ref{uygulama} yapılan uygulamayı içermektedir ve Uygulama 2 bölüme ayrılmıştır. Uygulamanın birinci (\ref{multiclass}) bölümünde üç ayrı sınıf için sınıflandırma sonuçlarına yer verilmiştir. Uygulamanın ikinci (\ref{binary}) bölümünde ise veri üç sınıftan iki sınıfa indirgenmiş ve indirgenmiş verilere ait sınıflandırma sonuçları paylaşılmıştır.  
+Bu projede Güney Kore’deki bir hastanede yapılan çalışmadan elde edilen 1037 el örneği [@park2021machine] ile üç (mild, moderate, severe) sınıfa sahip veri seti için KTS ciddiyet sınıflandırma tahminlemesi yapılmıştır. XGBoost, Rassal Ormanlar, K-En Yakın Komşuluk ve Yapay Sinir Ağları sınıflandırma algoritmaları ile modeller kurulduktan sonra ciddiyet sınıflandırması için tahminler yapılmaya çalışılmıştır. Bölüm \ref{KTSTanim}'de karpal tünel hastalığı Epidemiyoloji, Etiyoloji, Semptomlardan bahsedilmiş ve tanı değerlendirilmesi yapılmıştır. Bölüm \ref{yontem}'de ise uygulamada kullanılan sınıflandırma algoritmalarından bahsedilmiştir. Bölüm \ref{uygulama} yapılan uygulamayı içermektedir ve Uygulama 2 bölüme ayrılmıştır. Uygulamanın birinci (\ref{multiclass}) bölümünde üç ayrı sınıf için sınıflandırma sonuçlarına yer verilmiştir. Uygulamanın ikinci (\ref{binary}) bölümünde ise veri üç sınıftan iki sınıfa indirgenmiş ve indirgenmiş verilere ait sınıflandırma sonuçları paylaşılmıştır.  

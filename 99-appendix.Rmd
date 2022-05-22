@@ -393,30 +393,22 @@ Xbin_train, Xbin_test, ybin_train, ybin_test = train_test_split(X_bin,y_bin,test
                                                                 stratify=y_bin,random_state=13)
 def roc_bin(model):
     model_name = str(model.__class__).split(".")[-1][:-2]
-    ybin_pred2 = model.predict_proba(Xbin_test)
+    ybin_pred2 = model.predict_proba(Xbin_test)[::, 1]
     plt.figure(figsize=(10,5),dpi=100)
-    fpr = dict()
-    tpr = dict()
-    thresh = dict()
-    roc_auc = dict()
-    for i in range(2):
-        fpr[i], tpr[i], thresh[i] = roc_curve(ybin_test, ybin_pred2[:, i],pos_label=i)
-        roc_auc[i] = auc(fpr[i], tpr[i])
-    colors = cycle(["aqua", "darkorange", "cornflowerblue"])
-    for i, color, j in zip(range(2), colors,["Mild","Mod + Sev"]):
-        plt.plot(
-        fpr[i],
-        tpr[i],
-        color=color,
+    fpr, tpr, thresh = roc_curve(ybin_test, ybin_pred2)
+    roc_auc = auc(fpr, tpr)
+    plt.plot(
+        fpr,
+        tpr,
         lw=2,
-        label="ROC curve of class {0} (area = {1:0.2f})".format(j, roc_auc[i])
+        label=f"AUC = {roc_auc}"
         )
     plt.plot([0, 1], [0, 1], "k--", lw=2)
     plt.xlim([0.0, 1.0])
     plt.ylim([0.0, 1.05])
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("True Positive Rate")
-    plt.title("Some extension of Receiver operating characteristic to multiclass")
+    plt.xlabel("Yanlış Pozitif Oranı")
+    plt.ylabel("Doğru Pozitif Oranı")
+    plt.title("ROC Eğrisi")
     plt.legend(loc="lower right")
     plt.savefig(f'figure/{model_name}_binary_roc.png')
 ```

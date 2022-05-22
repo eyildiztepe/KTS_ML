@@ -1,20 +1,18 @@
 # Sonuç {-}  
-Bu çalışmamızda genel hatları ile karpal tünel sendromundan bahsedilmiştir. Çalışmamızda Güney Kore’deki bir hastaneden elde edilen 1037 adet el verisi üzerinde karpal tünel hastalığının ciddiyet düzeylerinin tahminlenmesi amacı ile farklı sınıflama modelleri kurulmuş olup bu modellerin kendi aralarında değerlendirmesi yapılmıştır.  
+Bu çalışmada karpal tünel sendromu ciddiyet sınıflandırması için makine öğrenmesi yöntemleri kullanılmıştır. Çalışmada Güney Kore’deki bir hastanede yapılan çalışmadan elde edilen ve üç farklı ciddiyet sınıfına sahip ("Mild", "Moderate", "Severe") 1037 el örneği [@park2021machine]  üzerinde karpal tünel hastalığının ciddiyet düzeylerinin tahminlenmesi amacı ile farklı sınıflama modelleri kurulmuş olup bu modellerin kendi aralarında değerlendirmesi yapılmıştır.  
 
 \  
 
-Hastalığın maddi, manevi ve zaman kayıpları göz önüne alındığında hastaların bir takım acılı girişimsel testlerden geçmesine engel olabilmek amacı ile çalışmamızın ikinci uygulama kısmında mild ve diğer sınıflar olacak şekilde veri seti 2 sınıfa indirgenmiş daha sonrasında sınıflandırma modelleri kurulmuştur.    
-
-\  
-  
-İki ve Üç sınıflı veri setleri için kurulan modeller arasında Karmaşık veri yapıları ile kolaylıkla baş edebilen XGBoost algoritması en yüksek doğruluk oranlarını yakalayabilmiştir. Uygulamanın 2. bölümünde veri seti üç sınıflıdan iki sınıflıya indirgenmesi ile doğruluk oranlarında ciddi artışlar gerçekleşmiş ve bu durum da hastanın evde kendi imkanları ile hastaneye gidip gitmemesi gerektiği hakkında hastaya %82 oranında doğru teşhis koyabilmektedir.  
+Uygulamanın ilk bölümünde ((\ref{multiclass}) üç sınıflı sınıflandırma problemi için K-En yakın komşuluk, rassal ormanlar, yapay sinir ağları ve XGBoost algoritmaları kullanılmıştır. %77 doğru sınıflandırma oranı ile en iyi sonuçlar XGBoost algoritması ile elde edilmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) doğru sınıflandırma oranını arttırabilmek amacı ile "Mild" ve "Moderate + Severe" olacak şekilde problem iki sınıflı sınıflandırmaya indirgenmiştir. İki ve Üç sınıflı veri setleri için kurulan modeller arasında Karmaşık veri yapıları ile kolaylıkla baş edebilen XGBoost algoritması en yüksek doğruluk oranlarını yakalayabilmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) veri seti üç sınıflıdan iki sınıflıya indirgenmesi ile doğruluk oranlarında ve diğer sınıflama metriklerinde ciddi artışlar gerçekleşmiş ve iki sınıflı problemde XGBoost algoritması kts ciddiyetini %82 oranında doğru tahmin etmektedir. 
 
 \
 
-Bu çalışmanın sürdürebilmesi için, uzman bir nörolog hekim tarafından daha fazla hastadan veri toplanabilir ve bu veriler kurulan modele katılarak model iyileştirebilir. Bunun yanı sıra 2021 yılında Japonya’da karpal tünel sendromunu mobil uygulama ile tespit etmek için geliştirilmiş ve geliştirilmeye devam eden projeye [@koyama2021screening] katkı sağlamak amacı ile elde olan veriler ve model parametreleri paylaşılabilir.  
+Çalışmanın sonuçlarına göre KTS'in ciddiyet sınıflanmasında hastalığın maddi, manevi ve zaman kayıpları göz önüne alındığında hastaların bir takım acılı girişimsel testlerden geçmesine engel olabilmek amacı ile ml yöntemlerinin kullanılabileceği öngörülmektedir. Sonraki çalışmalarda kurulan modelleri temel alan ve hastadan elde edilen verilere göre ciddiyet sınıflaması yapan mobil ya da web uygulamaları düşünülebilir. 
 
 
 <!--**More info**
 
 And here's some other random info: the first paragraph after a chapter title or section head _shouldn't be_ indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
 -->
+
+
