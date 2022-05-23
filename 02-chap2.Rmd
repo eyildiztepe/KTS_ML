@@ -81,7 +81,7 @@ knitr::include_graphics(path="figure/gb-dixit.png")
 XGBoost, temeli gradyan arttırımı ve karar ağacı algoritmalarına dayanan bir makine gözetimli öğrenme tekniğidir.
 XGBoost algoritmasının orijinal hali Friedman tarafından 2002 yılında geliştirilmiştir [@dikker2017master]. Sonrasında Washington Üniversitesi’nde iki araştırmacı olan Tianqi Chen ve Carlos Guestrin tarafından SIGKDD (Bilgi İşlem Makinalarının Bilgi Keşfi ve Veri Madenciliği Özel İlgi Grubu Derneği) 2016 konferansında makale olarak sunulmuştur ve makine öğrenme dünyasında çok popüler olmuştur [@chen2016xgboost].  
 
-XGBoost, yüksek tahmin etme gücüne sahip olup, diğer algoritmalardan 10 kat daha hızlıdır. Ayrıca XGBoost, genel performansı iyileştiren ve aşırı uyum ya da aşırı öğrenmeyi azaltan bir dizi düzeltme işlemleri içermektedir [@yangin2019xgboost].   
+XGBoost, yüksek tahmin etme gücüne sahip olup, diğer algoritmalardan 10 kata kadar daha hızlıdır. Ayrıca XGBoost, genel performansı iyileştiren ve aşırı uyum ya da aşırı öğrenmeyi azaltan bir dizi düzeltme işlemleri içermektedir [@yangin2019xgboost].   
 
 Gradyan arttırımı, güçlü bir sınıflandırıcı oluşturmak için, bir dizi zayıf sınıflandırıcıyı arttırma ile birleştiren topluluk yöntemidir. Güçlü öğrenici, temel bir öğrenici ile başlayarak yinelemeli olarak eğitilmektedir. Hem gradyan arttırımı hem de XGBoost aynı prensibi izlemektedir. Aralarındaki temel farklar uygulama detaylarında yatmaktadır. XGBoost, farklı düzeltme teknikleri kullanarak, ağaçların karmaşıklığını kontrol ederek daha iyi bir performans elde etmeyi başarmaktadır [@salam2018evaluating].  
 
