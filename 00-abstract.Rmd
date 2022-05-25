@@ -1,8 +1,8 @@
-In today's living conditions, working life is usually spent in the office and in front of the computer. With the spread and popularity of this type of work, the incidence of carpal tunnel syndrome (CTS) has increased significantly. In this project, carpal tunnel syndrome is introduced, and two exemplary applications are made regarding the use of machine learning methods in severity scoring.  
+In today's living conditions, working life is usually spent in the office and in front of the computer. With the spread and popularity of this type of work, the incidence of carpal tunnel syndrome (CTS) has increased significantly. In this project, CTS is introduced, and two applications are made regarding the use of machine learning methods in severity scoring.  
 \  
 \par
-Carpal tunnel syndrome severity classification estimation is performed for three classes dataset with 1037 hand samples obtained from a study in a hospital in South Korea [@park2021machine] then the dataset is downgraded to two classes and severity classification estimation is performed one more time. After establishing the models with XGBoost, Random Forests, K-Nearest Neighborhood and Artificial Neural Networks classification algorithms, predictions are made for severity classification. As a result of the application, the best results are obtained in the case of two-class classification and with the XGBoost algorithm with an accurate prediction rate of 82%.  
+CTS severity classification estimation is performed for three classes dataset with 1037 hand samples obtained from a study in a hospital in South Korea [@park2021machine] then the dataset is downgraded to two classes and severity classification estimation is performed one more time. After establishing the models with XGBoost, Random Forests, K-Nearest Neighborhood and Artificial Neural Networks classification algorithms, predictions are made for severity classification. As a result of the application, the best results are obtained in the case of two-class classification and with the XGBoost algorithm with an accurate prediction rate of 82%.  
 
 \  
 
-**Keywords:** Karpal Tunnel Syndrome, Multiclass Classification, Binary Classification, XGBoost, Artificial Neural Networks 
+**Keywords:** Karpal Tunnel Syndrome (CTS), Multiclass Classification, Binary Classification, XGBoost, Artificial Neural Networks 

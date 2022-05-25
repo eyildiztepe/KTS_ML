@@ -47,9 +47,9 @@ knitr::include_graphics(path="figure/rf_example.jpeg")
 Bu bölümde XGboost algoritmasına ve XGBoost algoritmasının daha iyi anlaşabilmesi için XGBoost'un altyapısını oluşturan gradyan arttırma algoritmasına değinilmiştir.  
 
 ### Gradyan Arttırımı  
-Gradyan artırma fikri, Leo Breiman'ın , artırmanın uygun bir maliyet fonksiyonu üzerinde bir optimizasyon algoritması olarak yorumlanabileceği gözleminden kaynaklanmıştır [@breiman1997arcing]. Açık regresyon gradyan artırma algoritmaları daha sonra Jerome H. Friedman [@greedy], tarafından Llew Mason, Jonathan Baxter, Peter Bartlett ve Marcus Frean'ın daha genel fonksiyonel gradyan artırma perspektifiyle eş zamanlı olarak geliştirildi [@mason1999boosting].  
+Gradyan artırma fikri, Leo Breiman'ın , arttırmanın uygun bir maliyet fonksiyonu üzerinde bir optimizasyon algoritması olarak yorumlanabileceği gözleminden kaynaklanmıştır [@breiman1997arcing]. Açık regresyon gradyan artırma algoritmaları daha sonra Jerome H. Friedman [@greedy], tarafından Llew Mason, Jonathan Baxter, Peter Bartlett ve Marcus Frean'ın daha genel fonksiyonel gradyan artırma perspektifiyle eş zamanlı olarak geliştirildi [@mason1999boosting].  
 
-Gradyan artırma, genellikle karar ağaçları gibi zayıf tahmin modelleri topluluğu şeklinde bir tahmin modeli üreten, regresyon, sınıflandırma ve diğer görevler için bir makine öğrenimi tekniğidir. Bir karar ağacı zayıf öğrenen ise, ortaya çıkan algoritmaya genellikle rastgele ormandan daha iyi performans gösteren gradyan destekli ağaçlar denir [@hastie_tibshirani_friedman_2009]. Modeli, diğer artırma yöntemlerinin yaptığı gibi aşamalı bir şekilde oluşturur ve keyfi bir türevlenebilir kayıp fonksiyonun optimizasyonuna izin vererek bunları genelleştirir.  
+Gradyan artırma, genellikle karar ağaçları gibi zayıf tahmin modelleri topluluğu şeklinde bir tahmin modeli üreten, regresyon, sınıflandırma ve diğer görevler için bir makine öğrenimi tekniğidir. Grandyan arrtıma modeli, diğer artırma yöntemlerinde de olduğu gibi aşamalı bir şekilde oluşturulur ve keyfi bir türevlenebilir kayıp fonksiyonun optimizasyonuna izin vererek bunları genelleştirir.  
 Gradyan Arttırımı Algoritması ;  
 
 * Adım 1 : $\{(x_i,y_i)\}_{i=1}^n$ şeklinde veri ve türevlenebilir bir kayıp fonksiyonu $L(y_i,F(x))$ tanımlanır.  
@@ -78,10 +78,10 @@ knitr::include_graphics(path="figure/gb-dixit.png")
 ### XGBoost (Aşırı Gradyan Arttırımı)  
 
 
-XGBoost, temeli gradyan arttırımı ve karar ağacı algoritmalarına dayanan bir makine gözetimli öğrenme tekniğidir.
-XGBoost algoritmasının orijinal hali Friedman tarafından 2002 yılında geliştirilmiştir [@dikker2017master]. Sonrasında Washington Üniversitesi’nde iki araştırmacı olan Tianqi Chen ve Carlos Guestrin tarafından SIGKDD (Bilgi İşlem Makinalarının Bilgi Keşfi ve Veri Madenciliği Özel İlgi Grubu Derneği) 2016 konferansında makale olarak sunulmuştur ve makine öğrenme dünyasında çok popüler olmuştur [@chen2016xgboost].  
+XGBoost, temeli gradyan arttırımı ve karar ağacı algoritmalarına dayanan denetimli makine öğrenmesi tekniğidir.
+XGBoost algoritmasının orijinal hali Friedman tarafından 2002 yılında geliştirilmiştir [@dikker2017master]. Sonrasında Washington Üniversitesi’nde iki araştırmacı olan Tianqi Chen ve Carlos Guestrin tarafından SIGKDD (Special Interest Group on Knowledge Discovery and Data Mining) 2016 konferansında bildiri olarak sunulmuştur ve makine öğrenme dünyasında çok popüler olmuştur [@chen2016xgboost].  
 
-XGBoost, yüksek tahmin etme gücüne sahip olup, diğer algoritmalardan 10 kata kadar daha hızlıdır. Ayrıca XGBoost, genel performansı iyileştiren ve aşırı uyum ya da aşırı öğrenmeyi azaltan bir dizi düzeltme işlemleri içermektedir [@yangin2019xgboost].   
+XGBoost, yüksek tahmin etme gücüne sahip olup, diğer algoritmalardan daha hızlıdır. Ayrıca XGBoost, genel performansı iyileştiren ve aşırı uyum ya da aşırı öğrenmeyi azaltan bir dizi düzeltme işlemleri içermektedir [@yangin2019xgboost].   
 
 Gradyan arttırımı, güçlü bir sınıflandırıcı oluşturmak için, bir dizi zayıf sınıflandırıcıyı arttırma ile birleştiren topluluk yöntemidir. Güçlü öğrenici, temel bir öğrenici ile başlayarak yinelemeli olarak eğitilmektedir. Hem gradyan arttırımı hem de XGBoost aynı prensibi izlemektedir. Aralarındaki temel farklar uygulama detaylarında yatmaktadır. XGBoost, farklı düzeltme teknikleri kullanarak, ağaçların karmaşıklığını kontrol ederek daha iyi bir performans elde etmeyi başarmaktadır [@salam2018evaluating].  
 
@@ -130,7 +130,7 @@ knitr::include_graphics(path="figure/xgb.png")
 ```
 
 ## Yapay Sinir Ağları {#nn}
-Yapay Sinir ağları insan beyninin en temel özelliği olan öğrenme fonksiyonunu gerçekleştiren bilgisayar sistemleridir. Öğrenme işlemini örnekler yardımı ile gerçekleştirirler. Bu ağlar birbirine bağlı yapay sinir hücrelerinden oluşur. Yapay sinir ağları biyolojik sinir sisteminden etkilenerek geliştirilmiştir. Biyolojik sinir hücreleri birbirleri ile sinapsisler vasıtası ile iletişim kurarlar. Bir sinir hücresi işlediği bilgileri Axon’ları yolu ile diğer hücrelere gönderirler [@oztemel2003yapay].  
+Yapay Sinir ağları insan beyninin en temel özelliği olan öğrenme fonksiyonunu taklit etmeye çalışan sistemlerdir. Öğrenme işlemini örnekler yardımı ile gerçekleştirirler. Bu ağlar birbirine bağlı yapay sinir hücrelerinden oluşur. Yapay sinir ağları biyolojik sinir sisteminden etkilenerek geliştirilmiştir. Biyolojik sinir hücreleri birbirleri ile sinapsisler vasıtası ile iletişim kurarlar. Bir sinir hücresi işlediği bilgileri Axon’ları yolu ile diğer hücrelere gönderirler [@oztemel2003yapay].  
 (ref:sahu2021) [@sahu_2021]
 ```{r echo=FALSE,fig.align='center',fig.cap="Basit Bir Yapay Nöron Örneği (ref:sahu2021)",out.width="80%",out.height="30%"}
 knitr::include_graphics(path="figure/basic_neuron.jpg")

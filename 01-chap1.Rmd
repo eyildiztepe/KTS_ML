@@ -2,7 +2,7 @@
 
 Karpal tünel sendromu, medyan sinirin karpal tüneli içerisinde baskıya uğraması sonucu ortaya çıkan semptomların genel adıdır [@werner2002carpal].  
 Tarihte ilk kez Pajet tarafından, 1854 yılında medyan sinir hasarının bulguları gözlenirken tanımlanmıştır [@history1988].  
-Karpal tünel sendromu (KTS), tanımlanması ve terimleştirilmesi ilk olarak 1947 yılında Brain, Wright ve Wilkinson tarafından yapılmıştır [@1995love].
+Karpal tünel sendromu, tanımlanması ve terimleştirilmesi ilk olarak 1947 yılında Brain, Wright ve Wilkinson tarafından yapılmıştır [@1995love].
 ```{r echo=FALSE,fig.align="center", fig.cap="Karpal Tünel Anatomisi ve Medyan Sinirin Sıkışması"}
 knitr::include_graphics(path = "figure/karpal_tunnel.png")
 ```
@@ -16,7 +16,7 @@ gözlenme sıklığı yaş ile doğru orantılıdır [@kts_mustafa]. KTS’nin %
 
 ## Etiyoloji {#KTSEtiyoloji}  
 
-Karpal tünel sendromunun en sık nedeni; herhangi bir etiyolojik etkenin saptanamadığı idiopatik KTS’dir. İdiopatik KTS’de ailesel yatkınlık, obezite, VKİ fazla olması, kare şeklinde bilek yapısı gibi
+KTS'nin en sık nedeni; herhangi bir etiyolojik etkenin saptanamadığı idiopatik KTS’dir. İdiopatik KTS’de ailesel yatkınlık, obezite, VKİ fazla olması, kare şeklinde bilek yapısı gibi
 kişisel faktörlerin etken olduğu düşünülmektedir. Günlük yaşamdaki mekanik etkenler de idiopatik KTS
 üzerinde etkin rol oynamaktadır. Montaj işinde çalışan işçiler, fabrika çalışanları, klavye ve bilgisayar
 kullananlarda olduğu gibi el bilek fleksiyonun aktif olarak yapıldığı belli hareketlerin çok sık
@@ -32,7 +32,7 @@ güçsüzlüğü ve körelme meydana gelir. Bu hastalarda elde, özellikle aktiv
 
 ## Tanı ve Ciddiyet Değerlendirmesi {#KTSTani_Ciddi}  
 
-Karpal tünel sendromunda tanı koymak için hastanın hikayesi, klinik semptomlar, fizik muayene bulguları ve bu bulguları destekleyen çeşitli testler kullanılmaktadır[@ghasemi2014handy].
+KTS'de tanı koymak için hastanın hikayesi, klinik semptomlar, fizik muayene bulguları ve bu bulguları destekleyen çeşitli testler kullanılmaktadır[@ghasemi2014handy].
 Bu testler elektronörofizyolojik, provokatif testler ve tıbbi görüntülemeye dayanan testlerdir.
 Elektronörofizyolojik testler karpal Tünel'e bağlanan elektrotlar ile elektrik sinyallerinin incelenmesi ve sonuçların bilgisayar ile yorumlanmasına dayananan testlerdir.
 (ref:noropati) [@kumacs2005idiyopatik]
@@ -88,7 +88,7 @@ knitr::include_graphics(path="figure/radyog.jpg")
 ```{r echo=FALSE, fig.align='center',fig.show='hold',fig.cap="Bilgisayarlı tomografi ",out.width="49%",out.height="22%"}
 knitr::include_graphics("figure/bt.jpg")
 ```
-İdiopatik karpal tünel sendromunda hastalığın tanımlanmasında Boston Karpal Tünel Sendromu
+İdiopatik KTS'de hastalığın tanımlanmasında Boston Karpal Tünel Sendromu
 Anketi (BKTSA) kullanılmaktadır [@levine1993self]. Bu ankete farklı dillere çevrilmiş ve ülkelere göre uyarlanmıştır. Anketin amacı hastanın yanıtlarına göre bir ciddiyet sınıflandırması yapmaktır. Anketin Türkçe versiyonu Sezgin ve ark. [@sezgi2006assessment] tarafından yayımlanmıştır, ancak  BKTSA sadece hastaların verdiği yanıtlara dayanarak bir semptom şiddeti belirlemeyi amaçlar.  
 
 Teknolojinin hızla gelişmesi ile birlikte hastalara uygulanan testlerin sonuçlarının toplanmasının kolaylaşmasının yanı sıra testlerin sonuçlarına bağlı olarak hastaya tanı koymak ve tanının şiddetini ve derecesini tespit etmek oldukça kolaylaşmıştır.  
