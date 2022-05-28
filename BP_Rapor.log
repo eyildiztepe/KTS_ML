@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.24)  28 MAY 2022 19:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.24)  28 MAY 2022 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -24,7 +24,8 @@ File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+)
+(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
 \f@nch@headwidth=\skip49
@@ -36,8 +37,10 @@ rs
 \f@nch@O@erf=\skip55
 \f@nch@O@olf=\skip56
 \f@nch@O@orf=\skip57
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2022/04/12 4.2 verbatim text (tvz,hv)
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
@@ -48,15 +51,20 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \c@FancyVerbLine=\count195
 \FV@StepNumber=\count196
 \FV@OutFile=\write3
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-)) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
+))
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\fixltx2e.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\fixltx2e.sty
 Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
 Applying: [2015/01/01] Old fixltx2e package on input line 46.
+
 
 Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 (fixltx2e)                All fixes are now in the LaTeX kernel.
@@ -65,25 +73,30 @@ Package fixltx2e Warning: fixltx2e is not required with releases after 2015
 Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 ) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2022/02/26 3.73 The Babel package
 \babel@savecnt=\count197
 \U@D=\dimen139
 \l@unhyphenated=\language79
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read3
 \bbl@dirlevel=\count198
+
 *************************************
 * Local config file bblopts.cfg used
 *
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/babel-turkish\turkish.ldf
+)
+(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/babel-turkish\turkish.ldf
 Language: turkish 2019/07/05 v1.4 Turkish support from the babel system
 Package babel Info: Making : an active character on input line 163.
 Package babel Info: Making ! an active character on input line 164.
@@ -100,11 +113,13 @@ Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 )) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.st
-y
+))
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count199
@@ -129,14 +144,17 @@ LaTeX Info: Redefining \lslig on input line 900.
 \MT@outer@space=\skip58
 )
 Package microtype Info: Loading configuration file microtype.cfg.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cfg
 File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
 )) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
@@ -146,10 +164,13 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \fb@frh=\dimen142
 \FrameRule=\dimen143
 \FrameSep=\dimen144
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
@@ -165,20 +186,25 @@ Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2021/10/15 v2.17l AMS math features
 \@mathmargin=\skip60
+
 For additional information on amsmath, use the `?' option.
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen147
-)) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+))
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen148
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2021/08/26 v2.02 operator names
 )
 \inf@bad=\count268
@@ -218,8 +244,10 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup5
@@ -227,7 +255,8 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/amscls\amsthm.sty
+))
+(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks25
 \thm@bodyfont=\toks26
@@ -238,7 +267,8 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@postskip=\skip64
 \thm@headsep=\skip65
 \dth@everypar=\toks30
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTleft=\skip66
 \LTright=\skip67
@@ -256,7 +286,8 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \c@LT@tables=\count283
 \c@LT@chunks=\count284
 \LT@p@ftn=\toks31
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen157
 \lightrulewidth=\dimen158
@@ -275,15 +306,18 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count287
 \@lastruleclass=\count288
 \@thisrulewidth=\dimen169
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/setspace\setspace.sty
+)
+(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
-) (chemarr.sty
+)
+(chemarr.sty
 Package: chemarr 2001/06/22 v1.1 Chemical reaction arrows (HO)
 ) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
@@ -316,22 +350,27 @@ ty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen170
 \Hy@linkcounter=\count289
 \Hy@pagecounter=\count290
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count291
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -347,6 +386,7 @@ Package hyperref Info: Bookmarks ON on input line 4390.
 \c@Hy@tempcnt=\count292
 LaTeX Info: Redefining \url on input line 4749.
 \XeTeXLinkMargin=\dimen171
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
@@ -367,6 +407,7 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6052.
 Package hyperref Info: PDF/A mode OFF on input line 6057.
 LaTeX Info: Redefining \ref on input line 6097.
 LaTeX Info: Redefining \pageref on input line 6101.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
@@ -376,8 +417,10 @@ package with kernel methods
 \c@Hfootnote=\count296
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
@@ -398,7 +441,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip70
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -432,15 +476,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/float\float.sty
+)
+(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count299
 \float@exts=\toks32
 \float@box=\box59
 \@float@everytoks=\toks33
 \@floatcapt=\box60
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.sty
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
@@ -449,8 +496,10 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \rotFPbot=\skip72
 \rot@float@box=\box61
 \rot@mess@toks=\toks34
-) (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/caption\caption.sty
+)
+(C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+
 (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \captionmargin=\dimen174
@@ -467,6 +516,7 @@ Package caption Info: Standard document class detected.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
+
 (C:\Users\Cem\AppData\Roaming\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
@@ -475,6 +525,7 @@ Package caption Info: rotating package is loaded.
 Package color Info: Redefining color shadecolor on input line 79.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 22
 0.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -519,6 +570,7 @@ LaTeX Info: Redefining \showhyphens on input line 220.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
@@ -547,8 +599,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 220.
-(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+ (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
@@ -561,7 +614,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 220.
 LaTeX Info: Redefining \pageref on input line 220.
 LaTeX Info: Redefining \nameref on input line 220.
-(BP_Rapor.out) (BP_Rapor.out)
+ (BP_Rapor.out) (BP_Rapor.out)
 \@outlinefile=\write4
 \openout4 = `BP_Rapor.out'.
 
@@ -569,21 +622,25 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
 24.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
 24.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
 224.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
 224.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -595,23 +652,29 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 224.
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 22
 4.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for U+msa on input line 224
 .
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 224
 .
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+)
+(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [1
+)
+[1
 Non-PDF special ignored!
 <special> !% DEU LaTeX Thesis Class 2018/11/24
 Non-PDF special ignored!
@@ -622,7 +685,8 @@ Non-PDF special ignored!
 
 ] [1
 
-] [2
+]
+[2
 
 
 ]
@@ -649,11 +713,11 @@ od-el-lerinin De§er-
 \tf@toc=\write5
 \openout5 = `BP_Rapor.toc'.
 
-[10] (BP_Rapor.lot)
+ [10] (BP_Rapor.lot)
 \tf@lot=\write6
 \openout6 = `BP_Rapor.lot'.
 
-[11
+ [11
 
 ] [12
 
@@ -662,7 +726,7 @@ od-el-lerinin De§er-
 \openout7 = `BP_Rapor.lof'.
 
 \cslhangindent=\skip73
-[14]
+ [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -699,7 +763,7 @@ Package pdftex.def Info: figure/karpal_tunnel.png  used on input line 318.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[3
+ [3
 
  <./figure/karpal_tunnel.png>]
 <figure/noropati_test.jpg, id=398, 765.86125pt x 573.14125pt>
@@ -709,6 +773,7 @@ Package pdftex.def Info: figure/noropati_test.jpg  used on input line 359.
 (pdftex.def)             Requested size: 212.46474pt x 117.06618pt.
 
 Underfull \vbox (badness 3557) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -721,7 +786,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [4]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 70.
-(C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+ (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 <figure/phalen.png, id=407, 399.4925pt x 331.2375pt>
@@ -744,6 +809,7 @@ File: figure/gerilmis.png Graphic file (type png)
 <use figure/gerilmis.png>
 Package pdftex.def Info: figure/gerilmis.png  used on input line 415.
 (pdftex.def)             Requested size: 212.48474pt x 117.07207pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -768,6 +834,7 @@ File: figure/bt.jpg Graphic file (type jpg)
 <use figure/bt.jpg>
 Package pdftex.def Info: figure/bt.jpg  used on input line 442.
 (pdftex.def)             Requested size: 212.48102pt x 143.0978pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -837,6 +904,7 @@ Package pdftex.def Info: figure/gb-dixit.png  used on input line 563.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -864,6 +932,7 @@ File: figure/xgb.png Graphic file (type png)
 <use figure/xgb.png>
 Package pdftex.def Info: figure/xgb.png  used on input line 627.
 (pdftex.def)             Requested size: 346.89659pt x 195.12553pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -917,6 +986,7 @@ File: figure/cok_katmanli.jpg Graphic file (type jpg)
 Package pdftex.def Info: figure/cok_katmanli.jpg  used on input line 684.
 (pdftex.def)             Requested size: 433.61958pt x 195.12508pt.
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -931,6 +1001,7 @@ File: figure/geri_yayilim.png Graphic file (type png)
 <use figure/geri_yayilim.png>
 Package pdftex.def Info: figure/geri_yayilim.png  used on input line 696.
 (pdftex.def)             Requested size: 368.57387pt x 195.13506pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -991,6 +1062,7 @@ Overfull \hbox (43.36348pt too wide) in paragraph at lines 823--824
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1010,6 +1082,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [22 <./figure/KNN_Grid_Graph.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
 45.
+
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1055,6 +1128,7 @@ Overfull \hbox (43.36348pt too wide) in paragraph at lines 886--887
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1118,6 +1192,7 @@ Overfull \hbox (43.36348pt too wide) in paragraph at lines 955--956
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1179,6 +1254,7 @@ Overfull \hbox (43.36348pt too wide) in paragraph at lines 1021--1022
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1227,6 +1303,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [32 <./figure/nn_conf.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1291,6 +1368,7 @@ Overfull \hbox (21.68341pt too wide) in paragraph at lines 1138--1139
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1300,6 +1378,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1323,6 +1402,7 @@ Overfull \hbox (43.36348pt too wide) in paragraph at lines 1155--1156
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1406,6 +1486,7 @@ Overfull \hbox (43.36348pt too wide) in paragraph at lines 1218--1219
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1485,6 +1566,7 @@ Overfull \hbox (43.36348pt too wide) in paragraph at lines 1281--1282
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1568,8 +1650,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 1348--1349
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[49]
+ [49]
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1723,7 +1806,7 @@ lic/lm/lmtk10.pfb><C:/Users/Cem/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/lm/lmtt12.pfb><C:/Users/Cem/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 lm/lmtt8.pfb><C:/Users/Cem/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
 lmtti10.pfb>
-Output written on BP_Rapor.pdf (82 pages, 2476185 bytes).
+Output written on BP_Rapor.pdf (82 pages, 2476237 bytes).
 PDF statistics:
  1052 PDF objects out of 1200 (max. 8388607)
  287 named destinations out of 1000 (max. 500000)
