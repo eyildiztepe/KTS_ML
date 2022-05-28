@@ -3,7 +3,7 @@ Bu çalışmada KTS ciddiyet sınıflandırması için makine öğrenmesi yönte
 
 \  
 
-Uygulamanın ilk bölümünde ((\ref{multiclass}) üç sınıflı sınıflandırma problemi için K-En yakın komşuluk, rassal ormanlar, yapay sinir ağları ve XGBoost algoritmaları kullanılmıştır ve %77 doğru sınıflandırma oranı ile en iyi sonuçlar XGBoost algoritması ile elde edilmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) doğru sınıflandırma oranını arttırabilmek amacı ile "Mild" ve "Moderate + Severe" olacak şekilde problem iki sınıflı sınıflandırmaya indirgenmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) veri seti üç sınıflıdan iki sınıflıya indirgenmesi ile doğruluk oranlarında ve diğer sınıflama metriklerinde ciddi artışlar gerçekleşmiş ve iki sınıflı problemde XGBoost algoritması KTS ciddiyet skorlarını %82 oranında doğru sınıflandırmaktadır. 
+Uygulamanın ilk bölümünde (\ref{multiclass}) üç sınıflı sınıflandırma problemi için K-En yakın komşuluk, rassal ormanlar, yapay sinir ağları ve XGBoost algoritmaları kullanılmıştır ve %77 doğru sınıflandırma oranı ile en iyi sonuçlar XGBoost algoritması ile elde edilmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) doğru sınıflandırma oranını arttırabilmek amacı ile "Mild" ve "Moderate + Severe" olacak şekilde problem iki sınıflı sınıflandırmaya indirgenmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) veri seti üç sınıflıdan iki sınıflıya indirgenmesi ile doğruluk oranlarında ve diğer sınıflama metriklerinde ciddi artışlar gerçekleşmiş ve iki sınıflı problemde XGBoost algoritması KTS ciddiyet skorlarını %82 oranında doğru sınıflandırmaktadır. 
 
 \
 

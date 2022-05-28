@@ -801,7 +801,7 @@ Bu çalışmada, KTS ciddiyet sınıflandırması için K-En Yakın Komşuluk, R
 İlk olarak orijinal verilerdeki 3 sınıf (Mild, Moderate, Severe) için sınıflandırma hedeflenmiştir.\\
 Bölüm \ref{multiclass}'de bu problem için farklı modeller ile elde edilen sonuçlara yer verilmiştir.\\
 Uygulamanın ikinci bölümünde hedef değişken iki sınıfa indirgenmiş ve bu probleme ait sonuçlar bölüm \ref{binary}'de paylaşılmıştır.\\
-Uygulamada Python programlama dili ve Scikit-Learn, Pandas, Numpy, Matplotlib, XGBoost kütüphanelerinden yararlanılmıştır. Kullanılan kodlar ve veri seti açık kaynaklı olacak şekilde \href{https://github.com/eyildiztepe/KTS_ML}{KTS\_ML} adı altında github deposunda paylaşılmaktadır.
+Uygulamada Python programlama dili ve Scikit-Learn (Buitinck ve diğerleri, 2013), Pandas, Numpy, Matplotlib, XGBoost kütüphanelerinden yararlanılmıştır. Kullanılan kodlar ve veri seti açık kaynaklı olacak şekilde \href{https://github.com/eyildiztepe/KTS_ML}{KTS\_ML} adı altında github deposunda paylaşılmaktadır.
 Bu bölümde modellerin performanslarını değerlendirmek üzere kesinlik, duyarlılık, F1-skoru, doğruluk oranı, dengelenmiş doğruluk oranı hesaplanmıştır.
 
 \hypertarget{multiclass}{%
@@ -1178,15 +1178,15 @@ Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki 
 \begin{verbatim}
               precision    recall  f1-score   support
 
-        Mild       0.79      0.83      0.81       153
-     Mod+Sev       0.83      0.79      0.81       159
+        Mild       0.78      0.85      0.81       153
+     Mod+Sev       0.84      0.77      0.80       159
 
     accuracy                           0.81       312
    macro avg       0.81      0.81      0.81       312
 weighted avg       0.81      0.81      0.81       312
 \end{verbatim}
 \begin{verbatim}
-Balanced Accuracy Score : 0.8112590948329017
+Balanced Accuracy Score : 0.8084844000493279
 \end{verbatim}
 \begin{figure}
 
@@ -1343,7 +1343,7 @@ Bu çalışmada KTS ciddiyet sınıflandırması için makine öğrenmesi yönte
 
 ~
 
-Uygulamanın ilk bölümünde ((\ref{multiclass}) üç sınıflı sınıflandırma problemi için K-En yakın komşuluk, rassal ormanlar, yapay sinir ağları ve XGBoost algoritmaları kullanılmıştır ve \%77 doğru sınıflandırma oranı ile en iyi sonuçlar XGBoost algoritması ile elde edilmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) doğru sınıflandırma oranını arttırabilmek amacı ile ``Mild'' ve ``Moderate + Severe'' olacak şekilde problem iki sınıflı sınıflandırmaya indirgenmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) veri seti üç sınıflıdan iki sınıflıya indirgenmesi ile doğruluk oranlarında ve diğer sınıflama metriklerinde ciddi artışlar gerçekleşmiş ve iki sınıflı problemde XGBoost algoritması KTS ciddiyet skorlarını \%82 oranında doğru sınıflandırmaktadır.
+Uygulamanın ilk bölümünde (\ref{multiclass}) üç sınıflı sınıflandırma problemi için K-En yakın komşuluk, rassal ormanlar, yapay sinir ağları ve XGBoost algoritmaları kullanılmıştır ve \%77 doğru sınıflandırma oranı ile en iyi sonuçlar XGBoost algoritması ile elde edilmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) doğru sınıflandırma oranını arttırabilmek amacı ile ``Mild'' ve ``Moderate + Severe'' olacak şekilde problem iki sınıflı sınıflandırmaya indirgenmiştir. Uygulamanın ikinci bölümünde (\ref{binary}) veri seti üç sınıflıdan iki sınıflıya indirgenmesi ile doğruluk oranlarında ve diğer sınıflama metriklerinde ciddi artışlar gerçekleşmiş ve iki sınıflı problemde XGBoost algoritması KTS ciddiyet skorlarını \%82 oranında doğru sınıflandırmaktadır.
 
 \hfill\break
 
@@ -1378,6 +1378,9 @@ Breiman, Leo. (1999). 1 RANDOM FORESTS--RANDOM FEATURES.
 \leavevmode\vadjust pre{\hypertarget{ref-breimanclassification}{}}%
 Breiman, L., Friedman, J., Olshen, R. ve Stone, C. (t.y.). \emph{Classification and Regression Trees. 1984 Monterey, CA Wadsworth \& Brooks}. \emph{Cole Advanced Books \& Software Google Scholar}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-sklearn_api}{}}%
+Buitinck, L., Louppe, G., Blondel, M., Pedregosa, F., Mueller, A., Grisel, O., \ldots{} Varoquaux, G. (2013). {API} design for machine learning software: experiences from the scikit-learn project. \emph{ECML PKDD Workshop: Languages for Data Mining and Machine Learning} içinde (ss. 108-122).
+
 \leavevmode\vadjust pre{\hypertarget{ref-kts_mustafa}{}}%
 Çalıcıoğlu, M. N. (2020). \emph{Karpal tünel sendromu olan hastalarda klinik, elektronöromyografik ve ultrasonografik bulguların vücut kitle indeksi ile ilişkisinin değerlendirilmesi}. (Yayımlanmamış mathesis). Hacettepe Üniversitesi.
 
@@ -1406,10 +1409,10 @@ Hastie, T., Tibshirani, R. ve Friedman, J. (2009). \emph{The elements of Statist
 Koyama, T., Sato, S., Toriumi, M., Watanabe, T., Nimura, A., Okawa, A., \ldots{} Fujita, K. (2021). A screening method using anomaly detection on a smartphone for patients with carpal tunnel syndrome: Diagnostic case-control study. \emph{JMIR mHealth and uHealth}, \emph{9}(3), e26320.
 
 \leavevmode\vadjust pre{\hypertarget{ref-kumacs2005idiyopatik}{}}%
-Kumaş, F. F. (2005).{I}diyopatik karpal t{"u}nel sendromu tedavisinde terap{"o}tik ultrason, steroid enjeksiyonu ve splint kullan{ı}m{ı}n{ı}n etkinli{ğ}inin randimize kontroll{"u} ara{ş}t{ı}r{ı}lmas{ı}.
+Kumaş, F. F. (2005). İdiyopatik karpal tÜnel sendromu tedavisinde terapötik ultrason, steroid enjeksiyonu ve splint kullanımının etkinliğinin randimize kontrollü araştırılması.
 
 \leavevmode\vadjust pre{\hypertarget{ref-kurt2020karpal}{}}%
-Kurt, A. (2020). \emph{Karpal t{"u}nel sendrom hastalar{ı}nda bilateral ince motor beceri, skapular diskinezi, hareket korkusu ve fonksiyonun sa{ğ}l{ı}kl{ı}larla kar{ş}{ı}la{ş}t{ı}r{ı}lmas{ı}}. (Yayımlanmamış mathesis). Sa{ğ}l{ı}k Bilimleri Enstit{"u}s{"u}.
+Kurt, A. (2020). \emph{Karpal tünel sendrom hastalarında bilateral ince motor beceri, skapular diskinezi, hareket korkusu ve fonksiyonun sağlıklılarla karşılaştırılması}. (Yayımlanmamış mathesis). Sağlık Bilimleri Enstitüsü.
 
 \leavevmode\vadjust pre{\hypertarget{ref-levine1993self}{}}%
 Levine, D. W., Simmons, B. P., Koris, M. J., Daltroy, L. H., Hohl, G. G., Fossel, A. H. ve Katz, J. N. (1993). A self-administered questionnaire for the assessment of severity of symptoms and functional status in carpal tunnel syndrome. \emph{The Journal of bone and joint surgery. American volume}, \emph{75}(11), 1585-1592.

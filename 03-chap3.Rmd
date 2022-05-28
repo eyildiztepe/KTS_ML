@@ -190,7 +190,7 @@ Bu çalışmada, KTS ciddiyet sınıflandırması için K-En Yakın Komşuluk, R
 İlk olarak orijinal verilerdeki 3 sınıf (Mild, Moderate, Severe) için sınıflandırma hedeflenmiştir.  
 Bölüm \ref{multiclass}'de bu problem için farklı modeller ile elde edilen sonuçlara yer verilmiştir.  
 Uygulamanın ikinci bölümünde hedef değişken iki sınıfa indirgenmiş ve bu probleme ait sonuçlar bölüm \ref{binary}'de paylaşılmıştır.  
-Uygulamada Python programlama dili  ve Scikit-Learn, Pandas, Numpy, Matplotlib, XGBoost kütüphanelerinden yararlanılmıştır. Kullanılan kodlar ve veri seti açık kaynaklı olacak şekilde [KTS_ML](https://github.com/eyildiztepe/KTS_ML) adı altında github deposunda paylaşılmaktadır.
+Uygulamada Python programlama dili  ve Scikit-Learn [@sklearn_api], Pandas, Numpy, Matplotlib, XGBoost kütüphanelerinden yararlanılmıştır. Kullanılan kodlar ve veri seti açık kaynaklı olacak şekilde [KTS_ML](https://github.com/eyildiztepe/KTS_ML) adı altında github deposunda paylaşılmaktadır.
 Bu bölümde modellerin performanslarını değerlendirmek üzere kesinlik, duyarlılık, F1-skoru, doğruluk oranı, dengelenmiş doğruluk oranı hesaplanmıştır.
 
 ```{python echo=FALSE}

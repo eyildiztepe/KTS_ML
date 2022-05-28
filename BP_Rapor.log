@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.24)  25 MAY 2022 22:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.24)  28 MAY 2022 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1593,9 +1593,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 Ek A.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1476.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1479.
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-1498.
+1501.
 (C:\Users\Cem\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [53]
@@ -1692,8 +1692,8 @@ Package rerunfilecheck Info: File `BP_Rapor.out' has not changed.
 (rerunfilecheck)             Checksum: 48B4FC56E44135BE9CEE12746C0C89A1;8848.
  ) 
 Here is how much of TeX's memory you used:
- 16808 strings out of 478547
- 284932 string characters out of 2842779
+ 16809 strings out of 478547
+ 284947 string characters out of 2842779
  606188 words of memory out of 3000000
  34234 multiletter control sequences out of 15000+600000
  533172 words of font info for 152 fonts, out of 8000000 for 9000
@@ -1723,9 +1723,9 @@ lic/lm/lmtk10.pfb><C:/Users/Cem/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/lm/lmtt12.pfb><C:/Users/Cem/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 lm/lmtt8.pfb><C:/Users/Cem/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
 lmtti10.pfb>
-Output written on BP_Rapor.pdf (82 pages, 2476232 bytes).
+Output written on BP_Rapor.pdf (82 pages, 2476185 bytes).
 PDF statistics:
- 1051 PDF objects out of 1200 (max. 8388607)
- 286 named destinations out of 1000 (max. 500000)
+ 1052 PDF objects out of 1200 (max. 8388607)
+ 287 named destinations out of 1000 (max. 500000)
  35368 words of extra memory for PDF output out of 35830 (max. 10000000)
 
