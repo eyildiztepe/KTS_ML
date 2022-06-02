@@ -112,7 +112,7 @@ y_train = y_train.to_numpy().ravel()
 X_test[["Age","BMI","CSA","PB","Duration","NRS"]] = pd.DataFrame(Stand.transform(X_test[["Age","BMI","CSA","PB","Duration","NRS"]]),columns=["Age","BMI","CSA","PB","Duration","NRS"])
 y_test = y_test.to_numpy().ravel()
 ```  
-Bu bölümde yapılan uygulama sunulmuştur. Uygulamada kullanılan veriler 2021 yılında Güney Kore'de yapılan bir araştırmadan alınmıştır [@park2021machine]. Uzmanlar tarafından yapılan tetkikler ile her bir hasta için (her bir el için) ciddiyet sınıflandırılması mild, moderate, severe olarak belirlenmiştir. Çalışmada 1037 elden alınan verilerin 405 (39.05%) adedi erkek hastalardan,  632 (60.95%) adedi kadın hastalardan elde edilmiştir. Uzmanlar tarafından 1037 adet elin, 507 (48.9%) adedi mild, 276 (26.6%) adedi moderate ve 254 (24.5%) adedi severe olarak sınıflandırılmıştır.  
+Bu bölümde yapılan uygulama sunulmuştur. Uygulamada kullanılan veriler 2021 yılında Güney Kore'de yapılan bir araştırmadan alınmıştır [@park2021machine]. Uzmanlar tarafından yapılan tetkikler ile her bir hasta için (her bir el için) ciddiyet sınıflandırılması mild, moderate, severe olarak belirlenmiştir. Çalışmada 1037 elden alınan verilerin 405 (39.05%) adedi erkek hastalardan, 632 (60.95%) adedi kadın hastalardan elde edilmiştir. Uzmanlar tarafından 1037 adet elin, 507 (48.9%) adedi mild, 276 (26.6%) adedi moderate ve 254 (24.5%) adedi severe olarak sınıflandırılmıştır.  
 
 Araştırmada uzman hekimler tarafından hastalara yöneltilen sorular ile şikayetleri olan ellerine ilişkin aşağıdaki değişkenler için veri toplanmıştır;  
 
@@ -128,9 +128,9 @@ Araştırmada uzman hekimler tarafından hastalara yöneltilen sorular ile şika
 
 * Diabetes (Diyabet Hastalığı Durumu)  
 
-* Duration (Duration in months, Dayanma süresi (Aylık))  
+* Duration (Duration in months, Hastalık süresi (Aylık))  
 
-* NRS (Numeric rating scale of pain, Hissedilen acının numerik karşılığı)  
+* NRS (Numeric rating scale of pain, Hissedilen acının sayısal karşılığı)  
 
 * NP (Noctural Pain, Gece Ağrıları)  
 
@@ -187,10 +187,10 @@ Tablo \ref{tab:catvar}'te yer alan P-Value değerleri incelendiğinde ciddiyet s
 \  
 
 Bu çalışmada, KTS ciddiyet sınıflandırması için K-En Yakın Komşuluk, Rassal Ormanlar, Yapay Sinir Ağları ve XGBoost yöntemleri kullanılmıştır.  
-İlk olarak orijinal verilerdeki 3 sınıf (Mild, Moderate, Severe) için sınıflandırma hedeflenmiştir.  
+İlk olarak orijinal verilerdeki üç sınıf (Mild, Moderate, Severe) için sınıflandırma hedeflenmiştir.  
 Bölüm \ref{multiclass}'de bu problem için farklı modeller ile elde edilen sonuçlara yer verilmiştir.  
 Uygulamanın ikinci bölümünde hedef değişken iki sınıfa indirgenmiş ve bu probleme ait sonuçlar bölüm \ref{binary}'de paylaşılmıştır.  
-Uygulamada Python programlama dili  ve Scikit-Learn [@sklearn_api], Pandas, Numpy, Matplotlib, XGBoost kütüphanelerinden yararlanılmıştır. Kullanılan kodlar ve veri seti açık kaynaklı olacak şekilde [KTS_ML](https://github.com/eyildiztepe/KTS_ML) adı altında github deposunda paylaşılmaktadır.
+Uygulamada Python programlama dili ve Scikit-Learn [@sklearn_api], Pandas, Numpy, Matplotlib, XGBoost kütüphanelerinden yararlanılmıştır. Kullanılan kodlar ve veri seti açık kaynaklı olarak [KTS_ML](https://github.com/eyildiztepe/KTS_ML) adı altında github deposunda paylaşılmaktadır.
 Bu bölümde modellerin performanslarını değerlendirmek üzere kesinlik, duyarlılık, F1-skoru, doğruluk oranı, dengelenmiş doğruluk oranı hesaplanmıştır.
 
 ```{python echo=FALSE}
@@ -240,10 +240,10 @@ def roc(model):
     plt.savefig(f'figure/roc_curve_{model_name}.png')
 ```  
 ## Çok Sınıflı(Multiclass) Sınıflama Problemi {#multiclass}
-Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin 3 farklı ciddiyet düzeyine sahip olduğu durumda farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.  
+Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin üç farklı ciddiyet düzeyine sahip olduğu durumda farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.  
 
 ### K-En Yakın Komşuluk Modeli  {#mult_knn}
-Bu bölümde veri seti üzerinde K - En yakın komşuluk modeli kullanılmış ve çıktıları değerlendirilmiştir.  
+Bu bölümde veri seti üzerinde K-En yakın komşuluk modeli kullanılmış ve çıktıları değerlendirilmiştir.  
 
 #### Hiper Parametre Seçimi  
 Daha önce belirlenen parametre uzayını ve Scikit-Learn kütüphanesinde bulunan GridSearchCV algoritması ile en yüksek doğruluk oranı yakalanana kadar çalışması sağlanmıştır.
@@ -281,7 +281,7 @@ K-En yakın komşuluk modeli için en yüksek doğruluk oranı aşağıdaki para
 
 \newpage
 
-#### En İyi Parametreli Model
+#### En İyi Model
 Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 ```{python echo=FALSE}
 KNN_model = KNeighborsClassifier(n_neighbors = 33,
@@ -352,7 +352,7 @@ Rassal ormanlar modeli için en yüksek doğruluk oranı aşağıdaki parametrel
 
 \newpage
 
-#### En İyi Parametreli Model
+#### En İyi Model
 Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 ```{python echo=FALSE}
 RFC_model = RandomForestClassifier(ccp_alpha=0.05,criterion="gini",max_features="auto",
@@ -431,6 +431,7 @@ XGBoost modeli için en yüksek doğruluk oranı aşağıdaki parametreler ile b
 
 \newpage  
 
+#### En İyi Model
 Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 ```{python echo=FALSE}
 XGB_model = XGBClassifier(booster="gbtree",eta="0.1",max_depth=3,min_child_weight=10,n_estimators=100,objective="multi:softprob",eval_metric="auc",use_label_encoder=False,num_class=2).fit(X_train,y_train)
@@ -488,6 +489,7 @@ Yapay sinir ağları modeli için en yüksek doğruluk oranı aşağıdaki param
 
 \newpage  
 
+#### En İyi Model
 Bulunan parametrelerle kurulan modelin sınıflandırma metrikleri aşağıdaki gibidir.
 ```{python echo=FALSE}
 NN_model = MLPClassifier(activation="relu",hidden_layer_sizes=19,learning_rate="adaptive",random_state=13,max_iter=3000).fit(X_train,y_train)
@@ -513,10 +515,10 @@ knitr::include_graphics(path="figure/roc_curve_MLPClassifier.png")
 ### Çok Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi  
 Bölüm \ref{mult_knn}, \ref{mult_rf}, \ref{mult_xgb} ve \ref{mult_nn}'den elde edilen sonuçlar incelenmiş olup, üç sınıflı problem için %77 doğru sınıflama oranı ile en iyi model XGBoost olarak bulunmuştur.  
 Bölüm \ref{mult_xgb}'de bulunan performans metrikleri yakından incelendiğinde, duyarlılık metriği 'Moderate' ve 'Severe' sınıfları için 'Mild' sınıfına kıyasla daha düşük kalmıştır.  
-Duyarlılık metriğindeki düşüklüğün sebep olabileceği yanlış sınıflandırmaların önüne geçebilmek amacı ile bölüm \ref{binary}'de problem iki sınıflı probleme indirgenecek ve modeller tekrar çalıştırılacaktır.
+Duyarlılık metriğindeki düşüklüğün sebep olabileceği yanlış sınıflandırmaların önüne geçebilmek amacı ile Bölüm \ref{binary}'de problem iki sınıflı probleme indirgenecek ve modeller tekrar çalıştırılacaktır.
 
 ## İki Sınıflı Sınıflama  {#binary}
-Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin 3 farklı ciddiyet düzeyine sahip olduğu veri seti 'Moderate' ve 'Severe' ciddiyet düzeyleri birleştirilerek problemin 2 farklı ciddiyet düzeyine indirgenip farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.  
+Bu bölümde KTS ciddiyet sınıflandırması için hedef değişkenin üç farklı ciddiyet düzeyine sahip olduğu veri seti 'Moderate' ve 'Severe' ciddiyet düzeyleri birleştirilerek problemin iki farklı ciddiyet düzeyine indirgenip farklı sınıflama algoritmaları ile ciddiyet düzeyinin tahminlenmesi amaçlanmıştır.  
 
 ```{python echo=FALSE}
 from sklearn.model_selection import train_test_split
@@ -815,4 +817,4 @@ knitr::include_graphics(path="figure/MLPClassifier_binary_roc.png")
 ### İki Sınıflı Sınıflama Probleminin Modellerinin Değerlendirdirilmesi
 Bölüm \ref{bin_knn}, \ref{bin_rf}, \ref{bin_xgb} ve \ref{bin_nn}'den elde edilen sonuçlar incelenmiş olup, iki sınıflı problem için %82 doğru sınıflama oranları ile XGBoost ve Rassal Ormanlar modelleri en iyi modeller olarak bulunmuştur.  
 Bölüm \ref{bin_rf} ve \ref{bin_xgb}'de bulunan performans metrikleri yakından incelendiğinde, XGBoost modeli kesinlik, duyarlılık ve f1-skor metrikleri bakımından Rassal Ormanlar modelinden daha iyi sonuç vermiştir.  
-Ciddiyet sınıflandırma probleminin 'Mild' ve 'Moderate + Severe' olacak şekilde 2 sınıfa indirgendiği durumda XGBoost modeli diğer modellerden daha iyi sonuç vermektedir.
+Ciddiyet sınıflandırma probleminin 'Mild' ve 'Moderate + Severe' olacak şekilde iki sınıfa indirgendiği durumda XGBoost modeli diğer modellerden daha iyi sonuç vermektedir.

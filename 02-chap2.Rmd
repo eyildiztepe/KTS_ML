@@ -24,7 +24,7 @@ Komşular için ağırlık değerleri atanması ile sınıflandırılmakta olan 
 ## Rassal Ormanlar {#random_forest}
 Rassal ormanlar sınıflandırıcısı, her biri farklı girdi vektörlerinden oluşan ve her ağacın yalnızca bir sınıfa oy verdiği karar ağaçlarının kombinasyonudur [@breiman1991]. Rassal ormanlar sınıflandırması ağaç derinliğini büyütmek için her dalda rastgele değişkenleri içerir.  
 
-Karar ağaçlarını modellemek, bir budama metodu ve nitelik seçme ölçütü seçmeyi gerektirir. Karar ağacının tüme varımı için kullanınlan bir sürü nitelik seçme yaklaşımı vardır ve çoğu yaklaşımlar niteliğe direkt olarak kalite ölçümü belirler. Karar ağacının tümevarımındaki en sık kullanılan nitelik seçme ölçümleri Information gain ratio kriteri ve Gini indexidir [@breimanclassification].  
+Karar ağaçlarını modellemek, bir budama metodu ve nitelik seçme ölçütü seçmeyi gerektirir. Karar ağacının tüme varımı için kullanılan bir sürü nitelik seçme yaklaşımı vardır ve çoğu yaklaşımlar niteliğe direkt olarak kalite ölçümü belirler. Karar ağacının tümevarımındaki en sık kullanılan nitelik seçme ölçümleri Information gain ratio kriteri ve Gini indexidir [@breiman2017classification].
 
 Verilen herhangi bir eğitim verisi için gini index o verinin hangi sınıfa ait olduğu olasılığını hesaplar.  
 
@@ -34,7 +34,7 @@ $$\begin{aligned}
 
 Bu denklemde $f(C_{i}, T) /|T|)$ seçilen gözlemin $C_{i}$ sınıfa ait olma olasılığıdır.
 
-Her seferinde bir ağaç, değişkenlerin bir kombinasyonunu kullanarak yeni eğitim verisi üzerinde en büyük derinliğe kadar büyür. Son derinliğine ulaşmış bu ağaçlar budanmamıştır. Bu durum,  [@quinlan2014c4] veya diğer karar ağacı metotlarına göre rassal ormanlanların en büyük avantajıdır. Bazı durumlarda maliyet ve karmaşıklığı minimum yapabilmek için rassal ormanlar içerisindeki karar ağaçlarına budama yapılır. Budama parametresi olan 'ccp_alpha' değerinden daha küçük olan en büyük maliyet ve karmaşıklık değerini bulunana kadar karar ağacı budanır.  
+Her seferinde bir ağaç, değişkenlerin bir kombinasyonunu kullanarak yeni eğitim verisi üzerinde en büyük derinliğe kadar büyür. Son derinliğine ulaşmış bu ağaçlar budanmamıştır. Bu durum, [@quinlan2014c4] veya diğer karar ağacı metotlarına göre rassal ormanlanların en büyük avantajıdır. Bazı durumlarda maliyet ve karmaşıklığı minimum yapabilmek için rassal ormanlar içerisindeki karar ağaçlarına budama yapılır. Budama parametresi olan 'ccp_alpha' değerinden daha küçük olan en büyük maliyet ve karmaşıklık değerini bulunana kadar karar ağacı budanır.  
 
 Sonuç olarak, rastgele ağaçlar metodu, kullanıcının herhangi bir değer belirleyebildiği, N kadar büyüyecek karar ağaçları içerir. Yeni veri setini sınıflandırmak için, seçilen maksimum değişken sayısına göre veri setindeki rastgele olarak paylaştırılmış her gözlem, N kadar karar ağacının her biri tarafından sınıflandırılır. Bu durum için ormanlar en fazla oya sahip sınıfı seçer.  
 (ref:rfex) [@tibco]
@@ -44,17 +44,17 @@ knitr::include_graphics(path="figure/rf_example.jpeg")
 
 
 ## XGBoost {#xgboost}  
-Bu bölümde XGboost algoritmasına ve XGBoost algoritmasının daha iyi anlaşabilmesi için XGBoost'un altyapısını oluşturan gradyan arttırma algoritmasına değinilmiştir.  
+Bu bölümde XGboost algoritmasına ve XGBoost algoritmasının daha iyi anlaşabilmesi için XGBoost'un altyapısını oluşturan gradyan artırma algoritmasına değinilmiştir.  
 
-### Gradyan Arttırımı  
-Gradyan artırma fikri, Leo Breiman'ın , arttırmanın uygun bir maliyet fonksiyonu üzerinde bir optimizasyon algoritması olarak yorumlanabileceği gözleminden kaynaklanmıştır [@breiman1997arcing]. Açık regresyon gradyan artırma algoritmaları daha sonra Jerome H. Friedman [@greedy], tarafından Llew Mason, Jonathan Baxter, Peter Bartlett ve Marcus Frean'ın daha genel fonksiyonel gradyan artırma perspektifiyle eş zamanlı olarak geliştirildi [@mason1999boosting].  
+### Gradyan Artırımı  
+Gradyan artırma fikri, Leo Breiman'ın , artırmanın uygun bir maliyet fonksiyonu üzerinde bir optimizasyon algoritması olarak yorumlanabileceği gözleminden kaynaklanmıştır [@breiman1997arcing]. Açık regresyon gradyan artırma algoritmaları daha sonra Jerome H. Friedman [@greedy] tarafından, Llew Mason, Jonathan Baxter, Peter Bartlett ve Marcus Frean'ın daha genel fonksiyonel gradyan artırma perspektifiyle eş zamanlı olarak geliştirilmiştir [@mason1999boosting].  
 
-Gradyan artırma, genellikle karar ağaçları gibi zayıf tahmin modelleri topluluğu şeklinde bir tahmin modeli üreten, regresyon, sınıflandırma ve diğer görevler için bir makine öğrenimi tekniğidir. Grandyan arrtıma modeli, diğer artırma yöntemlerinde de olduğu gibi aşamalı bir şekilde oluşturulur ve keyfi bir türevlenebilir kayıp fonksiyonun optimizasyonuna izin vererek bunları genelleştirir.  
-Gradyan Arttırımı Algoritması ;  
+Gradyan artırma, genellikle karar ağaçları gibi zayıf tahmin modelleri topluluğu şeklinde bir tahmin modeli üreten, regresyon, sınıflandırma ve diğer görevler için denetimli makine öğrenimi tekniğidir. Grandyan arrtıma modeli, diğer artırma yöntemlerinde de olduğu gibi aşamalı bir şekilde oluşturulur ve keyfi bir türevlenebilir kayıp fonksiyonun optimizasyonuna izin vererek bunları genelleştirir.  
+Gradyan Artırımı Algoritması ;  
 
 * Adım 1 : $\{(x_i,y_i)\}_{i=1}^n$ şeklinde veri ve türevlenebilir bir kayıp fonksiyonu $L(y_i,F(x))$ tanımlanır.  
 
-* Adım 2 : $F_0(x) = \min\limits_{\gamma}\,\sum_{i=1}^{n}L(y_i,\gamma)$ $\gamma$ = Tahmin Değeri olacak şekilde başlangıç değeri ($F_0(x)$) minumum olacak şekilde türevlenip 0'a eşitlenir ve $F_0(x)$'in minumum değeri elde edilir.  
+* Adım 2 : $F_0(x) = \min\limits_{\gamma}\,\sum_{i=1}^{n}L(y_i,\gamma)$ $\gamma$ = Tahmin Değeri olacak şekilde başlangıç değeri ($F_0(x)$) minimum olacak şekilde türevlenip 0'a eşitlenir ve $F_0(x)$'in minimum değeri elde edilir.  
 
 * Adım 3 :  
 
@@ -71,23 +71,23 @@ Gradyan Arttırımı Algoritması ;
 Formül incelendiğinde yeni ağacın tahmin değerinin önceki ağacın tahmin değeri + (öğrenme düzeyi $\times$ yeni ağacın değeri) olduğu görülmektedir.  
 
 (ref:gboost) [@dikker2017master]
-```{r echo=FALSE,fig.align='center',fig.cap="Gradyan Arttırma Çalışma Mantığı (ref:gboost)",out.width="100%",out.height="40%"}
+```{r echo=FALSE,fig.align='center',fig.cap="Gradyan Artırma Çalışma Mantığı (ref:gboost)",out.width="100%",out.height="40%"}
 knitr::include_graphics(path="figure/gb-dixit.png")
 ```
 
-### XGBoost (Aşırı Gradyan Arttırımı)  
+### XGBoost (Aşırı Gradyan Artırımı)  
 
 
-XGBoost, temeli gradyan arttırımı ve karar ağacı algoritmalarına dayanan denetimli makine öğrenmesi tekniğidir.
-XGBoost algoritmasının orijinal hali Friedman tarafından 2002 yılında geliştirilmiştir [@dikker2017master]. Sonrasında Washington Üniversitesi’nde iki araştırmacı olan Tianqi Chen ve Carlos Guestrin tarafından SIGKDD (Special Interest Group on Knowledge Discovery and Data Mining) 2016 konferansında bildiri olarak sunulmuştur ve makine öğrenme dünyasında çok popüler olmuştur [@chen2016xgboost].  
+XGBoost, temeli gradyan artırımı ve karar ağacı algoritmalarına dayanan denetimli makine öğrenmesi tekniğidir.
+XGBoost algoritmasının orijinal hali Friedman tarafından 2002 yılında geliştirilmiştir [@friedman2002stochastic]. Sonrasında Washington Üniversitesi’nde iki araştırmacı olan Tianqi Chen ve Carlos Guestrin tarafından SIGKDD (Special Interest Group on Knowledge Discovery and Data Mining) 2016 konferansında bildiri olarak sunulmuştur ve makine öğrenme dünyasında çok popüler olmuştur [@chen2016xgboost].  
 
-XGBoost, yüksek tahmin etme gücüne sahip olup, diğer algoritmalardan daha hızlıdır. Ayrıca XGBoost, genel performansı iyileştiren ve aşırı uyum ya da aşırı öğrenmeyi azaltan bir dizi düzeltme işlemleri içermektedir [@yangin2019xgboost].   
+XGBoost, yüksek tahmin etme gücüne sahip olup,bazı çalışmalarda diğer algoritmalardan daha hızlı olduğu bilinmektedir. Ayrıca XGBoost, genel performansı iyileştiren ve aşırı uyum ya da aşırı öğrenmeyi azaltan bir dizi düzeltme işlemleri içermektedir [@yangin2019xgboost].   
 
-Gradyan arttırımı, güçlü bir sınıflandırıcı oluşturmak için, bir dizi zayıf sınıflandırıcıyı arttırma ile birleştiren topluluk yöntemidir. Güçlü öğrenici, temel bir öğrenici ile başlayarak yinelemeli olarak eğitilmektedir. Hem gradyan arttırımı hem de XGBoost aynı prensibi izlemektedir. Aralarındaki temel farklar uygulama detaylarında yatmaktadır. XGBoost, farklı düzeltme teknikleri kullanarak, ağaçların karmaşıklığını kontrol ederek daha iyi bir performans elde etmeyi başarmaktadır [@salam2018evaluating].  
+Gradyan artırımı, güçlü bir sınıflandırıcı oluşturmak için, bir dizi zayıf sınıflandırıcıyı artırma ile birleştiren topluluk yöntemidir. Güçlü öğrenici, temel bir öğrenici ile başlayarak yinelemeli olarak eğitilmektedir. Hem gradyan artırımı hem de XGBoost aynı prensibi izlemektedir. Aralarındaki temel farklar uygulama detaylarında yatmaktadır. XGBoost, farklı düzeltme teknikleri kullanarak, ağaçların karmaşıklığını kontrol ederek daha iyi bir performans elde etmeyi başarmaktadır [@salam2018evaluating].  
 
 * Adım 1 : $\{(x_i,y_i)\}_{i=1}^n$ şeklinde veri ve türevlenebilir bir kayıp fonksiyonu $L(y_i,F(x))$ tanımlanır. XGBoost algoritması kayıp fonksiyonu olarak $$L(y_i,P_i) = -[y_{i}log(P_i)+(1-y_i)log(1-P_i)]$$ fonksiyonunu kullanır burada $P_i$ tahmin değerine eşittir.  
 
-* Adım 2 : $F_0(x) = \min\limits_{\gamma}\,\sum_{i=1}^{n}L(y_i,\gamma)$, $\gamma$ = Tahmin Değeri olacak şekilde başlangıç değeri ($F_0(x)$) minumum olacak şekilde türevlenip 0'a eşitlenir ve $F_0(x)$'in minumum değeri elde edilir.  
+* Adım 2 : $F_0(x) = \min\limits_{\gamma}\,\sum_{i=1}^{n}L(y_i,\gamma)$, $\gamma$ = Tahmin Değeri olacak şekilde başlangıç değeri ($F_0(x)$) minimum olacak şekilde türevlenip 0'a eşitlenir ve $F_0(x)$'in minimum değeri elde edilir.  
 
 * Adım 3 : Her bir yaprak için optimal çıktı değerini elde etmek amacı ile aşağıdaki denklemden yararlanılır. 
 \begin{equation}
@@ -104,7 +104,7 @@ $$
 	h = \left[\frac{d^2}{dlog(Odds)^2}L(y_i,log(Odds)_i)\right] = \frac{e^{log(Odds)_i}}{(1 + e^{log(Odds)_i})^2} = P_i\times (1-P_i)
 $$
 
-	+ Adım 3.1 : Denlem \ref{eq1}'den yararlanıldığı takdirde aşağıdaki denklem elde edilmektedir.
+	+ Adım 3.1 : Denklem \ref{eq1}'den yararlanıldığı takdirde aşağıdaki denklem elde edilmektedir.
 	\begin{equation}
 		(g_1 + g_2 + \ldots + g_n)O_{value} + \frac{1}{2}(h_1 + h_2 + \ldots + h_n + \lambda)O_{value}^2
 		\label{eq2}
